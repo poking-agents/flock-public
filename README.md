@@ -48,7 +48,7 @@ Core operations include:
 
 ```
 flock/
-├── handlers/                # Operation handlers
+├── handlers/               # Operation handlers
 │   ├── base.py             # Base handler definitions
 │   ├── bash.py             # Bash command execution
 │   ├── python.py           # Python code execution
@@ -81,7 +81,7 @@ flock/
 1. Clone the repository:
 ```bash
 git clone https://github.com/poking-agents/flock-public.git
-cd flock
+cd flock-public
 ```
 
 2. Install dependencies:
