@@ -89,7 +89,7 @@ def get_function_definitions(
     ]
     if intermediate_scoring:
         standard_functions.append(score)
-        standard_functions.append(score_log)
+        # standard_functions.append(score_log) # TODO: restore
     else:
         standard_functions.append(submit)
     if timeout:
