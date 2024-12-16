@@ -56,10 +56,32 @@ class triframeSettings(BaseModel):
     intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
     require_function_call: bool = Field(False, description="Require function calls")
     enable_advising: bool = Field(True, description="Enable advisor phase")
+    enable_subagents: bool = Field(False, description="Enable subagent launching")
 
 
 class triframeState(AgentState):
     settings: triframeSettings = Field(default_factory=triframeSettings)
+    active_subagents: List[Dict[str, Any]] = Field(default_factory=list)
+    subagent_config: Optional[Dict[str, Any]] = Field(default=None)
+    status: str = Field("initialized", description="State status (for subagents)")
+
+    def is_subagent(self) -> bool:
+        """Check if this state represents a subagent"""
+        return self.subagent_config is not None
+
+    def add_subagent(
+        self, agent_id: str, task: str, approach: str, include_task_description: bool
+    ) -> None:
+        """Add a subagent to active agents"""
+        self.active_subagents.append(
+            {
+                "id": agent_id,
+                "task": task,
+                "approach": approach,
+                "include_task_description": include_task_description,
+                "status": "initialized",
+            }
+        )
 
     def update_usage(self):
         latest_results = self.previous_results[-1]

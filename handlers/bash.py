@@ -36,20 +36,14 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
     command = params.command
     timeout = params.timeout or 60
     agent_id = getattr(params, "agent_id", None)
-
-    # Set up agent-specific cache directory
     if agent_id:
         cache_dir = Path("subagents") / agent_id / ".cache"
     else:
         cache_dir = Path.home() / ".cache"
     cache_dir.mkdir(parents=True, exist_ok=True)
-
     last_dir_file = cache_dir / ".last_dir"
     last_env_file = cache_dir / ".last_env"
-
-    # Initialize directory tracking if not exists
     if not last_dir_file.exists():
-        # Start in agent's directory if it exists
         if agent_id:
             agent_dir = Path("subagents") / agent_id
             agent_dir.mkdir(parents=True, exist_ok=True)
@@ -58,18 +52,14 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
         else:
             with last_dir_file.open("w") as f:
                 f.write(str(Path.cwd()))
-
-    # Initialize environment tracking if not exists
     if not last_env_file.exists():
         env = subprocess.check_output(["bash", "-c", "declare -p"], text=True)
         with last_env_file.open("w") as f:
             f.write(env)
-
     command_counter = int(time.time() * 1000)
     stdout_path = f"/tmp/bash_stdout_{agent_id or 'default'}_{command_counter}"
     stderr_path = f"/tmp/bash_stderr_{agent_id or 'default'}_{command_counter}"
     returncode_path = f"/tmp/bash_returncode_{agent_id or 'default'}_{command_counter}"
-
     full_command = f"""cd $( cat {last_dir_file} ) >/dev/null; 
         source {last_env_file} 2>/dev/null && 
         export TQDM_DISABLE=1 && 
@@ -77,7 +67,6 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
         echo $? > {returncode_path}; 
         pwd > {last_dir_file}; 
         declare -p > {last_env_file} ) > {stdout_path} 2> {stderr_path}"""
-
     try:
         proc = await asyncio.create_subprocess_exec(
             "bash",

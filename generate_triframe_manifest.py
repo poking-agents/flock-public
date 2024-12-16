@@ -4,13 +4,13 @@ import json
 MODELS = [
     ("gpt-4o-mini", "4om"),
     ("gpt-4o", "4o"),
-    ("o1", "o1"),
     ("claude-3-5-sonnet-20240620", "c3.5s"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
     ("gemini-1.5-pro", "g1.5p"),
     ("gemini-2.0-flash-exp", "g2f"),
 ]
 AIRD = [True, False]
+SUBAGENTS = [True, False]
 
 
 def generate_manifest() -> None:
@@ -56,6 +56,7 @@ def generate_manifest() -> None:
                 "intermediate_scoring": {"type": "boolean"},
                 "require_function_call": {"type": "boolean"},
                 "enable_advising": {"type": "boolean"},
+                "enable_subagents": {"type": "boolean"},
             },
             "required": ["advisors", "actors", "raters"],
         },
@@ -101,32 +102,46 @@ def generate_manifest() -> None:
     # Create homogeneous model settings
     for model, model_short in MODELS:
         for aird in AIRD:
-            pack_name = f"triframe_{model_short}{'_aird' if aird else ''}"
-            settings_packs[pack_name] = {
-                "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                "actors": [{"model": model, "temp": 1.0, "n": 3}],
-                "raters": [{"model": model, "temp": 1.0, "n": 2}],
-                "limit_type": "time" if aird else "token",
-                "intermediate_scoring": aird,
-                "require_function_call": False,
-                "enable_advising": True,
-            }
+            for subagents in SUBAGENTS:
+                pack_name = f"triframe_{model_short}{'_aird' if aird else ''}"
+                if subagents:
+                    pack_name += "_subagents"
+                settings_packs[pack_name] = {
+                    "advisors": [{"model": model, "temp": 1.0, "n": 1}],
+                    "actors": [{"model": model, "temp": 1.0, "n": 3}],
+                    "raters": [{"model": model, "temp": 1.0, "n": 2}],
+                    "limit_type": "time" if aird else "token",
+                    "intermediate_scoring": aird,
+                    "require_function_call": False,
+                    "enable_advising": True,
+                    "enable_subagents": subagents,
+                }
 
-    # Create mixed model setting with 4o actor and o1 others
-    settings_packs["triframe_4o_o1"] = {
-        "advisors": [{"model": "o1", "temp": 1.0, "n": 1}],
+    settings_packs["triframe_many"] = {
+        "advisors": [{"model": "claude-3-5-sonnet-20241022", "temp": 1.0, "n": 1}],
         "actors": [
-            {"model": "gpt-4o", "temp": 1.0, "n": 4},
-            {"model": "o1", "temp": 1.0, "n": 4},
+            {"model": "gpt-4o", "temp": 1.0, "n": 3},
+            {"model": "claude-3-5-sonnet-20240620", "temp": 1.0, "n": 3},
+            {"model": "claude-3-5-sonnet-20241022", "temp": 1.0, "n": 3},
+            # {"model": "gemini-1.5-pro", "temp": 1.0, "n": 3},
+            {"model": "gemini-2.0-flash-exp", "temp": 1.0, "n": 3},
         ],
         "raters": [
-            {"model": "gpt-4o", "temp": 1.0, "n": 2},
-            {"model": "o1", "temp": 1.0, "n": 2},
+            {"model": "claude-3-5-sonnet-20240620", "temp": 0.0, "n": 1},
+            {"model": "claude-3-5-sonnet-20241022", "temp": 0.0, "n": 1},
+            # {"model": "gemini-1.5-pro", "temp": 0.0, "n": 1},
+            {"model": "gemini-2.0-flash-exp", "temp": 0.0, "n": 1},
         ],
         "limit_type": "token",
         "intermediate_scoring": False,
         "require_function_call": False,
         "enable_advising": True,
+        "enable_subagents": False,
+    }
+
+    settings_packs["triframe_many_subagents"] = {
+        **settings_packs["triframe_many"],
+        "enable_subagents": True,
     }
 
     # Add no-advisor variants for each pack

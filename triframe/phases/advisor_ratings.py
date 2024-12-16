@@ -191,6 +191,30 @@ def validate_function_call(function_call: Optional[Dict[str, Any]]) -> bool:
             return "advice" in args and isinstance(args["advice"], str)
         elif function_name == "set_timeout":
             return "timeout" in args and isinstance(args["timeout"], int)
+        elif function_name == "conclude":
+            # `conclude` requires a `result` field which should be a string.
+            return "result" in args and isinstance(args["result"], str)
+        elif function_name == "launch_subagents":
+            # `launch_subagents` requires `agents`, which should be a list of agent specifications.
+            # Each agent specification must be a dictionary containing `task`, `approach`, and `include_task_description`.
+            if "agents" not in args or not isinstance(args["agents"], list):
+                return False
+            for agent_info in args["agents"]:
+                if not isinstance(agent_info, dict):
+                    return False
+                # Check required keys
+                if not all(
+                    key in agent_info
+                    for key in ["task", "approach", "include_task_description"]
+                ):
+                    return False
+                if (
+                    not isinstance(agent_info["task"], str)
+                    or not isinstance(agent_info["approach"], str)
+                    or not isinstance(agent_info["include_task_description"], bool)
+                ):
+                    return False
+            return True
         else:
             return False
 

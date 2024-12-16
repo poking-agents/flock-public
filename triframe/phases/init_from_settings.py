@@ -26,6 +26,7 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> trifram
     print(f"Settings data: {json.dumps(settings_data, indent=2)}")
 
     # Create triframeSettings directly from the settings data
+    # TODO: warn on any unconsumed keys
     settings = triframeSettings(
         actors=[
             MiddlemanSettings(**actor) for actor in settings_data.get("actors", [])
@@ -41,6 +42,7 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> trifram
         limit_type=settings_data.get("limit_type", "token"),
         intermediate_scoring=settings_data.get("intermediate_scoring", False),
         enable_advising=settings_data.get("enable_advising", True),
+        enable_subagents=settings_data.get("enable_subagents", False),
     )
 
     initial_state = triframeState(

@@ -35,6 +35,7 @@ set_timeout = {
         "required": ["timeout"],
     },
 }
+
 submit = {
     "name": "submit",
     "description": "Submit your final answer to the task. On some tasks, your score will be determined by this answer. On other tasks, submitting indicates that you have finished your work on some artifact, like a file on the server. If you the task is scored based on a file, make sure that you have written the correct content to the file before submitting.",
@@ -50,50 +51,107 @@ submit = {
     },
 }
 
+conclude = {
+    "name": "conclude",
+    "description": "Conclude this subagent's execution with findings",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "result": {
+                "type": "string",
+                "description": "Summary of findings and results",
+            }
+        },
+        "required": ["result"],
+    },
+}
+
+launch_subagents = {
+    "name": "launch_subagents",
+    "description": "Launch multiple parallel attempts at the task, or custom subtask. Subagents have access to a bash tool and can run commands on the server.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "agents": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "task": {
+                            "type": "string",
+                            "description": "The task for the subagent to attempt. Be as detailed as possible. If the subagent will not have access to the original task description, be sure to include any necessary context (e.g. the path of relevant files).",
+                        },
+                        "approach": {
+                            "type": "string",
+                            "description": "The approach the subagent should take to solve the task. This could be a high-level strategy or a specific algorithm. It can be beneficial to have subagents attempt different approaches to the same task.",
+                        },
+                        "include_task_description": {
+                            "type": "boolean",
+                            "description": "Whether to include the original high-level task description in the subagent's context.",
+                        },
+                    },
+                    "required": ["task", "approach", "include_task_description"],
+                },
+            }
+        },
+        "required": ["agents"],
+    },
+}
+
 
 def get_function_definitions(
     state: triframeState,
 ) -> List[Dict[str, Any]]:
+    """Return a list of function definitions for the triframe agent"""
     intermediate_scoring = state.settings.intermediate_scoring
     timeout = True
-    """Return a list of function definitions for the triframe agent"""
-    standard_functions = [
-        {
-            "name": "run_bash",
-            "description": "Run a bash command on the server. This does not support interactive commands, like 'vim'. Changing the directory with 'cd' will affect subsequent commands, but 'ssh' will not keep the connection open. If you are working with code in a file, consider using a heredoc (EOF) to write to the file.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "command": {
-                        "type": "string",
-                        "description": "The bash command to execute",
+    standard_functions = []
+    # TODO: restore run_bash to the main agents, after testing
+    if state.is_subagent():
+        standard_functions += [
+            {
+                "name": "run_bash",
+                "description": "Run a bash command on the server. This does not support interactive commands, like 'vim'. Changing the directory with 'cd' will affect subsequent commands, but 'ssh' will not keep the connection open. If you are working with code in a file, consider using a heredoc (EOF) to write to the file.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "command": {
+                            "type": "string",
+                            "description": "The bash command to execute",
+                        },
                     },
+                    "required": ["command"],
                 },
-                "required": ["command"],
             },
-        },
-        {
-            "name": "run_python",
-            "description": "Run Python code on the server, in an session that persists between calls. This means that variables and functions defined in one call will be available in subsequent calls.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "code": {
-                        "type": "string",
-                        "description": "The Python code to execute",
-                    },
-                },
-                "required": ["code"],
-            },
-        },
-    ]
+            # TODO: restore run_python
+            # {
+            #     "name": "run_python",
+            #     "description": "Run Python code on the server, in an session that persists between calls. This means that variables and functions defined in one call will be available in subsequent calls.",
+            #     "parameters": {
+            #         "type": "object",
+            #         "properties": {
+            #             "code": {
+            #                 "type": "string",
+            #                 "description": "The Python code to execute",
+            #             },
+            #         },
+            #         "required": ["code"],
+            #     },
+            # },
+        ]
     if intermediate_scoring:
         standard_functions.append(score)
         # standard_functions.append(score_log) # TODO: restore
-    else:
+    elif not state.is_subagent():
         standard_functions.append(submit)
     if timeout:
         standard_functions.append(set_timeout)
+    # Only add launch_subagents if this is not a subagent and subagents are enabled
+    if state.settings.enable_subagents and not state.is_subagent():
+        standard_functions.append(launch_subagents)
+    # Add conclude function only for subagents
+    if state.is_subagent():
+        standard_functions.append(conclude)
     return standard_functions
 
 

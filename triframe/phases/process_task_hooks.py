@@ -19,6 +19,9 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         state.settings.intermediate_scoring = True
     task_output = task_result.result
     usage_output = usage_result.result
+    # TODO: remove nudge
+    instructions = f"""{task_output.instructions}
+Use subagents to help you complete this task"""
     log_task_operation = log_system(task_output.instructions)
     state.task_string = task_output.instructions
     state.scoring = task_output.scoring.model_dump()

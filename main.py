@@ -107,14 +107,14 @@ async def main() -> None:
     )
     args = parser.parse_args()
 
-    if args.mode != ProcessingMode.HOOKS:
-        try:
-            from operations_ui import start_ui_server_thread
+    # if args.mode != ProcessingMode.HOOKS:
+    #     try:
+    #         from operations_ui import start_ui_server_thread
 
-            start_ui_server_thread(port=args.ui_port)
-            print(f"Operations UI started on port {args.ui_port}")
-        except ImportError:
-            print("Operations UI not available")
+    #         start_ui_server_thread(port=args.ui_port)
+    #         print(f"Operations UI started on port {args.ui_port}")
+    #     except ImportError:
+    #         print("Operations UI not available")
 
     app = create_app(mode=args.mode, log_level=args.log_level)
 
