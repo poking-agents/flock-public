@@ -151,4 +151,14 @@ log_styles = {
         "style": {"color": "white", "background-color": "#e3630c"},
         "title": "Warning",
     },
+    "subagent_output": {
+        "style": {
+            "color": "white",
+            "background-color": "#2c4a63",  # A distinct blue shade
+            "border-left": "6px solid #64b5f6",
+            "border-right": "6px solid #64b5f6",
+            "padding": "2px 6px",
+        },
+        "title": "Subagent Output",
+    },
 }

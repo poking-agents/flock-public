@@ -1,15 +1,10 @@
-"""Handlers for bash operation"""
-
 import asyncio
 import os
-import subprocess
-import time
 from pathlib import Path
 from typing import Optional
 
-import aiofiles
-
 from handlers.base import create_handler
+from logger import logger
 from type_defs.operations import BashOutput, BashParams
 from type_defs.processing import ProcessingMode
 
@@ -31,97 +26,69 @@ async def bash_middleman(params: BashParams, deps: Optional[dict]) -> BashOutput
 
 
 async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
-    """Bash handler for hooks mode with per-agent state tracking"""
-    hooks_client = deps["hooks_client"]
+    """Bash handler for hooks mode with per-agent state tracking using the current working directory."""
     command = params.command
     timeout = params.timeout or 60
     agent_id = getattr(params, "agent_id", None)
+
+    # Ensure existence of subagent environment directory if agent_id is provided
     if agent_id:
-        cache_dir = Path("subagents") / agent_id / ".cache"
+        env_dir = Path("subagents") / agent_id / ".cache"
+        env_dir.mkdir(parents=True, exist_ok=True)
+        env_dir_path = str(env_dir)
     else:
-        cache_dir = Path.home() / ".cache"
-    cache_dir.mkdir(parents=True, exist_ok=True)
-    last_dir_file = cache_dir / ".last_dir"
-    last_env_file = cache_dir / ".last_env"
-    if not last_dir_file.exists():
-        if agent_id:
-            agent_dir = Path("subagents") / agent_id
-            agent_dir.mkdir(parents=True, exist_ok=True)
-            with last_dir_file.open("w") as f:
-                f.write(str(agent_dir))
-        else:
-            with last_dir_file.open("w") as f:
-                f.write(str(Path.cwd()))
-    if not last_env_file.exists():
-        env = subprocess.check_output(["bash", "-c", "declare -p"], text=True)
-        with last_env_file.open("w") as f:
-            f.write(env)
-    command_counter = int(time.time() * 1000)
-    stdout_path = f"/tmp/bash_stdout_{agent_id or 'default'}_{command_counter}"
-    stderr_path = f"/tmp/bash_stderr_{agent_id or 'default'}_{command_counter}"
-    returncode_path = f"/tmp/bash_returncode_{agent_id or 'default'}_{command_counter}"
-    full_command = f"""cd $( cat {last_dir_file} ) >/dev/null; 
-        source {last_env_file} 2>/dev/null && 
-        export TQDM_DISABLE=1 && 
-        ( {command}
-        echo $? > {returncode_path}; 
-        pwd > {last_dir_file}; 
-        declare -p > {last_env_file} ) > {stdout_path} 2> {stderr_path}"""
+        # Use a general environment directory for the main agent
+        env_dir = Path(os.getenv("TEST_ENVIRONMENT", str(Path.home() / ".agent_env")))
+        env_dir.mkdir(parents=True, exist_ok=True)
+        env_dir_path = str(env_dir)
+
+    # Construct the shell command
+    # Directly run the command in the environment directory
+    full_command = f'cd "{env_dir_path}" && {command}'
+
+    logger.debug(
+        f"[{'Subagent: ' + agent_id if agent_id else 'Main Agent'}] Running bash command: {full_command}"
+    )
+
     try:
-        proc = await asyncio.create_subprocess_exec(
-            "bash",
-            "-c",
+        # Start the subprocess
+        proc = await asyncio.create_subprocess_shell(
             full_command,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
+            executable="/bin/bash",
         )
+
+        # Wait for the process to finish or timeout
         try:
-            stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout)
-            returncode = proc.returncode
-            try:
-                async with aiofiles.open(returncode_path, "r") as f:
-                    returncode = int((await f.read()).strip())
-            except Exception:
-                pass
-            try:
-                async with aiofiles.open(stdout_path, "r") as f:
-                    stdout_content = await f.read()
-                async with aiofiles.open(stderr_path, "r") as f:
-                    stderr_content = await f.read()
-            except Exception as e:
-                stdout_content = stdout.decode() if stdout else ""
-                stderr_content = (
-                    stderr.decode() if stderr else f"Error reading output: {str(e)}"
-                )
-            return BashOutput(
-                stdout=stdout_content, stderr=stderr_content, status=returncode
-            )
+            await asyncio.wait_for(proc.wait(), timeout=timeout)
         except asyncio.TimeoutError:
-            try:
-                proc.kill()
-                stdout, stderr = await proc.communicate()
-                return BashOutput(
-                    stdout=stdout.decode() if stdout else "",
-                    stderr=f"""{stderr.decode() if stderr else ''}
-Command timed out after {timeout} seconds.""",
-                    status=124,
-                )
-            except ProcessLookupError:
-                return BashOutput(
-                    stdout="",
-                    stderr="Process ended before it could be killed",
-                    status=125,
-                )
-    except Exception as e:
+            # If the command times out, kill it and return code 124
+            proc.kill()
+            return BashOutput(
+                stdout="",
+                stderr=f"Command '{command}' timed out after {timeout} seconds.",
+                status=124,
+            )
+
+        # Read stdout and stderr from the process
+        stdout_data = await proc.stdout.read() if proc.stdout else b""
+        stderr_data = await proc.stderr.read() if proc.stderr else b""
+        stdout_content = stdout_data.decode("utf-8", errors="ignore")
+        stderr_content = stderr_data.decode("utf-8", errors="ignore")
+
+        # Use the process's return code
+        return_code = proc.returncode if proc.returncode is not None else 1
+
+        # Return the results
         return BashOutput(
-            stdout="", stderr=f"Error executing command: {str(e)}", status=1
+            stdout=stdout_content.strip(),
+            stderr=stderr_content.strip(),
+            status=return_code,
         )
-    finally:
-        for path in [stdout_path, stderr_path, returncode_path]:
-            try:
-                os.remove(path)
-            except Exception:
-                pass
+    except Exception as e:
+        logger.error(f"Error in bash_hooks: {str(e)}", exc_info=True)
+        return BashOutput(stdout="", stderr=str(e), status=1)
 
 
 handlers = {

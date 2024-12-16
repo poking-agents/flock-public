@@ -84,6 +84,10 @@ def log_tool_output(content: str) -> LogWithAttributesRequest:
     return create_log_request(content, log_styles["tool_output"])
 
 
+def log_subagent_output(content: str) -> LogWithAttributesRequest:
+    return create_log_request(content, log_styles["subagent_output"])
+
+
 def log_review(content: str) -> LogWithAttributesRequest:
     """Log a review with appropriate styling"""
     return create_log_request(content, log_styles["review"])
