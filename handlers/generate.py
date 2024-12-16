@@ -4,7 +4,7 @@ import asyncio
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Set
+from typing import List, Optional, Set
 
 from handlers.base import create_handler
 from logger import logger
@@ -12,6 +12,40 @@ from type_defs.operations import GenerationOutput, GenerationParams
 from type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS: Set[str] = {}
+
+ANTHROPIC_MODELS = ["claude-3-5-sonnet-20240620", "claude-3-5-sonnet-20241022"]
+
+
+def preprocesses_messages(params: GenerationParams) -> List[dict]:
+    if params.settings.model in ["gemini-2.0-flash-exp"]:
+        return [
+            {
+                "role": "user" if message["role"] == "system" else message["role"],
+                "content": message["content"],
+            }
+            for message in params.messages
+        ]
+    # make sure we have non-empty and non-whitespace-only content in all assistant messages
+    if params.settings.model in ANTHROPIC_MODELS:
+        for i, message in enumerate(params.messages):
+            if message["role"] == "assistant" and message["content"].strip() == "":
+                params.messages[i]["content"] = "_"
+
+    return params.messages
+
+
+def postprocesses_output(full_output: GenerationOutput) -> GenerationOutput:
+    """Some models return function calls with arguments: <serialized_json>, while others return a dict. Convert all to serialized json for backwards compatibility"""
+    for output in full_output.outputs:
+        if (
+            output.function_call
+            and "arguments" in output.function_call
+            and isinstance(output.function_call["arguments"], dict)
+        ):
+            output.function_call["arguments"] = json.dumps(
+                output.function_call["arguments"]
+            )
+    return full_output
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -52,7 +86,7 @@ async def generate_middleman(
     """Generate handler for middleman mode"""
     post_completion = deps["post_completion"]
     try:
-        processed_messages = params.messages
+        processed_messages = preprocesses_messages(params)
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
             raw_outputs = await asyncio.gather(
                 *[
@@ -91,7 +125,7 @@ async def generate_middleman(
                 cost=sum(raw_output["cost"] or 0 for raw_output in raw_outputs),
             )
             log_generation(params, merged)
-            return merged
+            return postprocesses_output(merged)
         else:
             raw_output = await post_completion(
                 messages=processed_messages,
@@ -111,7 +145,7 @@ async def generate_middleman(
                 raise Exception(raw_output["error"])
             result = GenerationOutput(**raw_output)
             log_generation(params, result)
-            return result
+            return postprocesses_output(result)
     except Exception as e:
         error_output = GenerationOutput(
             outputs=[], error=str(e), non_blocking_errors=[str(e)]
@@ -125,7 +159,7 @@ async def generate_hooks(
 ) -> GenerationOutput:
     """Generate handler for hooks mode"""
     hooks_client = deps["hooks_client"]
-    processed_messages = params.messages
+    processed_messages = preprocesses_messages(params)
     if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
         raw_outputs = []
         settings = params.settings.copy()
@@ -154,7 +188,7 @@ async def generate_hooks(
             cost=sum(raw_output.cost or 0 for raw_output in raw_outputs),
         )
         log_generation(params, merged)
-        return merged
+        return postprocesses_output(merged)
     else:
         result = await hooks_client.generate(
             settings=params.settings,
@@ -163,16 +197,7 @@ async def generate_hooks(
         )
         output = GenerationOutput(**result.dict())
         log_generation(params, output)
-        return output
-
-
-async def generate_mock(
-    params: GenerationParams, deps: Optional[dict]
-) -> GenerationOutput:
-    """Generate handler for mock mode"""
-    mock_output = GenerationOutput()
-    log_generation(params, mock_output)
-    return mock_output
+        return postprocesses_output(output)
 
 
 handlers = {
