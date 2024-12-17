@@ -2,7 +2,7 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.logging import log_actor_choice, log_system, log_warning
@@ -12,8 +12,6 @@ from type_defs.operations import (
     BashParams,
     BashRequest,
     OperationMetadata,
-    PythonParams,
-    PythonRequest,
     ScoreLogParams,
     ScoreLogRequest,
     ScoreParams,
@@ -155,6 +153,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                     next_phase="triframe/phases/advisor.py",
                 )
             )
+        task_groups = {}
+        for agent in state.active_subagents:
+            task_groups.setdefault(agent["task"], []).append(agent["id"])
+        for task, agents in task_groups.items():
+            state.start_new_tournament(agents, task)
         state_requests.append(
             StateRequest(
                 state=state,
@@ -164,7 +167,38 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             )
         )
         return state_requests
-    tool_operation: BaseOperationRequest | None = None
+    if tool_name == "conclude":
+        if state.is_subagent():
+            state.status = "concluded"
+            state.nodes.append(
+                Node(
+                    source="tool_output",
+                    options=[
+                        Option(
+                            content=f"Subagent concluded: {tool_args.get('result', 'No result provided')}",
+                            name="conclude",
+                        )
+                    ],
+                )
+            )
+            return [
+                StateRequest(
+                    state=state,
+                    state_model="type_defs.states.triframeState",
+                    operations=[],
+                    next_phase=None,
+                )
+            ]
+        else:
+            return [
+                StateRequest(
+                    state=state,
+                    state_model="type_defs.states.triframeState",
+                    operations=[log_warning("Only subagents can use conclude")],
+                    next_phase="triframe/phases/advisor.py",
+                )
+            ]
+    tool_operation: Optional[BaseOperationRequest] = None
     next_phase = "triframe/phases/tool_output.py"
     metadata = OperationMetadata(
         purpose="tool_execution", phase="process", state_id=state.id
@@ -176,21 +210,12 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             metadata=metadata,
         )
         next_phase = None
-    elif tool_name == "conclude" and state.is_subagent():
-        state.status = "concluded"
-        next_phase = None
     elif tool_name == "run_bash":
         bash_params = BashParams(
             command=tool_args["command"],
             agent_id=state.id if state.is_subagent() else None,
         )
         tool_operation = BashRequest(type="bash", params=bash_params, metadata=metadata)
-    elif tool_name == "run_python":
-        tool_operation = PythonRequest(
-            type="python",
-            params=PythonParams(code=tool_args["code"]),
-            metadata=metadata,
-        )
     elif tool_name == "score":
         tool_operation = ScoreRequest(
             type="score", params=ScoreParams(), metadata=metadata
@@ -213,6 +238,14 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                     ],
                 )
             )
+            return [
+                StateRequest(
+                    state=state,
+                    state_model="type_defs.states.triframeState",
+                    operations=[],
+                    next_phase="triframe/phases/advisor.py",
+                )
+            ]
         except (KeyError, ValueError):
             state.nodes.append(
                 Node(
@@ -224,10 +257,23 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                     ],
                 )
             )
-        state.update_usage()
-        next_phase = "triframe/phases/advisor.py"
+            return [
+                StateRequest(
+                    state=state,
+                    state_model="type_defs.states.triframeState",
+                    operations=[log_warning("Invalid set_timeout arguments")],
+                    next_phase="triframe/phases/advisor.py",
+                )
+            ]
     else:
-        raise ValueError(f"Unknown function: {tool_name}")
+        return [
+            StateRequest(
+                state=state,
+                state_model="type_defs.states.triframeState",
+                operations=[log_warning(f"Unknown function: {tool_name}")],
+                next_phase="triframe/phases/advisor.py",
+            )
+        ]
     operations = []
     if directly_from_actor:
         operations.append(

@@ -53,13 +53,15 @@ def create_main_state(state_id: str) -> triframeState:
             "task": "Implement a solution to the Devil of Gravity problem",
             "approach": approach,
             "include_task_description": True,
-            "status": "concluded"
+            "status": "concluded",
         }
-        for i, approach in enumerate([
-            "Use a stack-based approach to handle falling segments",
-            "Implement a grid-based solution with gravity simulation",
-            "Use string manipulation with segment tracking"
-        ])
+        for i, approach in enumerate(
+            [
+                "Use a stack-based approach to handle falling segments",
+                "Implement a grid-based solution with gravity simulation",
+                "Use string manipulation with segment tracking",
+            ]
+        )
     ]
 
     for agent in approaches:
@@ -67,13 +69,15 @@ def create_main_state(state_id: str) -> triframeState:
             agent_id=agent["id"],
             task=agent["task"],
             approach=agent["approach"],
-            include_task_description=agent["include_task_description"]
+            include_task_description=agent["include_task_description"],
         )
 
     return state
 
 
-def create_subagent_state(agent_config: Dict[str, Any], parent_id: str) -> triframeState:
+def create_subagent_state(
+    agent_config: Dict[str, Any], parent_id: str
+) -> triframeState:
     """Create a completed subagent state with execution history"""
     state = triframeState(
         id=agent_config["id"],
@@ -88,31 +92,40 @@ def create_subagent_state(agent_config: Dict[str, Any], parent_id: str) -> trifr
             # Add some realistic execution history
             Node(
                 source="actor_choice",
-                options=[Option(
-                    content="Let me implement a solution using " + agent_config["approach"],
-                    function_call={
-                        "name": "run_bash",
-                        "arguments": json.dumps({"command": "echo 'Starting implementation'"})
-                    }
-                )]
+                options=[
+                    Option(
+                        content="Let me implement a solution using "
+                        + agent_config["approach"],
+                        function_call={
+                            "name": "run_bash",
+                            "arguments": json.dumps(
+                                {"command": "echo 'Starting implementation'"}
+                            ),
+                        },
+                    )
+                ],
             ),
             Node(
                 source="tool_output",
-                options=[Option(content="Starting implementation", name="run_bash")]
+                options=[Option(content="Starting implementation", name="run_bash")],
             ),
             # Add conclude node to mark completion
             Node(
                 source="actor_choice",
-                options=[Option(
-                    content="Implementation complete",
-                    function_call={
-                        "name": "conclude",
-                        "arguments": json.dumps({
-                            "result": f"Completed implementation using {agent_config['approach']}"
-                        })
-                    }
-                )]
-            )
+                options=[
+                    Option(
+                        content="Implementation complete",
+                        function_call={
+                            "name": "conclude",
+                            "arguments": json.dumps(
+                                {
+                                    "result": f"Completed implementation using {agent_config['approach']}"
+                                }
+                            ),
+                        },
+                    )
+                ],
+            ),
         ],
         token_limit=150000,  # Half of parent's limit
         token_usage=5000,
@@ -126,9 +139,9 @@ def create_subagent_state(agent_config: Dict[str, Any], parent_id: str) -> trifr
         subagent_config={
             "approach": agent_config["approach"],
             "parent_id": parent_id,
-            "created_at": datetime.now().isoformat()
+            "created_at": datetime.now().isoformat(),
         },
-        status="concluded"  # Mark as concluded
+        status="concluded",  # Mark as concluded
     )
     return state
 
@@ -140,12 +153,11 @@ async def run_monitor_phase(state_id: str) -> Dict[str, Any]:
             "state_id": state_id,
             "current_phase": "test_tournament",
             "operations": [],
-            "next_phase": "triframe/phases/subagents_monitor.py"
+            "next_phase": "triframe/phases/subagents_monitor.py",
         }
-        
+
         async with session.post(
-            "http://localhost:8080/run_workflow",
-            json=payload
+            "http://localhost:8080/run_workflow", json=payload
         ) as response:
             if response.status != 200:
                 raise Exception(f"Workflow request failed: {await response.text()}")
@@ -157,21 +169,21 @@ async def run_tournament_test():
     # Create main state
     main_state_id = f"tournament_test_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     main_state = create_main_state(main_state_id)
-    
+
     # Create and save subagent states
     for agent in main_state.active_subagents:
         subagent_state = create_subagent_state(agent, main_state_id)
         save_state(agent["id"], subagent_state)
-    
+
     # Save main state
     save_state(main_state_id, main_state)
-    
+
     print(f"\nCreated test states:")
     print(f"Main state ID: {main_state_id}")
     print("Subagent IDs:")
     for agent in main_state.active_subagents:
         print(f"  - {agent['id']}: {agent['approach']}")
-    
+
     print("\nRunning monitor phase...")
     result = await run_monitor_phase(main_state_id)
     print("\nMonitor phase result:")

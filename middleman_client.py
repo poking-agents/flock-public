@@ -95,11 +95,15 @@ async def post_completion(
     async with create_session() as session:
         for attempt in range(max_retries):
             try:
-                async with session.post(f"{base_url}/completions", json=data) as response:
+                async with session.post(
+                    f"{base_url}/completions", json=data
+                ) as response:
                     if response.status == 529:  # Overloaded error
                         if attempt < max_retries - 1:
-                            delay = base_delay * (2 ** attempt)  # Exponential backoff
-                            jitter = random.uniform(0, 0.1 * delay)  # Add some randomness
+                            delay = base_delay * (2**attempt)  # Exponential backoff
+                            jitter = random.uniform(
+                                0, 0.1 * delay
+                            )  # Add some randomness
                             total_delay = delay + jitter
                             logger.warning(
                                 f"Middleman API attempt {attempt + 1} failed due to overload. "
@@ -107,7 +111,7 @@ async def post_completion(
                             )
                             await asyncio.sleep(total_delay)
                             continue
-                        
+
                     if response.status != 200:
                         error_text = await response.text()
                         error_result = {
@@ -132,7 +136,7 @@ async def post_completion(
 
             except Exception as e:
                 if attempt < max_retries - 1:
-                    delay = base_delay * (2 ** attempt)
+                    delay = base_delay * (2**attempt)
                     jitter = random.uniform(0, 0.1 * delay)
                     total_delay = delay + jitter
                     logger.warning(
