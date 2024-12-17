@@ -1,58 +1,41 @@
 """Evaluate subagent results using tournament-style comparisons"""
-
 import sys
 from pathlib import Path
-from typing import List, Dict, Any
-
+from typing import Any, Dict, List
 sys.path.append(str(Path(__file__).parent.parent.parent))
-
 from type_defs import Message, Node, Option
-from type_defs.operations import GenerationParams, GenerationRequest
+from type_defs.operations import GenerationParams, GenerationRequest, OperationMetadata
 from type_defs.phases import StateRequest
-from type_defs.states import triframeState
+from type_defs.states import TournamentMatch, triframeState
 from utils.phase_utils import run_phase
 from utils.state import load_state
 
 
-def get_tournament_function() -> Dict[str, Any]:
+def get_tournament_function() ->Dict[str, Any]:
     """Get the tournament evaluation function definition"""
-    return {
-        "name": "select_winner",
-        "description": "Select the winner of a head-to-head comparison between subagents",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "reasoning": {
-                    "type": "string",
-                    "description": "Detailed explanation of why this agent's approach and results were better",
-                },
-                "winner_id": {
-                    "type": "string",
-                    "description": "ID of the winning agent",
-                },
-            },
-            "required": ["winner_id", "reasoning"],
-        },
-    }
+    return {'name': 'select_winner', 'description':
+        'Select the winner of a head-to-head comparison between subagents',
+        'parameters': {'type': 'object', 'properties': {'reasoning': {
+        'type': 'string', 'description':
+        "Detailed explanation of why this agent's approach and results were better"
+        }, 'winner_id': {'type': 'string', 'description':
+        'ID of the winning agent'}}, 'required': ['winner_id', 'reasoning']}}
 
 
-def format_tournament_prompt(state: triframeState, agent1: dict, agent2: dict) -> str:
+def format_tournament_prompt(state: triframeState, agent1: dict, agent2: dict
+    ) ->str:
     """Format prompt for evaluating a pair of candidates"""
-    # Load detailed state for each agent
-    agent1_state = load_state(agent1["id"])
-    agent2_state = load_state(agent2["id"])
+    agent1_state = load_state(agent1['id'])
+    agent2_state = load_state(agent2['id'])
 
-    # Format recent activity for each agent
-    def format_recent_activity(nodes: List[Dict], limit: int = 10) -> str:
+    def format_recent_activity(nodes: List[Dict], limit: int=10) ->str:
         if not nodes:
-            return "No activity recorded"
+            return 'No activity recorded'
         recent = nodes[-limit:]
-        return "\n".join(
+        return '\n'.join(
             f"""<{node['source']}>{node['options'][0]['content']}
     {node['options'][0].get('function_call', '')}</{node['source']}>"""
-            for node in recent
-        )
-
+             for node in recent)
     return f"""Compare these two agents working on this task:
 <task_description>
 {state.task_string}
@@ -91,7 +74,7 @@ Which one showed more promise? Consider:
 Use the select_winner function to indicate your choice (an agent id)."""
 
 
-def pair_agents(agents: List[dict]) -> List[List[dict]]:
+def pair_agents(agents: List[dict]) ->List[List[dict]]:
     """Create tournament pairs from agent list"""
     pairs = []
     for i in range(0, len(agents), 2):
@@ -102,95 +85,61 @@ def pair_agents(agents: List[dict]) -> List[List[dict]]:
     return pairs
 
 
-def create_phase_request(state: triframeState) -> List[StateRequest]:
+def create_tournament_matches(agent_ids: List[str]) ->List[TournamentMatch]:
+    """Create pairs of matches from a list of agent IDs"""
+    matches = []
+    for i in range(0, len(agent_ids), 2):
+        if i + 1 < len(agent_ids):
+            matches.append(TournamentMatch(agents=[agent_ids[i], agent_ids[
+                i + 1]], task=
+                'Implement a solution to the Devil of Gravity problem'))
+        else:
+            matches.append(TournamentMatch(agents=[agent_ids[i]], winner_id
+                =agent_ids[i], reasoning='Advanced via bye', task=
+                'Implement a solution to the Devil of Gravity problem'))
+    return matches
+
+
+def create_phase_request(state: triframeState) ->List[StateRequest]:
     """Create evaluation phase request using tournament format"""
-    current_round = state.active_subagents
-    agents = [a for a in current_round if a["status"] != "bye"]
-
-    # If there's only one agent, skip tournament and mark it as winner
-    if len(agents) == 1:
-        winner = agents[0]
-        state.nodes.append(
-            Node(
-                source="subagent_tournament_results",
-                options=[
-                    Option(
-                        content=f"Single agent tournament - {winner['id']} is winner by default",
-                        metadata={"winners": [winner]},
-                    )
-                ],
-            )
-        )
-        return [
-            StateRequest(
-                state=state,
-                state_model="type_defs.states.triframeState",
-                operations=[],
-                next_phase="triframe/phases/subagents_process.py",
-            )
-        ]
-
+    tournament = state.get_current_tournament()
+    if not tournament:
+        agent_ids = [agent['id'] for agent in state.active_subagents]
+        first_agent = next(iter(state.active_subagents), None)
+        task = first_agent.get('task', 'Unknown task'
+            ) if first_agent else 'Unknown task'
+        state.start_new_tournament(agent_ids, task)
+        tournament = state.get_current_tournament()
+    active_agents = state.get_active_agents_for_round(tournament)
+    if len(active_agents) == 1:
+        winner_id = active_agents[0]
+        state.complete_tournament(tournament, winner_id)
+        return [StateRequest(state=state, state_model=
+            'type_defs.states.triframeState', operations=[], next_phase=
+            'triframe/phases/subagents_process.py')]
+    matches = create_tournament_matches(active_agents)
+    state.add_tournament_round(tournament, matches)
     operations = []
-    pairs = pair_agents(agents)
-    for pair in pairs:
-        if len(pair) == 1:
-            state.nodes.append(
-                Node(
-                    source="subagent_tournament",
-                    options=[
-                        Option(
-                            content=f"Agent {pair[0]['id']} advances",
-                            metadata={"advanced_agent": pair[0]},
-                        )
-                    ],
-                )
-            )
-            continue
-
-        messages = [
-            Message(
-                role="system", content=format_tournament_prompt(state, pair[0], pair[1])
-            ).dict()
-        ]
-
-        operations.append(
-            GenerationRequest(
-                type="generate",
-                params=GenerationParams(
-                    messages=messages,
-                    settings=state.settings.actors[0],
-                    functions=[get_tournament_function()],
-                    function_call={"name": "select_winner"},
-                ),
-            )
-        )
-
-        state.nodes.append(
-            Node(
-                source="subagent_tournament",
-                options=[
-                    Option(
-                        content="Tournament comparison",
-                        metadata={
-                            "pair": [a["id"] for a in pair],
-                            "round": len(state.nodes),
-                        },
-                    )
-                ],
-            )
-        )
-
-    return [
-        StateRequest(
-            state=state,
-            state_model="type_defs.states.triframeState",
-            operations=operations,
-            next_phase="triframe/phases/subagents_process.py",
-        )
-    ]
+    for match_index, match in enumerate(matches):
+        if len(match.agents) == 2:
+            agent1 = next(a for a in state.active_subagents if a['id'] ==
+                match.agents[0])
+            agent2 = next(a for a in state.active_subagents if a['id'] ==
+                match.agents[1])
+            messages = [Message(role='system', content=
+                format_tournament_prompt(state, agent1, agent2)).dict()]
+            match_metadata = OperationMetadata(purpose='tournament_match',
+                tournament_id=tournament.id, round_number=len(tournament.
+                rounds), match_index=match_index, agent_ids=match.agents)
+            operations.append(GenerationRequest(type='generate', params=
+                GenerationParams(messages=messages, settings=state.settings
+                .actors[0], functions=[get_tournament_function()]),
+                metadata=match_metadata))
+    return [StateRequest(state=state, state_model=
+        'type_defs.states.triframeState', operations=operations, next_phase
+        ='triframe/phases/subagents_process.py')]
 
 
-if __name__ == "__main__":
-    run_phase(
-        "subagents_evaluate", create_phase_request, "type_defs.states.triframeState"
-    )
+if __name__ == '__main__':
+    run_phase('subagents_evaluate', create_phase_request,
+        'type_defs.states.triframeState')

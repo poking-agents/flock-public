@@ -14,6 +14,10 @@ class OperationMetadata(BaseModel):
     purpose: Optional[str] = None
     phase: Optional[str] = None
     state_id: Optional[str] = None
+    tournament_id: Optional[str] = None
+    round_number: Optional[int] = None
+    match_index: Optional[int] = None
+    agent_ids: Optional[List[str]] = None
     model_config = ConfigDict(extra="allow")
 
 

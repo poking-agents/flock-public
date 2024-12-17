@@ -141,4 +141,5 @@ __all__ = [
     "log_warning",
     "log_advisor_choosing",
     "log_system",
+    "log_subagent_output",
 ]

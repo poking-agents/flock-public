@@ -144,8 +144,9 @@ def get_function_definitions(
         # standard_functions.append(score_log) # TODO: restore
     elif not state.is_subagent():
         standard_functions.append(submit)
-    if timeout:
-        standard_functions.append(set_timeout)
+    # TODO: restore set_timeout for primary agents. Held back during testing because it mentions run_bash
+    # if timeout:
+    #     standard_functions.append(set_timeout)
     # Only add launch_subagents if this is not a subagent and subagents are enabled
     if state.settings.enable_subagents and not state.is_subagent():
         standard_functions.append(launch_subagents)
