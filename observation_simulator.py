@@ -13,7 +13,8 @@ from type_defs.operations import (
 
 
 def create_simulator(
-    model: str = "gpt-4o-mini",
+    # model: str = "gpt-4o-mini", # TODO: switch back, most likely
+    model: str = "claude-3-5-sonnet-20241022",
     context: str = None,
 ) -> Dict[str, Any]:
     """Create a simulator with the given settings"""
