@@ -38,10 +38,6 @@ async def handle_workflow(data: WorkflowData, mode: ProcessingMode) -> Dict[str,
         logger.info(f"[{state_id}][{current_phase}] No operations to process")
         return {"updates": [], "next_phase": next_phase, "error": None, "delay": delay}
 
-    if delay:
-        logger.info(f"[{state_id}][{current_phase}] Applying delay of {delay} seconds")
-        await asyncio.sleep(delay)
-
     current_state = load_state(state_id)
     save_state_op = SaveStateRequest(
         type="save_state",
@@ -113,13 +109,19 @@ async def process_workflow(
 
 
 async def execute_next_phase(result: Dict[str, Any], data: WorkflowData) -> None:
-    """Start next phase if present"""
     if not result.get("next_phase"):
         return
 
     state_id = data["state_id"]
     current_phase = data.get("current_phase", "unknown")
     next_phase = result["next_phase"]
+    delay = result.get("delay", 0)
+
+    if delay:
+        logger.info(
+            f"[{state_id}][{current_phase}] Delaying next phase '{next_phase}' for {delay} seconds"
+        )
+        await asyncio.sleep(delay)
 
     try:
         logger.info(f"[{state_id}][{current_phase}] Starting next phase: {next_phase}")
