@@ -3,7 +3,9 @@
 import json
 import os
 from typing import Any, Dict, List, Optional, Tuple
+
 import aiohttp
+
 from logger import logger
 
 
@@ -81,6 +83,7 @@ async def post_completion(
         "stream": False,
         "functions": functions,
         "function_call": function_call,
+        "priority": "high",
     }
     async with create_session() as session:
         try:
