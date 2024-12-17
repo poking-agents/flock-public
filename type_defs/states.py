@@ -74,12 +74,18 @@ class Tournament(BaseModel):
     id: str = Field(default_factory=lambda :
         f"tournament_{datetime.now().strftime('%Y%m%d_%H%M%S')}")
     initial_agents: List[str]
+    active_agents: List[str] = Field(default_factory=list)
     rounds: List[TournamentRound] = Field(default_factory=list)
     status: str = 'in_progress'
     winner_id: Optional[str] = None
     task: str
     agent_conclusions: Dict[str, str] = Field(default_factory=dict)
     timestamp: str = Field(default_factory=lambda : datetime.now().isoformat())
+
+    def model_post_init(self, *args, **kwargs):
+        """Initialize active_agents if not set"""
+        if not self.active_agents:
+            self.active_agents = self.initial_agents.copy()
 
 
 class triframeState(AgentState):

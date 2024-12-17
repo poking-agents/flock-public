@@ -104,37 +104,55 @@ def create_phase_request(state: triframeState) ->List[StateRequest]:
     """Create evaluation phase request using tournament format"""
     tournament = state.get_current_tournament()
     if not tournament:
-        agent_ids = [agent['id'] for agent in state.active_subagents]
+        agent_ids = [a['id'] for a in state.active_subagents]
+        tournament_id = f"tournament_{'_'.join(sorted(agent_ids))}"
+        existing_tournament = next((t for t in state.tournaments if t.id ==
+            tournament_id), None)
+        if existing_tournament:
+            return [StateRequest(state=state, state_model=
+                'type_defs.states.triframeState', operations=[], next_phase
+                ='triframe/phases/subagents_process.py')]
         first_agent = next(iter(state.active_subagents), None)
         task = first_agent.get('task', 'Unknown task'
             ) if first_agent else 'Unknown task'
-        state.start_new_tournament(agent_ids, task)
-        tournament = state.get_current_tournament()
-    active_agents = state.get_active_agents_for_round(tournament)
+        tournament = state.start_new_tournament(agent_ids, task)
+        tournament.id = tournament_id
+    active_agents = tournament.active_agents
     if len(active_agents) == 1:
-        winner_id = active_agents[0]
-        state.complete_tournament(tournament, winner_id)
-        return [StateRequest(state=state, state_model=
-            'type_defs.states.triframeState', operations=[], next_phase=
-            'triframe/phases/subagents_process.py')]
-    matches = create_tournament_matches(active_agents)
-    state.add_tournament_round(tournament, matches)
+        if tournament.rounds and all(match.winner_id is not None for round in
+            tournament.rounds for match in round.matches):
+            winner_id = active_agents[0]
+            state.complete_tournament(tournament, winner_id)
+            return [StateRequest(state=state, state_model=
+                'type_defs.states.triframeState', operations=[], next_phase
+                ='triframe/phases/subagents_process.py')]
     operations = []
-    for match_index, match in enumerate(matches):
-        if len(match.agents) == 2:
-            agent1 = next(a for a in state.active_subagents if a['id'] ==
-                match.agents[0])
-            agent2 = next(a for a in state.active_subagents if a['id'] ==
-                match.agents[1])
+    pairs = pair_agents(active_agents)
+    matches = []
+    for pair_index, pair in enumerate(pairs):
+        if len(pair) == 1:
+            match = TournamentMatch(agents=[pair[0]], winner_id=pair[0],
+                reasoning='Advanced via bye', task=tournament.task)
+            matches.append(match)
+            state.nodes.append(Node(source='subagent_tournament', options=[
+                Option(content=f'Agent {pair[0]} advances via bye',
+                metadata={'advanced_agent': pair[0]})]))
+        else:
+            match = TournamentMatch(agents=pair, task=tournament.task)
+            matches.append(match)
             messages = [Message(role='system', content=
-                format_tournament_prompt(state, agent1, agent2)).dict()]
-            match_metadata = OperationMetadata(purpose='tournament_match',
-                tournament_id=tournament.id, round_number=len(tournament.
-                rounds), match_index=match_index, agent_ids=match.agents)
+                format_tournament_prompt(state, next(a for a in state.
+                active_subagents if a['id'] == pair[0]), next(a for a in
+                state.active_subagents if a['id'] == pair[1]))).dict()]
             operations.append(GenerationRequest(type='generate', params=
                 GenerationParams(messages=messages, settings=state.settings
-                .actors[0], functions=[get_tournament_function()]),
-                metadata=match_metadata))
+                .actors[0], functions=[get_tournament_function()],
+                function_call={'name': 'select_winner'}), metadata=
+                OperationMetadata(purpose='tournament_match', tournament_id
+                =tournament.id, round_number=len(tournament.rounds),
+                match_index=pair_index, agent_ids=pair)))
+    if matches:
+        state.add_tournament_round(tournament, matches)
     return [StateRequest(state=state, state_model=
         'type_defs.states.triframeState', operations=operations, next_phase
         ='triframe/phases/subagents_process.py')]
