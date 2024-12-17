@@ -10,7 +10,7 @@ from typing import Any, Dict, List
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from triframe.logging import log_tool_output
-from type_defs import triframeState, Node, Option, StateRequest
+from type_defs import Node, Option, StateRequest, triframeState
 from type_defs.operations import (
     BashOutput,
     PythonOutput,
@@ -26,11 +26,13 @@ def enforce_output_limit(output_limit: int, output: str) -> str:
         half = output_limit // 2
         starts_with = output[:half]
         ends_with = output[-half:]
-        return dedent(f"""This output was too long to include in its entirety.
+        return dedent(
+            f"""This output was too long to include in its entirety.
         The start and end of the output are shown below.
         {starts_with}
         [output truncated]
-        {ends_with}""")
+        {ends_with}"""
+        )
     return output
 
 

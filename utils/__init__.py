@@ -1,11 +1,10 @@
 """Utility functions for operation and phase handling"""
 
 from utils.phase_utils import (
-    run_phase,
     get_last_completion,
     get_last_result,
+    run_phase,
 )
-
 from utils.state import (
     load_state,
     save_state,

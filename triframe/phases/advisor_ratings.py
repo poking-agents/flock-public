@@ -92,9 +92,11 @@ def format_function_call(
         arguments = json.loads(maybe_function_call.get("arguments"))
         first_value = next(
             iter(arguments.values()),
-            "<scaffolding-note>No arguments</scaffolding-note>"
-            if function_name not in ["score", "score_log"]
-            else "",
+            (
+                "<scaffolding-note>No arguments</scaffolding-note>"
+                if function_name not in ["score", "score_log"]
+                else ""
+            ),
         )
     except (json.JSONDecodeError, AttributeError):
         first_value = "<scaffolding-note>Invalid arguments</scaffolding-note>"
@@ -215,9 +217,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 actor_options.append(
                     Option(
                         content=output.completion,
-                        function_call=output.function_call
-                        if validate_function_call(output.function_call)
-                        else None,
+                        function_call=(
+                            output.function_call
+                            if validate_function_call(output.function_call)
+                            else None
+                        ),
                     )
                 )
 
@@ -247,9 +251,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         # Create a hashable representation of the option
         option_key = (
             option.content,
-            json.dumps(option.function_call, sort_keys=True)
-            if option.function_call
-            else None,
+            (
+                json.dumps(option.function_call, sort_keys=True)
+                if option.function_call
+                else None
+            ),
         )
         if option_key not in seen:
             seen.add(option_key)

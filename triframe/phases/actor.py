@@ -9,7 +9,6 @@ from triframe.context_management import (
     tool_output_with_usage,
     trim_content,
 )
-from utils.functions import get_function_definitions
 from triframe.logging import log_advisor_choice, log_warning
 from triframe.templates import ACTOR_FN_PROMPT
 from triframe.usage import add_usage_request
@@ -21,6 +20,7 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.functions import get_function_definitions
 from utils.phase_utils import (
     run_phase,
 )
