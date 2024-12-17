@@ -99,6 +99,24 @@ def generate_manifest() -> None:
 
     settings_packs = {}
 
+    # create homogeneous light settings (1x1x1)
+    for model, model_short in MODELS:
+        for aird in AIRD:
+            for subagents in SUBAGENTS:
+                pack_name = f"triframe_1x{model_short}{'_aird' if aird else ''}"
+                if subagents:
+                    pack_name += "_subagents"
+                settings_packs[pack_name] = {
+                    "advisors": [{"model": model, "temp": 1.0, "n": 1}],
+                    "actors": [{"model": model, "temp": 1.0, "n": 1}],
+                    "raters": [{"model": model, "temp": 1.0, "n": 1}],
+                    "limit_type": "time" if aird else "token",
+                    "intermediate_scoring": aird,
+                    "require_function_call": False,
+                    "enable_advising": True,
+                    "enable_subagents": subagents,
+                }
+
     # Create homogeneous model settings
     for model, model_short in MODELS:
         for aird in AIRD:
