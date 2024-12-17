@@ -3,8 +3,10 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from utils.functions import get_function_definitions
+
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.functions import get_function_definitions, get_rating_function
+from triframe.functions import get_rating_function
 from triframe.logging import (
     create_log_request,
     log_actor_choice,

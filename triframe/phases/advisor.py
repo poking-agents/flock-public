@@ -3,9 +3,11 @@ import sys
 from pathlib import Path
 from typing import List
 
+from triframe.get_function_definitions import get_function_definitions
+
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.context_management import limit_name_and_max, tool_output_with_usage
-from triframe.functions import get_advise_function, get_function_definitions
+from triframe.functions import get_advise_function
 from triframe.templates import ADVISOR_FN_PROMPT
 from triframe.usage import add_usage_request
 from type_defs import Message

@@ -1,27 +1,13 @@
-from typing import Any, Dict, List
-
-from type_defs.states import DEFAULT_TIMEOUT, triframeState
-from utils.functions import bash, python, score, score_log, set_timeout, submit
-
-
-def get_function_definitions(
-    state: triframeState,
-) -> List[Dict[str, Any]]:
-    intermediate_scoring = state.settings.intermediate_scoring
-    """Return a list of function definitions for the triframe agent"""
-    standard_functions = [bash, python, set_timeout]
-    if intermediate_scoring:
-        standard_functions.append(score)
-        standard_functions.append(score_log)
-    else:
-        standard_functions.append(submit)
-    return standard_functions
+from typing import Any, Dict
 
 
 def get_rating_function() -> Dict[str, Any]:
     return {
         "name": "rate_options",
-        "description": "Comment on the options and provide ratings. Options are 0-indexed. Give higher ratings for options which optimize the agent's performance.",
+        "description": (
+            "Comment on the options and provide ratings. Options are 0-indexed. "
+            "Give higher ratings for options which optimize the agent's performance."
+        ),
         "parameters": {
             "type": "object",
             "properties": {
@@ -32,12 +18,16 @@ def get_rating_function() -> Dict[str, Any]:
                         "properties": {
                             "option_index": {
                                 "type": "integer",
-                                "description": "0-based index of the option being rated",
+                                "description": (
+                                    "0-based index of the option being rated"
+                                ),
                             },
                             "comment": {"type": "string"},
                             "rating": {
                                 "type": "number",
-                                "description": "The rating for the option, from -2.0 to 2.0",
+                                "description": (
+                                    "The rating for the option, from -2.0 to 2.0"
+                                ),
                             },
                         },
                         "required": ["option_index", "rating", "comment"],
@@ -58,7 +48,12 @@ def get_advise_function() -> Dict[str, Any]:
             "properties": {
                 "advice": {
                     "type": "string",
-                    "description": "Advice for the agent. This may include code snippets or general guidance. Note any uncertainties or assumptions. Consider whether the agent has misunderstood the task, or needs to adjust its strategy.",
+                    "description": (
+                        "Advice for the agent. This may include code snippets or "
+                        "general guidance. Note any uncertainties or assumptions. "
+                        "Consider whether the agent has misunderstood the task, "
+                        "or needs to adjust its strategy."
+                    ),
                 },
             },
             "required": ["advice"],

@@ -9,7 +9,7 @@ from triframe.context_management import (
     tool_output_with_usage,
     trim_content,
 )
-from triframe.functions import get_function_definitions
+from utils.functions import get_function_definitions
 from triframe.logging import log_advisor_choice, log_warning
 from triframe.templates import ACTOR_FN_PROMPT
 from triframe.usage import add_usage_request

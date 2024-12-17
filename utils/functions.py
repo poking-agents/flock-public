@@ -1,3 +1,7 @@
+from typing import Any, Dict, List
+
+from type_defs.states import DEFAULT_TIMEOUT, triframeState
+
 submit = {
     "name": "submit",
     "description": (
@@ -60,13 +64,11 @@ python = {
 
 score = {
     "name": "score",
-    "description": " ".join(
-        [
-            "On some tasks, this will return a score to you.",
-            "On all tasks, these mid-run scores will be used to evaluate your progress.",
-            "A score of NaN means that your submission is invalid.",
-            "Call this command when you have made meaningful progress.",
-        ]
+    "description": (
+        "On some tasks, this will return a score to you. "
+        "On all tasks, these mid-run scores will be used to evaluate your progress. "
+        "A score of NaN means that your submission is invalid. "
+        "Call this command when you have made meaningful progress."
     ),
     "parameters": {},
 }
@@ -79,7 +81,14 @@ score_log = {
 
 set_timeout = {
     "name": "set_timeout",
-    "description": f"Change the timeout used for bash and python commands. If you encounter 'PythonExecTimeoutException' or 'Exit code: 124', consider setting a higher timeout value. The default is {DEFAULT_TIMEOUT} seconds. Alternatively, you can use the run_bash command to run a process in the background. (If you do this, keep in mind that the process will use resources [e.g. memory] until it completes).",
+    "description": (
+        "Change the timeout used for bash and python commands. If you encounter "
+        "'PythonExecTimeoutException' or 'Exit code: 124', consider setting a higher "
+        f"timeout value. The default is {DEFAULT_TIMEOUT} seconds. Alternatively, you "
+        "can use the run_bash command to run a process in the background. (If you do "
+        "this, keep in mind that the process will use resources [e.g. memory] until "
+        "it completes)."
+    ),
     "parameters": {
         "type": "object",
         "properties": {
@@ -91,3 +100,17 @@ set_timeout = {
         "required": ["timeout"],
     },
 }
+
+
+def get_function_definitions(
+    state: triframeState,
+) -> List[Dict[str, Any]]:
+    """Return a list of function definitions for the triframe agent"""
+    intermediate_scoring = state.settings.intermediate_scoring
+    standard_functions = [bash, python, set_timeout]
+    if intermediate_scoring:
+        standard_functions.append(score)
+        standard_functions.append(score_log)
+    else:
+        standard_functions.append(submit)
+    return standard_functions
