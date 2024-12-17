@@ -40,7 +40,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
         message = None
         if node.source == "actor_choice":
             message = Message(
-                role="assistant",
+                role="user",
                 content=(
                     f"{node.options[0].content} "
                     f"function_call: {json.dumps(node.options[0].function_call)}"
