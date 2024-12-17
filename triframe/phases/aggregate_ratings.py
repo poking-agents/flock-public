@@ -8,13 +8,12 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.logging import (
     log_actor_choice,
     log_advisor_choosing,
-    log_system,
-    log_warning,
 )
 from type_defs.base import Node, Option
 from type_defs.operations import LogRequest
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.logging import log_system, log_warning
 from utils.phase_utils import results_of_type, run_phase
 
 
@@ -28,7 +27,11 @@ def summarize_ratings(all_ratings: Dict[int, List[float]]) -> str:
                 "max": max(ratings),
                 "count": len(ratings),
             }
-            summary = f"Option {option_idx}: mean={stats['mean']:.2f}, range=[{stats['min']:.2f}, {stats['max']:.2f}], n={stats['count']}"
+            summary = (
+                f"Option {option_idx}: mean={stats['mean']:.2f}, "
+                f"range=[{stats['min']:.2f}, {stats['max']:.2f}], "
+                f"n={stats['count']}"
+            )
         else:
             summary = f"Option {option_idx}: rating={ratings[0]:.2f}, n=1"
         summary_parts.append(summary)
@@ -36,7 +39,8 @@ def summarize_ratings(all_ratings: Dict[int, List[float]]) -> str:
 
 
 def parse_ratings(option: Option) -> Dict[int, List[float]] | None:
-    """Parse ratings from a ratings node into a dict mapping option index to list of ratings"""
+    """Parse ratings from a ratings node into
+    a dict mapping option index to list of ratings"""
     ratings_by_option: Dict[int, List[float]] = {}
     try:
         function_call = option.function_call
@@ -98,7 +102,8 @@ def aggregate_ratings(
                         failed_ratings += 1
                         log_requests.append(
                             log_warning(
-                                f"Failed to parse ratings from this generation: {json.dumps(option.model_dump(), indent=2)}"
+                                "Failed to parse ratings from this generation: "
+                                f"{json.dumps(option.model_dump(), indent=2)}"
                             )
                         )
                         continue

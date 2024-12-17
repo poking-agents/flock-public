@@ -9,7 +9,7 @@ from triframe.context_management import (
     tool_output_with_usage,
     trim_content,
 )
-from triframe.logging import log_advisor_choice, log_warning
+from triframe.logging import log_advisor_choice
 from triframe.templates import ACTOR_FN_PROMPT
 from triframe.usage import add_usage_request
 from type_defs import Message, Node, Option
@@ -20,7 +20,8 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import get_function_definitions
+from utils.functions import get_standard_function_definitions
+from utils.logging import log_warning
 from utils.phase_utils import (
     run_phase,
 )
@@ -95,7 +96,8 @@ def prepare_history_for_actor(
             raise ValueError("Function messages must have a name")
     # reverse the messages so that they are in the correct order
     ordered_messages = list(reversed(messages))
-    # check that the 1st message is not a role="function" message (those must be preceded by a function call message)
+    # check that the 1st message is not a role="function" message
+    # (those must be preceded by a function call message)
     if ordered_messages and ordered_messages[0].role == "function":
         ordered_messages[0] = Message(
             content="The history of the agent's actions has been trimmed.",
@@ -165,14 +167,14 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_with_advice],
             settings=actor_settings,
-            functions=get_function_definitions(state),
+            functions=get_standard_function_definitions(state),
         )
         generation_request = GenerationRequest(type="generate", params=params)
         operations.append(generation_request)
         without_advice_params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_without_advice],
             settings=actor_settings,
-            functions=get_function_definitions(state),
+            functions=get_standard_function_definitions(state),
         )
         generation_request_without_advice = GenerationRequest(
             type="generate", params=without_advice_params

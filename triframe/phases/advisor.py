@@ -3,8 +3,6 @@ import sys
 from pathlib import Path
 from typing import List
 
-from triframe.get_function_definitions import get_function_definitions
-
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.context_management import limit_name_and_max, tool_output_with_usage
 from triframe.functions import get_advise_function
@@ -14,6 +12,7 @@ from type_defs import Message
 from type_defs.operations import GenerationParams, GenerationRequest
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.functions import get_standard_function_definitions
 from utils.phase_utils import run_phase
 
 
@@ -26,7 +25,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 task=state.task_string,
                 limit_name=limit_name,
                 limit_max=limit_max,
-                functions=json.dumps(get_function_definitions(state)),
+                functions=json.dumps(get_standard_function_definitions(state)),
             ),
         )
     ]
@@ -42,7 +41,10 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
         if node.source == "actor_choice":
             message = Message(
                 role="assistant",
-                content=f"{node.options[0].content} function_call: {json.dumps(node.options[0].function_call)}",
+                content=(
+                    f"{node.options[0].content} "
+                    f"function_call: {json.dumps(node.options[0].function_call)}"
+                ),
             )
         elif node.source == "tool_output":
             message = Message(

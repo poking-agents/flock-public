@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.logging import log_actor_choice, log_warning
+from triframe.logging import log_actor_choice
 from triframe.phases.advisor_ratings import validate_function_call
 from type_defs.base import Node, Option
 from type_defs.operations import (
@@ -23,6 +23,7 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.logging import log_warning
 from utils.phase_utils import get_last_completion, get_last_function_call, run_phase
 
 
@@ -111,7 +112,10 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         source="warning",
                         options=[
                             Option(
-                                content=f"Invalid set_timeout function call, timeout remains {state.timeout} seconds"
+                                content=(
+                                    "Invalid set_timeout function call, "
+                                    f"timeout remains {state.timeout} seconds"
+                                )
                             )
                         ],
                     )

@@ -3,16 +3,12 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-from utils.functions import get_function_definitions
-
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.functions import get_rating_function
 from triframe.logging import (
     create_log_request,
     log_actor_choice,
     log_styles,
-    log_system,
-    log_warning,
 )
 from triframe.phases.advisor import tool_output_with_usage
 from triframe.templates import (
@@ -27,6 +23,8 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.functions import get_standard_function_definitions
+from utils.logging import log_system, log_warning
 from utils.phase_utils import run_phase
 
 
@@ -71,7 +69,10 @@ def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
     # Add trimming notice if any actor choices were excluded
     trimmed_choices = actor_choices_seen - actor_choices_included
     if trimmed_choices > 0:
-        notice = f"\n<system>Note: {trimmed_choices} earlier actions have been trimmed from the transcript to stay within context limits.</system>\n"
+        notice = (
+            f"\n<system>Note: {trimmed_choices} earlier actions have been trimmed "
+            f"from the transcript to stay within context limits.</system>\n"
+        )
         transcript_parts.append(notice)
 
     # Reverse the parts to get chronological order
@@ -153,7 +154,7 @@ def fn_format_review_instructions(
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{json.dumps(get_function_definitions(state))}
+{json.dumps(get_standard_function_definitions(state))}
 {actions_and_observations}
 </transcript>
 <candidate_options>

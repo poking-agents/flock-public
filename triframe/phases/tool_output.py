@@ -9,7 +9,6 @@ from typing import Any, Dict, List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from triframe.logging import log_tool_output
 from type_defs import Node, Option, StateRequest, triframeState
 from type_defs.operations import (
     BashOutput,
@@ -19,6 +18,7 @@ from type_defs.operations import (
     SubmissionOutput,
 )
 from utils import run_phase
+from utils.logging import log_tool_output
 
 
 def enforce_output_limit(output_limit: int, output: str) -> str:

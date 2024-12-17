@@ -5,10 +5,14 @@ from pathlib import Path
 from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.logging import log_system
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.phase_utils import require_single_results, run_phase
+from utils.logging import log_system
+from utils.phase_utils import (
+    require_single_results,
+    run_phase,
+    set_state_from_task_and_usage_outputs,
+)
 
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
@@ -17,17 +21,13 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     )
     task_output = task_result.result
     usage_output = usage_result.result
-    log_task_operation = log_system(task_output.instructions)
-    state.task_string = task_output.instructions
-    state.scoring = task_output.scoring.model_dump()
-    state.token_limit = usage_output.usageLimits.tokens
-    state.actions_limit = usage_output.usageLimits.actions
-    state.time_limit = usage_output.usageLimits.total_seconds
+    state = set_state_from_task_and_usage_outputs(state, task_output, usage_output)
+
     return [
         StateRequest(
             state=state,
             state_model="type_defs.states.triframeState",
-            operations=[log_task_operation],
+            operations=[log_system(task_output.instructions)],
             next_phase="triframe/phases/advisor.py",
         )
     ]
