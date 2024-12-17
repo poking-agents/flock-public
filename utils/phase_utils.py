@@ -4,7 +4,17 @@ import asyncio
 import importlib
 import json
 import sys
-from typing import Any, Callable, Dict, List, Optional, Tuple, Type, TypeVar
+from pathlib import Path
+from typing import (
+    Any,
+    Callable,
+    Dict,
+    List,
+    Optional,
+    Tuple,
+    Type,
+    TypeVar,
+)
 
 import aiohttp
 from pydantic import BaseModel, ValidationError
@@ -230,3 +240,14 @@ def run_phase(
     state_model: str,
 ) -> None:
     asyncio.run(run_main(phase_name, create_request_func, state_model))
+
+
+def get_settings_path(state_id: str, previous_results) -> str:
+    """Get settings path from state or use default"""
+    settings_path = previous_results[0][0].result.settings_path
+    if not settings_path:
+        settings_path = f"{state_id}_settings.json"
+        print(f"No settings_path provided, using default: {settings_path}")
+    if not Path(settings_path).exists():
+        raise FileNotFoundError(f"Settings file not found: {settings_path}")
+    return settings_path
