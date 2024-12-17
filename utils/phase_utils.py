@@ -29,7 +29,8 @@ from type_defs.operations import (
     OperationResult,
 )
 from type_defs.phases import PreviousOperations, StateRequest
-from type_defs.states import BaseState
+from type_defs.states import AgentState, BaseState
+from type_defs.operations import GetTaskOutput, GetUsageOutput
 from utils.state import load_state, save_state
 
 T = TypeVar("T", bound=BaseState)
@@ -251,3 +252,14 @@ def get_settings_path(state_id: str, previous_results) -> str:
     if not Path(settings_path).exists():
         raise FileNotFoundError(f"Settings file not found: {settings_path}")
     return settings_path
+
+
+def set_state_from_task_and_usage_outputs(
+    state: AgentState, task_output: GetTaskOutput, usage_output: GetUsageOutput
+) -> AgentState:
+    state.task_string = task_output.instructions
+    state.scoring = task_output.scoring.model_dump()
+    state.token_limit = usage_output.usageLimits.tokens
+    state.actions_limit = usage_output.usageLimits.actions
+    state.time_limit = usage_output.usageLimits.total_seconds
+    return state
