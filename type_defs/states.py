@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
-from type_defs.base import Node, Option
+from type_defs.base import Message, Node, Option
 from type_defs.operations import MiddlemanSettings, OperationResult
 
 
@@ -87,3 +87,4 @@ class ModularSettings(BaseModel):
 
 class ModularState(AgentState):
     settings: ModularSettings = Field(default_factory=ModularSettings)
+    messages: List[Message] = Field(default_factory=list)
