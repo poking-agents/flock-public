@@ -170,6 +170,8 @@ async def generate_hooks(
                     settings=settings,
                     messages=processed_messages,
                     functions=params.functions,
+                    # TODO: remove once this is run-level setting
+                    # priority="high",
                 )
                 for _ in range(params.settings.n)
             ]
@@ -194,6 +196,8 @@ async def generate_hooks(
             settings=params.settings,
             messages=processed_messages,
             functions=params.functions,
+            # TODO: remove once this is run-level setting
+            # priority="high",
         )
         output = GenerationOutput(**result.dict())
         log_generation(params, output)
