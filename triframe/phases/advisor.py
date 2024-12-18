@@ -4,10 +4,11 @@ from pathlib import Path
 from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.context_management import limit_name_and_max, tool_output_with_usage
+from triframe.context_management import tool_output_with_usage
 from triframe.functions import get_advise_function
 from triframe.templates import ADVISOR_FN_PROMPT
-from triframe.usage import add_usage_request
+from utils.phase_utils import add_usage_request
+from triframe.context_management import limit_name_and_max
 from type_defs import Message
 from type_defs.operations import GenerationParams, GenerationRequest
 from type_defs.phases import StateRequest

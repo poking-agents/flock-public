@@ -11,7 +11,6 @@ from triframe.context_management import (
 )
 from triframe.logging import log_advisor_choice
 from triframe.templates import ACTOR_FN_PROMPT
-from triframe.usage import add_usage_request
 from type_defs import Message, Node, Option
 from type_defs.operations import (
     GenerationParams,
@@ -23,6 +22,7 @@ from type_defs.states import triframeState
 from utils.functions import get_standard_function_definitions
 from utils.logging import log_warning
 from utils.phase_utils import (
+    add_usage_request,
     run_phase,
 )
 

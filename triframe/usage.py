@@ -3,8 +3,6 @@ from typing import List
 from type_defs.operations import (
     BaseOperationRequest,
     BaseOperationResult,
-    GetUsageParams,
-    GetUsageRequest,
 )
 from type_defs.states import triframeState
 
@@ -12,16 +10,6 @@ from type_defs.states import triframeState
 def has_generation_requests(operations: List[BaseOperationRequest]) -> bool:
     """Check if there are any generation requests in the operations list"""
     return any(op.type == "generate" for op in operations)
-
-
-def add_usage_request(
-    operations: List[BaseOperationRequest],
-) -> List[BaseOperationRequest]:
-    usage_request = GetUsageRequest(
-        type="get_usage",
-        params=GetUsageParams(),
-    )
-    return [*operations, usage_request]
 
 
 def update_state_usage(

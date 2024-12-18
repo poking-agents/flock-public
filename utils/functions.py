@@ -1,6 +1,6 @@
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Union
 
-from type_defs.states import DEFAULT_TIMEOUT, AgentState
+from type_defs.states import DEFAULT_TIMEOUT, ModularState, triframeState
 
 submit = {
     "name": "submit",
@@ -103,7 +103,7 @@ set_timeout = {
 
 
 def get_standard_function_definitions(
-    state: AgentState,
+    state: Union[triframeState, ModularState],
 ) -> List[Dict[str, Any]]:
     """Return a list of function definitions for the triframe agent"""
     intermediate_scoring = state.settings.intermediate_scoring

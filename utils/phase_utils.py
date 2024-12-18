@@ -26,11 +26,14 @@ from type_defs.operations import (
     RESULT_MODELS,
     BaseOperationRequest,
     BaseOperationResult,
+    GetTaskOutput,
+    GetUsageOutput,
+    GetUsageParams,
+    GetUsageRequest,
     OperationResult,
 )
 from type_defs.phases import PreviousOperations, StateRequest
 from type_defs.states import AgentState, BaseState
-from type_defs.operations import GetTaskOutput, GetUsageOutput
 from utils.state import load_state, save_state
 
 T = TypeVar("T", bound=BaseState)
@@ -263,3 +266,13 @@ def set_state_from_task_and_usage_outputs(
     state.actions_limit = usage_output.usageLimits.actions
     state.time_limit = usage_output.usageLimits.total_seconds
     return state
+
+
+def add_usage_request(
+    operations: List[BaseOperationRequest],
+) -> List[BaseOperationRequest]:
+    usage_request = GetUsageRequest(
+        type="get_usage",
+        params=GetUsageParams(),
+    )
+    return [*operations, usage_request]
