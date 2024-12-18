@@ -10,32 +10,12 @@ from triframe.logging import (
     log_subagent_output,
     log_system,
     log_warning,
-    log_tool_output,
 )
-from triframe.phases.subagents_monitor import load_agent_state
 from type_defs import Node, Option
 from type_defs.operations import OperationRequest
 from type_defs.phases import StateRequest
-from type_defs.states import triframeState
+from type_defs.states import Tournament, triframeState
 from utils.phase_utils import get_last_function_call, run_phase
-
-
-def check_agent_statuses(state: triframeState) -> bool:
-    """Check if all agents have completed or failed"""
-    current_round = state.active_subagents
-    if not current_round:
-        return False
-    for agent in current_round:
-        agent_state = load_agent_state(agent["id"])
-        if agent_state is None:
-            agent["status"] = "failed"
-            continue
-        try:
-            agent["status"] = agent_state.get("status", "running")
-        except Exception as e:
-            agent["status"] = "failed"
-            log_warning(f"Error getting status for agent {agent['id']}: {str(e)}")
-    return all(agent["status"] in ["concluded", "failed"] for agent in current_round)
 
 
 def process_tournament_results(
@@ -123,32 +103,35 @@ def process_tournament_results(
     return operations, state
 
 
+def form_summary(tournament: Tournament) -> str:
+    summary_parts = []
+    for round_num, round in enumerate(tournament.rounds, 1):
+        summary_parts.append(f"\nRound {round_num}:")
+        for match in round.matches:
+            if len(match.agents) > 1:
+                summary_parts.append(
+                    f"""Match: {' vs '.join(match.agents)}
+Winner: {match.winner_id}
+Reasoning: {match.reasoning}"""
+                )
+    tournament_summary = "\n".join(summary_parts)
+    return tournament_summary
+
+
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     """Process evaluation results and decide next step"""
     operations, state = process_tournament_results(state)
     tournament = state.get_current_tournament(include_completed=True)
+    tournament_summary = form_summary(tournament)
     if tournament and tournament.status == "completed":
         winner = next(
             a for a in state.active_subagents if a["id"] == tournament.winner_id
         )
-        summary_parts = []
-        for round_num, round in enumerate(tournament.rounds, 1):
-            summary_parts.append(f"\nRound {round_num}:")
-            for match in round.matches:
-                if len(match.agents) > 1:
-                    summary_parts.append(
-                        f"""Match: {' vs '.join(match.agents)}
-Winner: {match.winner_id}
-Reasoning: {match.reasoning}"""
-                    )
-        tournament_summary = "\n".join(summary_parts)
-        state.active_subagents = [
-            agent for agent in state.active_subagents if agent["id"] == winner["id"]
-        ]
         subagent_output = Node(
             source="tool_output",
             options=[
                 Option(
+                    name="launch_subagents",
                     content=f"""Tournament complete. Winner: {winner['id']}
 Task: {winner['task']}
 Approach: {winner['approach']}
@@ -160,6 +143,9 @@ Tournament Results:
             ],
         )
         state.nodes.append(subagent_output)
+        state.active_subagents = [
+            agent for agent in state.active_subagents if agent["id"] == winner["id"]
+        ]
         return [
             StateRequest(
                 state=state,
@@ -168,32 +154,33 @@ Tournament Results:
                 next_phase="triframe/phases/advisor.py",
             )
         ]
-    else:
-        if tournament and tournament.status == "in_progress":
-            return [
-                StateRequest(
-                    state=state,
-                    state_model="type_defs.states.triframeState",
-                    operations=operations,
-                    next_phase="triframe/phases/subagents_evaluate.py",
-                )
-            ]
-        tool_output_message = "No active tournament found. Returning to advisor phase."
-        state.nodes.append(
-            Node(
-                source="tool_output",
-                options=[Option(content=tool_output_message, name="launch_subagents")],
-            )
-        )
-        operations.append(log_warning(tool_output_message))
+    elif tournament and tournament.status == "in_progress":
         return [
             StateRequest(
                 state=state,
                 state_model="type_defs.states.triframeState",
                 operations=operations,
-                next_phase="triframe/phases/advisor.py",
+                next_phase="triframe/phases/subagents_evaluate.py",
             )
         ]
+    else:
+        raise ValueError("No complete or in-progress tournament found")
+        # tool_output_message = "No active tournament found. Returning to advisor phase."
+        # state.nodes.append(
+        #     Node(
+        #         source="tool_output",
+        #         options=[Option(content=tool_output_message, name="launch_subagents")],
+        #     )
+        # )
+        # operations.append(log_warning(tool_output_message))
+        # return [
+        #     StateRequest(
+        #         state=state,
+        #         state_model="type_defs.states.triframeState",
+        #         operations=operations,
+        #         next_phase="triframe/phases/advisor.py",
+        #     )
+        # ]
 
 
 if __name__ == "__main__":

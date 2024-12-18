@@ -9,7 +9,6 @@ current_dir = Path(__file__).parent
 sys.path.extend([str(current_dir.parent.parent), str(Path("/home/agent/.agent_code"))])
 try:
     from triframe.logging import log_system, log_warning
-    from type_defs import Node, Option
     from type_defs.phases import StateRequest
     from type_defs.states import triframeState
     from utils.phase_utils import run_phase
@@ -17,7 +16,6 @@ try:
 except ImportError:
     sys.path.append("/home/agent/.agent_code")
     from triframe.logging import log_system, log_warning
-    from type_defs import Node, Option
     from type_defs.phases import StateRequest
     from type_defs.states import triframeState
     from utils.phase_utils import run_phase
@@ -58,75 +56,28 @@ def check_agent_statuses(state: triframeState) -> bool:
 
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
-    """Create monitor phase request"""
-    try:
-        if not state.active_subagents:
-            state.nodes.append(
-                Node(
-                    source="tool_output",
-                    options=[
-                        Option(
-                            content="No active subagents to monitor",
-                            name="launch_subagents",
-                            metadata={"error": "No active subagents"},
-                        )
-                    ],
-                )
-            )
-            return [
-                StateRequest(
-                    state=state,
-                    state_model="type_defs.states.triframeState",
-                    operations=[log_warning("No active subagents to monitor")],
-                    next_phase="triframe/phases/advisor.py",
-                )
-            ]
-        if check_agent_statuses(state):
-            return [
-                StateRequest(
-                    state=state,
-                    state_model="type_defs.states.triframeState",
-                    operations=[
-                        log_system(
-                            "All agents have completed. Starting tournament evaluation..."
-                        )
-                    ],
-                    next_phase="triframe/phases/subagents_evaluate.py",
-                )
-            ]
-        return [
-            StateRequest(
-                state=state,
-                state_model="type_defs.states.triframeState",
-                operations=[],
-                next_phase="triframe/phases/subagents_monitor.py",
-                delay=10,
-            )
-        ]
-    except Exception as e:
-        error_msg = f"Error in monitor phase: {str(e)}"
-        state.nodes.append(
-            Node(
-                source="tool_output",
-                options=[
-                    Option(
-                        content=error_msg,
-                        name="launch_subagents",
-                        metadata={"error": str(e)},
-                    )
-                ],
-            )
-        )
+    if check_agent_statuses(state):
         return [
             StateRequest(
                 state=state,
                 state_model="type_defs.states.triframeState",
                 operations=[
-                    log_warning(f"Monitor phase failed, returning to advisor: {str(e)}")
+                    log_system(
+                        "All agents have completed. Starting tournament evaluation..."
+                    )
                 ],
-                next_phase="triframe/phases/advisor.py",
+                next_phase="triframe/phases/subagents_evaluate.py",
             )
         ]
+    return [
+        StateRequest(
+            state=state,
+            state_model="type_defs.states.triframeState",
+            operations=[],
+            next_phase="triframe/phases/subagents_monitor.py",
+            delay=10,
+        )
+    ]
 
 
 if __name__ == "__main__":

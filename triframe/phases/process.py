@@ -42,12 +42,12 @@ def setup_subagent_state(
 Your specific task is:
 {task}
 
-Note: You have a dedicated working directory at {agent_dir} to help avoid conflicts with other agents.
+Note: You have a dedicated working directory at {agent_dir} to help avoid conflicts with other agents. Every command you run will be executed from this directory.
 You can use this directory for any files you need to create, but you're free to work in other directories if needed."""
         if include_task_description
         else f"""{task}
 
-Note: You have a dedicated working directory at {agent_dir} to help avoid conflicts with other agents.
+Note: You have a dedicated working directory at {agent_dir} to help avoid conflicts with other agents. Every command you run will be executed from this directory.
 You can use this directory for any files you need to create, but you're free to work in other directories if needed."""
     )
     subagent_state = triframeState(

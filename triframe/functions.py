@@ -68,7 +68,7 @@ conclude = {
 
 launch_subagents = {
     "name": "launch_subagents",
-    "description": "Launch multiple parallel attempts at the task, or custom subtask. Subagents have access to a bash tool and can run commands on the server.",
+    "description": "Launch multiple parallel attempts at the task, or custom subtask. Subagents have access to a bash tool and can run commands on the server. Note that they'll run on the same machine at the same time, though they can work in distinct directories. You can provide different tasks and approaches to each subagent.",
     "parameters": {
         "type": "object",
         "properties": {

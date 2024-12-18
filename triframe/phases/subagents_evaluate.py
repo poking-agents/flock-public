@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from type_defs import Message, Node, Option
+from type_defs import Message
 from type_defs.operations import GenerationParams, GenerationRequest, OperationMetadata
 from type_defs.phases import StateRequest
 from type_defs.states import TournamentMatch, triframeState
@@ -99,44 +99,15 @@ def pair_agents(agents: List[dict]) -> List[List[dict]]:
     return pairs
 
 
-def create_tournament_matches(agent_ids: List[str]) -> List[TournamentMatch]:
-    """Create pairs of matches from a list of agent IDs"""
-    matches = []
-    for i in range(0, len(agent_ids), 2):
-        if i + 1 < len(agent_ids):
-            matches.append(
-                TournamentMatch(
-                    agents=[agent_ids[i], agent_ids[i + 1]],
-                    task="Implement a solution to the Devil of Gravity problem",
-                )
-            )
-        else:
-            matches.append(
-                TournamentMatch(
-                    agents=[agent_ids[i]],
-                    winner_id=agent_ids[i],
-                    reasoning="Advanced via bye",
-                    task="Implement a solution to the Devil of Gravity problem",
-                )
-            )
-    return matches
-
-
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     """Create evaluation phase request using tournament format"""
     tournament = state.get_current_tournament()
     if not tournament or tournament.status != "in_progress":
-        return [
-            StateRequest(
-                state=state,
-                state_model="type_defs.states.triframeState",
-                operations=[],
-                next_phase="triframe/phases/advisor.py",
-            )
-        ]
+        raise ValueError("No in-progress tournament found")
     if tournament.rounds:
         current_round = tournament.rounds[-1]
         if not all(match.winner_id is not None for match in current_round.matches):
+            raise ValueError("Tournament has not been processed")
             return [
                 StateRequest(
                     state=state,
@@ -146,20 +117,18 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 )
             ]
     active_agents = tournament.active_agents
-    if len(active_agents) <= 1:
-        if len(active_agents) == 1:
-            winner_id = active_agents[0]
-            state.complete_tournament(tournament, winner_id)
-        return [
-            StateRequest(
-                state=state,
-                state_model="type_defs.states.triframeState",
-                operations=[],
-                next_phase="triframe/phases/subagents_process.py",
-            )
-        ]
-    operations = []
+    # if we get here with 1, it's a bye, and can be handled here
+    # if len(active_agents) <= 1:
+    #     return [
+    #         StateRequest(
+    #             state=state,
+    #             state_model="type_defs.states.triframeState",
+    #             operations=[],
+    #             next_phase="triframe/phases/subagents_process.py",
+    #         )
+    #     ]
     pairs = pair_agents(active_agents)
+    operations = []
     matches = []
     for pair_index, pair in enumerate(pairs):
         if len(pair) == 1:
@@ -170,17 +139,6 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 task=tournament.task,
             )
             matches.append(match)
-            state.nodes.append(
-                Node(
-                    source="subagent_tournament",
-                    options=[
-                        Option(
-                            content=f"Agent {pair[0]} advances via bye",
-                            metadata={"advanced_agent": pair[0]},
-                        )
-                    ],
-                )
-            )
         else:
             match = TournamentMatch(agents=pair, task=tournament.task)
             matches.append(match)

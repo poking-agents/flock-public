@@ -3,23 +3,23 @@
 import asyncio
 import json
 from datetime import datetime
-from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, Dict
+
 import aiohttp
-from pydantic import BaseModel
+
+from handlers.utility import icpc_instructions
 from type_defs import Node, Option
 from type_defs.operations import MiddlemanSettings
-from type_defs.states import triframeState, triframeSettings
+from type_defs.states import triframeSettings, triframeState
 from utils.state import save_state
-from handlers.utility import icpc_instructions
 
 
 def create_main_state(state_id: str) -> triframeState:
     """Create main agent state with ICPC task and 3 subagents"""
     settings = triframeSettings(
-        actors=[MiddlemanSettings(model="gpt-4o-mini", temp=0.7, n=1)],
-        advisors=[MiddlemanSettings(model="gpt-4o-mini", temp=0.0, n=1)],
-        raters=[MiddlemanSettings(model="gpt-4o-mini", temp=0.2, n=1)],
+        actors=[MiddlemanSettings(model="claude-3-5-sonnet-20241022", temp=0.7, n=1)],
+        advisors=[MiddlemanSettings(model="claude-3-5-sonnet-20241022", temp=0.0, n=1)],
+        raters=[MiddlemanSettings(model="claude-3-5-sonnet-20241022", temp=0.2, n=1)],
         limit_type="token",
         intermediate_scoring=False,
         require_function_call=True,
@@ -76,13 +76,14 @@ def create_subagent_state(
     agent_config: Dict[str, Any], parent_id: str
 ) -> triframeState:
     """Create a completed subagent state with execution history"""
+    model = "claude-3-5-sonnet-20241022"
     state = triframeState(
         id=agent_config["id"],
         task_string=agent_config["task"],
         settings=triframeSettings(
-            actors=[MiddlemanSettings(model="gpt-4o-mini", temp=0.7, n=1)],
-            advisors=[MiddlemanSettings(model="gpt-4o-mini", temp=0.0, n=1)],
-            raters=[MiddlemanSettings(model="gpt-4o-mini", temp=0.2, n=1)],
+            actors=[MiddlemanSettings(model=model, temp=0.7, n=1)],
+            advisors=[MiddlemanSettings(model=model, temp=0.0, n=1)],
+            raters=[MiddlemanSettings(model=model, temp=0.2, n=1)],
         ),
         previous_results=[],
         nodes=[
@@ -166,7 +167,7 @@ async def run_tournament_test():
         subagent_state = create_subagent_state(agent, main_state_id)
         save_state(agent["id"], subagent_state)
     save_state(main_state_id, main_state)
-    print(f"\nCreated test states:")
+    print("\nCreated test states:")
     print(f"Main state ID: {main_state_id}")
     print("Subagent IDs:")
     for agent in main_state.active_subagents:

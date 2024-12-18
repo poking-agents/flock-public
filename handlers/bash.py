@@ -43,8 +43,10 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
         env_dir_path = str(env_dir)
 
     # Construct the shell command
-    # Directly run the command in the environment directory
-    full_command = f'cd "{env_dir_path}" && {command}'
+    # Directly run the command in agent_id directory if agent_id is provided
+    if agent_id:
+        working_dir_path = str(Path("subagents") / agent_id)
+        full_command = f"cd {working_dir_path} && {command}"
 
     logger.debug(
         f"[{'Subagent: ' + agent_id if agent_id else 'Main Agent'}] Running bash command: {full_command}"
