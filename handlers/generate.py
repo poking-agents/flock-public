@@ -164,14 +164,14 @@ async def generate_hooks(
         raw_outputs = []
         settings = params.settings.copy()
         settings.n = 1
+        # TODO: remove once this is run-level setting
+        settings.priority = "high"
         raw_outputs = await asyncio.gather(
             *[
                 hooks_client.generate(
                     settings=settings,
                     messages=processed_messages,
                     functions=params.functions,
-                    # TODO: remove once this is run-level setting
-                    # priority="high",
                 )
                 for _ in range(params.settings.n)
             ]
@@ -192,12 +192,13 @@ async def generate_hooks(
         log_generation(params, merged)
         return postprocesses_output(merged)
     else:
+        # TODO: remove once this is run-level setting
+        # increase priority
+        params.settings.priority = "high"
         result = await hooks_client.generate(
             settings=params.settings,
             messages=processed_messages,
             functions=params.functions,
-            # TODO: remove once this is run-level setting
-            # priority="high",
         )
         output = GenerationOutput(**result.dict())
         log_generation(params, output)

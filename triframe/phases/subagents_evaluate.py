@@ -102,7 +102,7 @@ def pair_agents(agents: List[dict]) -> List[List[dict]]:
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     """Create evaluation phase request using tournament format"""
     tournaments = state.get_current_tournaments()
-    if not tournaments or len(tournaments) > 1:
+    if not tournaments or len(tournaments) < 1:
         raise ValueError("No active tournament found")
     for tournament in tournaments:
         if tournament.rounds:

@@ -125,22 +125,6 @@ class triframeState(AgentState):
         )
 
     def start_new_tournament(
-        self, agent_ids: List[str], task: Optional[str] = None
-    ) -> Tournament:
-        """Start a new tournament with the given agents"""
-        if task is None and agent_ids:
-            agent = next(
-                (a for a in self.active_subagents if a["id"] == agent_ids[0]), None
-            )
-            if agent:
-                task = agent.get("task", "Unknown task")
-            else:
-                task = "Unknown task"
-        tournament = Tournament(initial_agents=agent_ids, task=task)
-        self.tournaments.append(tournament)
-        return tournament
-
-    def start_new_tournament(
         self,
         agent_ids: List[str],
         task: Optional[str] = None,
