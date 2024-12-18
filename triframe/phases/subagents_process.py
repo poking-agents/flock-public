@@ -24,72 +24,79 @@ def process_tournament_results(
     """Process tournament results and return updated state"""
     operations = []
     original_state = state
-    tournament = state.get_current_tournament(include_completed=True)
-    if (
-        not tournament
-        or not state.previous_results
-        or not state.previous_results[-1]
-        or not tournament.rounds
-    ):
-        operations.append(log_system("No tournament results to process"))
-        return operations, state
-    current_round = tournament.rounds[-1]
-    new_active_agents = tournament.active_agents.copy()
-    for result in state.previous_results[-1]:
-        if result.type == "generate":
-            operations.append(
-                log_system(f"Processing generation result {result.result.model_dump()}")
-            )
-            if not (result.metadata and result.metadata.purpose == "tournament_match"):
-                continue
-            if (
-                result.metadata.tournament_id != tournament.id
-                or result.metadata.round_number != len(tournament.rounds) - 1
-                or result.metadata.match_index >= len(current_round.matches)
-            ):
-                continue
-            match = current_round.matches[result.metadata.match_index]
-            if match.winner_id is not None:
-                continue
-            function_call = get_last_function_call([result])
-            if function_call and function_call["name"] == "select_winner":
-                try:
-                    args = json.loads(function_call["arguments"])
-                    winner_id = args["winner_id"]
-                    reasoning = args["reasoning"]
-                    if winner_id not in result.metadata.agent_ids:
-                        operations.append(
-                            log_warning(
-                                f"Winner {winner_id} not in match agents {result.metadata.agent_ids}"
-                            )
-                        )
-                        continue
-                    if set(match.agents) != set(result.metadata.agent_ids):
-                        operations.append(
-                            log_warning(
-                                f"Warning: Match agents mismatch. Expected {match.agents}, got {result.metadata.agent_ids}"
-                            )
-                        )
-                        continue
-                    match.winner_id = winner_id
-                    match.reasoning = reasoning
-                    new_active_agents = [
-                        a
-                        for a in new_active_agents
-                        if a == winner_id or a not in match.agents
-                    ]
-                except Exception as e:
-                    operations.append(
-                        log_warning(f"Error processing match result: {str(e)}")
+    tournament = state.get_current_tournaments(include_completed=True)
+    for tournament in state.tournaments:
+        if (
+            not tournament
+            or not state.previous_results
+            or not state.previous_results[-1]
+            or not tournament.rounds
+        ):
+            operations.append(log_system("No tournament results to process"))
+            return operations, state
+        if tournament.status == "completed":
+            continue
+        current_round = tournament.rounds[-1]
+        new_active_agents = tournament.active_agents.copy()
+        for result in state.previous_results[-1]:
+            if result.type == "generate":
+                operations.append(
+                    log_system(
+                        f"Processing generation result {result.result.model_dump()}"
                     )
+                )
+                if not (
+                    result.metadata and result.metadata.purpose == "tournament_match"
+                ):
                     continue
-    tournament.active_agents = new_active_agents
-    all_matches_complete = all(
-        match.winner_id is not None for match in current_round.matches
-    )
-    if all_matches_complete and len(tournament.active_agents) == 1:
-        winner_id = tournament.active_agents[0]
-        state.complete_tournament(tournament, winner_id)
+                if (
+                    result.metadata.tournament_id != tournament.id
+                    or result.metadata.round_number != len(tournament.rounds) - 1
+                    or result.metadata.match_index >= len(current_round.matches)
+                ):
+                    continue
+                match = current_round.matches[result.metadata.match_index]
+                if match.winner_id is not None:
+                    continue
+                function_call = get_last_function_call([result])
+                if function_call and function_call["name"] == "select_winner":
+                    try:
+                        args = json.loads(function_call["arguments"])
+                        winner_id = args["winner_id"]
+                        reasoning = args["reasoning"]
+                        if winner_id not in result.metadata.agent_ids:
+                            operations.append(
+                                log_warning(
+                                    f"Winner {winner_id} not in match agents {result.metadata.agent_ids}"
+                                )
+                            )
+                            continue
+                        if set(match.agents) != set(result.metadata.agent_ids):
+                            operations.append(
+                                log_warning(
+                                    f"Warning: Match agents mismatch. Expected {match.agents}, got {result.metadata.agent_ids}"
+                                )
+                            )
+                            continue
+                        match.winner_id = winner_id
+                        match.reasoning = reasoning
+                        new_active_agents = [
+                            a
+                            for a in new_active_agents
+                            if a == winner_id or a not in match.agents
+                        ]
+                    except Exception as e:
+                        operations.append(
+                            log_warning(f"Error processing match result: {str(e)}")
+                        )
+                        continue
+        tournament.active_agents = new_active_agents
+        all_matches_complete = all(
+            match.winner_id is not None for match in current_round.matches
+        )
+        if all_matches_complete and len(tournament.active_agents) == 1:
+            winner_id = tournament.active_agents[0]
+            state.complete_tournament(tournament, winner_id)
     original_dict = original_state.dict()
     new_dict = state.dict()
     diff = {}
@@ -121,31 +128,28 @@ Reasoning: {match.reasoning}"""
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     """Process evaluation results and decide next step"""
     operations, state = process_tournament_results(state)
-    tournament = state.get_current_tournament(include_completed=True)
-    tournament_summary = form_summary(tournament)
-    if tournament and tournament.status == "completed":
-        winner = next(
-            a for a in state.active_subagents if a["id"] == tournament.winner_id
-        )
-        subagent_output = Node(
-            source="tool_output",
-            options=[
-                Option(
-                    name="launch_subagents",
-                    content=f"""Tournament complete. Winner: {winner['id']}
+    tournaments = state.get_current_tournaments(include_completed=True)
+    if tournaments is None or tournaments == []:
+        raise ValueError("No active tournaments")
+    if all(tournament.status == "completed" for tournament in tournaments):
+        output = "All tournaments complete. Results:\n"
+        for tournament in tournaments:
+            tournament_summary = form_summary(tournament)
+            winner = next(
+                a for a in state.active_subagents if a["id"] == tournament.winner_id
+            )
+            output += f"""Tournament {tournament.id}. Winner: {winner['id']}
 Task: {winner['task']}
 Approach: {winner['approach']}
 
 Tournament Results:
-{tournament_summary}""",
-                    metadata={"winner": winner},
-                )
-            ],
+{tournament_summary}"""
+        subagent_output = Node(
+            source="tool_output",
+            options=[Option(content=output, name="launch_subagents")],
         )
         state.nodes.append(subagent_output)
-        state.active_subagents = [
-            agent for agent in state.active_subagents if agent["id"] == winner["id"]
-        ]
+        state.active_subagents = []
         return [
             StateRequest(
                 state=state,
@@ -154,33 +158,14 @@ Tournament Results:
                 next_phase="triframe/phases/advisor.py",
             )
         ]
-    elif tournament and tournament.status == "in_progress":
-        return [
-            StateRequest(
-                state=state,
-                state_model="type_defs.states.triframeState",
-                operations=operations,
-                next_phase="triframe/phases/subagents_evaluate.py",
-            )
-        ]
-    else:
-        raise ValueError("No complete or in-progress tournament found")
-        # tool_output_message = "No active tournament found. Returning to advisor phase."
-        # state.nodes.append(
-        #     Node(
-        #         source="tool_output",
-        #         options=[Option(content=tool_output_message, name="launch_subagents")],
-        #     )
-        # )
-        # operations.append(log_warning(tool_output_message))
-        # return [
-        #     StateRequest(
-        #         state=state,
-        #         state_model="type_defs.states.triframeState",
-        #         operations=operations,
-        #         next_phase="triframe/phases/advisor.py",
-        #     )
-        # ]
+    return [
+        StateRequest(
+            state=state,
+            state_model="type_defs.states.triframeState",
+            operations=operations,
+            next_phase="triframe/phases/subagents_evaluate.py",
+        )
+    ]
 
 
 if __name__ == "__main__":

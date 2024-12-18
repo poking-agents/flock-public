@@ -123,6 +123,17 @@ async def post_completion(
                             )
                             await asyncio.sleep(total_delay)
                             continue
+                    if response.status == 429:  # Rate limit error
+                        if attempt < max_retries - 1:
+                            delay = base_delay * (2**attempt)
+                            jitter = random.uniform(0, 0.1 * delay)
+                            total_delay = delay + jitter
+                            logger.warning(
+                                f"Middleman API attempt {attempt + 1} failed due to rate limit. "
+                                f"Retrying in {total_delay:.2f} seconds..."
+                            )
+                            await asyncio.sleep(total_delay)
+                            continue
                     if response.status != 200:
                         error_text = await response.text()
                         error_result = {

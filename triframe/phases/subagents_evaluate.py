@@ -101,77 +101,64 @@ def pair_agents(agents: List[dict]) -> List[List[dict]]:
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     """Create evaluation phase request using tournament format"""
-    tournament = state.get_current_tournament()
-    if not tournament or tournament.status != "in_progress":
-        raise ValueError("No in-progress tournament found")
-    if tournament.rounds:
-        current_round = tournament.rounds[-1]
-        if not all(match.winner_id is not None for match in current_round.matches):
-            raise ValueError("Tournament has not been processed")
-            return [
-                StateRequest(
-                    state=state,
-                    state_model="type_defs.states.triframeState",
-                    operations=[],
-                    next_phase="triframe/phases/subagents_process.py",
+    tournaments = state.get_current_tournaments()
+    if not tournaments or len(tournaments) > 1:
+        raise ValueError("No active tournament found")
+    for tournament in tournaments:
+        if tournament.rounds:
+            current_round = tournament.rounds[-1]
+            if not all(match.winner_id is not None for match in current_round.matches):
+                raise ValueError("Tournament has not been processed")
+        active_agents = tournament.active_agents
+        pairs = pair_agents(active_agents)
+        operations = []
+        matches = []
+        for pair_index, pair in enumerate(pairs):
+            if len(pair) == 1:
+                match = TournamentMatch(
+                    agents=[pair[0]],
+                    winner_id=pair[0],
+                    reasoning="Advanced via bye",
+                    task=tournament.task,
                 )
-            ]
-    active_agents = tournament.active_agents
-    # if we get here with 1, it's a bye, and can be handled here
-    # if len(active_agents) <= 1:
-    #     return [
-    #         StateRequest(
-    #             state=state,
-    #             state_model="type_defs.states.triframeState",
-    #             operations=[],
-    #             next_phase="triframe/phases/subagents_process.py",
-    #         )
-    #     ]
-    pairs = pair_agents(active_agents)
-    operations = []
-    matches = []
-    for pair_index, pair in enumerate(pairs):
-        if len(pair) == 1:
-            match = TournamentMatch(
-                agents=[pair[0]],
-                winner_id=pair[0],
-                reasoning="Advanced via bye",
-                task=tournament.task,
-            )
-            matches.append(match)
-        else:
-            match = TournamentMatch(agents=pair, task=tournament.task)
-            matches.append(match)
-            messages = [
-                Message(
-                    role="system",
-                    content=format_tournament_prompt(
-                        state,
-                        next(a for a in state.active_subagents if a["id"] == pair[0]),
-                        next(a for a in state.active_subagents if a["id"] == pair[1]),
-                    ),
-                ).dict()
-            ]
-            operations.append(
-                GenerationRequest(
-                    type="generate",
-                    params=GenerationParams(
-                        messages=messages,
-                        settings=state.settings.actors[0],
-                        functions=[get_tournament_function()],
-                        function_call={"name": "select_winner"},
-                    ),
-                    metadata=OperationMetadata(
-                        purpose="tournament_match",
-                        tournament_id=tournament.id,
-                        round_number=len(tournament.rounds),
-                        match_index=pair_index,
-                        agent_ids=pair,
-                    ),
+                matches.append(match)
+            else:
+                match = TournamentMatch(agents=pair, task=tournament.task)
+                matches.append(match)
+                messages = [
+                    Message(
+                        role="system",
+                        content=format_tournament_prompt(
+                            state,
+                            next(
+                                a for a in state.active_subagents if a["id"] == pair[0]
+                            ),
+                            next(
+                                a for a in state.active_subagents if a["id"] == pair[1]
+                            ),
+                        ),
+                    ).dict()
+                ]
+                operations.append(
+                    GenerationRequest(
+                        type="generate",
+                        params=GenerationParams(
+                            messages=messages,
+                            settings=state.settings.actors[0],
+                            functions=[get_tournament_function()],
+                            function_call={"name": "select_winner"},
+                        ),
+                        metadata=OperationMetadata(
+                            purpose="tournament_match",
+                            tournament_id=tournament.id,
+                            round_number=len(tournament.rounds),
+                            match_index=pair_index,
+                            agent_ids=pair,
+                        ),
+                    )
                 )
-            )
-    if matches:
-        state.add_tournament_round(tournament, matches)
+        if matches:
+            state.add_tournament_round(tournament, matches)
     return [
         StateRequest(
             state=state,

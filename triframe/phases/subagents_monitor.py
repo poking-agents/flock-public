@@ -7,19 +7,11 @@ from typing import List, Optional
 
 current_dir = Path(__file__).parent
 sys.path.extend([str(current_dir.parent.parent), str(Path("/home/agent/.agent_code"))])
-try:
-    from triframe.logging import log_system, log_warning
-    from type_defs.phases import StateRequest
-    from type_defs.states import triframeState
-    from utils.phase_utils import run_phase
-    from utils.state import load_state
-except ImportError:
-    sys.path.append("/home/agent/.agent_code")
-    from triframe.logging import log_system, log_warning
-    from type_defs.phases import StateRequest
-    from type_defs.states import triframeState
-    from utils.phase_utils import run_phase
-    from utils.state import load_state
+from triframe.logging import log_system, log_warning
+from type_defs.phases import StateRequest
+from type_defs.states import triframeState
+from utils.phase_utils import run_phase
+from utils.state import load_state
 
 
 def load_agent_state(agent_id: str) -> Optional[dict]:
