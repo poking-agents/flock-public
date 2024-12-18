@@ -15,6 +15,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     [task_result, usage_result] = require_single_results(
         state.previous_results[-1], ["get_task", "get_usage"]
     )
+    if task_result.result.scoring.intermediate:
+        state.settings.intermediate_scoring = True
     task_output = task_result.result
     usage_output = usage_result.result
     log_task_operation = log_system(task_output.instructions)
