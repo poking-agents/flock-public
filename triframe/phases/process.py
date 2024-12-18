@@ -157,7 +157,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         for agent in state.active_subagents:
             task_groups.setdefault(agent["task"], []).append(agent["id"])
         for task, agents in task_groups.items():
-            state.start_new_tournament(agents, task)
+            task_hash = str(abs(hash(task)) % 10000)
+            tournament_id = (
+                f"tournament_{task_hash}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            )
+            state.start_new_tournament(agents, task, tournament_id)
         state_requests.append(
             StateRequest(
                 state=state,

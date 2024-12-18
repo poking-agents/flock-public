@@ -6,7 +6,12 @@ from pathlib import Path
 from typing import List, Tuple
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.logging import log_subagent_output, log_system, log_warning
+from triframe.logging import (
+    log_subagent_output,
+    log_system,
+    log_warning,
+    log_tool_output,
+)
 from triframe.phases.subagents_monitor import load_agent_state
 from type_defs import Node, Option
 from type_defs.operations import OperationRequest
@@ -39,7 +44,7 @@ def process_tournament_results(
     """Process tournament results and return updated state"""
     operations = []
     original_state = state
-    tournament = state.get_current_tournament()
+    tournament = state.get_current_tournament(include_completed=True)
     if (
         not tournament
         or not state.previous_results
@@ -121,7 +126,7 @@ def process_tournament_results(
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     """Process evaluation results and decide next step"""
     operations, state = process_tournament_results(state)
-    tournament = state.get_current_tournament()
+    tournament = state.get_current_tournament(include_completed=True)
     if tournament and tournament.status == "completed":
         winner = next(
             a for a in state.active_subagents if a["id"] == tournament.winner_id
@@ -173,6 +178,14 @@ Tournament Results:
                     next_phase="triframe/phases/subagents_evaluate.py",
                 )
             ]
+        tool_output_message = "No active tournament found. Returning to advisor phase."
+        state.nodes.append(
+            Node(
+                source="tool_output",
+                options=[Option(content=tool_output_message, name="launch_subagents")],
+            )
+        )
+        operations.append(log_warning(tool_output_message))
         return [
             StateRequest(
                 state=state,

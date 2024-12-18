@@ -156,10 +156,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         prepare_history_for_actor(state, first_message, include_advice=True)
     )
 
-    messages_without_advice = [first_message]
-    messages_without_advice.extend(
-        prepare_history_for_actor(state, first_message, include_advice=False)
-    )
+    # TODO: uncomment, this is only commented out for light testing
+    # messages_without_advice = [first_message]
+    # messages_without_advice.extend(
+    #     prepare_history_for_actor(state, first_message, include_advice=False)
+    # )
 
     for actor_settings in state.settings.actors:
         params = GenerationParams(
@@ -169,15 +170,16 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         )
         generation_request = GenerationRequest(type="generate", params=params)
         operations.append(generation_request)
-        without_advice_params = GenerationParams(
-            messages=[msg.model_dump() for msg in messages_without_advice],
-            settings=actor_settings,
-            functions=get_function_definitions(state),
-        )
-        generation_request_without_advice = GenerationRequest(
-            type="generate", params=without_advice_params
-        )
-        operations.append(generation_request_without_advice)
+        # TODO: uncomment, this is only commented out for light testing
+        # without_advice_params = GenerationParams(
+        #     messages=[msg.model_dump() for msg in messages_without_advice],
+        #     settings=actor_settings,
+        #     functions=get_function_definitions(state),
+        # )
+        # generation_request_without_advice = GenerationRequest(
+        #     type="generate", params=without_advice_params
+        # )
+        # operations.append(generation_request_without_advice)
 
     operations = add_usage_request(operations)
     return [
