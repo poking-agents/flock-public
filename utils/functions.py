@@ -1,6 +1,16 @@
 import json
+from functools import partial
+from textwrap import dedent
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from type_defs.operations import (
+    BashOutput,
+    OperationResult,
+    PythonOutput,
+    ScoreLogEntry,
+    ScoreOutput,
+    SubmissionOutput,
+)
 from type_defs.states import DEFAULT_TIMEOUT, ModularState, triframeState
 
 submit = {
@@ -102,6 +112,23 @@ set_timeout = {
     },
 }
 
+STANDARD_FUNCTION_VALIDATIONS = {
+    "run_python": ("code", str),
+    "run_bash": ("command", str),
+    "submit": ("answer", str),
+    "set_timeout": ("timeout", int),
+    "score": (),
+    "score_log": (),
+}
+
+STANDARD_TOOL_OUTPUT_TYPES_TO_NAMES = {
+    BashOutput: "run_bash",
+    PythonOutput: "run_python",
+    SubmissionOutput: "submit",
+    ScoreOutput: "score",
+    List[ScoreLogEntry]: "score_log",
+}
+
 
 def get_standard_function_definitions(
     state: Union[triframeState, ModularState],
@@ -115,16 +142,6 @@ def get_standard_function_definitions(
     else:
         standard_functions.append(submit)
     return standard_functions
-
-
-STANDARD_FUNCTION_VALIDATIONS = {
-    "run_python": ("code", str),
-    "run_bash": ("command", str),
-    "submit": ("answer", str),
-    "set_timeout": ("timeout", int),
-    "score": (),
-    "score_log": (),
-}
 
 
 def validate_function_call(
@@ -168,3 +185,70 @@ def validate_function_call(
 
     except (json.JSONDecodeError, AttributeError, TypeError):
         return False
+
+
+def enforce_output_limit(output_limit: int, output: str) -> str:
+    if len(output) > output_limit:
+        half = output_limit // 2
+        starts_with = output[:half]
+        ends_with = output[-half:]
+        return dedent(
+            f"""This output was too long to include in its entirety.
+        The start and end of the output are shown below.
+        {starts_with}
+        [output truncated]
+        {ends_with}"""
+        )
+    return output
+
+
+def format_tool_output(output_limit: int, operation_result: Dict[str, Any]) -> str:
+    enforce_limit = partial(enforce_output_limit, output_limit)
+
+    if isinstance(operation_result, BashOutput):
+        parts = []
+        parts.append(enforce_limit(operation_result.stdout))
+        if operation_result.stderr:
+            parts.append(f"Error: {enforce_limit(operation_result.stderr)}")
+        if operation_result.status and operation_result.status != 0:
+            parts.append(f"Exit code: {operation_result.status}")
+        return "\n".join(parts)
+    elif isinstance(operation_result, PythonOutput):
+        parts = [enforce_limit(operation_result.output)]
+        if operation_result.error:
+            parts.append(f"Error: {enforce_limit(operation_result.error)}")
+        return "\n".join(parts)
+    elif isinstance(operation_result, ScoreOutput):
+        return enforce_limit(str(operation_result.message))
+    elif isinstance(operation_result, List[ScoreLogEntry]):
+        entries = []
+        for entry in operation_result:
+            entries.append(entry.model_dump())
+        return enforce_limit("\n---\n".join(entries))
+    else:
+        return enforce_limit(json.dumps(operation_result))
+
+
+def get_tool_output_name(
+    operation_result: Dict[str, Any],
+    tool_output_to_name: Dict[type, str] = STANDARD_TOOL_OUTPUT_TYPES_TO_NAMES,
+) -> str:
+    if type(operation_result) not in tool_output_to_name.keys():
+        raise ValueError(
+            f"Unable to get name for unknown tool output type: {type(operation_result)}"
+        )
+    return tool_output_to_name[type(operation_result)]
+
+
+def get_tool_operation_result(last_update: List[OperationResult]) -> Dict[str, Any]:
+    tool_result = next(
+        (
+            op
+            for op in last_update
+            if op.type in ["bash", "python", "submit", "score", "score_log"]
+        ),
+        None,
+    )
+    if not tool_result:
+        raise ValueError("No tool operation found in last update")
+    return tool_result.result

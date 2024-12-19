@@ -62,12 +62,19 @@ def prepare_messages(state: ModularState) -> List[Message]:
     # Get messages from node history
     for node in state.nodes:
         option = node.options[0]
-        message = Message(
-            role="assistant" if option.function_call else "user",
-            content=option.content,
-            function_call=option.function_call,
-            name=option.name,
-        )
+        if node.source == "tool_output":
+            message = Message(
+                content=option.content,
+                name=option.name,
+                role="function",
+            )
+        else:
+            message = Message(
+                role="assistant" if option.function_call else "user",
+                content=option.content,
+                function_call=option.function_call,
+                name=option.name,
+            )
         messages.append(message)
 
     # Add usage warning if needed
