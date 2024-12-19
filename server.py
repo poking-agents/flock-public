@@ -40,9 +40,7 @@ def create_app(mode: ProcessingMode, log_level: str = "INFO") -> web.Application
     setup_logging(log_level)
     logger.info(f"Starting server in {mode} mode with log level {log_level}")
 
-    app = web.Application(
-        client_max_size=1024**2 * 100  # 100 MB limit
-    )
+    app = web.Application(client_max_size=1024**2 * 100)  # 100 MB limit
 
     # Add routes
     app.router.add_post("/run_workflow", lambda r: workflow_handler(r, mode))

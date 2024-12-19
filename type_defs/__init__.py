@@ -16,6 +16,7 @@ from type_defs.phases import (
 from type_defs.processing import ProcessingMode
 from type_defs.states import (
     BaseState,
+    ModularState,
     triframeState,
 )
 
@@ -27,6 +28,7 @@ __all__ = [
     # State types
     "BaseState",
     "triframeState",
+    "ModularState",
     # Operation types
     "OperationRequest",
     "OperationResult",

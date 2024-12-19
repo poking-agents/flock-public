@@ -5,15 +5,8 @@ from typing import Any, Dict
 
 from triframe.styles import log_styles
 from type_defs import Option
-from type_defs.operations import LogWithAttributesParams, LogWithAttributesRequest
-
-
-def create_log_request(content: str, style: dict) -> LogWithAttributesRequest:
-    """Create a log request with the given content and style"""
-    return LogWithAttributesRequest(
-        type="log_with_attributes",
-        params=LogWithAttributesParams(content=content, attributes=style),
-    )
+from type_defs.operations import LogWithAttributesRequest
+from utils.logging import create_log_request
 
 
 def log_actor_choice(option: Option) -> LogWithAttributesRequest:
@@ -79,19 +72,9 @@ def log_advisor_choice(option: Option) -> LogWithAttributesRequest:
     return create_log_request(message, style)
 
 
-def log_tool_output(content: str) -> LogWithAttributesRequest:
-    """Log tool output with appropriate styling"""
-    return create_log_request(content, log_styles["tool_output"])
-
-
 def log_review(content: str) -> LogWithAttributesRequest:
     """Log a review with appropriate styling"""
     return create_log_request(content, log_styles["review"])
-
-
-def log_warning(content: str) -> LogWithAttributesRequest:
-    """Log a warning with appropriate styling"""
-    return create_log_request(content, log_styles["warning"])
 
 
 def format_ratings(function_call: Dict[str, Any]) -> str:
@@ -124,17 +107,9 @@ def log_advisor_choosing(option: Option) -> LogWithAttributesRequest:
     return create_log_request(message, log_styles["advisor_choosing"])
 
 
-def log_system(content: str) -> LogWithAttributesRequest:
-    """Log system messages with appropriate styling"""
-    return create_log_request(content, log_styles["system"])
-
-
 __all__ = [
     "log_actor_choice",
     "log_advisor_choice",
-    "log_tool_output",
     "log_review",
-    "log_warning",
     "log_advisor_choosing",
-    "log_system",
 ]

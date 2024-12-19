@@ -4,9 +4,7 @@ from pydantic import BaseModel
 from typing_extensions import TypedDict
 
 from type_defs.operations import BaseOperationRequest, BaseOperationResult
-from type_defs.states import (
-    triframeState,
-)
+from type_defs.states import AgentState
 
 
 class PreviousOperations(BaseModel):
@@ -17,7 +15,7 @@ class PreviousOperations(BaseModel):
 
 class StateRequest(BaseModel):
     state: Union[
-        triframeState,
+        AgentState,
         Dict[str, Any],
     ]
     state_model: str
