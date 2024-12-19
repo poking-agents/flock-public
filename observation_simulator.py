@@ -94,7 +94,7 @@ async def simulate_command(
         {"role": "user", "content": f"Simulate this {tool} command: {command}"},
     ]
 
-    models = [sim_state["model"], "gpt-4o"]
+    models = ["claude-3-5-sonnet-20241022", "gpt-4o-mini"]
     max_retries = 5
     last_error = BaseException()
 

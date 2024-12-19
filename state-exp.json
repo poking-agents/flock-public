@@ -1,0 +1,39 @@
+{
+    "state_model": "type_defs.states.ModularState",
+    "id": "000000000",
+    "previous_results": [],
+    "task_string": "",
+    "nodes": [],
+    "timeout": 60,
+    "token_limit": 300000,
+    "token_usage": 0,
+    "time_limit": 3000.0,
+    "time_usage": 0.0,
+    "actions_limit": 3000,
+    "actions_usage": 0,
+    "scoring": {
+        "intermediate": false,
+        "visible_to_agent": false,
+        "score_on_usage_limits": false
+    },
+    "output_limit": 10000,
+    "context_trimming_threshold": 80000,
+    "last_rating_options": null,
+    "settings": {
+        "generator": {
+            "model": "gpt-4o-mini",
+            "temp": 0.7,
+            "n": 1,
+            "max_tokens": null,
+            "stop": [],
+                "logprobs": null,
+                "logit_bias": null,
+                "function_call": null,
+                "cache_key": null,
+                "delegation_token": null
+            },
+        "limit_type": "token",
+        "intermediate_scoring": false,
+        "require_function_call": false
+    }
+}
