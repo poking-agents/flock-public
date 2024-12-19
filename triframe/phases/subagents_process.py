@@ -16,6 +16,7 @@ from type_defs.operations import OperationRequest
 from type_defs.phases import StateRequest
 from type_defs.states import Tournament, triframeState
 from utils.phase_utils import get_last_function_call, run_phase
+from utils.state import load_state
 
 
 def process_tournament_results(
@@ -121,6 +122,23 @@ def form_summary(tournament: Tournament) -> str:
 Winner: {match.winner_id}
 Reasoning: {match.reasoning}"""
                 )
+
+    # include the last few nodes of the winning agent
+    winning_state = load_state(tournament.winner_id)
+    if winning_state:
+        summary_parts.append("\n\nRecent nodes from the winning agent:")
+        winning_nodes = winning_state.get("nodes", [])
+        winning_nodes = winning_nodes[-10:]
+        winning_nodes = [Node(**node) for node in winning_nodes]
+        for node in winning_nodes:
+            if node.source == "tool_output":
+                summary_parts.append(f"\n\nTool output:\n{node.options[0].content}")
+            elif node.source == "warning":
+                summary_parts.append(f"\n\nWarning:\n{node.options[0].content}")
+            elif node.source == "actor_choice":
+                summary_parts.append(
+                    f"\n\nAction:\n{node.options[0].content} {node.options[0].function_call}"
+                )
     tournament_summary = "\n".join(summary_parts)
     return tournament_summary
 
@@ -142,7 +160,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 Task: {winner['task']}
 Approach: {winner['approach']}
 
-Tournament Results:
+Detailed Results:
 {tournament_summary}"""
         subagent_output = Node(
             source="tool_output",
