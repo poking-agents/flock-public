@@ -4,8 +4,8 @@ from pathlib import Path
 from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.logging import log_actor_choice, log_warning
-from triframe.phases.advisor_ratings import validate_function_call
+from triframe.logging import log_actor_choice
+from triframe.phases.advisor_ratings import validate_triframe_function_call
 from type_defs.base import Node, Option
 from type_defs.operations import (
     BaseOperationRequest,
@@ -23,6 +23,7 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.logging import log_warning
 from utils.phase_utils import get_last_completion, get_last_function_call, run_phase
 
 
@@ -48,7 +49,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             raise ValueError("No actor choice found")
         completion = actor_choice.options[0].content
         function_call = actor_choice.options[0].function_call
-    if validate_function_call(function_call):
+    if validate_triframe_function_call(function_call):
         if not isinstance(function_call, dict):
             print(function_call)
             raise ValueError(
@@ -111,7 +112,10 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         source="warning",
                         options=[
                             Option(
-                                content=f"Invalid set_timeout function call, timeout remains {state.timeout} seconds"
+                                content=(
+                                    "Invalid set_timeout function call, "
+                                    f"timeout remains {state.timeout} seconds"
+                                )
                             )
                         ],
                     )
