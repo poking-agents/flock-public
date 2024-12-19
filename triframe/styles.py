@@ -1,4 +1,6 @@
-log_styles = {
+from utils.styles import standard_log_styles
+
+triframe_log_styles = {
     "review": {
         "style": {
             "color": "white",
@@ -132,3 +134,5 @@ log_styles = {
         "title": "Advisor Choosing",
     },
 }
+
+log_styles = {**standard_log_styles, **triframe_log_styles}

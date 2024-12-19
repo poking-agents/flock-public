@@ -22,7 +22,7 @@ from utils.functions import (
 )
 from utils.logging import create_log_request, log_warning
 from utils.phase_utils import get_last_completion, run_phase
-from utils.styles import log_styles
+from utils.styles import standard_log_styles
 
 
 def create_function_call_log_message(
@@ -33,7 +33,7 @@ def create_function_call_log_message(
     message = f"Completion content:\n{completion}\n" if completion else ""
     function_name = function_call["name"]
     message += f"Function called: {function_name}"
-    style = log_styles["actor"]
+    style = standard_log_styles["actor"]
 
     if function_name not in ["score", "score_log"]:
         try:
@@ -42,7 +42,7 @@ def create_function_call_log_message(
             message += f" with {first_key}:\n{args[first_key]}\n"
         except (json.JSONDecodeError, KeyError, TypeError):
             message += f"Function call does not parse: {function_call}\n"
-            style = log_styles["warning"]
+            style = standard_log_styles["warning"]
 
     return message, style
 
@@ -55,7 +55,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
     completion = get_last_completion(generator_phase_result)
 
     if not validate_function_call(function_call):
-        log_request = create_log_request(completion, log_styles["actor"])
+        log_request = create_log_request(completion, standard_log_styles["actor"])
         state.nodes.append(
             Node(
                 source="warning",

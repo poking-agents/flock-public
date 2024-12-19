@@ -1,7 +1,7 @@
 """Logging utilities for duet workflow"""
 
 from type_defs.operations import LogWithAttributesParams, LogWithAttributesRequest
-from utils.styles import log_styles
+from utils.styles import standard_log_styles
 
 
 def create_log_request(content: str, style: dict) -> LogWithAttributesRequest:
@@ -14,17 +14,17 @@ def create_log_request(content: str, style: dict) -> LogWithAttributesRequest:
 
 def log_tool_output(content: str) -> LogWithAttributesRequest:
     """Log tool output with appropriate styling"""
-    return create_log_request(content, log_styles["tool_output"])
+    return create_log_request(content, standard_log_styles["tool_output"])
 
 
 def log_warning(content: str) -> LogWithAttributesRequest:
     """Log a warning with appropriate styling"""
-    return create_log_request(content, log_styles["warning"])
+    return create_log_request(content, standard_log_styles["warning"])
 
 
 def log_system(content: str) -> LogWithAttributesRequest:
     """Log system messages with appropriate styling"""
-    return create_log_request(content, log_styles["system"])
+    return create_log_request(content, standard_log_styles["system"])
 
 
 __all__ = [

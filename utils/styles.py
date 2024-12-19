@@ -1,4 +1,4 @@
-log_styles = {
+standard_log_styles = {
     "system": {
         "style": {"color": "black", "background-color": "#eeeeee"},
         "title": "System",
