@@ -1,4 +1,6 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
+
+from utils.functions import validate_function_call
 
 
 def get_rating_function() -> Dict[str, Any]:
@@ -59,3 +61,9 @@ def get_advise_function() -> Dict[str, Any]:
             "required": ["advice"],
         },
     }
+
+
+def validate_triframe_function_call(function_call: Optional[Dict[str, Any]]) -> bool:
+    """Validates base functions plus advisor-specific functions."""
+    advisor_validations = {"advise": ("advice", str)}
+    return validate_function_call(function_call, advisor_validations)

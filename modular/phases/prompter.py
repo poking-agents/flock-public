@@ -63,7 +63,7 @@ def prepare_messages(state: ModularState) -> List[Message]:
     for node in state.nodes:
         option = node.options[0]
         message = Message(
-            role="user",
+            role="assistant" if option.function_call else "user",
             content=option.content,
             function_call=option.function_call,
             name=option.name,

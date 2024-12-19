@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Union
+import json
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from type_defs.states import DEFAULT_TIMEOUT, ModularState, triframeState
 
@@ -114,3 +115,56 @@ def get_standard_function_definitions(
     else:
         standard_functions.append(submit)
     return standard_functions
+
+
+STANDARD_FUNCTION_VALIDATIONS = {
+    "run_python": ("code", str),
+    "run_bash": ("command", str),
+    "submit": ("answer", str),
+    "set_timeout": ("timeout", int),
+    "score": (),
+    "score_log": (),
+}
+
+
+def validate_function_call(
+    function_call: Optional[Dict[str, Any]],
+    additional_validations: Optional[Dict[str, Tuple[str, type]]] = None,
+) -> bool:
+    """
+    Validates function calls with configurable additional validation rules.
+
+    Args:
+        function_call: The function call to validate
+        additional_validations: Dictionary of additional function validations
+            in the format {function_name: (required_arg, arg_type)}
+    """
+    if not function_call or not isinstance(function_call, dict):
+        return False
+    function_name = function_call.get("name")
+    if not function_name:
+        return False
+
+    if (
+        function_name in STANDARD_FUNCTION_VALIDATIONS
+        and STANDARD_FUNCTION_VALIDATIONS[function_name] == ()
+    ):
+        return True
+
+    try:
+        arguments = function_call.get("arguments", "{}")
+        args = json.loads(arguments) if isinstance(arguments, str) else arguments
+
+        # Combine base validations with any additional ones
+        validations = STANDARD_FUNCTION_VALIDATIONS.copy()
+        if additional_validations:
+            validations.update(additional_validations)
+
+        if function_name not in validations:
+            return False
+
+        required_arg, arg_type = validations[function_name]
+        return required_arg in args and isinstance(args[required_arg], arg_type)
+
+    except (json.JSONDecodeError, AttributeError, TypeError):
+        return False

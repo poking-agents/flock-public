@@ -12,11 +12,6 @@ def create_log_request(content: str, style: dict) -> LogWithAttributesRequest:
     )
 
 
-def log_actor_choice(content: str) -> LogWithAttributesRequest:
-    """Log an actor's choice with appropriate styling"""
-    return create_log_request(content, log_styles["actor"])
-
-
 def log_tool_output(content: str) -> LogWithAttributesRequest:
     """Log tool output with appropriate styling"""
     return create_log_request(content, log_styles["tool_output"])
@@ -33,7 +28,6 @@ def log_system(content: str) -> LogWithAttributesRequest:
 
 
 __all__ = [
-    "log_actor_choice",
     "log_tool_output",
     "log_warning",
     "log_system",

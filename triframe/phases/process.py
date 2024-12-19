@@ -5,7 +5,7 @@ from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.logging import log_actor_choice
-from triframe.phases.advisor_ratings import validate_function_call
+from triframe.phases.advisor_ratings import validate_triframe_function_call
 from type_defs.base import Node, Option
 from type_defs.operations import (
     BaseOperationRequest,
@@ -49,7 +49,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             raise ValueError("No actor choice found")
         completion = actor_choice.options[0].content
         function_call = actor_choice.options[0].function_call
-    if validate_function_call(function_call):
+    if validate_triframe_function_call(function_call):
         if not isinstance(function_call, dict):
             print(function_call)
             raise ValueError(

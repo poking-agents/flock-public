@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.functions import get_rating_function
+from triframe.functions import get_rating_function, validate_triframe_function_call
 from triframe.logging import (
     create_log_request,
     log_actor_choice,
@@ -165,44 +165,6 @@ They have these functions available:
     return review_instructions, log_requests
 
 
-def validate_function_call(function_call: Optional[Dict[str, Any]]) -> bool:
-    if not function_call:
-        return False
-
-    function_name = function_call.get("name")
-    if not function_name:
-        return False
-
-    if function_name in ["score", "score_log"]:
-        return True
-
-    try:
-        arguments = function_call.get("arguments", "{}")
-        if isinstance(arguments, str):
-            import json
-
-            args = json.loads(arguments)
-        else:
-            args = arguments
-
-        # Validate based on function type
-        if function_name == "run_python":
-            return "code" in args and isinstance(args["code"], str)
-        elif function_name == "run_bash":
-            return "command" in args and isinstance(args["command"], str)
-        elif function_name == "submit":
-            return "answer" in args and isinstance(args["answer"], str)
-        elif function_name == "advise":
-            return "advice" in args and isinstance(args["advice"], str)
-        elif function_name == "set_timeout":
-            return "timeout" in args and isinstance(args["timeout"], int)
-        else:
-            return False
-
-    except (json.JSONDecodeError, AttributeError, TypeError):
-        return False
-
-
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     # Collect all actor outputs
     actor_options = []
@@ -220,7 +182,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         content=output.completion,
                         function_call=(
                             output.function_call
-                            if validate_function_call(output.function_call)
+                            if validate_triframe_function_call(output.function_call)
                             else None
                         ),
                     )

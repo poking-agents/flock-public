@@ -2,7 +2,7 @@
 
 import sys
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
