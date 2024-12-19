@@ -3,15 +3,28 @@ from functools import partial
 from textwrap import dedent
 from typing import Any, Dict, List, Optional, Tuple, Union
 
+from type_defs.base import Node, Option
 from type_defs.operations import (
+    BaseOperationRequest,
     BashOutput,
+    BashParams,
+    BashRequest,
+    OperationMetadata,
     OperationResult,
     PythonOutput,
+    PythonParams,
+    PythonRequest,
     ScoreLogEntry,
+    ScoreLogParams,
+    ScoreLogRequest,
     ScoreOutput,
+    ScoreParams,
+    ScoreRequest,
     SubmissionOutput,
+    SubmissionParams,
+    SubmissionRequest,
 )
-from type_defs.states import DEFAULT_TIMEOUT, ModularState, triframeState
+from type_defs.states import DEFAULT_TIMEOUT, AgentState, ModularState, triframeState
 
 submit = {
     "name": "submit",
@@ -252,3 +265,66 @@ def get_tool_operation_result(last_update: List[OperationResult]) -> Dict[str, A
     if not tool_result:
         raise ValueError("No tool operation found in last update")
     return tool_result.result
+
+
+def create_standard_tool_operation(
+    tool_name: str, tool_args: dict, metadata: OperationMetadata
+) -> BaseOperationRequest | None:
+    if tool_name == "submit":
+        return SubmissionRequest(
+            type="submit",
+            params=SubmissionParams(submission=tool_args["answer"]),
+            metadata=metadata,
+        )
+    elif tool_name == "run_bash":
+        return BashRequest(
+            type="bash",
+            params=BashParams(command=tool_args["command"]),
+            metadata=metadata,
+        )
+    elif tool_name == "run_python":
+        return PythonRequest(
+            type="python",
+            params=PythonParams(code=tool_args["code"]),
+            metadata=metadata,
+        )
+    elif tool_name == "score":
+        return ScoreRequest(type="score", params=ScoreParams(), metadata=metadata)
+    elif tool_name == "score_log":
+        return ScoreLogRequest(
+            type="score_log", params=ScoreLogParams(), metadata=metadata
+        )
+    else:
+        return None
+
+
+def handle_set_timeout(state: AgentState, tool_args: dict) -> AgentState:
+    """Handle the set_timeout tool operation"""
+    try:
+        state.timeout = int(tool_args["timeout"])
+        state.nodes.append(
+            Node(
+                source="tool_output",
+                options=[
+                    Option(
+                        content=f"Timeout set to {state.timeout}", name="set_timeout"
+                    )
+                ],
+            )
+        )
+    except (KeyError, ValueError):
+        state.nodes.append(
+            Node(
+                source="warning",
+                options=[
+                    Option(
+                        content=(
+                            "Invalid set_timeout function call, timeout remains ",
+                            f"{state.timeout} seconds",
+                        )
+                    )
+                ],
+            )
+        )
+    state.update_usage()
+    return state

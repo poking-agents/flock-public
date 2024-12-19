@@ -9,20 +9,11 @@ from triframe.phases.advisor_ratings import validate_triframe_function_call
 from type_defs.base import Node, Option
 from type_defs.operations import (
     BaseOperationRequest,
-    BashParams,
-    BashRequest,
     OperationMetadata,
-    PythonParams,
-    PythonRequest,
-    ScoreLogParams,
-    ScoreLogRequest,
-    ScoreParams,
-    ScoreRequest,
-    SubmissionParams,
-    SubmissionRequest,
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.functions import create_standard_tool_operation, handle_set_timeout
 from utils.logging import log_warning
 from utils.phase_utils import get_last_completion, get_last_function_call, run_phase
 
@@ -65,65 +56,21 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         metadata = OperationMetadata(
             purpose="tool_execution", phase="process", state_id=state.id
         )
-        if tool_name == "submit":
-            tool_operation = SubmissionRequest(
-                type="submit",
-                params=SubmissionParams(submission=tool_args["answer"]),
-                metadata=metadata,
-            )
-            next_phase = None
-        elif tool_name == "run_bash":
-            tool_operation = BashRequest(
-                type="bash",
-                params=BashParams(command=tool_args["command"]),
-                metadata=metadata,
-            )
-        elif tool_name == "run_python":
-            tool_operation = PythonRequest(
-                type="python",
-                params=PythonParams(code=tool_args["code"]),
-                metadata=metadata,
-            )
-        elif tool_name == "score":
-            tool_operation = ScoreRequest(
-                type="score", params=ScoreParams(), metadata=metadata
-            )
-        elif tool_name == "score_log":
-            tool_operation = ScoreLogRequest(
-                type="score_log", params=ScoreLogParams(), metadata=metadata
-            )
-        elif tool_name == "set_timeout":
-            try:
-                state.timeout = int(tool_args["timeout"])
-                state.nodes.append(
-                    Node(
-                        source="tool_output",
-                        options=[
-                            Option(
-                                content=f"Timeout set to {state.timeout}",
-                                name="set_timeout",
-                            )
-                        ],
-                    )
-                )
-            except (KeyError, ValueError):
-                state.nodes.append(
-                    Node(
-                        source="warning",
-                        options=[
-                            Option(
-                                content=(
-                                    "Invalid set_timeout function call, "
-                                    f"timeout remains {state.timeout} seconds"
-                                )
-                            )
-                        ],
-                    )
-                )
-            state.update_usage()
+
+        if tool_name == "set_timeout":
+            state = handle_set_timeout(state, tool_args)
             next_phase = "triframe/phases/advisor.py"
         else:
-            raise ValueError(f"Unknown function: {tool_name}")
+            tool_operation = create_standard_tool_operation(
+                tool_name, tool_args, metadata
+            )
+            if tool_operation is None:
+                raise ValueError(f"Unknown function: {tool_name}")
+
+            # Special case for submit operation
+            if tool_name == "submit":
+                next_phase = None
+
         operations = []
         if directly_from_actor:
             operations.append(
@@ -133,6 +80,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             )
         if tool_operation:
             operations.append(tool_operation)
+
         return [
             StateRequest(
                 state=state,
