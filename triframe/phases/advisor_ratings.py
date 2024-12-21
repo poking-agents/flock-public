@@ -4,13 +4,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.functions import get_function_definitions, get_rating_function
+from triframe.functions import get_rating_function, validate_triframe_function_call
 from triframe.logging import (
     create_log_request,
     log_actor_choice,
     log_styles,
-    log_system,
-    log_warning,
 )
 from triframe.phases.advisor import tool_output_with_usage
 from triframe.templates import (
@@ -25,6 +23,8 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.functions import get_standard_function_definitions
+from utils.logging import log_system, log_warning
 from utils.phase_utils import run_phase
 
 
@@ -69,7 +69,10 @@ def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
     # Add trimming notice if any actor choices were excluded
     trimmed_choices = actor_choices_seen - actor_choices_included
     if trimmed_choices > 0:
-        notice = f"\n<system>Note: {trimmed_choices} earlier actions have been trimmed from the transcript to stay within context limits.</system>\n"
+        notice = (
+            f"\n<system>Note: {trimmed_choices} earlier actions have been trimmed "
+            f"from the transcript to stay within context limits.</system>\n"
+        )
         transcript_parts.append(notice)
 
     # Reverse the parts to get chronological order
@@ -90,9 +93,11 @@ def format_function_call(
         arguments = json.loads(maybe_function_call.get("arguments"))
         first_value = next(
             iter(arguments.values()),
-            "<scaffolding-note>No arguments</scaffolding-note>"
-            if function_name not in ["score", "score_log"]
-            else "",
+            (
+                "<scaffolding-note>No arguments</scaffolding-note>"
+                if function_name not in ["score", "score_log"]
+                else ""
+            ),
         )
     except (json.JSONDecodeError, AttributeError):
         first_value = "<scaffolding-note>Invalid arguments</scaffolding-note>"
@@ -149,7 +154,7 @@ def fn_format_review_instructions(
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{json.dumps(get_function_definitions(state))}
+{json.dumps(get_standard_function_definitions(state))}
 {actions_and_observations}
 </transcript>
 <candidate_options>
@@ -158,44 +163,6 @@ They have these functions available:
 {fn_comparison_template_end()}"""
 
     return review_instructions, log_requests
-
-
-def validate_function_call(function_call: Optional[Dict[str, Any]]) -> bool:
-    if not function_call:
-        return False
-
-    function_name = function_call.get("name")
-    if not function_name:
-        return False
-
-    if function_name in ["score", "score_log"]:
-        return True
-
-    try:
-        arguments = function_call.get("arguments", "{}")
-        if isinstance(arguments, str):
-            import json
-
-            args = json.loads(arguments)
-        else:
-            args = arguments
-
-        # Validate based on function type
-        if function_name == "run_python":
-            return "code" in args and isinstance(args["code"], str)
-        elif function_name == "run_bash":
-            return "command" in args and isinstance(args["command"], str)
-        elif function_name == "submit":
-            return "answer" in args and isinstance(args["answer"], str)
-        elif function_name == "advise":
-            return "advice" in args and isinstance(args["advice"], str)
-        elif function_name == "set_timeout":
-            return "timeout" in args and isinstance(args["timeout"], int)
-        else:
-            return False
-
-    except (json.JSONDecodeError, AttributeError, TypeError):
-        return False
 
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
@@ -213,9 +180,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 actor_options.append(
                     Option(
                         content=output.completion,
-                        function_call=output.function_call
-                        if validate_function_call(output.function_call)
-                        else None,
+                        function_call=(
+                            output.function_call
+                            if validate_triframe_function_call(output.function_call)
+                            else None
+                        ),
                     )
                 )
 
@@ -245,9 +214,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         # Create a hashable representation of the option
         option_key = (
             option.content,
-            json.dumps(option.function_call, sort_keys=True)
-            if option.function_call
-            else None,
+            (
+                json.dumps(option.function_call, sort_keys=True)
+                if option.function_call
+                else None
+            ),
         )
         if option_key not in seen:
             seen.add(option_key)

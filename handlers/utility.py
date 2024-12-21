@@ -72,7 +72,11 @@ async def task_hooks(params: GetTaskParams, deps: Optional[dict]) -> GetTaskOutp
 async def task_mock(params: GetTaskParams, deps: Optional[dict]) -> GetTaskOutput:
     """Task handler for mock mode"""
     return GetTaskOutput(
-        instructions="List the files in the current directory",
+        instructions=(
+            "Develop a new programming language. Use the score command to assess "
+            "your progress, and the score_log command to track your progress "
+            "over time."
+        ),
         permissions=[],
         scoring=ScoringInfo(
             intermediate=False, visible_to_agent=False, score_on_usage_limits=False

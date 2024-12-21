@@ -23,17 +23,19 @@ def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
             "timestamp": datetime.now().isoformat(),
             "request": {
                 **params.model_dump(),
-                "raw_messages": [
-                    {
-                        "role": msg.get("role"),
-                        "content": msg.get("content"),
-                        "function_call": msg.get("function_call"),
-                        "name": msg.get("name"),
-                    }
-                    for msg in params.messages
-                ]
-                if params.messages
-                else [],
+                "raw_messages": (
+                    [
+                        {
+                            "role": msg.get("role"),
+                            "content": msg.get("content"),
+                            "function_call": msg.get("function_call"),
+                            "name": msg.get("name"),
+                        }
+                        for msg in params.messages
+                    ]
+                    if params.messages
+                    else []
+                ),
             },
             "response": result.model_dump(),
             "success": not bool(result.error),
