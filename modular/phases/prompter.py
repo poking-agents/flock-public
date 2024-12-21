@@ -15,9 +15,18 @@ from type_defs.states import ModularState
 from utils.phase_utils import run_phase
 
 
-def trim_message_list(messages: List[Message], target_tok_length: int) -> List[Message]:
+def trim_message_list(
+    messages: List[Message], target_tok_length: int, model: str
+) -> List[Message]:
     """Trim messages to fit within token budget while preserving context"""
-    enc = tiktoken.get_encoding("cl100k_base")
+    # NOTE: We use o200k_base for openai models because we're mostly evaluating
+    # models newer than GPT-4o, which all use o200k_base.
+    # This is not perfect as it sometimes undercount tokens for long lists of numbers
+    if "claude" in model:
+        enc = tiktoken.get_encoding("cl100k_base")
+    else:
+        enc = tiktoken.get_encoding("o200k_base")
+
     tokens_to_use = target_tok_length - len(
         enc.encode(NOTICE_TRIMMED, disallowed_special=())
     )
@@ -70,7 +79,7 @@ def prepare_messages(state: ModularState) -> List[Message]:
             )
         else:
             message = Message(
-                role="assistant" if option.function_call else "user",
+                role="assistant",
                 content=option.content,
                 function_call=option.function_call,
                 name=option.name,
@@ -97,7 +106,9 @@ def prepare_messages(state: ModularState) -> List[Message]:
         usage_message += " You should attempt to reach a final answer soon."
 
     messages.append(Message(role="user", content=usage_message))
-    messages = trim_message_list(messages, state.context_trimming_threshold)
+    messages = trim_message_list(
+        messages, state.context_trimming_threshold, state.settings.generator.model
+    )
 
     return messages
 

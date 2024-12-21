@@ -56,6 +56,14 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
 
     if not validate_function_call(function_call):
         log_request = create_log_request(completion, standard_log_styles["actor"])
+        if function_call:
+            # must add tool output block for non empty function call to avoid api errors
+            state.nodes.append(
+                Node(
+                    source="tool_output",
+                    options=[Option(content="")],
+                )
+            )
         state.nodes.append(
             Node(
                 source="warning",
