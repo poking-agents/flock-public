@@ -6,6 +6,8 @@ MODELS = [
     ("gpt-4o", "4o"),
     ("o1", "o1"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
+    ("claude-3-5-haiku-20241022", "c3.5h"),
+    ("deepseek-chat", "ds3"),
 ]
 AIRD = [True, False]
 
