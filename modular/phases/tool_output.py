@@ -6,7 +6,7 @@ from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from type_defs import Node, Option, StateRequest, triframeState
+from type_defs import ModularState, Node, Option, StateRequest
 from utils import run_phase
 from utils.functions import (
     format_tool_output,
@@ -16,7 +16,7 @@ from utils.functions import (
 from utils.logging import log_tool_output
 
 
-def create_phase_request(state: triframeState) -> List[StateRequest]:
+def create_phase_request(state: ModularState) -> List[StateRequest]:
     last_update = state.previous_results[-1]
     operation_result = get_tool_operation_result(last_update)
     formatted_output = format_tool_output(state.output_limit, operation_result)
@@ -32,12 +32,12 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="type_defs.states.triframeState",
+            state_model="type_defs.states.ModularState",
             operations=[log_request],
-            next_phase="triframe/phases/advisor.py",
+            next_phase="modular/phases/prompter.py",
         )
     ]
 
 
 if __name__ == "__main__":
-    run_phase("tool_output", create_phase_request, "type_defs.states.triframeState")
+    run_phase("tool_output", create_phase_request, "type_defs.states.ModularState")

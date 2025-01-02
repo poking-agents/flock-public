@@ -96,7 +96,7 @@ async def main() -> None:
         "--workflow",
         type=str,
         default="triframe",
-        choices=["listen", "triframe"],
+        choices=["listen", "triframe", "modular"],
         help="Type of workflow to run ('listen' to just listen for incoming requests)",
     )
     parser.add_argument(

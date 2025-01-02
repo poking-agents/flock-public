@@ -4,7 +4,17 @@ import asyncio
 import importlib
 import json
 import sys
-from typing import Any, Callable, Dict, List, Optional, Tuple, Type, TypeVar
+from pathlib import Path
+from typing import (
+    Any,
+    Callable,
+    Dict,
+    List,
+    Optional,
+    Tuple,
+    Type,
+    TypeVar,
+)
 
 import aiohttp
 from pydantic import BaseModel, ValidationError
@@ -16,10 +26,14 @@ from type_defs.operations import (
     RESULT_MODELS,
     BaseOperationRequest,
     BaseOperationResult,
+    GetTaskOutput,
+    GetUsageOutput,
+    GetUsageParams,
+    GetUsageRequest,
     OperationResult,
 )
 from type_defs.phases import PreviousOperations, StateRequest
-from type_defs.states import BaseState
+from type_defs.states import AgentState, BaseState
 from utils.state import load_state, save_state
 
 T = TypeVar("T", bound=BaseState)
@@ -230,3 +244,35 @@ def run_phase(
     state_model: str,
 ) -> None:
     asyncio.run(run_main(phase_name, create_request_func, state_model))
+
+
+def get_settings_path(state_id: str, previous_results) -> str:
+    """Get settings path from state or use default"""
+    settings_path = previous_results[0][0].result.settings_path
+    if not settings_path:
+        settings_path = f"{state_id}_settings.json"
+        print(f"No settings_path provided, using default: {settings_path}")
+    if not Path(settings_path).exists():
+        raise FileNotFoundError(f"Settings file not found: {settings_path}")
+    return settings_path
+
+
+def set_state_from_task_and_usage_outputs(
+    state: AgentState, task_output: GetTaskOutput, usage_output: GetUsageOutput
+) -> AgentState:
+    state.task_string = task_output.instructions
+    state.scoring = task_output.scoring.model_dump()
+    state.token_limit = usage_output.usageLimits.tokens
+    state.actions_limit = usage_output.usageLimits.actions
+    state.time_limit = usage_output.usageLimits.total_seconds
+    return state
+
+
+def add_usage_request(
+    operations: List[BaseOperationRequest],
+) -> List[BaseOperationRequest]:
+    usage_request = GetUsageRequest(
+        type="get_usage",
+        params=GetUsageParams(),
+    )
+    return [*operations, usage_request]

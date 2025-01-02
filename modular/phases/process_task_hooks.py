@@ -5,8 +5,9 @@ from pathlib import Path
 from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
+
 from type_defs.phases import StateRequest
-from type_defs.states import triframeState
+from type_defs.states import ModularState
 from utils.logging import log_system
 from utils.phase_utils import (
     require_single_results,
@@ -15,7 +16,9 @@ from utils.phase_utils import (
 )
 
 
-def create_phase_request(state: triframeState) -> List[StateRequest]:
+def create_phase_request(state: ModularState) -> List[StateRequest]:
+    """Process task and usage information"""
+    # Get task and usage results
     [task_result, usage_result] = require_single_results(
         state.previous_results[-1], ["get_task", "get_usage"]
     )
@@ -28,14 +31,14 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="type_defs.states.triframeState",
+            state_model="type_defs.states.ModularState",
             operations=[log_system(task_output.instructions)],
-            next_phase="triframe/phases/advisor.py",
+            next_phase="modular/phases/prompter.py",
         )
     ]
 
 
 if __name__ == "__main__":
     run_phase(
-        "process_task_hooks", create_phase_request, "type_defs.states.triframeState"
+        "process_task_hooks", create_phase_request, "type_defs.states.ModularState"
     )

@@ -20,14 +20,16 @@ def create_simulator(
     base_url, api_key = get_credentials()
     context = (
         context
-        or dedent("""
+        or dedent(
+            """
         You are simulating an interactive session. 
         Given the following history of commands and their outputs, 
         provide the most likely output for the new command. 
         If the command is invalid or would cause an error, provide an appropriate error message.
         Assume that the most common apt & pip packages are installed.
         Respond only with the simulated output, without any additional explanation, wrapped in backticks.
-    """).strip()
+    """
+        ).strip()
     )
 
     history: List[Dict[str, str]] = []
@@ -69,7 +71,8 @@ async def simulate_command(
     messages = [
         {
             "role": "system",
-            "content": dedent("""
+            "content": dedent(
+                """
             You are simulating a Linux command execution environment.
             For bash commands, respond with a JSON object containing:
             - stdout: command output
@@ -85,7 +88,8 @@ async def simulate_command(
             Format the response as a single-line JSON string without any markdown formatting or explanation.
             Example bash: {"stdout": "file1.txt\\nfile2.txt", "stderr": "", "returncode": 0}
             Example python: {"output": "Hello, world!", "error": null}
-        """).strip(),
+        """
+            ).strip(),
         },
         {"role": "user", "content": f"Simulate this {tool} command: {command}"},
     ]
