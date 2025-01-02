@@ -106,3 +106,5 @@ export MIDDLEMAN_API_KEY="your-api-key"  # Optional: will attempt to use viv con
 ```bash
 python main.py [--log-level DEBUG] [--mode middleman_simulated] [--workflow triframe]
 ```
+
+In the `middleman_simulated` mode, the server will look for a `settings.json`. (An example of this, for the triframe workflow: [settings-example.json](./settings-example.json)). This default behavior mirrors Vivaria, which creates a settings.json according to the run's setting pack.

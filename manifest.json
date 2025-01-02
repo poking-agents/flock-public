@@ -1,7 +1,7 @@
 {
-    "defaultSettingsPack": "triframe_4om_all",
+    "defaultSettingsPack": "triframe_4om",
     "settingsPacks": {
-        "triframe_4o_all": {
+        "triframe_4o": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -28,7 +28,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_aird": {
+        "triframe_4o_aird": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -55,7 +55,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_aird_no_advisor": {
+        "triframe_4o_aird_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -82,7 +82,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_no_advisor": {
+        "triframe_4o_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -183,7 +183,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all": {
+        "triframe_4om": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -210,7 +210,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_aird": {
+        "triframe_4om_aird": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -237,7 +237,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_aird_no_advisor": {
+        "triframe_4om_aird_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -264,7 +264,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_no_advisor": {
+        "triframe_4om_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -275,114 +275,6 @@
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": false,
-            "intermediate_scoring": false,
-            "limit_type": "token",
-            "raters": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_c3.6s_all": {
-            "actors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": true,
-            "intermediate_scoring": false,
-            "limit_type": "token",
-            "raters": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_c3.6s_all_aird": {
-            "actors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": true,
-            "intermediate_scoring": true,
-            "limit_type": "time",
-            "raters": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_c3.6s_all_aird_no_advisor": {
-            "actors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": false,
-            "intermediate_scoring": true,
-            "limit_type": "time",
-            "raters": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_c3.6s_all_no_advisor": {
-            "actors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
                 }
@@ -392,6 +284,141 @@
             "limit_type": "token",
             "raters": [
                 {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.5s": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.5s_aird": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.5s_aird_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.5s_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20240620",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -399,7 +426,304 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all": {
+        "triframe_c3.6s_aird": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_aird_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g1.5p": {
+            "actors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g1.5p_aird": {
+            "actors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g1.5p_aird_no_advisor": {
+            "actors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g1.5p_no_advisor": {
+            "actors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gemini-1.5-pro",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g2f": {
+            "actors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g2f_aird": {
+            "actors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g2f_aird_no_advisor": {
+            "actors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_g2f_no_advisor": {
+            "actors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gemini-2.0-flash-exp",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1": {
             "actors": [
                 {
                     "model": "o1",
@@ -426,7 +750,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_aird": {
+        "triframe_o1_aird": {
             "actors": [
                 {
                     "model": "o1",
@@ -453,7 +777,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_aird_no_advisor": {
+        "triframe_o1_aird_no_advisor": {
             "actors": [
                 {
                     "model": "o1",
@@ -480,7 +804,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_no_advisor": {
+        "triframe_o1_no_advisor": {
             "actors": [
                 {
                     "model": "o1",

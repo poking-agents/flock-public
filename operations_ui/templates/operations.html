@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="h-full">
+<head>
+    <title>Operation Monitor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+        /* Override Prism styles for better readability */
+        pre[class*="language-"] {
+            background: #1a1a1a;
+            border-radius: 6px;
+            margin: 0;
+        }
+        code[class*="language-"] {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body class="h-full bg-gray-50">
+    <div class="h-full flex flex-col">
+        <div class="flex items-center justify-between px-6 py-3 bg-white border-b">
+            <h2 class="text-xl font-semibold text-gray-800">Operation Monitor</h2>
+            <button id="toggleAllDetails" class="px-3 py-1 text-sm text-blue-600 hover:text-blue-800 border border-blue-600 rounded">
+                Show All Details
+            </button>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="bg-white border-b">
+            <div class="px-6" id="stateTabs">
+                <div class="flex space-x-4 overflow-x-auto custom-scrollbar" role="tablist">
+                    <!-- Tabs will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-auto custom-scrollbar" id="stateContent">
+            <!-- Content for each state will be inserted here -->
+        </div>
+    </div>
+
+    <template id="stateContentTemplate">
+        <div class="hidden w-full" role="tabpanel">
+            <div class="divide-y divide-gray-100">
+                <!-- Operations will be inserted here -->
+            </div>
+        </div>
+    </template>
+
+    <template id="operationTemplate">
+        <div class="hover:bg-gray-50">
+            <div class="px-6 py-3">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-none text-xs text-gray-500 w-28 pt-1"></div>
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="text-xs text-gray-500"></span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 rounded"></span>
+                            <span class="text-xs text-blue-600"></span>
+                        </div>
+                        <div class="result-content"></div>
+                        <div class="mt-2 space-y-2">
+                            <button class="text-xs text-blue-500 hover:text-blue-700" onclick="toggleDetails(this)">
+                                Show Details
+                            </button>
+                            <div class="hidden space-y-2">
+                                <div class="space-y-1">
+                                    <div class="text-xs font-medium text-gray-700">Request:</div>
+                                    <div class="request-content"></div>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="text-xs font-medium text-gray-700">Response:</div>
+                                    <div class="response-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        const socket = io();
+        const stateContent = document.getElementById('stateContent');
+        const stateTabs = document.getElementById('stateTabs').firstElementChild;
+        const toggleAllDetailsBtn = document.getElementById('toggleAllDetails');
+        let allDetailsVisible = false;
+        let stateOperations = new Map();
+
+        function formatTimestamp(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleTimeString();
+        }
+
+        function unquoteString(str) {
+            if (typeof str === 'string' && str.startsWith('"') && str.endsWith('"')) {
+                return str.slice(1, -1);
+            }
+            return str;
+        }
+
+        function formatCode(code, language) {
+            const unquoted = unquoteString(code);
+            return Prism.highlight(unquoted, Prism.languages[language], language);
+        }
+
+        function createCodeBlock(content, language) {
+            return `<pre class="language-${language}"><code class="language-${language}">${content}</code></pre>`;
+        }
+
+        function formatBashCommand(params) {
+            if (params.command) {
+                return createCodeBlock(params.command, 'bash');
+            }
+            return createCodeBlock(JSON.stringify(params, null, 2), 'json');
+        }
+
+        function formatPythonCode(params) {
+            if (params.code) {
+                return createCodeBlock(params.code, 'python');
+            }
+            return createCodeBlock(JSON.stringify(params, null, 2), 'json');
+        }
+
+        function formatJsonContent(content) {
+            try {
+                const formatted = JSON.stringify(content, null, 2);
+                return createCodeBlock(formatted, 'json');
+            } catch (e) {
+                return createCodeBlock(String(content), 'json');
+            }
+        }
+
+        function formatOperationContent(operation) {
+            const type = operation.operation_type;
+            const params = operation.params;
+            const result = operation.result;
+
+            // Format the main result display
+            let mainContent = '';
+            if (type === 'bash') {
+                mainContent = formatBashCommand(params);
+            } else if (type === 'python') {
+                mainContent = formatPythonCode(params);
+            } else {
+                mainContent = formatJsonContent(result);
+            }
+
+            // Format request and response details
+            const requestContent = formatJsonContent(params);
+            const responseContent = formatJsonContent(result);
+
+            return {
+                main: mainContent,
+                request: requestContent,
+                response: responseContent
+            };
+        }
+
+        function toggleDetails(button) {
+            const details = button.nextElementSibling;
+            const isHidden = details.classList.contains('hidden');
+            details.classList.toggle('hidden');
+            button.textContent = isHidden ? 'Hide Details' : 'Show Details';
+        }
+
+        function toggleAllDetails() {
+            allDetailsVisible = !allDetailsVisible;
+            toggleAllDetailsBtn.textContent = allDetailsVisible ? 'Hide All Details' : 'Show All Details';
+            
+            document.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+                const buttons = panel.querySelectorAll('button');
+                const details = panel.querySelectorAll('button + div');
+                
+                buttons.forEach(button => {
+                    button.textContent = allDetailsVisible ? 'Hide Details' : 'Show Details';
+                });
+                
+                details.forEach(detail => {
+                    if (allDetailsVisible) {
+                        detail.classList.remove('hidden');
+                    } else {
+                        detail.classList.add('hidden');
+                    }
+                });
+            });
+        }
+
+        function createTab(stateId) {
+            const tab = document.createElement('button');
+            tab.className = 'px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 border-b-2 border-transparent hover:border-gray-300 focus:outline-none';
+            tab.textContent = stateId;
+            tab.setAttribute('role', 'tab');
+            tab.onclick = () => switchTab(stateId);
+            return tab;
+        }
+
+        function createStatePanel(stateId) {
+            const template = document.getElementById('stateContentTemplate');
+            const panel = template.content.cloneNode(true).children[0];
+            panel.id = `state-${stateId}`;
+            return panel;
+        }
+
+        function switchTab(stateId) {
+            // Update tab styles
+            stateTabs.querySelectorAll('button').forEach(tab => {
+                if (tab.textContent === stateId) {
+                    tab.classList.add('border-blue-600', 'text-blue-600');
+                    tab.classList.remove('border-transparent', 'text-gray-600');
+                } else {
+                    tab.classList.remove('border-blue-600', 'text-blue-600');
+                    tab.classList.add('border-transparent', 'text-gray-600');
+                }
+            });
+
+            // Show selected content
+            stateContent.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+                panel.classList.toggle('hidden', panel.id !== `state-${stateId}`);
+            });
+        }
+
+        function addOperationToState(stateId, operation) {
+            if (!stateOperations.has(stateId)) {
+                // Create new state tab and panel
+                stateOperations.set(stateId, []);
+                stateTabs.appendChild(createTab(stateId));
+                stateContent.appendChild(createStatePanel(stateId));
+            }
+
+            const operations = stateOperations.get(stateId);
+            operations.push(operation);
+            
+            const panel = document.getElementById(`state-${stateId}`);
+            const template = document.getElementById('operationTemplate');
+            const operationElement = template.content.cloneNode(true);
+            
+            const container = operationElement.querySelector('.hover\\:bg-gray-50');
+            const timestamp = operationElement.querySelector('.text-gray-500.w-28');
+            const phase = operationElement.querySelector('.bg-gray-100');
+            const opType = operationElement.querySelector('.text-blue-600');
+            
+            const formattedContent = formatOperationContent(operation);
+            const resultContent = operationElement.querySelector('.result-content');
+            const requestContent = operationElement.querySelector('.request-content');
+            const responseContent = operationElement.querySelector('.response-content');
+
+            timestamp.textContent = formatTimestamp(operation.timestamp);
+            phase.textContent = operation.phase;
+            opType.textContent = operation.operation_type;
+            
+            resultContent.innerHTML = formattedContent.main;
+            requestContent.innerHTML = formattedContent.request;
+            responseContent.innerHTML = formattedContent.response;
+
+            if (operation.status === 'error') {
+                resultContent.classList.add('text-red-600');
+            }
+
+            panel.querySelector('div').appendChild(container);
+
+            // If this is the first operation for this state, switch to its tab
+            if (operations.length === 1) {
+                switchTab(stateId);
+            }
+
+            // Scroll to bottom
+            panel.scrollTop = panel.scrollHeight;
+
+            // Re-run Prism highlighting
+            Prism.highlightAll();
+        }
+
+        toggleAllDetailsBtn.onclick = toggleAllDetails;
+
+        socket.on('operation_event', function(operation) {
+            addOperationToState(operation.state_id, operation);
+        });
+
+        socket.on('initial_operations', function(operations) {
+            stateOperations.clear();
+            stateTabs.innerHTML = '';
+            stateContent.innerHTML = '';
+
+            for (const [stateId, ops] of Object.entries(operations)) {
+                ops.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+                ops.forEach(op => addOperationToState(stateId, op));
+            }
+        });
+    </script>
+</body>
+</html>

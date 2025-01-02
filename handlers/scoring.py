@@ -15,9 +15,12 @@ from type_defs.processing import ProcessingMode
 async def score_hooks(params: ScoreParams, deps: Optional[dict]) -> ScoreOutput:
     hooks_client = deps["hooks_client"]
     raw_result = await hooks_client.score()
-
-    score_output = ScoreOutput(message=raw_result.dict())
-    return score_output
+    try:
+        message = raw_result.dict() if hasattr(raw_result, "dict") else raw_result
+        return ScoreOutput(message=message)
+    except Exception:
+        # Return a valid ScoreOutput with empty/default values
+        return ScoreOutput(message={"score": None, "details": "Score unavailable"})
 
 
 async def score_mock(params: ScoreParams, deps: Optional[dict]) -> ScoreOutput:
