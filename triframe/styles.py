@@ -1,12 +1,6 @@
-log_styles = {
-    "system": {
-        "style": {"color": "black", "background-color": "#eeeeee"},
-        "title": "System",
-    },
-    "tool_output": {
-        "style": {"color": "white", "background-color": "#424345"},
-        "title": "Tool",
-    },
+from utils.styles import standard_log_styles
+
+triframe_log_styles = {
     "review": {
         "style": {
             "color": "white",
@@ -64,14 +58,6 @@ log_styles = {
             "padding": "2px 6px",
         },
         "title": "Review (No Function)",
-    },
-    "actor": {
-        "style": {
-            "color": "black",
-            "background-color": "#c8e9f7",
-            "padding": "2px 6px",
-        },
-        "title": "Actor",
     },
     "actor_bash": {
         "style": {
@@ -147,8 +133,6 @@ log_styles = {
         },
         "title": "Advisor Choosing",
     },
-    "warning": {
-        "style": {"color": "white", "background-color": "#e3630c"},
-        "title": "Warning",
-    },
 }
+
+log_styles = {**standard_log_styles, **triframe_log_styles}

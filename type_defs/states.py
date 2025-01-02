@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
-from type_defs.base import Node, Option
+from type_defs.base import Message, Node, Option
 from type_defs.operations import MiddlemanSettings, OperationResult
 
 
@@ -38,6 +38,23 @@ class AgentState(BaseState):
     )
     last_rating_options: Optional[List[Option]] = None
 
+    def update_usage(self):
+        latest_results = self.previous_results[-1]
+        usage_result = next((r for r in latest_results if r.type == "get_usage"), None)
+        if usage_result:
+            usage = usage_result.result.usage
+            self.token_usage = usage.tokens
+            self.actions_usage = usage.actions
+            self.time_usage = usage.total_seconds
+            if self.nodes:
+                self.nodes[-1].token_usage = usage.tokens
+                self.nodes[-1].actions_usage = usage.actions
+                self.nodes[-1].time_usage = usage.total_seconds
+        elif self.nodes:
+            self.nodes[-1].token_usage = self.token_usage
+            self.nodes[-1].actions_usage = self.actions_usage
+            self.nodes[-1].time_usage = self.time_usage
+
 
 class triframeSettings(BaseModel):
     advisors: List[MiddlemanSettings] = Field(
@@ -61,19 +78,13 @@ class triframeSettings(BaseModel):
 class triframeState(AgentState):
     settings: triframeSettings = Field(default_factory=triframeSettings)
 
-    def update_usage(self):
-        latest_results = self.previous_results[-1]
-        usage_result = next((r for r in latest_results if r.type == "get_usage"), None)
-        if usage_result:
-            usage = usage_result.result.usage
-            self.token_usage = usage.tokens
-            self.actions_usage = usage.actions
-            self.time_usage = usage.total_seconds
-            if self.nodes:
-                self.nodes[-1].token_usage = usage.tokens
-                self.nodes[-1].actions_usage = usage.actions
-                self.nodes[-1].time_usage = usage.total_seconds
-        elif self.nodes:
-            self.nodes[-1].token_usage = self.token_usage
-            self.nodes[-1].actions_usage = self.actions_usage
-            self.nodes[-1].time_usage = self.time_usage
+
+class ModularSettings(BaseModel):
+    generator: MiddlemanSettings = Field(default_factory=MiddlemanSettings)
+    limit_type: str = Field("token", description="Type of usage limit")
+    intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
+
+
+class ModularState(AgentState):
+    settings: ModularSettings = Field(default_factory=ModularSettings)
+    messages: List[Message] = Field(default_factory=list)
