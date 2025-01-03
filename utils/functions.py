@@ -51,7 +51,11 @@ submit = {
 submit_backticks = """```submit
 [your final answer to the task at hand]
 ```
-Note: This function will submit your final answer to the task. On some tasks, your score will be determined by this answer. On other tasks, submitting indicates that you have finished your work on some artifact, like a file on the server. If you the task is scored based on a file, make sure that you have written the correct content to the file before submitting."""
+Note: This function will submit your final answer to the task. On some tasks, your score
+ will be determined by this answer. On other tasks, submitting indicates that you have 
+finished your work on some artifact, like a file on the server. If you the task is 
+scored based on a file, make sure that you have written the correct content to the file 
+before submitting."""
 
 bash = {
     "name": "run_bash",
@@ -76,7 +80,8 @@ bash = {
 bash_backticks = """```run_bash
 [bash command to be executed in the VM]
 ```
-Note: interactive commands (like vim and nano) are not supported by the scaffolding. Use '&' to run long-running commands in the background.
+Note: interactive commands (like vim and nano) are not supported by the scaffolding. 
+Use '&' to run long-running commands in the background.
 """
 
 python = {
@@ -113,10 +118,13 @@ score = {
     "parameters": {},
 }
 
-score_backticks = """```score
-```
-Note: this function call has no parameter, thus nothing goes inside the backticks. On some tasks, this will return a score to you. On all tasks, these mid-run scores will be used to evaluate your progress. A score of NaN means that your submission is invalid. Call this command when you have made meaningful progress.
-"""
+score_backticks = (
+    "```score\n```\n Note: "
+    "this function call has no parameter, thus nothing goes inside the backticks. On "
+    "some tasks, this will return a score to you. On all tasks, these mid-run scores "
+    "will be used to evaluate your progress. A score of NaN means that your submission "
+    "is invalid. Call this command when you have made meaningful progress."
+)
 
 score_log = {
     "name": "score_log",
@@ -126,7 +134,8 @@ score_log = {
 
 score_log_backticks = """```score_log
 ```
-Note: this function call has no parameter, thus nothing goes inside the backticks. This function call returns the history of your scores. 
+Note: this function call has no parameter, thus nothing goes inside the backticks. 
+This function call returns the history of your scores. 
 """
 
 set_timeout = {
