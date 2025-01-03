@@ -3314,6 +3314,114 @@
                 }
             ],
             "require_function_call": false
+        },
+        "triframe_o3-mini_all": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
         }
     },
     "settingsSchema": {
