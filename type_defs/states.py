@@ -73,6 +73,7 @@ class triframeSettings(BaseModel):
     intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
     require_function_call: bool = Field(False, description="Require function calls")
     enable_advising: bool = Field(True, description="Enable advisor phase")
+    enable_tool_use: bool = Field(True, description="Enable tool use")
 
 
 class triframeState(AgentState):
