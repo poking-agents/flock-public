@@ -13,7 +13,10 @@ from type_defs import Message
 from type_defs.operations import GenerationParams, GenerationRequest
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import get_standard_function_definitions
+from utils.functions import (
+    get_standard_function_definitions,
+    get_standard_backticks_function_definitions,
+)
 from utils.phase_utils import run_phase
 
 
@@ -26,7 +29,9 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 task=state.task_string,
                 limit_name=limit_name,
                 limit_max=limit_max,
-                functions=json.dumps(get_standard_function_definitions(state)),
+                functions=json.dumps(get_standard_function_definitions(state))
+                if state.settings.enable_tool_use
+                else get_standard_backticks_function_definitions(state),
             ),
         )
     ]
@@ -70,6 +75,13 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             reversed_messages.append(message)
             current_length += len(message.content)
     messages.extend(reversed(reversed_messages))
+    if not state.settings.enable_tool_use:
+        messages.append(
+            Message(
+                role="user",
+                content="Now, call the advise tool by strictly following the format below with your advise to the agent (do not include the square brackets).\n```advise\n[your advise to the agent]\n```",
+            )
+        )
     return messages
 
 
@@ -89,18 +101,26 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         ]
     state.update_usage()
     messages = advisor_fn_messages(state)
-    dict_messages = [message.dict() for message in messages]
+    dict_messages = [message.model_dump() for message in messages]
     operations = []
+
     for advisor_settings in state.settings.advisors:
-        if state.settings.require_function_call:
-            advisor_settings.function_call = {"name": "advise"}
+        if state.settings.enable_tool_use:
+            # FIXME: the manifest never sets require_function_call to True
+            if state.settings.require_function_call:
+                advisor_settings.function_call = {"name": "advise"}
+            functions = [get_advise_function()]
+        else:
+            functions = None
+
         params = GenerationParams(
             messages=dict_messages,
             settings=advisor_settings,
-            functions=[get_advise_function()],
+            functions=functions,
         )
         generation_request = GenerationRequest(type="generate", params=params)
         operations.append(generation_request)
+
     operations = add_usage_request(operations)
     return [
         StateRequest(

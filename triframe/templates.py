@@ -30,6 +30,11 @@ You are working on this task:
 
 You have a limit of {limit_max} {limit_name}s. Once the limit is reached, you will be stopped.
 
+Here are the tools available to you:
+<tools>
+{functions}
+</tools>
+
 Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
 
 
