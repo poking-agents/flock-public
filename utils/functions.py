@@ -1,4 +1,5 @@
 import json
+import re
 from functools import partial
 from textwrap import dedent
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -47,6 +48,11 @@ submit = {
     },
 }
 
+submit_backticks = """```submit
+[your final answer to the task at hand]
+```
+Note: This function will submit your final answer to the task. On some tasks, your score will be determined by this answer. On other tasks, submitting indicates that you have finished your work on some artifact, like a file on the server. If you the task is scored based on a file, make sure that you have written the correct content to the file before submitting."""
+
 bash = {
     "name": "run_bash",
     "description": (
@@ -67,6 +73,12 @@ bash = {
     },
 }
 
+bash_backticks = """```run_bash
+[bash command to be executed in the VM]
+```
+Note: interactive commands (like vim and nano) are not supported by the scaffolding. Use '&' to run long-running commands in the background.
+"""
+
 python = {
     "name": "run_python",
     "description": (
@@ -86,6 +98,10 @@ python = {
     },
 }
 
+python_backticks = """```run_python
+[python code to be executed in an interactive python session]
+```"""
+
 score = {
     "name": "score",
     "description": (
@@ -97,11 +113,21 @@ score = {
     "parameters": {},
 }
 
+score_backticks = """```score
+```
+Note: this function call has no parameter, thus nothing goes inside the backticks. On some tasks, this will return a score to you. On all tasks, these mid-run scores will be used to evaluate your progress. A score of NaN means that your submission is invalid. Call this command when you have made meaningful progress.
+"""
+
 score_log = {
     "name": "score_log",
     "description": "Get the history of your scores.",
     "parameters": {},
 }
+
+score_log_backticks = """```score_log
+```
+Note: this function call has no parameter, thus nothing goes inside the backticks. This function call returns the history of your scores. 
+"""
 
 set_timeout = {
     "name": "set_timeout",
@@ -124,6 +150,10 @@ set_timeout = {
         "required": ["timeout"],
     },
 }
+
+set_timeout_backticks = """```set_timeout
+[number of seconds to set the bash and python timeout to]
+```"""
 
 STANDARD_FUNCTION_VALIDATIONS = {
     "run_python": ("code", str),
@@ -155,6 +185,61 @@ def get_standard_function_definitions(
     else:
         standard_functions.append(submit)
     return standard_functions
+
+
+def get_standard_backticks_function_definitions(
+    state: Union[triframeState, ModularState],
+) -> str:
+    standard_functions = "\n".join(
+        [bash_backticks, python_backticks, set_timeout_backticks]
+    )
+    intermediate_scoring = state.settings.intermediate_scoring
+    if intermediate_scoring:
+        standard_functions += "\n".join([score_backticks, score_log_backticks])
+    else:
+        standard_functions += "\n".join([submit_backticks])
+    return standard_functions
+
+
+def parse_backticks_function_names(completion: str) -> List[Dict[str, Any]]:
+    function_names = re.findall(r"```(\w+)", completion)
+    return function_names
+
+
+def parse_backticks_function_call(
+    function_name: str,
+    completion: str,
+    func_name_to_args: Dict[str, Tuple[str, type]] = STANDARD_FUNCTION_VALIDATIONS,
+) -> Dict[str, Any] | None:
+    if f"```{function_name}" not in completion:
+        return None
+    function_args = completion.split(f"```{function_name}")[1].split("```")[0]
+    function_args = function_args.strip()
+    if not func_name_to_args[function_name]:
+        return {"name": function_name, "arguments": json.dumps({})}
+    arg_name, arg_type = func_name_to_args[function_name]
+    if arg_type is not None and not function_args:
+        return None
+    try:
+        function_args = {arg_name: arg_type(function_args)}
+        return {"name": function_name, "arguments": json.dumps(function_args)}
+    except ValueError:
+        return None
+
+
+def remove_code_blocks(text: str) -> str:
+    pattern = r"```[^`]*```"
+    cleaned_text = re.sub(pattern, "", text)
+    cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
+    return cleaned_text.strip()
+
+
+def combine_function_call_and_content(
+    function_call: Dict[str, Any], content: str
+) -> str:
+    args = list(function_call["arguments"].values())[0]
+    function_call_str = f"```{function_call['name']}\n{args}\n```"
+    return f"{content}\n\n{function_call_str}"
 
 
 def validate_function_call(
