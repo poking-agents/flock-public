@@ -37,6 +37,8 @@ Here are the tools available to you:
 
 Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
 
+ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
+
 
 def fn_comparison_template_start() -> str:
     return """Below is a transcript of the actions of an LLM agent trying to accomplish a task. The transcript starts by explaining the setup and the objectives, then records the actions of the agent. After the transcript some candidate next actions are listed. Your job is to rate each candidate option and specify which one you think is best.
@@ -56,8 +58,10 @@ You may reason out loud before generating the ratings, but you should make sure 
 """
 
 
-def fn_comparison_template_end() -> str:
-    return """Here's a reminder of what your job is:
+def fn_comparison_template_end(
+    enable_tool_use: bool = True,
+) -> str:
+    end_prompt = """Here's a reminder of what your job is:
 
 The transcript starts by explaining the setup and the objectives, then records the actions of the agent. After the transcript some candidate next actions are listed. Your job is to rate each candidate option and specify which one you think is best. 
 
@@ -71,6 +75,22 @@ You should rate the potential actions in the following way:
 You are welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. In fact, giving at least 1 decimal point of precision is encouraged. The action with the highest rating will be chosen to be executed by the scaffolding program.
 Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
 You should give your ratings in a call to the rate_options tool."""
+
+    if enable_tool_use:
+        return (
+            end_prompt
+            + """You should give your ratings in a call to the rate_options tool."""
+        )
+    else:
+        return (
+            end_prompt
+            + """Your generation should include a string of the form:
+```json
+{"option1":{"comment": <a comment about the option and your rating if desired, "rating":<your rating>}, "option2":{"comment":_, "rating":_} ...}
+```
+You may reason out loud before generating the dictionary, but you should make sure to generate the json somewhere in your response.
+"""
+        )
 
 
 notice_retroactively_trimmed_prompt = "Part of the history of the conversation has been trimmed to lower token usage. This means that some messages in this part of the conversation have been removed. Past actions may have taken advantage of the information in those messages."

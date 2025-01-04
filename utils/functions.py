@@ -224,8 +224,18 @@ def parse_backticks_function_call(
         return None
     function_args = completion.split(f"```{function_name}")[1].split("```")[0]
     function_args = function_args.strip()
+
+    # fix common generation mistakes
+    if function_name == "python":
+        function_name = "run_python"
+    elif function_name == "bash":
+        function_name = "run_bash"
+
+    if function_name not in func_name_to_args:
+        return None
     if not func_name_to_args[function_name]:
         return {"name": function_name, "arguments": json.dumps({})}
+
     arg_name, arg_type = func_name_to_args[function_name]
     if arg_type is not None and not function_args:
         return None
