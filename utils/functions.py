@@ -246,6 +246,16 @@ def parse_backticks_function_call(
         return None
 
 
+def parse_backticks_json(completion: str) -> Dict[str, Any] | None:
+    if "```json" not in completion:
+        return None
+    json_str = completion.split("```json")[1].split("```")[0]
+    try:
+        return json.loads(json_str)
+    except json.JSONDecodeError:
+        return None
+
+
 def remove_code_blocks(text: str) -> str:
     pattern = r"```[^`]*```"
     cleaned_text = re.sub(pattern, "", text)

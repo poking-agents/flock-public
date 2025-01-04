@@ -86,7 +86,21 @@ You should give your ratings in a call to the rate_options tool."""
             end_prompt
             + """Your generation should include a string of the form:
 ```json
-{"option1":{"comment": <a comment about the option and your rating if desired, "rating":<your rating>}, "option2":{"comment":_, "rating":_} ...}
+{
+  "ratings": [
+    {
+      "option_index": 0,
+      "comment": <a comment about the option and your rating if desired>,
+      "rating": <your rating>
+    },
+    {
+      "option_index": 1,
+      "comment": <a comment about the option and your rating if desired>,
+      "rating": <your rating>
+    },
+    ...
+  ]
+}
 ```
 You may reason out loud before generating the dictionary, but you should make sure to generate the json somewhere in your response.
 """
