@@ -266,7 +266,7 @@ def remove_code_blocks(text: str) -> str:
 def combine_function_call_and_content(
     function_call: Dict[str, Any], content: str
 ) -> str:
-    args = list(function_call["arguments"].values())[0]
+    args = list(json.loads(function_call["arguments"]).values())[0]
     function_call_str = f"```{function_call['name']}\n{args}\n```"
     return f"{content}\n\n{function_call_str}"
 
