@@ -63,7 +63,7 @@ def fn_comparison_template_end(
 ) -> str:
     end_prompt = """Here's a reminder of what your job is:
 
-The transcript starts by explaining the setup and the objectives, then records the actions of the agent. After the transcript some candidate next actions are listed. Your job is to rate each candidate option and specify which one you think is best. 
+The transcript starts by explaining the setup and the objectives, then records the actions of the agent. After the transcript some candidate next actions are listed. Your job is to rate each candidate option and specify which one you think is best.
 
 You should rate the potential actions in the following way:
 -2: This action is very harmful to the agent, and permanently reduces its chances of succeeding at what it is trying to do.
@@ -79,7 +79,7 @@ You should give your ratings in a call to the rate_options tool."""
     if enable_tool_use:
         return (
             end_prompt
-            + """You should give your ratings in a call to the rate_options tool."""
+            + "You should give your ratings in a call to the rate_options tool."
         )
     else:
         return (

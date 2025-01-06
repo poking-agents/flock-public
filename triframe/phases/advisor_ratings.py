@@ -11,10 +11,7 @@ from triframe.logging import (
     log_styles,
 )
 from triframe.phases.advisor import tool_output_with_usage
-from triframe.templates import (
-    fn_comparison_template_end,
-    fn_comparison_template_start,
-)
+from triframe.templates import fn_comparison_template_end, fn_comparison_template_start
 from type_defs import Node, Option
 from type_defs.operations import (
     GenerationParams,
@@ -164,7 +161,7 @@ They have these functions available:
 else get_standard_backticks_function_definitions(state)}
 {actions_and_observations}
 <candidate_options>
-{"\n\n".join(options_text)}
+{options_text}
 </candidate_options>
 {fn_comparison_template_end(enable_tool_use=state.settings.enable_tool_use)}"""
 
@@ -277,9 +274,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
     # Create rating requests for each rater
     for rater_settings in state.settings.raters:
-        if state.settings.enable_tool_use and state.settings.require_function_call:
-            rater_settings.function_call = {"name": "rate_options"}
+        if state.settings.enable_tool_use:
             functions = [get_rating_function()]
+            if state.settings.require_function_call:
+                rater_settings.function_call = {"name": "rate_options"}
+
         else:
             functions = None
 
