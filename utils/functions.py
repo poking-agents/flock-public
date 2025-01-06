@@ -266,8 +266,15 @@ def remove_code_blocks(text: str) -> str:
 def combine_function_call_and_content(
     function_call: Dict[str, Any], content: str
 ) -> str:
-    args = list(json.loads(function_call["arguments"]).values())[0]
-    function_call_str = f"```{function_call['name']}\n{args}\n```"
+    if not function_call:
+        return content
+    if "arguments" not in function_call:
+        raise ValueError(f"Function call has no arguments: {function_call}")
+    if not function_call["arguments"]:
+        function_call_str = f"```{function_call['name']}\n```"
+    else:
+        args = list(json.loads(function_call["arguments"]).values())[0]
+        function_call_str = f"```{function_call['name']}\n{args}\n```"
     return f"{content}\n\n{function_call_str}"
 
 
