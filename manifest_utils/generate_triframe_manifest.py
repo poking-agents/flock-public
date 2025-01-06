@@ -54,6 +54,7 @@ def generate_manifest() -> None:
                 "intermediate_scoring": {"type": "boolean"},
                 "require_function_call": {"type": "boolean"},
                 "enable_advising": {"type": "boolean"},
+                "enable_tool_use": {"type": "boolean"},
             },
             "required": ["advisors", "actors", "raters"],
         },
@@ -117,6 +118,11 @@ def generate_manifest() -> None:
                         "require_function_call": False,
                         "enable_advising": True,
                     }
+            # Add no-tool variant
+            settings_packs[f"{pack_name}_no_tools"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+            }
 
     # Create mixed model setting with 4o actor and o1 others
     settings_packs["triframe_4o_o1"] = {
@@ -133,6 +139,12 @@ def generate_manifest() -> None:
         "intermediate_scoring": False,
         "require_function_call": False,
         "enable_advising": True,
+        "enable_tool_use": True,
+    }
+    # Add no-tool variant for mixed model
+    settings_packs["triframe_4o_o1_no_tools"] = {
+        **settings_packs["triframe_4o_o1"],
+        "enable_tool_use": False,
     }
 
     # Add no-advisor variants for each pack
