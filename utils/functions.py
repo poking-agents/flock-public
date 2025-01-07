@@ -270,7 +270,7 @@ def combine_function_call_and_content(
         return content
     if "arguments" not in function_call:
         raise ValueError(f"Function call has no arguments: {function_call}")
-    if not function_call["arguments"]:
+    if not json.loads(function_call["arguments"]):
         function_call_str = f"```{function_call['name']}\n```"
     else:
         args = list(json.loads(function_call["arguments"]).values())[0]

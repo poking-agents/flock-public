@@ -118,7 +118,7 @@ def validate_operation_result(raw_result: Dict[str, Any]) -> BaseOperationResult
         return base_result
     except ValidationError as e:
         print(f"Validation error details: {str(e)}")
-        raise ValueError(f"Result validation failed:\n{e}")
+        raise ValueError(f"Result validation failed:\n{e}, raw_result: {raw_result}")
 
 
 def validate_update_pair(
