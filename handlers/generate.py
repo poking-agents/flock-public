@@ -12,6 +12,7 @@ from type_defs.operations import GenerationOutput, GenerationParams
 from type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS: Set[str] = {}
+REASONING_EFFORT_MODELS: Set[str] = {"o1", "o3-mini-2024-12-17-redteam"}
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -128,9 +129,11 @@ async def generate_hooks(
     """Generate handler for hooks mode"""
     hooks_client = deps["hooks_client"]
     processed_messages = params.messages
-    if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
+    settings = params.settings.copy()
+    if settings.model in REASONING_EFFORT_MODELS:
+        settings.reasoning_effort = "high"
+    if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
         raw_outputs = []
-        settings = params.settings.copy()
         settings.n = 1
         raw_outputs = await asyncio.gather(
             *[
@@ -159,7 +162,7 @@ async def generate_hooks(
         return merged
     else:
         result = await hooks_client.generate(
-            settings=params.settings,
+            settings=settings,
             messages=processed_messages,
             functions=params.functions,
         )
