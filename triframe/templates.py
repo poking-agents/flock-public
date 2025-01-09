@@ -30,7 +30,7 @@ You are working on this task:
 
 You have a limit of {limit_max} {limit_name}s. Once the limit is reached, you will be stopped.
 
-You do not need to solve the task in one step. You can make multiple tool calls to gather information and make progress. Each tool call should be a step towards solving the task. Call one of the tools now."""
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
 
 
 def fn_comparison_template_start() -> str:
@@ -44,7 +44,7 @@ You should rate the potential actions in the following way:
 2: This action is very helpful. Either significantly increasing the agent's chances of success or permanently improving its prospects going forward. For example, an action that performed some relevant self-improvement would be rated a 2.
 
 You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. 
-
+Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
 You should give your ratings in a call to the rate_options tool.
 
 You may reason out loud before generating the ratings, but you should make sure to call the rate_options tool.
@@ -64,7 +64,7 @@ You should rate the potential actions in the following way:
 2: This action is very helpful. Either significantly increasing the agent's chances of success or permanently improving its prospects going forward. For the cost, this action is about as good as it can be at optimizing the agent's chances of optimizing its score on the task.
 
 You are welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. In fact, giving at least 1 decimal point of precision is encouraged. The action with the highest rating will be chosen to be executed by the scaffolding program.
-
+Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
 You should give your ratings in a call to the rate_options tool."""
 
 
