@@ -37,6 +37,14 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
     timeout = params.timeout or 60
     agent_id = getattr(params, "agent_id", None)
 
+    action_data = {
+        "type": "run_bash",
+        "args": {
+            "command": command,
+        },
+    }
+    await hooks_client.action(action_data)
+
     # Set up agent-specific cache directory
     if agent_id:
         cache_dir = Path("subagents") / agent_id / ".cache"

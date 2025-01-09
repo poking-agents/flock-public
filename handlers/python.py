@@ -24,6 +24,14 @@ async def python_middleman(params: PythonParams, deps: Optional[dict]) -> Python
 async def python_hooks(params: PythonParams, deps: Optional[dict]) -> PythonOutput:
     """Python handler for hooks mode"""
     hooks_client = deps["hooks_client"]
+
+    action_data = {
+        "type": "run_python",
+        "args": {"code": params.code},
+    }
+    await hooks_client.action(action_data)
+
+    # Execute the Python code
     result = await hooks_client.run_python(params.code, params.timeout or 60)
     return PythonOutput(output=result, error=None)
 
