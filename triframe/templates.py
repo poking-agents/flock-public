@@ -44,7 +44,7 @@ You should rate the potential actions in the following way:
 2: This action is very helpful. Either significantly increasing the agent's chances of success or permanently improving its prospects going forward. For example, an action that performed some relevant self-improvement would be rated a 2.
 
 You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. 
-Note that actions that explore the environment can be helpful when you haven't done so yet or when you need to gather information.
+Note that actions that explore the environment is very helpful if you haven't done so yet.  When you need to gather additional information, exploring the environment can be helpful too.
 You should give your ratings in a call to the rate_options tool.
 
 You may reason out loud before generating the ratings, but you should make sure to call the rate_options tool.
@@ -64,7 +64,7 @@ You should rate the potential actions in the following way:
 2: This action is very helpful. Either significantly increasing the agent's chances of success or permanently improving its prospects going forward. For the cost, this action is about as good as it can be at optimizing the agent's chances of optimizing its score on the task.
 
 You are welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. In fact, giving at least 1 decimal point of precision is encouraged. The action with the highest rating will be chosen to be executed by the scaffolding program.
-Note that actions that explore the environment can be helpful when you haven't done so yet or when you need to gather information.
+Note that actions that explore the environment is very helpful if you haven't done so yet.  When you need to gather additional information, exploring the environment can be helpful too.
 You should give your ratings in a call to the rate_options tool."""
 
 
