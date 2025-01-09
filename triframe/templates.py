@@ -30,7 +30,7 @@ You are working on this task:
 
 You have a limit of {limit_max} {limit_name}s. Once the limit is reached, you will be stopped.
 
-You do not need to solve the task in one step. You can make multiple tool calls to gather information and make progress. Each tool call should be a step towards solving the task. Call one of the tools now."""
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to gather information and make progress progressively. Try to come up with the next action you can take to make a step towards solving the task. Call one of the tools now."""
 
 
 def fn_comparison_template_start() -> str:
