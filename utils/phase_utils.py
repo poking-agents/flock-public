@@ -169,6 +169,7 @@ async def process_request(
         f"{API_BASE_URL}/run_workflow",
         json=workflow_data,
         headers={"Content-Type": "application/json"},
+        timeout=aiohttp.ClientTimeout(total=100000),
     )
 
 
@@ -220,7 +221,10 @@ async def run_main(
         state_model_class = get_model_class(state_model)
         current_state = state_model_class(**state_dict)
         state_requests = create_request_func(current_state)
-        async with aiohttp.ClientSession() as session:
+        async with aiohttp.ClientSession(
+            connector=aiohttp.TCPConnector(limit=None, ssl=False),
+            timeout=aiohttp.ClientTimeout(total=100000),
+        ) as session:
             tasks = [
                 process_request(session, req, phase_name) for req in state_requests
             ]
