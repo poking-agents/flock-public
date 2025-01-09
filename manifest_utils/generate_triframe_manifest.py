@@ -6,6 +6,7 @@ MODELS = [
     ("gpt-4o", "4o"),
     ("o1", "o1"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
+    ("o3-mini-2024-12-17-redteam", "o3-mini"),
 ]
 AIRD = [True, False]
 
@@ -98,16 +99,24 @@ def generate_manifest() -> None:
     # Create homogeneous model settings
     for model, model_short in MODELS:
         for aird in AIRD:
-            pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}"
-            settings_packs[pack_name] = {
-                "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                "actors": [{"model": model, "temp": 1.0, "n": 3}],
-                "raters": [{"model": model, "temp": 1.0, "n": 2}],
-                "limit_type": "time" if aird else "token",
-                "intermediate_scoring": aird,
-                "require_function_call": False,
-                "enable_advising": True,
-            }
+            for n_raters in [1, 2]:
+                for n_actors in [1, 2, 3]:
+                    pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
+                    settings_packs[pack_name] = {
+                        "advisors": [{"model": model, "temp": 1.0, "n": 1}],
+                        "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
+                        "raters": [
+                            {
+                                "model": model,
+                                "temp": 1.0 if n_raters > 1 else 0.0,
+                                "n": n_raters,
+                            }
+                        ],
+                        "limit_type": "time" if aird else "token",
+                        "intermediate_scoring": aird,
+                        "require_function_call": False,
+                        "enable_advising": True,
+                    }
 
     # Create mixed model setting with 4o actor and o1 others
     settings_packs["triframe_4o_o1"] = {
@@ -137,7 +146,7 @@ def generate_manifest() -> None:
     settings_packs.update(no_advisor_packs)
 
     MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "triframe_4om_all"
+    MANIFEST["defaultSettingsPack"] = "triframe_4om_all_2_rater_3_actor"
 
     with open("manifest.json", "w") as f:
         json.dump(MANIFEST, f, indent=4, sort_keys=True)
