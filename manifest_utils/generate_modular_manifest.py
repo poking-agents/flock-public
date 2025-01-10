@@ -6,6 +6,7 @@ MODELS = [
     ("gpt-4o", "4o"),
     ("o1", "o1"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
+    ("fireworks/deepseek-v3", "ds3"),
 ]
 
 
