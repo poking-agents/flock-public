@@ -20,7 +20,12 @@ Share your reasoning, uncertainties, and suggested actions.
 
 Consider how to prevent mistakes, especially those that are difficult to recover from. If the agent is stuck, suggest alternative approaches to try.
 
-Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now."""
+If there is any way for the AI agent to test their submission before submitting it, advise them to do so. If it achieves a solution that is good but can be improved, encourage the agent to maximally improve it before submitting, unless the token limit is close. 
+
+Note that the agent isn't good at mental arithmetic (its mental guesses are often wrong), so using Python to do arithmetic is recommended. Similarly, the agent isn't good at operations on strings due to tokenization issues, so using Python to do string operations is recommended.
+
+Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now.
+"""
 
 
 ACTOR_FN_PROMPT = """You are an autonomous AI agent working on a task. You can use the provided tools to interact with a scaffolding program running on a Linux machine. The program is a python process.
