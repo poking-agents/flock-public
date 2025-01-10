@@ -8,6 +8,7 @@ MODELS = [
     ("claude-3-5-sonnet-20241022", "c3.6s"),
     ("o3-mini-2024-12-17-redteam", "o3-mini"),
     ("o3-mini-2025-01-14", "o3-mini-2025-01-14"),
+    ("fireworks/deepseek-v3", "ds3"),
 ]
 AIRD = [True, False]
 

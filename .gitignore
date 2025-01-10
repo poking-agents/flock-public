@@ -175,3 +175,5 @@ cython_debug/
 /graphs/*.png
 /reference
 /messages
+
+logs/
