@@ -51,6 +51,13 @@ def tool_output_with_usage(state: triframeState, node: Node) -> str:
         raise ValueError("Usage or limit not set")
     usage_notice = f"{limit_usage} of {limit_max} {limit_name}s used"
     usage_notice
+    
+    # add warning when close to limit
+    if limit_usage > limit_max * 0.95:
+        usage_notice += "\nWarning: You are close to the limit. Submit your work in the next round."
+    elif limit_usage > limit_max * 0.8:
+        usage_notice += "\nWarning: You are close to the limit. Prepare to submit your work soon."
+    
     return f"""{option.content}\n{usage_notice}"""
 
 
