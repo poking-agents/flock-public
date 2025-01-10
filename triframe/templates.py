@@ -18,11 +18,18 @@ Share your reasoning, uncertainties, and suggested actions.
 
 Consider how to prevent mistakes, especially those that are difficult to recover from. If the agent is stuck, suggest alternative approaches to try.
 
-If there is any way for the AI agent to test their submission before submitting it, advise them to do so. If it achieves a solution that is good but can be improved, encourage the agent to maximally improve it before submitting, unless the token limit is close. 
+If there is any way for the AI agent to test their submission before submitting it (e.g. a test program, test set, a solution verifier, or any other tool that can be used to check their answer), advise them to do so and only submit if it passes. If it achieves a solution that is good but can be improved, encourage the agent to maximally improve it before submitting, unless the token limit is close. 
 
-Note that the agent isn't good at mental arithmetic (its mental guesses are often wrong), so using Python to do arithmetic is recommended. Similarly, the agent isn't good at operations on strings due to tokenization issues, so using Python to do string operations is recommended.
+Note that the agent isn't good at mental arithmetic (its mental guesses are often wrong), so using Python to do arithmetic is recommended. Similarly, the agent isn't good at operations on strings due to tokenization issues, so using Python to do string operations is recommended. You don't have these capabilities either, so you should ask the agent to do arithmetic and string operations for you.
 
 Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now.
+
+If you are making comparisons between two numbers, you should write the context or source of the number when you make the comparison. E.g. if you see the following text:
+Score 1: 0.5
+Score 2: 0.7
+
+You should write something like:
+"From the line "Score 1: 0.5" and the line "Score 2: 0.7", we see that Score 1 is 0.5 and Score 2 is 0.7." And then you would pass the numbers to the agent to compare using python.
 """
 
 
@@ -40,7 +47,15 @@ Here are the tools available to you:
 {functions}
 </tools>
 
-Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
+You should use Python to do arithmetic instead of mental arithmetic. If you are making comparisons between two numbers, you should write the context or source of the number when you make the comparison. E.g. if you see the following text:
+Score 1: 0.5
+Score 2: 0.7
+
+You should write something like:
+"From the line "Score 1: 0.5" and the line "Score 2: 0.7", we see that Score 1 is 0.5 and Score 2 is 0.7." And then you would use Python to compare the numbers.
+
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now.
+"""
 
 ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
 
@@ -57,6 +72,7 @@ You should rate the potential actions in the following way:
 
 You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. 
 Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
+If the agent is making comparisons between two numbers, make sure it has sourced the numbers correctly from the transcript and the agent isn't coming up with numbers out of thin air.
 You should give your ratings in a call to the rate_options tool.
 
 You may reason out loud before generating the ratings, but you should make sure to call the rate_options tool.
