@@ -32,6 +32,8 @@ Score 2: 0.7
 
 You should write something like:
 "From the line "Score 1: 0.5" and the line "Score 2: 0.7", we see that Score 1 is 0.5 and Score 2 is 0.7." And then you would pass the numbers to the agent to compare using python.
+
+If the task involves a scoring function which can be called multiple times, you should advise the agent to call it multiple times through the "score" command through bash to check its current performance.
 """
 
 
