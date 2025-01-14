@@ -7,8 +7,7 @@
                 "n": 1,
                 "temp": 1.0
             },
-            "intermediate_scoring": false,
-            "limit_type": "time"
+            "intermediate_scoring": false
         },
         "modular_4om": {
             "generator": {
@@ -16,8 +15,7 @@
                 "n": 1,
                 "temp": 1.0
             },
-            "intermediate_scoring": false,
-            "limit_type": "time"
+            "intermediate_scoring": false
         },
         "modular_c3.6s": {
             "generator": {
@@ -25,8 +23,7 @@
                 "n": 1,
                 "temp": 1.0
             },
-            "intermediate_scoring": false,
-            "limit_type": "time"
+            "intermediate_scoring": false
         },
         "modular_o1": {
             "generator": {
@@ -34,8 +31,7 @@
                 "n": 1,
                 "temp": 1.0
             },
-            "intermediate_scoring": false,
-            "limit_type": "time"
+            "intermediate_scoring": false
         }
     },
     "settingsSchema": {
@@ -56,9 +52,6 @@
             },
             "intermediate_scoring": {
                 "type": "boolean"
-            },
-            "limit_type": {
-                "type": "string"
             }
         },
         "required": [

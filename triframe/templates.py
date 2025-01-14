@@ -12,7 +12,7 @@ The agent is working on this task:
 {task}
 </task>
 
-They have a limit of {limit_max} {limit_name}s. Help them optimize their score.
+They have a limit of {limit_time} seconds and {limit_tokens} tokens. Help them optimize their score.
 
 Share your reasoning, uncertainties, and suggested actions.
 
@@ -28,7 +28,7 @@ You are working on this task:
 {task}
 </task>
 
-You have a limit of {limit_max} {limit_name}s. Once the limit is reached, you will be stopped.
+You have a limit of {limit_time} seconds and {limit_tokens} tokens. Once the limit is reached, you will be stopped.
 
 You do not need to solve the task in one step. You can make multiple tool calls to gather information and make progress. Each tool call should be a step towards solving the task. Call one of the tools now."""
 

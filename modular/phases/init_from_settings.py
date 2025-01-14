@@ -29,7 +29,6 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> Modular
     # Create ModularSettings from the settings data
     settings = ModularSettings(
         generator=MiddlemanSettings(**settings_data["generator"]),
-        limit_type=settings_data.get("limit_type", "token"),
         intermediate_scoring=settings_data.get("intermediate_scoring", False),
     )
 

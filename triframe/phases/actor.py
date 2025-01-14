@@ -5,7 +5,6 @@ from typing import Any, Dict, List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.context_management import (
-    limit_name_and_max,
     tool_output_with_usage,
     trim_content,
 )
@@ -144,11 +143,12 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             )
     state.update_usage()
 
-    limit_name, limit_max = limit_name_and_max(state)
     first_message = Message(
         role="system",
         content=(ACTOR_FN_PROMPT).format(
-            task=state.task_string, limit_name=limit_name, limit_max=limit_max
+            task=state.task_string,
+            limit_time=state.time_limit,
+            limit_tokens=state.token_limit,
         ),
     )
 

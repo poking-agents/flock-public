@@ -8,7 +8,6 @@ from triframe.context_management import tool_output_with_usage
 from triframe.functions import get_advise_function
 from triframe.templates import ADVISOR_FN_PROMPT
 from utils.phase_utils import add_usage_request
-from triframe.context_management import limit_name_and_max
 from type_defs import Message
 from type_defs.operations import GenerationParams, GenerationRequest
 from type_defs.phases import StateRequest
@@ -18,14 +17,13 @@ from utils.phase_utils import run_phase
 
 
 def advisor_fn_messages(state: triframeState) -> List[Message]:
-    limit_name, limit_max = limit_name_and_max(state)
     messages: List[Message] = [
         Message(
             role="system",
             content=ADVISOR_FN_PROMPT.format(
                 task=state.task_string,
-                limit_name=limit_name,
-                limit_max=limit_max,
+                limit_time=state.time_limit,
+                limit_tokens=state.token_limit,
                 functions=json.dumps(get_standard_function_definitions(state)),
             ),
         )
