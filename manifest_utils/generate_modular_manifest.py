@@ -23,7 +23,6 @@ def generate_manifest() -> None:
                         "n": {"type": "integer"},
                     },
                 },
-                "limit_type": {"type": "string"},
                 "intermediate_scoring": {"type": "boolean"},
             },
             "required": ["generator"],
@@ -76,7 +75,6 @@ def generate_manifest() -> None:
                 "temp": 1.0,
                 "n": 1,
             },
-            "limit_type": "time",
             "intermediate_scoring": False,
         }
 

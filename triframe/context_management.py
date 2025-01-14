@@ -14,44 +14,17 @@ def trim_content(content: str, max_length: int = 10000) -> str:
 ... [trimmed {len(content) - max_length} characters] ...
 {content[-portion_size:]}"""
 
-
-def limit_name_and_max(state: triframeState) -> Tuple[str, int]:
-    limit_type = state.settings.limit_type
-    if limit_type == "token":
-        limit_max = state.token_limit
-    elif limit_type == "action":
-        limit_max = state.actions_limit
-    elif limit_type == "time":
-        limit_max = int(state.time_limit)
-    else:
-        raise ValueError(f"Invalid limit type: {limit_type}")
-    limit_name = "second" if limit_type == "time" else limit_type
-    return limit_name, limit_max
-
-
-def limit_name_usage_max(state: triframeState, node: Node) -> Tuple[str, int, int]:
-    """Get the limit name, usage, and max for the given node"""
-    name, max = limit_name_and_max(state)
-    limit_type = state.settings.limit_type
-    if limit_type == "token":
-        limit_usage = node.token_usage
-    elif limit_type == "action":
-        limit_usage = node.actions_usage
-    elif limit_type == "time":
-        limit_usage = int(node.time_usage)
-    else:
-        raise ValueError(f"Invalid limit type: {limit_type}")
-    return name, limit_usage, max
-
-
 def tool_output_with_usage(state: triframeState, node: Node) -> str:
+    if node.time_usage is None or node.token_usage is None:
+        raise ValueError("Time or token usage not set")
+    
+    if state.time_limit is None or state.token_limit is None:
+        raise ValueError("Time or token limit not set")
+
+    time_usage_notice = f"Time usage (s): {node.time_usage} of {state.time_limit} used"
+    token_usage_notice = f"Token usage: {node.token_usage} of {state.token_limit} used"
     option = node.options[0]
-    limit_name, limit_usage, limit_max = limit_name_usage_max(state, node)
-    if limit_usage is None or limit_max is None:
-        raise ValueError("Usage or limit not set")
-    usage_notice = f"{limit_usage} of {limit_max} {limit_name}s used"
-    usage_notice
-    return f"""{option.content}\n{usage_notice}"""
+    return f"""{option.content}\n{time_usage_notice}\n{token_usage_notice}"""
 
 
 def merge_consecutive_user_messages(messages: List[Message]) -> List[Message]:

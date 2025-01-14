@@ -69,7 +69,6 @@ class triframeSettings(BaseModel):
         default_factory=lambda: [MiddlemanSettings()],
         description="List of rater model settings",
     )
-    limit_type: str = Field("token", description="Type of usage limit")
     intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
     require_function_call: bool = Field(False, description="Require function calls")
     enable_advising: bool = Field(True, description="Enable advisor phase")
@@ -81,7 +80,6 @@ class triframeState(AgentState):
 
 class ModularSettings(BaseModel):
     generator: MiddlemanSettings = Field(default_factory=MiddlemanSettings)
-    limit_type: str = Field("token", description="Type of usage limit")
     intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
 
 

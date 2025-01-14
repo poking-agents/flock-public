@@ -38,7 +38,6 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> trifram
             MiddlemanSettings(**rater) for rater in settings_data.get("raters", [])
         ],
         require_function_call=settings_data.get("require_function_call", False),
-        limit_type=settings_data.get("limit_type", "token"),
         intermediate_scoring=settings_data.get("intermediate_scoring", False),
         enable_advising=settings_data.get("enable_advising", True),
     )
