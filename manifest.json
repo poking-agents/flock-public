@@ -3552,6 +3552,766 @@
             ],
             "require_function_call": false
         },
+        "triframe_dsr1_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_3_actor_no_tools": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_2_rater_3_actor_no_tools_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_3_actor_no_tools": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+            "actors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
         "triframe_o1_all_1_rater_1_actor": {
             "actors": [
                 {
