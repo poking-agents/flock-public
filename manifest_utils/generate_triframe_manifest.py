@@ -27,6 +27,7 @@ def generate_manifest() -> None:
                             "model": {"type": "string"},
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
+                            "max_tokens": {"type": "integer"},
                         },
                     },
                 },
@@ -38,6 +39,7 @@ def generate_manifest() -> None:
                             "model": {"type": "string"},
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
+                            "max_tokens": {"type": "integer"},
                         },
                     },
                 },
@@ -49,6 +51,7 @@ def generate_manifest() -> None:
                             "model": {"type": "string"},
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
+                            "max_tokens": {"type": "integer"},
                         },
                     },
                 },
@@ -106,13 +109,23 @@ def generate_manifest() -> None:
                 for n_actors in [1, 2, 3]:
                     pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
                     settings_packs[pack_name] = {
-                        "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                        "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
+                        "advisors": [
+                            {"model": model, "temp": 1.0, "n": 1, "max_tokens": 20000}
+                        ],
+                        "actors": [
+                            {
+                                "model": model,
+                                "temp": 1.0,
+                                "n": n_actors,
+                                "max_tokens": 20000,
+                            }
+                        ],
                         "raters": [
                             {
                                 "model": model,
                                 "temp": 1.0 if n_raters > 1 else 0.0,
                                 "n": n_raters,
+                                "max_tokens": 20000,
                             }
                         ],
                         "limit_type": "time" if aird else "token",
