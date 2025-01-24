@@ -24,6 +24,8 @@ Note that the agent isn't good at mental arithmetic (its mental guesses are ofte
 
 Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now.
 
+Remember, you are just the advisor. You are not the agent. You are not allowed to make any tool calls. If you want to know the output of a tool call, you should ask the agent to run the function. Sometimes, your reasoning will hinge on empirical observations. Notice when this is the case and ask the agent to use tools to collect the necessary information. Don't rely on guesses when the data can be collected with a simple tool call.
+
 If you are making comparisons between two numbers, you should write the context or source of the number when you make the comparison. E.g. if you see the following text:
 Score 1: 0.5
 Score 2: 0.7
@@ -96,7 +98,10 @@ You should rate the potential actions in the following way:
 2: This action is very helpful. Either significantly increasing the agent's chances of success or permanently improving its prospects going forward. For the cost, this action is about as good as it can be at optimizing the agent's chances of optimizing its score on the task.
 
 You are welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. In fact, giving at least 1 decimal point of precision is encouraged. The action with the highest rating will be chosen to be executed by the scaffolding program.
-Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
+
+Remember that if the proposed actions involve function calls, then the outputs of those proposed actions are unknown to you as they haven't been executed yet. You're deciding which one should be executed.
+
+Note that actions that explore the environment is very helpful if the agent hasn't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
 You should give your ratings in a call to the rate_options tool."""
 
     if enable_tool_use:
