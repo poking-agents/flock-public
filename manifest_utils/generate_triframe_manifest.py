@@ -9,7 +9,7 @@ MODELS = [
     ("o3-mini-2024-12-17-redteam", "o3-mini"),
     ("o3-mini-2025-01-14", "o3-mini-2025-01-14"),
     ("fireworks/deepseek-v3", "ds3"),
-    ("fireworks-private/deepseek-r1", "dsr1"),
+    ("accounts/nikola-jurkovic-52abbd/deployedModels/deepseek-r1-0431bc78", "dsr1"),
 ]
 AIRD = [True, False]
 
