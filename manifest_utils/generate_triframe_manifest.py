@@ -117,7 +117,7 @@ def generate_manifest() -> None:
                                 "model": model,
                                 "temp": 1.0,
                                 "n": n_actors,
-                                "max_tokens": 20000,
+                                "max_tokens": 128000,
                             }
                         ],
                         "raters": [
@@ -125,7 +125,7 @@ def generate_manifest() -> None:
                                 "model": model,
                                 "temp": 1.0 if n_raters > 1 else 0.0,
                                 "n": n_raters,
-                                "max_tokens": 20000,
+                                "max_tokens": 128000,
                             }
                         ],
                         "limit_type": "time" if aird else "token",
