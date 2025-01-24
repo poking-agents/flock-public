@@ -4,7 +4,7 @@
         "triframe_4o_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -23,7 +23,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -34,7 +34,7 @@
         "triframe_4o_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -53,7 +53,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -64,7 +64,7 @@
         "triframe_4o_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -83,7 +83,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -94,7 +94,7 @@
         "triframe_4o_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -113,7 +113,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -124,7 +124,7 @@
         "triframe_4o_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -143,7 +143,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -154,7 +154,7 @@
         "triframe_4o_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -173,7 +173,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -184,7 +184,7 @@
         "triframe_4o_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -203,7 +203,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -214,7 +214,7 @@
         "triframe_4o_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -233,7 +233,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -244,7 +244,7 @@
         "triframe_4o_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -263,7 +263,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -274,7 +274,7 @@
         "triframe_4o_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -293,7 +293,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -304,7 +304,7 @@
         "triframe_4o_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -323,7 +323,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -334,7 +334,7 @@
         "triframe_4o_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -353,7 +353,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -364,7 +364,7 @@
         "triframe_4o_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -385,7 +385,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -396,7 +396,7 @@
         "triframe_4o_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -475,7 +475,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -486,7 +486,7 @@
         "triframe_4o_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -505,7 +505,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -516,7 +516,7 @@
         "triframe_4o_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -535,7 +535,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -546,7 +546,7 @@
         "triframe_4o_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -565,7 +565,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -576,7 +576,7 @@
         "triframe_4o_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -595,7 +595,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -606,7 +606,7 @@
         "triframe_4o_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -625,7 +625,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -636,7 +636,7 @@
         "triframe_4o_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -655,7 +655,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 0.0
@@ -666,7 +666,7 @@
         "triframe_4o_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -685,7 +685,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -696,7 +696,7 @@
         "triframe_4o_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 1,
                     "temp": 1.0
@@ -715,7 +715,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -726,7 +726,7 @@
         "triframe_4o_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -745,7 +745,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -756,7 +756,7 @@
         "triframe_4o_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -775,7 +775,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -786,7 +786,7 @@
         "triframe_4o_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -805,7 +805,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -816,7 +816,7 @@
         "triframe_4o_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -835,7 +835,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -846,7 +846,7 @@
         "triframe_4o_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -867,7 +867,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -878,7 +878,7 @@
         "triframe_4o_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 3,
                     "temp": 1.0
@@ -957,7 +957,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o",
                     "n": 2,
                     "temp": 1.0
@@ -1120,7 +1120,7 @@
         "triframe_4om_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1139,7 +1139,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1150,7 +1150,7 @@
         "triframe_4om_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1169,7 +1169,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1180,7 +1180,7 @@
         "triframe_4om_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1199,7 +1199,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1210,7 +1210,7 @@
         "triframe_4om_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1229,7 +1229,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1240,7 +1240,7 @@
         "triframe_4om_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1259,7 +1259,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1270,7 +1270,7 @@
         "triframe_4om_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1289,7 +1289,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1300,7 +1300,7 @@
         "triframe_4om_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1319,7 +1319,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1330,7 +1330,7 @@
         "triframe_4om_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1349,7 +1349,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1360,7 +1360,7 @@
         "triframe_4om_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1379,7 +1379,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1390,7 +1390,7 @@
         "triframe_4om_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1409,7 +1409,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1420,7 +1420,7 @@
         "triframe_4om_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1439,7 +1439,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1450,7 +1450,7 @@
         "triframe_4om_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1469,7 +1469,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1480,7 +1480,7 @@
         "triframe_4om_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1501,7 +1501,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1512,7 +1512,7 @@
         "triframe_4om_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1591,7 +1591,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1602,7 +1602,7 @@
         "triframe_4om_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1621,7 +1621,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1632,7 +1632,7 @@
         "triframe_4om_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1651,7 +1651,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1662,7 +1662,7 @@
         "triframe_4om_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1681,7 +1681,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1692,7 +1692,7 @@
         "triframe_4om_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1711,7 +1711,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1722,7 +1722,7 @@
         "triframe_4om_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1741,7 +1741,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1752,7 +1752,7 @@
         "triframe_4om_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1771,7 +1771,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 0.0
@@ -1782,7 +1782,7 @@
         "triframe_4om_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1801,7 +1801,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1812,7 +1812,7 @@
         "triframe_4om_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 1,
                     "temp": 1.0
@@ -1831,7 +1831,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1842,7 +1842,7 @@
         "triframe_4om_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1861,7 +1861,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1872,7 +1872,7 @@
         "triframe_4om_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1891,7 +1891,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1902,7 +1902,7 @@
         "triframe_4om_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1921,7 +1921,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1932,7 +1932,7 @@
         "triframe_4om_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1951,7 +1951,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1962,7 +1962,7 @@
         "triframe_4om_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -1983,7 +1983,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -1994,7 +1994,7 @@
         "triframe_4om_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 3,
                     "temp": 1.0
@@ -2073,7 +2073,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "gpt-4o-mini",
                     "n": 2,
                     "temp": 1.0
@@ -2084,7 +2084,7 @@
         "triframe_c3.6s_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2103,7 +2103,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2114,7 +2114,7 @@
         "triframe_c3.6s_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2133,7 +2133,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2144,7 +2144,7 @@
         "triframe_c3.6s_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2163,7 +2163,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2174,7 +2174,7 @@
         "triframe_c3.6s_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2193,7 +2193,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2204,7 +2204,7 @@
         "triframe_c3.6s_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "temp": 1.0
                 }
@@ -2222,7 +2222,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2233,7 +2233,7 @@
         "triframe_c3.6s_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2252,7 +2252,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2263,7 +2263,7 @@
         "triframe_c3.6s_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2282,7 +2282,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2293,7 +2293,7 @@
         "triframe_c3.6s_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2312,7 +2312,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2323,7 +2323,7 @@
         "triframe_c3.6s_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2342,7 +2342,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2353,7 +2353,7 @@
         "triframe_c3.6s_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2372,7 +2372,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2383,7 +2383,7 @@
         "triframe_c3.6s_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2402,7 +2402,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2413,7 +2413,7 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2432,7 +2432,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2443,7 +2443,7 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2464,7 +2464,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2475,7 +2475,7 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2554,7 +2554,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2565,7 +2565,7 @@
         "triframe_c3.6s_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2584,7 +2584,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2595,7 +2595,7 @@
         "triframe_c3.6s_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2614,7 +2614,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2625,7 +2625,7 @@
         "triframe_c3.6s_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2644,7 +2644,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2655,7 +2655,7 @@
         "triframe_c3.6s_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2674,7 +2674,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2685,7 +2685,7 @@
         "triframe_c3.6s_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2704,7 +2704,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2715,7 +2715,7 @@
         "triframe_c3.6s_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2734,7 +2734,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2745,7 +2745,7 @@
         "triframe_c3.6s_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2764,7 +2764,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2775,7 +2775,7 @@
         "triframe_c3.6s_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2794,7 +2794,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2805,7 +2805,7 @@
         "triframe_c3.6s_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2824,7 +2824,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2835,7 +2835,7 @@
         "triframe_c3.6s_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2854,7 +2854,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2865,7 +2865,7 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2884,7 +2884,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2895,7 +2895,7 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2914,7 +2914,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2925,7 +2925,7 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2946,7 +2946,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2957,7 +2957,7 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -3036,7 +3036,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -3047,7 +3047,7 @@
         "triframe_ds3_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3066,7 +3066,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3077,7 +3077,7 @@
         "triframe_ds3_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3096,7 +3096,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3107,7 +3107,7 @@
         "triframe_ds3_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3126,7 +3126,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3137,7 +3137,7 @@
         "triframe_ds3_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3156,7 +3156,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3167,7 +3167,7 @@
         "triframe_ds3_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3186,7 +3186,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3197,7 +3197,7 @@
         "triframe_ds3_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3216,7 +3216,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3227,7 +3227,7 @@
         "triframe_ds3_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3246,7 +3246,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3257,7 +3257,7 @@
         "triframe_ds3_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3276,7 +3276,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3287,7 +3287,7 @@
         "triframe_ds3_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3306,7 +3306,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3317,7 +3317,7 @@
         "triframe_ds3_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3336,7 +3336,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3347,7 +3347,7 @@
         "triframe_ds3_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3366,7 +3366,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3377,7 +3377,7 @@
         "triframe_ds3_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3396,7 +3396,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3407,7 +3407,7 @@
         "triframe_ds3_all_2_rater_3_actor_no_tools": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3427,7 +3427,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3438,7 +3438,7 @@
         "triframe_ds3_all_2_rater_3_actor_no_tools_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3458,7 +3458,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3469,7 +3469,7 @@
         "triframe_ds3_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3488,7 +3488,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3499,7 +3499,7 @@
         "triframe_ds3_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3518,7 +3518,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3529,7 +3529,7 @@
         "triframe_ds3_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3548,7 +3548,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3559,7 +3559,7 @@
         "triframe_ds3_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3578,7 +3578,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3589,7 +3589,7 @@
         "triframe_ds3_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3608,7 +3608,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3619,7 +3619,7 @@
         "triframe_ds3_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3638,7 +3638,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 0.0
@@ -3649,7 +3649,7 @@
         "triframe_ds3_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3668,7 +3668,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3679,7 +3679,7 @@
         "triframe_ds3_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
                     "temp": 1.0
@@ -3698,7 +3698,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3709,7 +3709,7 @@
         "triframe_ds3_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3728,7 +3728,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3739,7 +3739,7 @@
         "triframe_ds3_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3758,7 +3758,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3769,7 +3769,7 @@
         "triframe_ds3_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3788,7 +3788,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3799,7 +3799,7 @@
         "triframe_ds3_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3818,7 +3818,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3829,7 +3829,7 @@
         "triframe_ds3_all_aird_2_rater_3_actor_no_tools": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3849,7 +3849,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3860,7 +3860,7 @@
         "triframe_ds3_all_aird_2_rater_3_actor_no_tools_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
                     "temp": 1.0
@@ -3880,7 +3880,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
                     "temp": 1.0
@@ -3891,7 +3891,7 @@
         "triframe_dsr1_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -3910,7 +3910,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -3921,7 +3921,7 @@
         "triframe_dsr1_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -3940,7 +3940,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -3951,7 +3951,7 @@
         "triframe_dsr1_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -3970,7 +3970,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -3981,7 +3981,7 @@
         "triframe_dsr1_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4000,7 +4000,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4011,7 +4011,7 @@
         "triframe_dsr1_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4030,7 +4030,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4041,7 +4041,7 @@
         "triframe_dsr1_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4060,7 +4060,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4071,7 +4071,7 @@
         "triframe_dsr1_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -4090,7 +4090,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4101,7 +4101,7 @@
         "triframe_dsr1_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -4120,7 +4120,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4131,7 +4131,7 @@
         "triframe_dsr1_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4150,7 +4150,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4161,7 +4161,7 @@
         "triframe_dsr1_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4180,7 +4180,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4191,7 +4191,7 @@
         "triframe_dsr1_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4210,7 +4210,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4221,7 +4221,7 @@
         "triframe_dsr1_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4240,7 +4240,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4251,7 +4251,7 @@
         "triframe_dsr1_all_2_rater_3_actor_no_tools": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4271,7 +4271,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4282,7 +4282,7 @@
         "triframe_dsr1_all_2_rater_3_actor_no_tools_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4302,7 +4302,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4313,7 +4313,7 @@
         "triframe_dsr1_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -4332,7 +4332,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4343,7 +4343,7 @@
         "triframe_dsr1_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -4362,7 +4362,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4373,7 +4373,7 @@
         "triframe_dsr1_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4392,7 +4392,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4403,7 +4403,7 @@
         "triframe_dsr1_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4422,7 +4422,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4433,7 +4433,7 @@
         "triframe_dsr1_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4452,7 +4452,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4463,7 +4463,7 @@
         "triframe_dsr1_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4482,7 +4482,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 0.0
@@ -4493,7 +4493,7 @@
         "triframe_dsr1_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -4512,7 +4512,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4523,7 +4523,7 @@
         "triframe_dsr1_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 1,
                     "temp": 1.0
@@ -4542,7 +4542,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4553,7 +4553,7 @@
         "triframe_dsr1_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4572,7 +4572,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4583,7 +4583,7 @@
         "triframe_dsr1_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4602,7 +4602,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4613,7 +4613,7 @@
         "triframe_dsr1_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4632,7 +4632,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4643,7 +4643,7 @@
         "triframe_dsr1_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4662,7 +4662,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4673,7 +4673,7 @@
         "triframe_dsr1_all_aird_2_rater_3_actor_no_tools": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4693,7 +4693,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4704,7 +4704,7 @@
         "triframe_dsr1_all_aird_2_rater_3_actor_no_tools_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 3,
                     "temp": 1.0
@@ -4724,7 +4724,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "fireworks/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
@@ -4735,7 +4735,7 @@
         "triframe_o1_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -4754,7 +4754,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -4765,7 +4765,7 @@
         "triframe_o1_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -4784,7 +4784,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -4795,7 +4795,7 @@
         "triframe_o1_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -4814,7 +4814,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -4825,7 +4825,7 @@
         "triframe_o1_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -4844,7 +4844,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -4855,7 +4855,7 @@
         "triframe_o1_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -4874,7 +4874,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -4885,7 +4885,7 @@
         "triframe_o1_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -4904,7 +4904,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -4915,7 +4915,7 @@
         "triframe_o1_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -4934,7 +4934,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -4945,7 +4945,7 @@
         "triframe_o1_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -4964,7 +4964,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -4975,7 +4975,7 @@
         "triframe_o1_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -4994,7 +4994,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5005,7 +5005,7 @@
         "triframe_o1_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5024,7 +5024,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5035,7 +5035,7 @@
         "triframe_o1_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5054,7 +5054,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5065,7 +5065,7 @@
         "triframe_o1_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5084,7 +5084,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5095,7 +5095,7 @@
         "triframe_o1_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5116,7 +5116,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5127,7 +5127,7 @@
         "triframe_o1_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5206,7 +5206,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5217,7 +5217,7 @@
         "triframe_o1_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -5236,7 +5236,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -5247,7 +5247,7 @@
         "triframe_o1_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -5266,7 +5266,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -5277,7 +5277,7 @@
         "triframe_o1_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5296,7 +5296,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -5307,7 +5307,7 @@
         "triframe_o1_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5326,7 +5326,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -5337,7 +5337,7 @@
         "triframe_o1_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5356,7 +5356,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -5367,7 +5367,7 @@
         "triframe_o1_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5386,7 +5386,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 0.0
@@ -5397,7 +5397,7 @@
         "triframe_o1_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -5416,7 +5416,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5427,7 +5427,7 @@
         "triframe_o1_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 1,
                     "temp": 1.0
@@ -5446,7 +5446,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5457,7 +5457,7 @@
         "triframe_o1_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5476,7 +5476,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5487,7 +5487,7 @@
         "triframe_o1_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5506,7 +5506,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5517,7 +5517,7 @@
         "triframe_o1_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5536,7 +5536,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5547,7 +5547,7 @@
         "triframe_o1_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5566,7 +5566,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5577,7 +5577,7 @@
         "triframe_o1_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5598,7 +5598,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -5609,7 +5609,7 @@
         "triframe_o1_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 3,
                     "temp": 1.0
@@ -5630,7 +5630,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o1",
                     "n": 2,
                     "temp": 1.0
@@ -6579,7 +6579,7 @@
         "triframe_o3-mini_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -6598,7 +6598,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -6609,7 +6609,7 @@
         "triframe_o3-mini_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -6628,7 +6628,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -6639,7 +6639,7 @@
         "triframe_o3-mini_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6658,7 +6658,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -6669,7 +6669,7 @@
         "triframe_o3-mini_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6688,7 +6688,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -6699,7 +6699,7 @@
         "triframe_o3-mini_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -6718,7 +6718,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -6729,7 +6729,7 @@
         "triframe_o3-mini_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -6748,7 +6748,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -6759,7 +6759,7 @@
         "triframe_o3-mini_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -6778,7 +6778,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6789,7 +6789,7 @@
         "triframe_o3-mini_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -6808,7 +6808,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6819,7 +6819,7 @@
         "triframe_o3-mini_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6838,7 +6838,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6849,7 +6849,7 @@
         "triframe_o3-mini_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6868,7 +6868,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6879,7 +6879,7 @@
         "triframe_o3-mini_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -6898,7 +6898,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6909,7 +6909,7 @@
         "triframe_o3-mini_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -6928,7 +6928,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6939,7 +6939,7 @@
         "triframe_o3-mini_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -6960,7 +6960,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -6971,7 +6971,7 @@
         "triframe_o3-mini_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7050,7 +7050,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7061,7 +7061,7 @@
         "triframe_o3-mini_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -7080,7 +7080,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -7091,7 +7091,7 @@
         "triframe_o3-mini_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -7110,7 +7110,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -7121,7 +7121,7 @@
         "triframe_o3-mini_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7140,7 +7140,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -7151,7 +7151,7 @@
         "triframe_o3-mini_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7170,7 +7170,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -7181,7 +7181,7 @@
         "triframe_o3-mini_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7200,7 +7200,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -7211,7 +7211,7 @@
         "triframe_o3-mini_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7230,7 +7230,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 0.0
@@ -7241,7 +7241,7 @@
         "triframe_o3-mini_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -7260,7 +7260,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7271,7 +7271,7 @@
         "triframe_o3-mini_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
@@ -7290,7 +7290,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7301,7 +7301,7 @@
         "triframe_o3-mini_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7320,7 +7320,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7331,7 +7331,7 @@
         "triframe_o3-mini_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7350,7 +7350,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7361,7 +7361,7 @@
         "triframe_o3-mini_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7380,7 +7380,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7391,7 +7391,7 @@
         "triframe_o3-mini_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7410,7 +7410,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7421,7 +7421,7 @@
         "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7442,7 +7442,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
@@ -7453,7 +7453,7 @@
         "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
                     "temp": 1.0
@@ -7532,7 +7532,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 20000,
+                    "max_tokens": 128000,
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
