@@ -111,7 +111,7 @@ def generate_manifest() -> None:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
                     max_tokens_actor_and_rater = (
-                        8192 if model_short == "dsr1_trains_on_your_data" else 128000
+                        8192 if model_short == "dsr1_trains_on_your_data" else 20000
                     )
                     max_tokens_advisor = 8192 if model_short == "dsr1_trains_on_your_data" else 20000
                     pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
