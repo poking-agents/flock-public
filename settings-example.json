@@ -1,0 +1,69 @@
+{
+  "actors": [
+    {
+      "n": 2,
+      "model": "gpt-4o-mini",
+      "temp": 0.7,
+      "stop": [],
+      "logprobs": null,
+      "cache_key": null,
+      "logit_bias": null,
+      "max_tokens": null,
+      "function_call": null,
+      "delegation_token": null
+    },
+    {
+      "n": 1,
+      "model": "gpt-4o-mini",
+      "temp": 0.0,
+      "stop": [],
+      "logprobs": null,
+      "cache_key": null,
+      "logit_bias": null,
+      "max_tokens": null,
+      "function_call": null,
+      "delegation_token": null
+    }
+  ],
+  "advisors": [
+    {
+      "n": 1,
+      "model": "gpt-4o-mini",
+      "temp": 0.7,
+      "stop": [],
+      "logprobs": null,
+      "cache_key": null,
+      "logit_bias": null,
+      "max_tokens": null,
+      "function_call": null,
+      "delegation_token": null
+    }
+  ],
+  "raters": [
+    {
+      "model": "gpt-4o-mini",
+      "temp": 1.0,
+      "n": 1,
+      "stop": [],
+      "logprobs": null,
+      "cache_key": null,
+      "logit_bias": null,
+      "max_tokens": null,
+      "function_call": null,
+      "delegation_token": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "temp": 0.0,
+      "n": 1,
+      "stop": [],
+      "logprobs": null,
+      "cache_key": null,
+      "logit_bias": null,
+      "max_tokens": null,
+      "function_call": null,
+      "delegation_token": null
+    }
+  ],
+  "require_function_call": false
+}

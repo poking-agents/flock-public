@@ -5,7 +5,10 @@ MODELS = [
     ("gpt-4o-mini", "4om"),
     ("gpt-4o", "4o"),
     ("o1", "o1"),
+    ("claude-3-5-sonnet-20240620", "c3.5s"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
+    ("gemini-1.5-pro", "g1.5p"),
+    ("gemini-2.0-flash-exp", "g2f"),
 ]
 AIRD = [True, False]
 
@@ -98,7 +101,7 @@ def generate_manifest() -> None:
     # Create homogeneous model settings
     for model, model_short in MODELS:
         for aird in AIRD:
-            pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}"
+            pack_name = f"triframe_{model_short}{'_aird' if aird else ''}"
             settings_packs[pack_name] = {
                 "advisors": [{"model": model, "temp": 1.0, "n": 1}],
                 "actors": [{"model": model, "temp": 1.0, "n": 3}],
@@ -137,7 +140,7 @@ def generate_manifest() -> None:
     settings_packs.update(no_advisor_packs)
 
     MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "triframe_4om_all"
+    MANIFEST["defaultSettingsPack"] = "triframe_4om"
 
     with open("manifest.json", "w") as f:
         json.dump(MANIFEST, f, indent=4, sort_keys=True)
