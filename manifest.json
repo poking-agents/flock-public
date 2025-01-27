@@ -3529,7 +3529,851 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_1_rater_1_actor": {
+        "triframe_dsr1_fireworks_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_3_actor_no_tools": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_3_actor_no_tools_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_3_actor_no_tools": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_together_all_1_rater_1_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3559,7 +4403,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_1_rater_1_actor_no_advisor": {
+        "triframe_dsr1_together_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3589,7 +4433,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_1_rater_2_actor": {
+        "triframe_dsr1_together_all_1_rater_2_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3619,7 +4463,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_1_rater_2_actor_no_advisor": {
+        "triframe_dsr1_together_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3649,7 +4493,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_1_rater_3_actor": {
+        "triframe_dsr1_together_all_1_rater_3_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3679,7 +4523,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_1_rater_3_actor_no_advisor": {
+        "triframe_dsr1_together_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3709,7 +4553,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_1_actor": {
+        "triframe_dsr1_together_all_2_rater_1_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3739,7 +4583,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_1_actor_no_advisor": {
+        "triframe_dsr1_together_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3769,7 +4613,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_2_actor": {
+        "triframe_dsr1_together_all_2_rater_2_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3799,7 +4643,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_2_actor_no_advisor": {
+        "triframe_dsr1_together_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3829,7 +4673,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_3_actor": {
+        "triframe_dsr1_together_all_2_rater_3_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3859,7 +4703,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_3_actor_no_advisor": {
+        "triframe_dsr1_together_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3889,7 +4733,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_3_actor_no_tools": {
+        "triframe_dsr1_together_all_2_rater_3_actor_no_tools": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3920,7 +4764,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_dsr1_together_all_2_rater_3_actor_no_tools_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3951,7 +4795,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_1_rater_1_actor": {
+        "triframe_dsr1_together_all_aird_1_rater_1_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -3981,7 +4825,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_1_rater_1_actor_no_advisor": {
+        "triframe_dsr1_together_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4011,7 +4855,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_1_rater_2_actor": {
+        "triframe_dsr1_together_all_aird_1_rater_2_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4041,7 +4885,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_1_rater_2_actor_no_advisor": {
+        "triframe_dsr1_together_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4071,7 +4915,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_1_rater_3_actor": {
+        "triframe_dsr1_together_all_aird_1_rater_3_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4101,7 +4945,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_1_rater_3_actor_no_advisor": {
+        "triframe_dsr1_together_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4131,7 +4975,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_1_actor": {
+        "triframe_dsr1_together_all_aird_2_rater_1_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4161,7 +5005,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_1_actor_no_advisor": {
+        "triframe_dsr1_together_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4191,7 +5035,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_2_actor": {
+        "triframe_dsr1_together_all_aird_2_rater_2_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4221,7 +5065,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_2_actor_no_advisor": {
+        "triframe_dsr1_together_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4251,7 +5095,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_3_actor": {
+        "triframe_dsr1_together_all_aird_2_rater_3_actor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4281,7 +5125,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_3_actor_no_advisor": {
+        "triframe_dsr1_together_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4311,7 +5155,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_3_actor_no_tools": {
+        "triframe_dsr1_together_all_aird_2_rater_3_actor_no_tools": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4342,7 +5186,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_dsr1_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_dsr1_together_all_aird_2_rater_3_actor_no_tools_no_advisor": {
             "actors": [
                 {
                     "max_tokens": 128000,
@@ -4367,6 +5211,850 @@
                 {
                     "max_tokens": 128000,
                     "model": "together/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_3_actor_no_tools": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_3_actor_no_tools_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_3_actor_no_tools": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 20000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
                     "n": 2,
                     "temp": 1.0
                 }
