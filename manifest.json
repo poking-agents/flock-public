@@ -2667,6 +2667,654 @@
             ],
             "require_function_call": false
         },
+        "triframe_o3-mini-2025-01-14_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
         "triframe_o3-mini_all_1_rater_1_actor": {
             "actors": [
                 {
