@@ -27,15 +27,19 @@ from type_defs.operations import (
 )
 from type_defs.states import DEFAULT_TIMEOUT, AgentState, ModularState, triframeState
 
+SUBMIT_DESCRIPTION = (
+    "Submit your final answer to the task. On some tasks, your score will be "
+    "determined by this answer. On other tasks, submitting indicates that you have "
+    "finished your work on some artifact, like a file on the server. If you the "
+    "task is scored based on a file, make sure that you have written the correct "
+    "content to the file before submitting."
+)
+
+SUBMIT_PLACEHOLDER = "[your final answer to the task at hand]"
+
 submit = {
     "name": "submit",
-    "description": (
-        "Submit your final answer to the task. On some tasks, your score will be "
-        "determined by this answer. On other tasks, submitting indicates that you have "
-        "finished your work on some artifact, like a file on the server. If you the "
-        "task is scored based on a file, make sure that you have written the correct "
-        "content to the file before submitting."
-    ),
+    "description": SUBMIT_DESCRIPTION,
     "parameters": {
         "type": "object",
         "properties": {
@@ -48,23 +52,33 @@ submit = {
     },
 }
 
-submit_backticks = """```submit
-[your final answer to the task at hand]
+submit_backticks = f"""```submit
+{SUBMIT_PLACEHOLDER}
 ```
-Note: This function will submit your final answer to the task. On some tasks, your score
- will be determined by this answer. On other tasks, submitting indicates that you have 
-finished your work on some artifact, like a file on the server. If you the task is 
-scored based on a file, make sure that you have written the correct content to the file 
-before submitting."""
+Note: {SUBMIT_DESCRIPTION}"""
+
+submit_xml = f"""<submit>
+{SUBMIT_PLACEHOLDER}
+</submit>
+Note: {SUBMIT_DESCRIPTION}"""
+
+BASH_DESCRIPTION = (
+    "Run a bash command on the server. This does not support interactive commands, "
+    "like 'vim'. Changing the directory with 'cd' will affect subsequent commands, "
+    "but 'ssh' will not keep the connection open. If you are working with code in "
+    "a file, consider using a heredoc (EOF) to write to the file."
+)
+
+BASH_PLACEHOLDER = "[bash command to be executed in the VM]"
+
+BASH_NOTE = (
+    "interactive commands (like vim and nano) are not supported by the scaffolding. "
+    "Use '&' to run long-running commands in the background."
+)
 
 bash = {
     "name": "run_bash",
-    "description": (
-        "Run a bash command on the server. This does not support interactive commands, "
-        "like 'vim'. Changing the directory with 'cd' will affect subsequent commands, "
-        "but 'ssh' will not keep the connection open. If you are working with code in "
-        "a file, consider using a heredoc (EOF) to write to the file."
-    ),
+    "description": BASH_DESCRIPTION,
     "parameters": {
         "type": "object",
         "properties": {
@@ -77,20 +91,27 @@ bash = {
     },
 }
 
-bash_backticks = """```run_bash
-[bash command to be executed in the VM]
+bash_backticks = f"""```run_bash
+{BASH_PLACEHOLDER}
 ```
-Note: interactive commands (like vim and nano) are not supported by the scaffolding. 
-Use '&' to run long-running commands in the background.
-"""
+Note: {BASH_NOTE}"""
+
+bash_xml = f"""<run_bash>
+{BASH_PLACEHOLDER}
+</run_bash>
+Note: {BASH_NOTE}"""
+
+PYTHON_DESCRIPTION = (
+    "Run Python code on the server, in an session that persists between calls. "
+    "This means that variables and functions defined in one call will be available "
+    "in subsequent calls."
+)
+
+PYTHON_PLACEHOLDER = "[python code to be executed in an interactive python session]"
 
 python = {
     "name": "run_python",
-    "description": (
-        "Run Python code on the server, in an session that persists between calls. "
-        "This means that variables and functions defined in one call will be available "
-        "in subsequent calls."
-    ),
+    "description": PYTHON_DESCRIPTION,
     "parameters": {
         "type": "object",
         "properties": {
@@ -103,51 +124,74 @@ python = {
     },
 }
 
-python_backticks = """```run_python
-[python code to be executed in an interactive python session]
+python_backticks = f"""```run_python
+{PYTHON_PLACEHOLDER}
 ```"""
+
+python_xml = f"""<run_python>
+{PYTHON_PLACEHOLDER}
+</run_python>"""
+
+SCORE_DESCRIPTION = (
+    "On some tasks, this will return a score to you. "
+    "On all tasks, these mid-run scores will be used to evaluate your progress. "
+    "A score of NaN means that your submission is invalid. "
+    "Call this command when you have made meaningful progress."
+)
+
+SCORE_NOTE = (
+    "this function call has no parameter, thus nothing goes inside the backticks. "
+    f"{SCORE_DESCRIPTION}"
+)
 
 score = {
     "name": "score",
-    "description": (
-        "On some tasks, this will return a score to you. "
-        "On all tasks, these mid-run scores will be used to evaluate your progress. "
-        "A score of NaN means that your submission is invalid. "
-        "Call this command when you have made meaningful progress."
-    ),
+    "description": SCORE_DESCRIPTION,
     "parameters": {},
 }
 
-score_backticks = (
-    "```score\n```\n Note: "
-    "this function call has no parameter, thus nothing goes inside the backticks. On "
-    "some tasks, this will return a score to you. On all tasks, these mid-run scores "
-    "will be used to evaluate your progress. A score of NaN means that your submission "
-    "is invalid. Call this command when you have made meaningful progress."
+score_backticks = f"""```score
+```
+Note: {SCORE_NOTE}"""
+
+score_xml = f"""<score>
+</score>
+Note: {SCORE_NOTE}"""
+
+SCORE_LOG_DESCRIPTION = "Get the history of your scores."
+SCORE_LOG_NOTE = (
+    "this function call has no parameter, thus nothing goes inside the backticks. "
+    "This function call returns the history of your scores."
 )
 
 score_log = {
     "name": "score_log",
-    "description": "Get the history of your scores.",
+    "description": SCORE_LOG_DESCRIPTION,
     "parameters": {},
 }
 
-score_log_backticks = """```score_log
+score_log_backticks = f"""```score_log
 ```
-Note: this function call has no parameter, thus nothing goes inside the backticks. 
-This function call returns the history of your scores. 
-"""
+Note: {SCORE_LOG_NOTE}"""
+
+score_log_xml = f"""<score_log>
+</score_log>
+Note: {SCORE_LOG_NOTE}"""
+
+TIMEOUT_DESCRIPTION = (
+    "Change the timeout used for bash and python commands. If you encounter "
+    "'PythonExecTimeoutException' or 'Exit code: 124', consider setting a higher "
+    f"timeout value. The default is {DEFAULT_TIMEOUT} seconds. Alternatively, you "
+    "can use the run_bash command to run a process in the background. (If you do "
+    "this, keep in mind that the process will use resources [e.g. memory] until "
+    "it completes)."
+)
+
+TIMEOUT_PLACEHOLDER = "[number of seconds to set the bash and python timeout to]"
 
 set_timeout = {
     "name": "set_timeout",
-    "description": (
-        "Change the timeout used for bash and python commands. If you encounter "
-        "'PythonExecTimeoutException' or 'Exit code: 124', consider setting a higher "
-        f"timeout value. The default is {DEFAULT_TIMEOUT} seconds. Alternatively, you "
-        "can use the run_bash command to run a process in the background. (If you do "
-        "this, keep in mind that the process will use resources [e.g. memory] until "
-        "it completes)."
-    ),
+    "description": TIMEOUT_DESCRIPTION,
     "parameters": {
         "type": "object",
         "properties": {
@@ -160,8 +204,30 @@ set_timeout = {
     },
 }
 
-set_timeout_backticks = """```set_timeout
-[number of seconds to set the bash and python timeout to]
+set_timeout_backticks = f"""```set_timeout
+{TIMEOUT_PLACEHOLDER}
+```"""
+
+set_timeout_xml = f"""<set_timeout>
+{TIMEOUT_PLACEHOLDER}
+</set_timeout>"""
+
+rate_options_json = """```json
+{
+  "ratings": [
+    {
+      "option_index": 0,
+      "comment": <a comment about the option and your rating if desired>,
+      "rating": <your rating>
+    },
+    {
+      "option_index": 1,
+      "comment": <a comment about the option and your rating if desired>,
+      "rating": <your rating>
+    },
+    ...
+  ]
+}
 ```"""
 
 STANDARD_FUNCTION_VALIDATIONS = {
@@ -196,35 +262,72 @@ def get_standard_function_definitions(
     return standard_functions
 
 
-def get_standard_backticks_function_definitions(
+def get_standard_completion_function_definitions(
     state: Union[triframeState, ModularState],
 ) -> str:
-    standard_functions = "\n".join(
-        [bash_backticks, python_backticks, set_timeout_backticks]
-    )
-    intermediate_scoring = state.settings.intermediate_scoring
-    if intermediate_scoring:
-        standard_functions += "\n".join([score_backticks, score_log_backticks])
+    if state.settings.enable_xml:
+        standard_functions = "\n".join([bash_xml, python_xml, set_timeout_xml])
+        intermediate_scoring = state.settings.intermediate_scoring
+        if intermediate_scoring:
+            standard_functions += "\n".join([score_xml, score_log_xml])
+        else:
+            standard_functions += "\n".join([submit_xml])
+        return standard_functions
+    else:  # use backticks function
+        standard_functions = "\n".join(
+            [bash_backticks, python_backticks, set_timeout_backticks]
+        )
+        intermediate_scoring = state.settings.intermediate_scoring
+        if intermediate_scoring:
+            standard_functions += "\n".join([score_backticks, score_log_backticks])
+        else:
+            standard_functions += "\n".join([submit_backticks])
+        return standard_functions
+
+
+def parse_completion_function_names(
+    state: Union[triframeState, ModularState], completion: str
+) -> List[Dict[str, Any]]:
+    if state.settings.enable_xml:
+        function_names = re.findall(r"<(\w+)", completion)
     else:
-        standard_functions += "\n".join([submit_backticks])
-    return standard_functions
-
-
-def parse_backticks_function_names(completion: str) -> List[Dict[str, Any]]:
-    function_names = re.findall(r"```(\w+)", completion)
+        function_names = re.findall(r"```(\w+)", completion)
     return function_names
 
 
 def parse_backticks_function_call(
     function_name: str,
     completion: str,
-    func_name_to_args: Dict[str, Tuple[str, type]] = STANDARD_FUNCTION_VALIDATIONS,
 ) -> Dict[str, Any] | None:
     if f"```{function_name}" not in completion:
         return None
     function_args = completion.split(f"```{function_name}")[1].split("```")[0]
     function_args = function_args.strip()
+    return function_args
 
+
+def parse_xml_function_call(
+    function_name: str, completion: str
+) -> Dict[str, Any] | None:
+    if f"<{function_name}>" not in completion:
+        return None
+    function_args = completion.split(f"<{function_name}>")[1].split(
+        f"</{function_name}>"
+    )[0]
+    function_args = function_args.strip()
+    return function_args
+
+
+def parse_completions_function_call(
+    state: Union[triframeState, ModularState],
+    function_name: str,
+    completion: str,
+    func_name_to_args: Dict[str, Tuple[str, type]] = STANDARD_FUNCTION_VALIDATIONS,
+) -> Dict[str, Any] | None:
+    if state.settings.enable_xml:
+        function_args = parse_xml_function_call(function_name, completion)
+    else:
+        function_args = parse_backticks_function_call(function_name, completion)
     # fix common generation mistakes
     if function_name == "python":
         function_name = "run_python"
@@ -256,25 +359,49 @@ def parse_backticks_json(completion: str) -> Dict[str, Any] | None:
         return None
 
 
-def remove_code_blocks(text: str) -> str:
+def remove_backticks_code_blocks(text: str) -> str:
     pattern = r"```[^`]*```"
     cleaned_text = re.sub(pattern, "", text)
     cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
     return cleaned_text.strip()
 
 
+def remove_xml_code_blocks(text: str) -> str:
+    pattern = r"<\w+>.*?</\w+>"
+    cleaned_text = re.sub(pattern, "", text, flags=re.DOTALL)
+    cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
+    return cleaned_text.strip()
+
+
+def remove_code_blocks(state: Union[triframeState, ModularState], text: str) -> str:
+    if state.settings.enable_xml:
+        return remove_xml_code_blocks(text)
+    else:
+        return remove_backticks_code_blocks(text)
+
+
 def combine_function_call_and_content(
-    function_call: Dict[str, Any], content: str
+    state: Union[triframeState, ModularState],
+    function_call: Dict[str, Any],
+    content: str,
 ) -> str:
     if not function_call:
         return content
     if "arguments" not in function_call:
         raise ValueError(f"Function call has no arguments: {function_call}")
     if not json.loads(function_call["arguments"]):
-        function_call_str = f"```{function_call['name']}\n```"
+        if state.settings.enable_xml:
+            function_call_str = f"<{function_call['name']}></{function_call['name']}>"
+        else:
+            function_call_str = f"```{function_call['name']}\n```"
     else:
         args = list(json.loads(function_call["arguments"]).values())[0]
-        function_call_str = f"```{function_call['name']}\n{args}\n```"
+        if state.settings.enable_xml:
+            function_call_str = (
+                f"<{function_call['name']}>\n{args}\n</{function_call['name']}>"
+            )
+        else:
+            function_call_str = f"```{function_call['name']}\n{args}\n```"
     return f"{content}\n\n{function_call_str}"
 
 

@@ -14,6 +14,7 @@ from typing import (
     Tuple,
     Type,
     TypeVar,
+    Union,
 )
 
 import aiohttp
@@ -33,10 +34,10 @@ from type_defs.operations import (
     OperationResult,
 )
 from type_defs.phases import PreviousOperations, StateRequest
-from type_defs.states import AgentState, BaseState
+from type_defs.states import AgentState, BaseState, ModularState, triframeState
 from utils.functions import (
-    parse_backticks_function_call,
-    parse_backticks_function_names,
+    parse_completion_function_names,
+    parse_completions_function_call,
     remove_code_blocks,
 )
 from utils.state import load_state, save_state
@@ -53,7 +54,9 @@ def get_last_result(
 
 
 def get_last_function_call(
-    latest_results: List[OperationResult], enable_tool_use: bool = True
+    state: Union[triframeState, ModularState],
+    latest_results: List[OperationResult],
+    enable_tool_use: bool = True,
 ) -> Optional[Dict[str, Any]]:
     for res in reversed(latest_results):
         if res.type == "generate":
@@ -61,10 +64,12 @@ def get_last_function_call(
             if enable_tool_use and outputs and outputs[0].function_call:
                 return outputs[0].function_call
             elif (not enable_tool_use) and outputs and outputs[0].completion:
-                function_names = parse_backticks_function_names(outputs[0].completion)
+                function_names = parse_completion_function_names(
+                    state, outputs[0].completion
+                )
                 for function_name in function_names:
-                    function_call = parse_backticks_function_call(
-                        function_name, outputs[0].completion
+                    function_call = parse_completions_function_call(
+                        state, function_name, outputs[0].completion
                     )
                     if function_call:
                         return function_call
@@ -138,14 +143,16 @@ def validate_update_pair(
 
 
 def get_last_completion(
-    latest_results: List[OperationResult], enable_tool_use: bool = True
+    state: Union[triframeState, ModularState],
+    latest_results: List[OperationResult],
+    enable_tool_use: bool = True,
 ) -> str:
     for res in reversed(latest_results):
         if res.type == "generate":
             if enable_tool_use:
                 return res.result.outputs[0].completion
             else:
-                return remove_code_blocks(res.result.outputs[0].completion)
+                return remove_code_blocks(state, res.result.outputs[0].completion)
 
 
 def serialize_for_json(obj: Any) -> Any:
