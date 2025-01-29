@@ -10,7 +10,7 @@ from triframe.context_management import (
     trim_content,
 )
 from triframe.logging import log_advisor_choice
-from triframe.templates import ACTOR_FN_PROMPT
+from triframe.templates import ACTOR_FN_PROMPT, ENFORCE_FUNCTION_CALL_PROMPT
 from type_defs import Message, Node, Option
 from type_defs.operations import (
     GenerationParams,
@@ -19,7 +19,13 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import get_standard_function_definitions
+from utils.functions import (
+    combine_function_call_and_content,
+    get_standard_backticks_function_definitions,
+    get_standard_function_definitions,
+    parse_backticks_function_call,
+    remove_code_blocks,
+)
 from utils.logging import log_warning
 from utils.phase_utils import (
     add_usage_request,
@@ -67,16 +73,24 @@ def prepare_history_for_actor(
                     role="user",
                 )
             elif node.source == "actor_choice":
-                message = Message(
-                    content=non_empty_option_content(option),
-                    function_call=option.function_call,
-                    role="assistant",
-                )
+                if state.settings.enable_tool_use:
+                    message = Message(
+                        content=non_empty_option_content(option),
+                        function_call=option.function_call,
+                        role="assistant",
+                    )
+                else:
+                    message = Message(
+                        content=combine_function_call_and_content(
+                            option.function_call, option.content
+                        ),
+                        role="assistant",
+                    )
             elif node.source == "tool_output":
                 message = Message(
                     content=tool_output_with_usage(state, node),
                     name=option.name,
-                    role="function",
+                    role="function" if state.settings.enable_tool_use else "user",
                 )
             elif node.source == "warning":
                 message = Message(
@@ -118,14 +132,24 @@ def maybe_function_call(
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     # Process all advisor outputs from previous results
+    operations = []
     advisor_outputs = []
     for result in state.previous_results[-1]:
         if result.type == "generate":
             completion = result.result.outputs[0].completion
-            function_call = result.result.outputs[0].function_call
+            function_call = None
+            if state.settings.enable_tool_use:
+                function_call = result.result.outputs[0].function_call
+            else:
+                function_call = parse_backticks_function_call(
+                    "advise",
+                    completion,
+                    {"advise": ("advice", str)},
+                )
+                if function_call:
+                    completion = remove_code_blocks(completion)
             advisor_outputs.append((completion, function_call))
 
-    operations = []
     for completion, function_call in advisor_outputs:
         log_request = log_advisor_choice(
             Option(content=completion, function_call=function_call)
@@ -135,6 +159,13 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             operations.append(
                 log_warning("Advisor output is empty. Not adding to the state")
             )
+        elif function_call is None:
+            operations.append(
+                log_warning(
+                    "Advisor output does not contain a valid advise function call. "
+                    "Not adding to the state"
+                )
+            )
         else:
             state.nodes.append(
                 Node(
@@ -142,14 +173,22 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                     options=[Option(content=completion, function_call=function_call)],
                 )
             )
-    state.update_usage()
 
+    state.update_usage()
     limit_name, limit_max = limit_name_and_max(state)
+    content = (ACTOR_FN_PROMPT).format(
+        task=state.task_string,
+        limit_name=limit_name,
+        limit_max=limit_max,
+        functions=get_standard_function_definitions(state)
+        if state.settings.enable_tool_use
+        else get_standard_backticks_function_definitions(state),
+    )
+    if not state.settings.enable_tool_use:
+        content += ENFORCE_FUNCTION_CALL_PROMPT
     first_message = Message(
         role="system",
-        content=(ACTOR_FN_PROMPT).format(
-            task=state.task_string, limit_name=limit_name, limit_max=limit_max
-        ),
+        content=content,
     )
 
     # Create separate message lists for with and without advice
@@ -167,14 +206,18 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_with_advice],
             settings=actor_settings,
-            functions=get_standard_function_definitions(state),
+            functions=get_standard_function_definitions(state)
+            if state.settings.enable_tool_use
+            else None,
         )
         generation_request = GenerationRequest(type="generate", params=params)
         operations.append(generation_request)
         without_advice_params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_without_advice],
             settings=actor_settings,
-            functions=get_standard_function_definitions(state),
+            functions=get_standard_function_definitions(state)
+            if state.settings.enable_tool_use
+            else None,
         )
         generation_request_without_advice = GenerationRequest(
             type="generate", params=without_advice_params

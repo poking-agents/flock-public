@@ -11,10 +11,7 @@ from triframe.logging import (
     log_styles,
 )
 from triframe.phases.advisor import tool_output_with_usage
-from triframe.templates import (
-    fn_comparison_template_end,
-    fn_comparison_template_start,
-)
+from triframe.templates import fn_comparison_template_end, fn_comparison_template_start
 from type_defs import Node, Option
 from type_defs.operations import (
     GenerationParams,
@@ -23,7 +20,13 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import get_standard_function_definitions
+from utils.functions import (
+    get_standard_backticks_function_definitions,
+    get_standard_function_definitions,
+    parse_backticks_function_call,
+    parse_backticks_function_names,
+    remove_code_blocks,
+)
 from utils.logging import log_system, log_warning
 from utils.phase_utils import run_phase
 
@@ -154,13 +157,13 @@ def fn_format_review_instructions(
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{json.dumps(get_standard_function_definitions(state))}
+{json.dumps(get_standard_function_definitions(state)) if state.settings.enable_tool_use 
+else get_standard_backticks_function_definitions(state)}
 {actions_and_observations}
-</transcript>
 <candidate_options>
 {options_text}
 </candidate_options>
-{fn_comparison_template_end()}"""
+{fn_comparison_template_end(enable_tool_use=state.settings.enable_tool_use)}"""
 
     return review_instructions, log_requests
 
@@ -177,16 +180,39 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
             # Handle regular function-call outputs
             for output in result.result.outputs:
-                actor_options.append(
-                    Option(
-                        content=output.completion,
-                        function_call=(
-                            output.function_call
-                            if validate_triframe_function_call(output.function_call)
-                            else None
-                        ),
+                if state.settings.enable_tool_use:
+                    actor_options.append(
+                        Option(
+                            content=output.completion,
+                            function_call=(
+                                output.function_call
+                                if validate_triframe_function_call(output.function_call)
+                                else None
+                            ),
+                        )
                     )
-                )
+                else:
+                    function_names = parse_backticks_function_names(output.completion)
+                    found_valid_function = False
+                    for function_name in function_names:
+                        function_call = parse_backticks_function_call(
+                            function_name,
+                            output.completion,
+                        )
+                        if function_call:
+                            completion = remove_code_blocks(output.completion)
+                            actor_options.append(
+                                Option(
+                                    content=completion,
+                                    function_call=function_call,
+                                )
+                            )
+                            found_valid_function = True
+                            break
+                    if not found_valid_function:
+                        actor_options.append(
+                            Option(content=output.completion, function_call=None)
+                        )
 
     actor_options = [
         option
@@ -248,13 +274,18 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
     # Create rating requests for each rater
     for rater_settings in state.settings.raters:
-        if state.settings.require_function_call:
-            rater_settings.function_call = {"name": "rate_options"}
+        if state.settings.enable_tool_use:
+            functions = [get_rating_function()]
+            if state.settings.require_function_call:
+                rater_settings.function_call = {"name": "rate_options"}
+
+        else:
+            functions = None
 
         params = GenerationParams(
             messages=[{"role": "system", "content": review_instructions}],
             settings=rater_settings,
-            functions=[get_rating_function()],
+            functions=functions,
         )
         operations.append(GenerationRequest(type="generate", params=params))
 
