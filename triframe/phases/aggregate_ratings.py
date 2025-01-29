@@ -87,7 +87,7 @@ def aggregate_ratings(
                     completion = option.completion
                     function_call = option.function_call
                 else:
-                    completion = remove_code_blocks(option.completion)
+                    completion = remove_code_blocks(state, option.completion)
                     ratings_json = parse_backticks_json(option.completion)
                     function_call = {
                         "name": "rate_options",
