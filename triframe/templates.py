@@ -49,6 +49,8 @@ Here are the tools available to you:
 DO NOT call the advise tool. That's for the advisor only, and you're the agent who's in charge of making progress on the task, not providing advice.
 
 You should use Python to do arithmetic instead of mental arithmetic. Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now.
+
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now.
 """
 
 ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
