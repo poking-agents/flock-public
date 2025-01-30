@@ -28,13 +28,6 @@ Do not include tool outputs in your response, except as clearly labeled examples
 
 Remember, you are just the advisor. You are not the agent. You are not allowed to make any tool calls. If you want to know the output of a tool call, you should ask the agent to run the function. Sometimes, your reasoning will hinge on empirical observations. Notice when this is the case and ask the agent to use tools to collect the necessary information. Don't rely on guesses when the data can be collected with a simple tool call.
 
-If you are making comparisons between two numbers, you should write the context or source of the number when you make the comparison. E.g. if you see the following text:
-Score 1: 0.5
-Score 2: 0.7
-
-You should write something like:
-"From the line "Score 1: 0.5" and the line "Score 2: 0.7", we see that Score 1 is 0.5 and Score 2 is 0.7." And then you would pass the numbers to the agent to compare using python.
-
 If the task involves a scoring function which can be called multiple times, you should advise the agent to call it multiple times through the "score" command through bash to check its current performance.
 """
 
@@ -53,14 +46,9 @@ Here are the tools available to you:
 {functions}
 </tools>
 
-You should use Python to do arithmetic instead of mental arithmetic. If you are making comparisons between two numbers, you should write the context or source of the number when you make the comparison. E.g. if you see the following text:
-Score 1: 0.5
-Score 2: 0.7
+DO NOT call the advise tool. That's for the advisor only, and you're the agent who's in charge of making progress on the task, not providing advice.
 
-You should write something like:
-"From the line "Score 1: 0.5" and the line "Score 2: 0.7", we see that Score 1 is 0.5 and Score 2 is 0.7." And then you would use Python to compare the numbers.
-
-Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now.
+You should use Python to do arithmetic instead of mental arithmetic. Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now.
 """
 
 ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
@@ -78,6 +66,7 @@ You should rate the potential actions in the following way:
 
 You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. 
 Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
+Also note that <scaffolding-note> is a note added by the scaffolding program when the function call suggested by the LLM agent is non existent or invalid. When you see this, you rate the action a -2.
 If the agent is making comparisons between two numbers, make sure it has sourced the numbers correctly from the transcript and the agent isn't coming up with numbers out of thin air.
 You should give your ratings in a call to the rate_options tool.
 

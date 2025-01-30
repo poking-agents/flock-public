@@ -281,7 +281,7 @@ def get_standard_completion_function_definitions(
         if intermediate_scoring:
             standard_functions += "\n".join([score_backticks, score_log_backticks])
         else:
-            standard_functions += "\n".join([submit_backticks])
+            standard_functions += f"\n{submit_backticks}"
         return standard_functions
 
 
