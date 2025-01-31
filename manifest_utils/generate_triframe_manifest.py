@@ -110,8 +110,12 @@ def generate_manifest() -> None:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    max_tokens_actor_and_rater = 20000
-                    max_tokens_advisor = 20000
+                    if "fireworks" in model:
+                        max_tokens_actor_and_rater = 128000
+                        max_tokens_advisor = 128000
+                    else:
+                        max_tokens_actor_and_rater = 16000
+                        max_tokens_advisor = 16000
                     pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
                     settings_packs[pack_name] = {
                         "advisors": [
