@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 from pathlib import Path
 from statistics import mean
@@ -83,12 +84,19 @@ def aggregate_ratings(
                 failed_ratings += 1
                 continue
             for option in result.result.outputs:
+                # Keep full completion for logging
+                full_completion = option.completion
+                # Remove CoT for state storage
+                completion = re.sub(
+                    r"<think>.*?</think>", "", option.completion, flags=re.DOTALL
+                ).strip()
+
                 if state.settings.enable_tool_use:
-                    completion = option.completion
+                    completion = full_completion
                     function_call = option.function_call
                 else:
-                    completion = remove_code_blocks(state, option.completion)
-                    ratings_json = parse_backticks_json(option.completion)
+                    completion = remove_code_blocks(state, completion)
+                    ratings_json = parse_backticks_json(full_completion)
                     function_call = {
                         "name": "rate_options",
                         "arguments": json.dumps(ratings_json),
@@ -99,23 +107,27 @@ def aggregate_ratings(
                     log_requests.append(
                         log_warning(
                             "Cannot parse valid function call from this generation: "
-                            f"completion: {json.dumps(option.completion, indent=2)}\n"
+                            f"completion: {json.dumps(full_completion, indent=2)}\n"
                             f"function_call: {option.function_call}"
                         )
                     )
                     continue
 
-                rating_node.options.append(
-                    Option(content=completion, function_call=function_call)
-                )
+                # Log with full completion including CoT
                 log_requests.append(
                     log_advisor_choosing(
                         Option(
-                            content=completion,
+                            content=full_completion,
                             function_call=function_call,
                         )
                     )
                 )
+
+                # Store in state without CoT
+                rating_node.options.append(
+                    Option(content=completion, function_call=function_call)
+                )
+
                 try:
                     ratings = parse_ratings(function_call)
                     if ratings is None:
@@ -138,6 +150,7 @@ def aggregate_ratings(
                         log_warning(f"Error processing ratings: {str(e)}")
                     )
                     continue
+
         state.nodes.append(rating_node)
         if not all_ratings:
             log_requests.append(
