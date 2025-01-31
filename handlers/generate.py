@@ -10,9 +10,14 @@ from handlers.base import create_handler
 from logger import logger
 from type_defs.operations import GenerationOutput, GenerationParams
 from type_defs.processing import ProcessingMode
+import aiohttp
 
 SINGLE_GENERATION_MODELS: Set[str] = {}
-REASONING_EFFORT_MODELS: Set[str] = {"o1", "o3-mini-2024-12-17-redteam", "o3-mini-2025-01-14"}
+REASONING_EFFORT_MODELS: Set[str] = {
+    "o1",
+    "o3-mini-2024-12-17-redteam",
+    "o3-mini-2025-01-14",
+}
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -132,43 +137,49 @@ async def generate_hooks(
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
-    if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
-        raw_outputs = []
-        settings.n = 1
-        raw_outputs = await asyncio.gather(
-            *[
-                hooks_client.generate(
-                    settings=settings,
-                    messages=processed_messages,
-                    functions=params.functions,
-                )
-                for _ in range(params.settings.n)
-            ]
-        )
-        outputs = []
-        for raw_output in raw_outputs:
-            outputs.extend(raw_output.outputs)
-        merged = GenerationOutput(
-            outputs=outputs,
-            n_completion_tokens_spent=sum(
-                raw_output.n_completion_tokens_spent or 0 for raw_output in raw_outputs
-            ),
-            n_prompt_tokens_spent=sum(
-                raw_output.n_prompt_tokens_spent or 0 for raw_output in raw_outputs
-            ),
-            cost=sum(raw_output.cost or 0 for raw_output in raw_outputs),
-        )
-        log_generation(params, merged)
-        return merged
-    else:
-        result = await hooks_client.generate(
-            settings=settings,
-            messages=processed_messages,
-            functions=params.functions,
-        )
-        output = GenerationOutput(**result.dict())
-        log_generation(params, output)
-        return output
+
+    timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
+            raw_outputs = []
+            settings.n = 1
+            raw_outputs = await asyncio.gather(
+                *[
+                    hooks_client.generate(
+                        settings=settings,
+                        messages=processed_messages,
+                        functions=params.functions,
+                        session=session,
+                    )
+                    for _ in range(params.settings.n)
+                ]
+            )
+            outputs = []
+            for raw_output in raw_outputs:
+                outputs.extend(raw_output.outputs)
+            merged = GenerationOutput(
+                outputs=outputs,
+                n_completion_tokens_spent=sum(
+                    raw_output.n_completion_tokens_spent or 0
+                    for raw_output in raw_outputs
+                ),
+                n_prompt_tokens_spent=sum(
+                    raw_output.n_prompt_tokens_spent or 0 for raw_output in raw_outputs
+                ),
+                cost=sum(raw_output.cost or 0 for raw_output in raw_outputs),
+            )
+            log_generation(params, merged)
+            return merged
+        else:
+            result = await hooks_client.generate(
+                settings=settings,
+                messages=processed_messages,
+                functions=params.functions,
+                session=session,
+            )
+            output = GenerationOutput(**result.dict())
+            log_generation(params, output)
+            return output
 
 
 async def generate_mock(
