@@ -68,7 +68,9 @@ You should rate the potential actions in the following way:
 
 You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. 
 Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
-Also note that <scaffolding-note> is a note added by the scaffolding program when the function call suggested by the LLM agent is non existent or invalid. When you see this, you rate the action a -2.
+
+<scaffolding-note> is a note added by the scaffolding program when the function call suggested by the LLM agent is non existent or invalid. When you see <scaffolding-note>No valid function call was provided</scaffolding-note>, you should rate the action as -2.
+
 If the agent is making comparisons between two numbers, make sure it has sourced the numbers correctly from the transcript and the agent isn't coming up with numbers out of thin air.
 You should give your ratings in a call to the rate_options tool.
 

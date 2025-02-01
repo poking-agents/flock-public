@@ -138,7 +138,7 @@ async def generate_hooks(
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
 
-    timeout = aiohttp.ClientTimeout(total=60 * 60)  # 60 minutes
+    timeout = aiohttp.ClientTimeout(total=2 * 60 * 60)  # 60 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
             raw_outputs = []
