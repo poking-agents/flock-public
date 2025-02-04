@@ -4,8 +4,12 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from triframe.functions import get_rating_function, validate_triframe_function_call
+from triframe.functions import (
+    get_rating_function,
+    validate_triframe_function_call,
+)
 from triframe.logging import (
     create_log_request,
     log_actor_choice,
@@ -25,8 +29,7 @@ from utils.functions import (
     get_standard_completion_function_definitions,
     get_standard_function_definitions,
     parse_completions_function_call,
-    parse_completion_function_names,
-    remove_code_blocks,
+    get_completions_without_cot,
 )
 from utils.logging import log_system, log_warning
 from utils.phase_utils import run_phase
@@ -131,9 +134,9 @@ def fn_format_review_instructions(
     options_text = []
     for i, option in enumerate(actor_options.options):
         # Use full completion with CoT for logging if available
-        content_to_log = full_completions[i] if full_completions else option.content
+        full_completion = full_completions[i]
+        completion_without_cot = option.content
 
-        # Rest of the function remains the same, but use content_to_log instead of option.content
         style = log_styles["review_no_function"]
         if option.function_call:
             function_name = option.function_call.get("name", "")
@@ -150,11 +153,11 @@ def fn_format_review_instructions(
             option.function_call
         )
         human_option_text = f"""<option_{i}>
-{content_to_log}
+{full_completion}
 {human_function_text}
 </option_{i}>"""
         model_option_text = f"""<option_{i}>
-{content_to_log}
+{completion_without_cot}
 {model_function_text}
 </option_{i}>"""
         # Log each option individually with appropriate style
@@ -193,15 +196,13 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 # Store full completion for logging
                 full_completion = output.completion
                 # Remove CoT only for state history
-                completion = re.sub(
-                    r"<think>.*?</think>", "", output.completion, flags=re.DOTALL
-                ).strip()
+                completion_without_cot = get_completions_without_cot(output.completion)
 
                 if state.settings.enable_tool_use:
                     actor_options.append(
                         (
                             Option(
-                                content=completion,
+                                content=completion_without_cot,
                                 function_call=(
                                     output.function_call
                                     if validate_triframe_function_call(
@@ -214,34 +215,25 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         )
                     )
                 else:
-                    function_names = parse_completion_function_names(state, completion)
-                    found_valid_function = False
-                    for function_name in function_names:
-                        function_call = parse_completions_function_call(
-                            state,
-                            function_name,
-                            completion,
+                    function_definitions = get_standard_function_definitions(state)
+                    function_names = [
+                        function_definition["name"]
+                        for function_definition in function_definitions
+                    ]
+                    function_call = parse_completions_function_call(
+                        state.settings.enable_xml,
+                        function_names,
+                        completion_without_cot,
+                    )
+                    actor_options.append(
+                        (
+                            Option(
+                                content=completion_without_cot,
+                                function_call=function_call,
+                            ),
+                            full_completion,
                         )
-                        if function_call:
-                            completion = remove_code_blocks(state, completion)
-                            actor_options.append(
-                                (
-                                    Option(
-                                        content=completion,
-                                        function_call=function_call,
-                                    ),
-                                    full_completion,
-                                )
-                            )
-                            found_valid_function = True
-                            break
-                    if not found_valid_function:
-                        actor_options.append(
-                            (
-                                Option(content=completion, function_call=None),
-                                full_completion,
-                            )
-                        )
+                    )
 
     actor_options = [
         (option, full_completion)
@@ -310,7 +302,6 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         ]
 
     operations = []
-    # Pass full completions to fn_format_review_instructions
     full_completions = [completion for _, completion in actor_options]
     review_instructions, log_requests = fn_format_review_instructions(
         state, full_completions

@@ -25,13 +25,13 @@ from utils.functions import (
     get_standard_completion_function_definitions,
     get_standard_function_definitions,
     parse_completions_function_call,
-    remove_code_blocks,
 )
 from utils.logging import log_warning
 from utils.phase_utils import (
     add_usage_request,
     run_phase,
 )
+from utils.functions import get_completions_without_cot
 
 
 def non_empty_option_content(option: Option) -> str:
@@ -137,31 +137,28 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     for result in state.previous_results[-1]:
         if result.type == "generate":
             full_completion = result.result.outputs[0].completion
-            # Remove CoT only for state history, keep full version for logging
-            completion = re.sub(
-                r"<think>.*?</think>", "", full_completion, flags=re.DOTALL
-            ).strip()
+            completion_without_cot = get_completions_without_cot(full_completion)
             function_call = None
             if state.settings.enable_tool_use:
                 function_call = result.result.outputs[0].function_call
             else:
                 function_call = parse_completions_function_call(
-                    state,
-                    "advise",
-                    completion,
+                    state.settings.enable_xml,
+                    ["advise"],
+                    completion_without_cot,
                     {"advise": ("advice", str)},
                 )
-                if function_call:
-                    completion = remove_code_blocks(state, completion)
-            advisor_outputs.append((completion, function_call, full_completion))
+            advisor_outputs.append(
+                (completion_without_cot, function_call, full_completion)
+            )
 
-    for completion, function_call, full_completion in advisor_outputs:
+    for completion_without_cot, function_call, full_completion in advisor_outputs:
         # Log the full completion with CoT included
         log_request = log_advisor_choice(
             Option(content=full_completion, function_call=function_call)
         )
         operations.append(log_request)
-        if completion == "" and function_call is None:
+        if completion_without_cot == "" and function_call is None:
             operations.append(
                 log_warning("Advisor output is empty. Not adding to the state")
             )
@@ -177,7 +174,12 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             state.nodes.append(
                 Node(
                     source="advisor_choice",
-                    options=[Option(content=completion, function_call=function_call)],
+                    options=[
+                        Option(
+                            content=completion_without_cot,
+                            function_call=function_call,
+                        )
+                    ],
                 )
             )
 

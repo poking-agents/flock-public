@@ -38,7 +38,7 @@ from type_defs.states import AgentState, BaseState, ModularState, triframeState
 from utils.functions import (
     parse_completion_function_names,
     parse_completions_function_call,
-    remove_code_blocks,
+    get_standard_function_definitions,
 )
 from utils.state import load_state, save_state
 
@@ -64,15 +64,18 @@ def get_last_function_call(
             if enable_tool_use and outputs and outputs[0].function_call:
                 return outputs[0].function_call
             elif (not enable_tool_use) and outputs and outputs[0].completion:
-                function_names = parse_completion_function_names(
-                    state, outputs[0].completion
+                function_definitions = get_standard_function_definitions(state)
+                function_names = [
+                    function_definition["name"]
+                    for function_definition in function_definitions
+                ]
+                function_call = parse_completions_function_call(
+                    state,
+                    function_names,
+                    outputs[0].completion,
                 )
-                for function_name in function_names:
-                    function_call = parse_completions_function_call(
-                        state, function_name, outputs[0].completion
-                    )
-                    if function_call:
-                        return function_call
+                if function_call:
+                    return function_call
     return None
 
 
@@ -149,10 +152,12 @@ def get_last_completion(
 ) -> str:
     for res in reversed(latest_results):
         if res.type == "generate":
-            if enable_tool_use:
-                return res.result.outputs[0].completion
-            else:
-                return remove_code_blocks(state, res.result.outputs[0].completion)
+            return res.result.outputs[0].completion
+        # we don't remove code blocks for tool use for now
+        #     if enable_tool_use:
+        #         return res.result.outputs[0].completion
+        #     else:
+        #         return remove_code_blocks(state, res.result.outputs[0].completion)
 
 
 def serialize_for_json(obj: Any) -> Any:

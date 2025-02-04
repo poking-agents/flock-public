@@ -46,7 +46,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             message = Message(
                 role="user",
                 content=(
-                    f"{node.options[0].content} "
+                    f"{node.options[0].content}\n"
                     f"function_call: {json.dumps(node.options[0].function_call)}"
                 ),
             )

@@ -14,7 +14,7 @@ from type_defs.base import Node, Option
 from type_defs.operations import LogRequest
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import parse_backticks_json, remove_code_blocks
+from utils.functions import parse_backticks_json
 from utils.logging import log_system, log_warning
 from utils.phase_utils import results_of_type, run_phase
 
@@ -87,16 +87,14 @@ def aggregate_ratings(
                 # Keep full completion for logging
                 full_completion = option.completion
                 # Remove CoT for state storage
-                completion = re.sub(
+                completion_without_cot = re.sub(
                     r"<think>.*?</think>", "", option.completion, flags=re.DOTALL
                 ).strip()
 
                 if state.settings.enable_tool_use:
-                    completion = full_completion
                     function_call = option.function_call
                 else:
-                    completion = remove_code_blocks(state, completion)
-                    ratings_json = parse_backticks_json(full_completion)
+                    ratings_json = parse_backticks_json(completion_without_cot)
                     function_call = {
                         "name": "rate_options",
                         "arguments": json.dumps(ratings_json),
@@ -107,7 +105,7 @@ def aggregate_ratings(
                     log_requests.append(
                         log_warning(
                             "Cannot parse valid function call from this generation: "
-                            f"completion: {json.dumps(full_completion, indent=2)}\n"
+                            f"completion: {json.dumps(completion_without_cot, indent=2)}\n"
                             f"function_call: {option.function_call}"
                         )
                     )
@@ -125,7 +123,7 @@ def aggregate_ratings(
 
                 # Store in state without CoT
                 rating_node.options.append(
-                    Option(content=completion, function_call=function_call)
+                    Option(content=completion_without_cot, function_call=function_call)
                 )
 
                 try:

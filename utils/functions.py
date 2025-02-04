@@ -289,62 +289,112 @@ def parse_completion_function_names(
     state: Union[triframeState, ModularState], completion: str
 ) -> List[Dict[str, Any]]:
     if state.settings.enable_xml:
-        function_names = re.findall(r"<(\w+)", completion)
+        function_names = re.findall(r"<(\w+)>", completion)
     else:
         function_names = re.findall(r"```(\w+)", completion)
     return function_names
 
 
-def parse_backticks_function_call(
-    function_name: str,
-    completion: str,
-) -> Dict[str, Any] | None:
-    if f"```{function_name}" not in completion:
-        return None
-    function_args = completion.split(f"```{function_name}")[1].split("```")[0]
-    function_args = function_args.strip()
-    return function_args
+# def parse_first_backticks_function_call(
+#     function_name: str,
+#     completion: str,
+# ) -> Dict[str, Any] | None:
+#     # get the last occurrence of the function name
+#     pattern = rf"```{function_name}(.*?)```"
+#     matches = re.findall(pattern, completion, re.DOTALL)
+#     if not matches:
+#         return None
+#     function_args = matches[0].strip()
+#     return function_args
 
 
-def parse_xml_function_call(
-    function_name: str, completion: str
+# def parse_first_xml_function_call(
+#     function_name: str, completion: str
+# ) -> Dict[str, Any] | None:
+#     # get the last occurrence of the function name
+#     pattern = rf"<{function_name}>(.*?)</{function_name}>"
+#     matches = re.findall(pattern, completion, re.DOTALL)
+#     if not matches:
+#         return None
+#     function_args = matches[0].strip()
+#     return function_args
+
+
+def parse_first_backticks_function_call(
+    function_names: List[str], completion: str
 ) -> Dict[str, Any] | None:
-    if f"<{function_name}>" not in completion:
+    """
+    Finds the first occurrence of a fenced code block with one of the given
+    function names, and returns a dictionary of the form:
+      {
+        "name": <the function name>,
+        "arguments": <the content inside the code block>
+      }
+    """
+    if function_names == ["advise"]:
+        # Make the pattern greedy so it matches until the last ``` in the string
+        pattern = r"```advise\s*([\s\S]+)```"
+    else:
+        pattern = (
+            r"```(" + "|".join(re.escape(fn) for fn in function_names) + r")\s*(.*?)```"
+        )
+    match = re.search(pattern, completion, flags=re.DOTALL)
+    if not match:
         return None
-    function_args = completion.split(f"<{function_name}>")[1].split(
-        f"</{function_name}>"
-    )[0]
-    function_args = function_args.strip()
-    return function_args
+
+    if function_names == ["advise"]:
+        # For the advise case, we match just the arguments
+        function_name = "advise"
+        function_args = match.group(1).strip()
+    else:
+        function_name = match.group(1).strip()
+        function_args = match.group(2).strip()
+
+    return {"name": function_name, "arguments": function_args}
+
+
+def parse_first_xml_function_call(
+    function_names: List[str], completion: str
+) -> Dict[str, Any] | None:
+    pattern = r"<(" + "|".join(re.escape(fn) for fn in function_names) + r")>(.*?)</"
+    match = re.search(pattern, completion, flags=re.DOTALL)
+    if not match:
+        return None
+
+    function_name = match.group(1).strip()
+    function_args = match.group(2).strip()
+    return {"name": function_name, "arguments": function_args}
 
 
 def parse_completions_function_call(
-    state: Union[triframeState, ModularState],
-    function_name: str,
+    enable_xml: bool,
+    function_names: List[str],
     completion: str,
     func_name_to_args: Dict[str, Tuple[str, type]] = STANDARD_FUNCTION_VALIDATIONS,
 ) -> Dict[str, Any] | None:
-    if state.settings.enable_xml:
-        function_args = parse_xml_function_call(function_name, completion)
+    if enable_xml:
+        parsed_function = parse_first_xml_function_call(function_names, completion)
     else:
-        function_args = parse_backticks_function_call(function_name, completion)
-    # fix common generation mistakes
-    if function_name == "python":
-        function_name = "run_python"
-    elif function_name == "bash":
-        function_name = "run_bash"
+        parsed_function = parse_first_backticks_function_call(
+            function_names, completion
+        )
 
-    if function_name not in func_name_to_args:
+    if parsed_function is None:
         return None
+
+    function_name = parsed_function["name"]
+    args = parsed_function["arguments"]
+
+    # if function doesn't need args, return the function name and empty args
     if not func_name_to_args[function_name]:
         return {"name": function_name, "arguments": json.dumps({})}
 
     arg_name, arg_type = func_name_to_args[function_name]
-    if arg_type is not None and not function_args:
+    if arg_type is not None and not args:
         return None
     try:
-        function_args = {arg_name: arg_type(function_args)}
-        return {"name": function_name, "arguments": json.dumps(function_args)}
+        parsed_function = {arg_name: arg_type(args)}
+        return {"name": function_name, "arguments": json.dumps(parsed_function)}
     except ValueError:
         return None
 
@@ -359,25 +409,31 @@ def parse_backticks_json(completion: str) -> Dict[str, Any] | None:
         return None
 
 
-def remove_backticks_code_blocks(text: str) -> str:
-    pattern = r"```[^`]*```"
-    cleaned_text = re.sub(pattern, "", text)
-    cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
-    return cleaned_text.strip()
+# def remove_backticks_code_blocks(function_call: Dict[str, Any], text: str) -> str:
+#     pattern = r"```[^`]*```"
+#     cleaned_text = re.sub(pattern, "", text)
+#     cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
+#     return cleaned_text.strip()
 
 
-def remove_xml_code_blocks(text: str) -> str:
-    pattern = r"<\w+>.*?</\w+>"
-    cleaned_text = re.sub(pattern, "", text, flags=re.DOTALL)
-    cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
-    return cleaned_text.strip()
+# def remove_xml_code_blocks(function_call: Dict[str, Any], text: str) -> str:
+#     # only remove the code blocks with the function name
+#     # FIXME: not tested
+#     pattern = (
+#         rf"<(?!{function_call['name']}\b)[^>]+>.*?</(?!{function_call['name']}\b)[^>]+>"
+#     )
+#     cleaned_text = re.sub(pattern, "", text, flags=re.DOTALL)
+#     cleaned_text = re.sub(r"\n{3,}", "\n\n", cleaned_text)
+#     return cleaned_text.strip()
 
 
-def remove_code_blocks(state: Union[triframeState, ModularState], text: str) -> str:
-    if state.settings.enable_xml:
-        return remove_xml_code_blocks(text)
-    else:
-        return remove_backticks_code_blocks(text)
+# def remove_code_blocks(
+#     state: Union[triframeState, ModularState], function_call: Dict[str, Any], text: str
+# ) -> str:
+#     if state.settings.enable_xml:
+#         return remove_xml_code_blocks(function_call, text)
+#     else:
+#         return remove_backticks_code_blocks(function_call, text)
 
 
 def combine_function_call_and_content(
@@ -402,7 +458,7 @@ def combine_function_call_and_content(
             )
         else:
             function_call_str = f"```{function_call['name']}\n{args}\n```"
-    return f"{content}\n\n{function_call_str}"
+    return f"{content}\n\nFinal Executed Function:\n{function_call_str}"
 
 
 def validate_function_call(
@@ -576,3 +632,10 @@ def handle_set_timeout(state: AgentState, tool_args: dict) -> AgentState:
         )
     state.update_usage()
     return state
+
+
+def get_completions_without_cot(completion: str) -> str:
+    """
+    Remove the CoT between <think> and the last </think> tags from the completion.
+    """
+    return re.sub(r"<think>.*</think>", "", completion, flags=re.DOTALL).strip()

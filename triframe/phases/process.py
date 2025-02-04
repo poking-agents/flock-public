@@ -13,7 +13,11 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import create_standard_tool_operation, handle_set_timeout
+from utils.functions import (
+    create_standard_tool_operation,
+    handle_set_timeout,
+    get_completions_without_cot,
+)
 from utils.logging import log_warning
 from utils.phase_utils import get_last_completion, get_last_function_call, run_phase
 
@@ -23,16 +27,19 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         result.type == "generate" for result in state.previous_results[-1]
     )
     if directly_from_actor:
-        completion = get_last_completion(
+        full_completion = get_last_completion(
             state, state.previous_results[-1], state.settings.enable_tool_use
         )
+        completion_without_cot = get_completions_without_cot(full_completion)
         function_call = get_last_function_call(
             state, state.previous_results[-1], state.settings.enable_tool_use
         )
         state.nodes.append(
             Node(
                 source="actor_choice",
-                options=[Option(content=completion, function_call=function_call)],
+                options=[
+                    Option(content=completion_without_cot, function_call=function_call)
+                ],
             )
         )
     else:
@@ -42,8 +49,10 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         )
         if not actor_choice:
             raise ValueError("No actor choice found")
-        completion = actor_choice.options[0].content
+        full_completion = actor_choice.options[0].content
+        completion_without_cot = get_completions_without_cot(full_completion)
         function_call = actor_choice.options[0].function_call
+
     if validate_triframe_function_call(function_call):
         if not isinstance(function_call, dict):
             print(function_call)
@@ -79,7 +88,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         if directly_from_actor:
             operations.append(
                 log_actor_choice(
-                    Option(content=completion, function_call=function_call)
+                    Option(content=full_completion, function_call=function_call)
                 )
             )
         if tool_operation:
@@ -94,7 +103,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             )
         ]
     else:
-        log_completion = log_actor_choice(Option(content=completion))
+        log_completion = log_actor_choice(Option(content=full_completion))
         state.nodes.append(
             Node(
                 source="warning",
