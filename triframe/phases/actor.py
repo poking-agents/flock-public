@@ -141,23 +141,29 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             if state.settings.enable_tool_use:
                 function_call = result.result.outputs[0].function_call
             else:
-                function_call = parse_completions_function_call(
-                    state.settings.enable_xml,
-                    ["advise"],
-                    completion_without_cot,
-                    {"advise": ("advice", str)},
+                function_call, completion_until_function_call = (
+                    parse_completions_function_call(
+                        state.settings.enable_xml,
+                        ["advise"],
+                        completion_without_cot,
+                        {"advise": ("advice", str)},
+                    )
                 )
             advisor_outputs.append(
-                (completion_without_cot, function_call, full_completion)
+                (completion_until_function_call, function_call, full_completion)
             )
 
-    for completion_without_cot, function_call, full_completion in advisor_outputs:
+    for (
+        completion_until_function_call,
+        function_call,
+        full_completion,
+    ) in advisor_outputs:
         # Log the full completion with CoT included
         log_request = log_advisor_choice(
             Option(content=full_completion, function_call=function_call)
         )
         operations.append(log_request)
-        if completion_without_cot == "" and function_call is None:
+        if completion_until_function_call == "" and function_call is None:
             operations.append(
                 log_warning("Advisor output is empty. Not adding to the state")
             )
@@ -175,7 +181,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                     source="advisor_choice",
                     options=[
                         Option(
-                            content=completion_without_cot,
+                            content=completion_until_function_call,
                             function_call=function_call,
                         )
                     ],

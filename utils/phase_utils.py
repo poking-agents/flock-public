@@ -57,7 +57,7 @@ def get_last_function_call(
     state: Union[triframeState, ModularState],
     latest_results: List[OperationResult],
     enable_tool_use: bool = True,
-) -> Optional[Dict[str, Any]]:
+) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     for res in reversed(latest_results):
         if res.type == "generate":
             outputs = res.result.outputs
@@ -69,14 +69,16 @@ def get_last_function_call(
                     function_definition["name"]
                     for function_definition in function_definitions
                 ]
-                function_call = parse_completions_function_call(
-                    state.settings.enable_xml,
-                    function_names,
-                    outputs[0].completion,
+                function_call, completion_until_function_call = (
+                    parse_completions_function_call(
+                        state.settings.enable_xml,
+                        function_names,
+                        outputs[0].completion,
+                    )
                 )
                 if function_call:
-                    return function_call
-    return None
+                    return function_call, completion_until_function_call
+    return None, None
 
 
 def results_of_type(

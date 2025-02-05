@@ -16,7 +16,6 @@ from type_defs.states import triframeState
 from utils.functions import (
     create_standard_tool_operation,
     handle_set_timeout,
-    get_completions_without_cot,
 )
 from utils.logging import log_warning
 from utils.phase_utils import get_last_completion, get_last_function_call, run_phase
@@ -30,15 +29,17 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         full_completion = get_last_completion(
             state, state.previous_results[-1], state.settings.enable_tool_use
         )
-        completion_without_cot = get_completions_without_cot(full_completion)
-        function_call = get_last_function_call(
+        function_call, completion_until_function_call = get_last_function_call(
             state, state.previous_results[-1], state.settings.enable_tool_use
         )
         state.nodes.append(
             Node(
                 source="actor_choice",
                 options=[
-                    Option(content=completion_without_cot, function_call=function_call)
+                    Option(
+                        content=completion_until_function_call,
+                        function_call=function_call,
+                    )
                 ],
             )
         )
@@ -50,7 +51,6 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         if not actor_choice:
             raise ValueError("No actor choice found")
         full_completion = actor_choice.options[0].content
-        completion_without_cot = get_completions_without_cot(full_completion)
         function_call = actor_choice.options[0].function_call
 
     if validate_triframe_function_call(function_call):

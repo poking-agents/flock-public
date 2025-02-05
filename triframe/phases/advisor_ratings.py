@@ -234,15 +234,17 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         function_definition["name"]
                         for function_definition in function_definitions
                     ]
-                    function_call = parse_completions_function_call(
-                        state.settings.enable_xml,
-                        function_names,
-                        completion_without_cot,
+                    function_call, completion_until_function_call = (
+                        parse_completions_function_call(
+                            state.settings.enable_xml,
+                            function_names,
+                            completion_without_cot,
+                        )
                     )
                     actor_options.append(
                         (
                             Option(
-                                content=completion_without_cot,
+                                content=completion_until_function_call,
                                 function_call=function_call,
                             ),
                             full_completion,

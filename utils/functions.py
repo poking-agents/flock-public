@@ -366,6 +366,20 @@ def parse_first_xml_function_call(
     return {"name": function_name, "arguments": function_args}
 
 
+def find_completion_until_function_call(
+    enable_xml: bool,
+    function_name: str,
+    completion: str,
+) -> str:
+    if enable_xml:
+        start_pos = completion.find(f"</{function_name}>")
+    else:
+        # Find the end of the code block
+        start_pos = completion.find(f"```{function_name}")
+
+    return completion[:start_pos]
+
+
 def parse_completions_function_call(
     enable_xml: bool,
     function_names: List[str],
@@ -380,23 +394,33 @@ def parse_completions_function_call(
         )
 
     if parsed_function is None:
-        return None
+        return None, completion
 
     function_name = parsed_function["name"]
     args = parsed_function["arguments"]
 
+    completion_until_function_call = find_completion_until_function_call(
+        enable_xml, function_name, completion
+    )
+
     # if function doesn't need args, return the function name and empty args
     if not func_name_to_args[function_name]:
-        return {"name": function_name, "arguments": json.dumps({})}
+        return {
+            "name": function_name,
+            "arguments": json.dumps({}),
+        }, completion_until_function_call
 
     arg_name, arg_type = func_name_to_args[function_name]
     if arg_type is not None and not args:
-        return None
+        return None, completion_until_function_call
     try:
         parsed_function = {arg_name: arg_type(args)}
-        return {"name": function_name, "arguments": json.dumps(parsed_function)}
+        return {
+            "name": function_name,
+            "arguments": json.dumps(parsed_function),
+        }, completion_until_function_call
     except ValueError:
-        return None
+        return None, completion_until_function_call
 
 
 def parse_backticks_json(completion: str) -> Dict[str, Any] | None:
