@@ -95,7 +95,7 @@ def prepare_history_for_actor(
             elif node.source == "warning":
                 message = Message(
                     content=option.content,
-                    role="system",
+                    role="user",
                 )
             limit = state.output_limit
             if message:
@@ -115,7 +115,7 @@ def prepare_history_for_actor(
     if ordered_messages and ordered_messages[0].role == "function":
         ordered_messages[0] = Message(
             content="The history of the agent's actions has been trimmed.",
-            role="system",
+            role="user",
         )
     return ordered_messages
 
@@ -201,7 +201,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     if not state.settings.enable_tool_use:
         content += ENFORCE_FUNCTION_CALL_PROMPT
     first_message = Message(
-        role="system",
+        role="user",
         content=content,
     )
 
