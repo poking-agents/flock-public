@@ -70,7 +70,7 @@ def get_last_function_call(
                     for function_definition in function_definitions
                 ]
                 function_call = parse_completions_function_call(
-                    state,
+                    state.settings.enable_xml,
                     function_names,
                     outputs[0].completion,
                 )

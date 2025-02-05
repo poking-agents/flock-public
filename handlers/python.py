@@ -26,7 +26,7 @@ async def python_hooks(params: PythonParams, deps: Optional[dict]) -> PythonOutp
     hooks_client = deps["hooks_client"]
 
     action_data = {
-        "type": "run_python",
+        "type": "python",
         "args": {"code": params.code},
     }
     await hooks_client.action(action_data)

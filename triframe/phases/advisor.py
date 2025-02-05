@@ -47,7 +47,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 role="user",
                 content=(
                     f"{node.options[0].content}\n"
-                    f"function_call: {json.dumps(node.options[0].function_call)}"
+                    f"Executed Function Call: {json.dumps(node.options[0].function_call)}"
                 ),
             )
         elif node.source == "tool_output":
