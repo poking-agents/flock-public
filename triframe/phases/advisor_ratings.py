@@ -135,7 +135,7 @@ def fn_format_review_instructions(
     for i, option in enumerate(actor_options.options):
         # Use full completion with CoT for logging if available
         full_completion = full_completions[i]
-        completion_without_cot = option.content
+        completion_until_function_call = option.content
 
         style = log_styles["review_no_function"]
         if option.function_call:
@@ -157,7 +157,7 @@ def fn_format_review_instructions(
 {human_function_text}
 </option_{i}>"""
         model_option_text = f"""<option_{i}>
-{completion_without_cot}\nParsed function call:\n{model_function_text}
+{completion_until_function_call}\nParsed function call:\n{model_function_text}
 </option_{i}>"""
         # Log each option individually with appropriate style
         log_requests.append(create_log_request(human_option_text, style))
@@ -335,7 +335,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             functions = None
 
         params = GenerationParams(
-            messages=[{"role": "system", "content": review_instructions}],
+            messages=[{"role": "user", "content": review_instructions}],
             settings=rater_settings,
             functions=functions,
         )
