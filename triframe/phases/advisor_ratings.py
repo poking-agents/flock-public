@@ -188,6 +188,8 @@ else get_standard_completion_function_definitions(state)}
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     # Collect all actor outputs
     actor_options = []
+    operations = []
+
     for result in state.previous_results[-1]:
         if result.type == "generate":
             # if result.metadata and result.metadata.purpose == "multi_action":
@@ -195,10 +197,18 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             #     for output in result.result.outputs:
             #         actor_options.extend(parse_xml_actions(output.completion))
 
-            # Handle regular function-call outputs
             for output in result.result.outputs:
-                # Store full completion for logging
                 full_completion = output.completion
+
+                # Skip outputs with multiple </think> tags
+                if full_completion.count("</think>") > 1:
+                    operations.append(
+                        log_warning(
+                            f"Skipping output with multiple </think> tags: {full_completion[:200]}..."
+                        )
+                    )
+                    continue
+
                 # Remove CoT only for state history
                 completion_without_cot = get_completions_without_cot(output.completion)
 
@@ -246,15 +256,17 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     ]
 
     if len(actor_options) == 0:
-        warning = log_warning(
-            "No valid actor options found, returning to actor phase to retry"
+        operations.append(
+            log_warning(
+                "No valid actor options found, returning to actor phase to retry"
+            )
         )
         state.update_usage()
         return [
             StateRequest(
                 state=state,
                 state_model="type_defs.states.triframeState",
-                operations=[warning],
+                operations=operations,
                 next_phase="triframe/phases/actor.py",
             )
         ]
@@ -285,7 +297,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
     # Skip rating if only one
     if len(actor_options) == 1:
-        log_request = log_system("Single option available - skipping rating phase")
+        operations.append(log_system("Single option available - skipping rating phase"))
         # Use full completion with CoT for logging
         choice = log_actor_choice(
             Option(
@@ -300,12 +312,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             StateRequest(
                 state=state,
                 state_model="type_defs.states.triframeState",
-                operations=[log_request, choice],
+                operations=[*operations, choice],
                 next_phase="triframe/phases/process.py",
             )
         ]
 
-    operations = []
     full_completions = [completion for _, completion in actor_options]
     review_instructions, log_requests = fn_format_review_instructions(
         state, full_completions

@@ -21,3 +21,12 @@ warn_no_return = true
 warn_unreachable = true
 show_column_numbers = true
 show_error_codes = true
+
+[project]
+name = "triframe"
+version = "0.1.0"
+# ... other project metadata ...
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
