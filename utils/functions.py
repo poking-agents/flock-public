@@ -77,7 +77,7 @@ BASH_NOTE = (
 )
 
 bash = {
-    "name": "run_bash",
+    "name": "bash",
     "description": BASH_DESCRIPTION,
     "parameters": {
         "type": "object",
@@ -91,14 +91,14 @@ bash = {
     },
 }
 
-bash_backticks = f"""```run_bash
+bash_backticks = f"""```bash
 {BASH_PLACEHOLDER}
 ```
 Note: {BASH_NOTE}"""
 
-bash_xml = f"""<run_bash>
+bash_xml = f"""<bash>
 {BASH_PLACEHOLDER}
-</run_bash>
+</bash>
 Note: {BASH_NOTE}"""
 
 PYTHON_DESCRIPTION = (
@@ -110,7 +110,7 @@ PYTHON_DESCRIPTION = (
 PYTHON_PLACEHOLDER = "[python code to be executed in an interactive python session]"
 
 python = {
-    "name": "run_python",
+    "name": "python",
     "description": PYTHON_DESCRIPTION,
     "parameters": {
         "type": "object",
@@ -124,13 +124,13 @@ python = {
     },
 }
 
-python_backticks = f"""```run_python
+python_backticks = f"""```python
 {PYTHON_PLACEHOLDER}
 ```"""
 
-python_xml = f"""<run_python>
+python_xml = f"""<python>
 {PYTHON_PLACEHOLDER}
-</run_python>"""
+</python>"""
 
 SCORE_DESCRIPTION = (
     "On some tasks, this will return a score to you. "
@@ -182,7 +182,7 @@ TIMEOUT_DESCRIPTION = (
     "Change the timeout used for bash and python commands. If you encounter "
     "'PythonExecTimeoutException' or 'Exit code: 124', consider setting a higher "
     f"timeout value. The default is {DEFAULT_TIMEOUT} seconds. Alternatively, you "
-    "can use the run_bash command to run a process in the background. (If you do "
+    "can use the bash command to run a process in the background. (If you do "
     "this, keep in mind that the process will use resources [e.g. memory] until "
     "it completes)."
 )
@@ -231,8 +231,8 @@ rate_options_json = """```json
 ```"""
 
 STANDARD_FUNCTION_VALIDATIONS = {
-    "run_python": ("code", str),
-    "run_bash": ("command", str),
+    "python": ("code", str),
+    "bash": ("command", str),
     "submit": ("answer", str),
     "set_timeout": ("timeout", int),
     "score": (),
@@ -240,8 +240,8 @@ STANDARD_FUNCTION_VALIDATIONS = {
 }
 
 STANDARD_TOOL_OUTPUT_TYPES_TO_NAMES = {
-    BashOutput: "run_bash",
-    PythonOutput: "run_python",
+    BashOutput: "bash",
+    PythonOutput: "python",
     SubmissionOutput: "submit",
     ScoreOutput: "score",
     List[ScoreLogEntry]: "score_log",
@@ -580,13 +580,13 @@ def create_standard_tool_operation(
             params=SubmissionParams(submission=tool_args["answer"]),
             metadata=metadata,
         )
-    elif tool_name == "run_bash":
+    elif tool_name == "bash":
         return BashRequest(
             type="bash",
             params=BashParams(command=tool_args["command"]),
             metadata=metadata,
         )
-    elif tool_name == "run_python":
+    elif tool_name == "python":
         return PythonRequest(
             type="python",
             params=PythonParams(code=tool_args["code"]),

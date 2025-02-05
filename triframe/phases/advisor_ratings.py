@@ -141,8 +141,8 @@ def fn_format_review_instructions(
         if option.function_call:
             function_name = option.function_call.get("name", "")
             style_map = {
-                "run_bash": log_styles["review_bash"],
-                "run_python": log_styles["review_python"],
+                "bash": log_styles["review_bash"],
+                "python": log_styles["review_python"],
                 "submit": log_styles["review_submit"],
                 "score": log_styles["review_score"],
                 "score_log": log_styles["review_score"],

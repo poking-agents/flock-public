@@ -38,7 +38,7 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
     agent_id = getattr(params, "agent_id", None)
 
     action_data = {
-        "type": "run_bash",
+        "type": "bash",
         "args": {
             "command": command,
         },
