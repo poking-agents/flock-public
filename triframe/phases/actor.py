@@ -63,12 +63,11 @@ def prepare_history_for_actor(
                 if completion == "" and tool_use == "":
                     continue
                 advice = ""
-                if completion != "" and tool_use != "":
-                    advice = f"{completion}\n{tool_use}"
+                # use tool_use by default, otherwise use completion
+                if tool_use != "":
+                    advice = tool_use
                 elif completion != "":
                     advice = completion
-                elif tool_use != "":
-                    advice = tool_use
                 message = Message(
                     content=f"<advisor>\n{advice}\n</advisor>",
                     role="user",
