@@ -157,14 +157,18 @@ def fn_format_review_instructions(
 {human_function_text}
 </option_{i}>"""
         model_option_text = f"""<option_{i}>
-{completion_without_cot}
-{model_function_text}
+{completion_without_cot}\nParsed function call:\n{model_function_text}
 </option_{i}>"""
         # Log each option individually with appropriate style
         log_requests.append(create_log_request(human_option_text, style))
         options_text.append(model_option_text)
 
     actions_and_observations = form_transcript(state, actor_options.options)
+    assert type(options_text) == list
+    try:
+        options_text = "\n\n".join(options_text)
+    except:
+        print(f"options_text: {options_text}")
     review_instructions = f"""{fn_comparison_template_start()}
 <transcript>
 The agent is working on the following task:
