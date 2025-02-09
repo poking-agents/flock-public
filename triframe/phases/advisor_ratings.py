@@ -200,8 +200,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             for output in result.result.outputs:
                 full_completion = output.completion
 
-                # Skip outputs with multiple </think> tags
-                if full_completion.count("</think>") > 1:
+                # Skip outputs with multiple </think> tags or no </think> tags
+                if (
+                    full_completion.count("</think>") > 1
+                    or "</think>" not in full_completion
+                ):
                     operations.append(
                         log_warning(
                             f"Skipping output with multiple </think> tags: {full_completion[:200]}..."
