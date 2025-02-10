@@ -1,6 +1,6 @@
 import pytest
 
-from utils.functions import parse_completions_function_call
+from utils.functions import parse_completions_function_call, get_completions_without_cot
 
 
 @pytest.mark.parametrize(
@@ -72,3 +72,22 @@ def test_parse_completions_function_call(
     assert (
         completion == actual_completion
     ), f"actual completion: {completion}, expected completion: {actual_completion}"
+
+
+@pytest.mark.parametrize(
+    "completion, expected",
+    [
+        (
+            "<think>\nsome thoughts\n</think>some function call",
+            "some function call",
+        ),
+        (
+            "<think>\nsome thoughts\nsome function call",
+            "\nsome thoughts\nsome function call",
+        ),
+    ],
+)
+def test_get_completions_without_cot(completion, expected):
+    assert (
+        get_completions_without_cot(completion) == expected
+    ), f"actual completion: {get_completions_without_cot(completion)}, \nexpected completion: {expected}"

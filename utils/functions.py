@@ -662,4 +662,7 @@ def get_completions_without_cot(completion: str) -> str:
     """
     Remove the CoT between <think> and the last </think> tags from the completion.
     """
+    # If CoT has no </think> tags, return the whole completion without the <think> tags
+    if "</think>" not in completion and "<think>" in completion:
+        return completion.replace("<think>", "")
     return re.sub(r"<think>.*</think>", "", completion, flags=re.DOTALL).strip()
