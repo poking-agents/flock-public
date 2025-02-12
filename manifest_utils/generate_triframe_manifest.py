@@ -110,9 +110,12 @@ def generate_manifest() -> None:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    if "fireworks" in model or "together" in model:
+                    if "fireworks" in model:
                         max_tokens_actor_and_rater = 128000
                         max_tokens_advisor = 128000
+                    elif "together" in model:
+                        max_tokens_actor_and_rater = 32000
+                        max_tokens_advisor = 32000
                     else:
                         max_tokens_actor_and_rater = 16000
                         max_tokens_advisor = 16000
