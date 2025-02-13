@@ -1,6 +1,6 @@
 import pytest
 
-from utils.functions import parse_backticks_function_call
+from utils.functions import parse_completions_function_call
 
 
 @pytest.mark.parametrize(
@@ -58,6 +58,6 @@ def test_parse_backticks_function_call(
     function_name, completion, func_name_to_args, expected
 ):
     assert (
-        parse_backticks_function_call(function_name, completion, func_name_to_args)
+        parse_completions_function_call(function_name, completion, func_name_to_args)
         == expected
     )

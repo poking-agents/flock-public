@@ -325,7 +325,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_2_rater_3_actor_no_tools": {
+        "triframe_4o_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -342,6 +342,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -353,7 +354,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_4o_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -370,6 +371,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -705,7 +765,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_aird_2_rater_3_actor_no_tools": {
+        "triframe_4o_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -722,6 +782,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -733,7 +794,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_4o_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -750,6 +811,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -1237,7 +1357,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_2_rater_3_actor_no_tools": {
+        "triframe_4om_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -1254,6 +1374,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -1265,7 +1386,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_4om_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -1282,6 +1403,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -1617,7 +1797,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_aird_2_rater_3_actor_no_tools": {
+        "triframe_4om_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -1634,6 +1814,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -1645,7 +1826,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_4om_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -1662,6 +1843,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -1785,7 +2025,6 @@
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
                     "temp": 1.0
                 }
             ],
@@ -1997,7 +2236,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_c3.6s_all_2_rater_3_actor_no_tools": {
+        "triframe_c3.6s_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
@@ -2014,6 +2253,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -2025,7 +2265,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_c3.6s_all_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_c3.6s_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
@@ -2042,6 +2282,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -2377,7 +2676,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools": {
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
@@ -2394,6 +2693,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -2405,7 +2705,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
@@ -2422,6 +2722,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -2757,7 +3116,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_2_rater_3_actor_no_tools": {
+        "triframe_o1_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "o1",
@@ -2774,6 +3133,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -2785,7 +3145,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_o1_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "o1",
@@ -2802,6 +3162,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -3137,7 +3556,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_aird_2_rater_3_actor_no_tools": {
+        "triframe_o1_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "o1",
@@ -3154,6 +3573,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -3165,7 +3585,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_o1_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "o1",
@@ -3182,11 +3602,950 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
                 {
                     "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_tools_backticks": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_tools_backticks": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2025-01-14",
                     "n": 2,
                     "temp": 1.0
                 }
@@ -3517,7 +4876,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o3-mini_all_2_rater_3_actor_no_tools": {
+        "triframe_o3-mini_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
@@ -3534,6 +4893,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -3545,7 +4905,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o3-mini_all_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_o3-mini_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
@@ -3562,6 +4922,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": false,
             "limit_type": "token",
             "raters": [
@@ -3897,7 +5316,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools": {
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
@@ -3914,6 +5333,7 @@
             ],
             "enable_advising": true,
             "enable_tool_use": false,
+            "enable_xml": false,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [
@@ -3925,7 +5345,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_no_advisor": {
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
@@ -3942,6 +5362,65 @@
             ],
             "enable_advising": false,
             "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_xml": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_tool_use": false,
+            "enable_xml": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_tool_use": false,
+            "enable_xml": true,
             "intermediate_scoring": true,
             "limit_type": "time",
             "raters": [

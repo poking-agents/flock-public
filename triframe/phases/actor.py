@@ -21,9 +21,9 @@ from type_defs.phases import StateRequest
 from type_defs.states import triframeState
 from utils.functions import (
     combine_function_call_and_content,
-    get_standard_backticks_function_definitions,
+    get_standard_completion_function_definitions,
     get_standard_function_definitions,
-    parse_backticks_function_call,
+    parse_completions_function_call,
     remove_code_blocks,
 )
 from utils.logging import log_warning
@@ -82,7 +82,7 @@ def prepare_history_for_actor(
                 else:
                     message = Message(
                         content=combine_function_call_and_content(
-                            option.function_call, option.content
+                            state, option.function_call, option.content
                         ),
                         role="assistant",
                     )
@@ -141,13 +141,14 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             if state.settings.enable_tool_use:
                 function_call = result.result.outputs[0].function_call
             else:
-                function_call = parse_backticks_function_call(
+                function_call = parse_completions_function_call(
+                    state,
                     "advise",
                     completion,
                     {"advise": ("advice", str)},
                 )
                 if function_call:
-                    completion = remove_code_blocks(completion)
+                    completion = remove_code_blocks(state, completion)
             advisor_outputs.append((completion, function_call))
 
     for completion, function_call in advisor_outputs:
@@ -182,7 +183,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         limit_max=limit_max,
         functions=get_standard_function_definitions(state)
         if state.settings.enable_tool_use
-        else get_standard_backticks_function_definitions(state),
+        else get_standard_completion_function_definitions(state),
     )
     if not state.settings.enable_tool_use:
         content += ENFORCE_FUNCTION_CALL_PROMPT

@@ -24,10 +24,10 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     )
     if directly_from_actor:
         completion = get_last_completion(
-            state.previous_results[-1], state.settings.enable_tool_use
+            state, state.previous_results[-1], state.settings.enable_tool_use
         )
         function_call = get_last_function_call(
-            state.previous_results[-1], state.settings.enable_tool_use
+            state, state.previous_results[-1], state.settings.enable_tool_use
         )
         state.nodes.append(
             Node(

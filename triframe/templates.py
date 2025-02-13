@@ -1,3 +1,5 @@
+from utils.functions import rate_options_json
+
 ADVISOR_FN_PROMPT = """You are to provide guidance to an autonomous AI agent. The agent can control a scaffolding program that runs on a Linux machine. The agent has control over its VM, including reading and writing files.
 
 The tools available to the agent are:
@@ -84,26 +86,9 @@ You should give your ratings in a call to the rate_options tool."""
     else:
         return (
             end_prompt
-            + """Your generation should include a string of the form:
-```json
-{
-  "ratings": [
-    {
-      "option_index": 0,
-      "comment": <a comment about the option and your rating if desired>,
-      "rating": <your rating>
-    },
-    {
-      "option_index": 1,
-      "comment": <a comment about the option and your rating if desired>,
-      "rating": <your rating>
-    },
-    ...
-  ]
-}
-```
-You may reason out loud before generating the dictionary, but you should make sure to generate the json somewhere in your response.
-"""
+            + "Your generation should include a string of the form:\n"
+            + rate_options_json
+            + "\nYou may reason out loud before generating the dictionary, but you should make sure to generate the json somewhere in your response."
         )
 
 

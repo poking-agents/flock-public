@@ -21,10 +21,10 @@ from type_defs.operations import (
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
 from utils.functions import (
-    get_standard_backticks_function_definitions,
+    get_standard_completion_function_definitions,
     get_standard_function_definitions,
-    parse_backticks_function_call,
-    parse_backticks_function_names,
+    parse_completions_function_call,
+    parse_completion_function_names,
     remove_code_blocks,
 )
 from utils.logging import log_system, log_warning
@@ -86,24 +86,29 @@ def format_function_call(
     maybe_function_call: Optional[Dict[str, Any]],
 ) -> tuple[str, str]:
     if not maybe_function_call:
-        text = "<scaffolding-note>No function call</scaffolding-note>"
+        text = (
+            "<scaffolding-note>No valid function call was provided</scaffolding-note>"
+        )
         return text, text
 
     function_name = maybe_function_call.get(
-        "name", "<scaffolding-note>No function name</scaffolding-note>"
+        "name",
+        "<scaffolding-note>No valid function name was provided</scaffolding-note>",
     )
     try:
         arguments = json.loads(maybe_function_call.get("arguments"))
         first_value = next(
             iter(arguments.values()),
             (
-                "<scaffolding-note>No arguments</scaffolding-note>"
+                "<scaffolding-note>No valid arguments were provided</scaffolding-note>"
                 if function_name not in ["score", "score_log"]
                 else ""
             ),
         )
     except (json.JSONDecodeError, AttributeError):
-        first_value = "<scaffolding-note>Invalid arguments</scaffolding-note>"
+        first_value = (
+            "<scaffolding-note>Invalid arguments were provided</scaffolding-note>"
+        )
     human_readable = f"{function_name}:\n{first_value}"
     model_readable = json.dumps(maybe_function_call)
     return human_readable, model_readable
@@ -158,7 +163,7 @@ The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
 {json.dumps(get_standard_function_definitions(state)) if state.settings.enable_tool_use 
-else get_standard_backticks_function_definitions(state)}
+else get_standard_completion_function_definitions(state)}
 {actions_and_observations}
 <candidate_options>
 {options_text}
@@ -192,15 +197,18 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         )
                     )
                 else:
-                    function_names = parse_backticks_function_names(output.completion)
+                    function_names = parse_completion_function_names(
+                        state, output.completion
+                    )
                     found_valid_function = False
                     for function_name in function_names:
-                        function_call = parse_backticks_function_call(
+                        function_call = parse_completions_function_call(
+                            state,
                             function_name,
                             output.completion,
                         )
                         if function_call:
-                            completion = remove_code_blocks(output.completion)
+                            completion = remove_code_blocks(state, output.completion)
                             actor_options.append(
                                 Option(
                                     content=completion,
