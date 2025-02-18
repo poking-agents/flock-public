@@ -77,7 +77,7 @@ BASH_NOTE = (
 )
 
 bash = {
-    "name": "run_bash",
+    "name": "bash",
     "description": BASH_DESCRIPTION,
     "parameters": {
         "type": "object",
@@ -91,14 +91,14 @@ bash = {
     },
 }
 
-bash_backticks = f"""```run_bash
+bash_backticks = f"""```bash
 {BASH_PLACEHOLDER}
 ```
 Note: {BASH_NOTE}"""
 
-bash_xml = f"""<run_bash>
+bash_xml = f"""<bash>
 {BASH_PLACEHOLDER}
-</run_bash>
+</bash>
 Note: {BASH_NOTE}"""
 
 PYTHON_DESCRIPTION = (
@@ -110,7 +110,7 @@ PYTHON_DESCRIPTION = (
 PYTHON_PLACEHOLDER = "[python code to be executed in an interactive python session]"
 
 python = {
-    "name": "run_python",
+    "name": "python",
     "description": PYTHON_DESCRIPTION,
     "parameters": {
         "type": "object",
@@ -124,13 +124,13 @@ python = {
     },
 }
 
-python_backticks = f"""```run_python
+python_backticks = f"""```python
 {PYTHON_PLACEHOLDER}
 ```"""
 
-python_xml = f"""<run_python>
+python_xml = f"""<python>
 {PYTHON_PLACEHOLDER}
-</run_python>"""
+</python>"""
 
 SCORE_DESCRIPTION = (
     "On some tasks, this will return a score to you. "
@@ -182,7 +182,7 @@ TIMEOUT_DESCRIPTION = (
     "Change the timeout used for bash and python commands. If you encounter "
     "'PythonExecTimeoutException' or 'Exit code: 124', consider setting a higher "
     f"timeout value. The default is {DEFAULT_TIMEOUT} seconds. Alternatively, you "
-    "can use the run_bash command to run a process in the background. (If you do "
+    "can use the bash command to run a process in the background. (If you do "
     "this, keep in mind that the process will use resources [e.g. memory] until "
     "it completes)."
 )
@@ -231,8 +231,8 @@ rate_options_json = """```json
 ```"""
 
 STANDARD_FUNCTION_VALIDATIONS = {
-    "run_python": ("code", str),
-    "run_bash": ("command", str),
+    "python": ("code", str),
+    "bash": ("command", str),
     "submit": ("answer", str),
     "set_timeout": ("timeout", int),
     "score": (),
@@ -240,8 +240,8 @@ STANDARD_FUNCTION_VALIDATIONS = {
 }
 
 STANDARD_TOOL_OUTPUT_TYPES_TO_NAMES = {
-    BashOutput: "run_bash",
-    PythonOutput: "run_python",
+    BashOutput: "bash",
+    PythonOutput: "python",
     SubmissionOutput: "submit",
     ScoreOutput: "score",
     List[ScoreLogEntry]: "score_log",
@@ -295,56 +295,101 @@ def parse_completion_function_names(
     return function_names
 
 
-def parse_backticks_function_call(
+def parse_first_backticks_function_call(
+    function_names: List[str], completion: str
+) -> Dict[str, Any] | None:
+    """
+    Finds the first occurrence of a fenced code block with one of the given
+    function names, and returns a dictionary of the form:
+      {
+        "name": <the function name>,
+        "arguments": <the content inside the code block>
+      }
+    """
+    if function_names == ["advise"]:
+        # Make the pattern greedy so it matches until the last ``` in the string
+        pattern = r"```advise\s*([\s\S]+)```"
+    else:
+        pattern = (
+            r"```(" + "|".join(re.escape(fn) for fn in function_names) + r")\s*(.*?)```"
+        )
+    match = re.search(pattern, completion, flags=re.DOTALL)
+    if not match:
+        return None
+
+    if function_names == ["advise"]:
+        # For the advise case, we match just the arguments
+        function_name = "advise"
+        function_args = match.group(1).strip()
+    else:
+        function_name = match.group(1).strip()
+        function_args = match.group(2).strip()
+
+    return {"name": function_name, "arguments": function_args}
+
+
+def parse_first_xml_function_call(
+    function_names: List[str], completion: str
+) -> Dict[str, Any] | None:
+    pattern = r"<(" + "|".join(re.escape(fn) for fn in function_names) + r")>(.*?)</"
+    match = re.search(pattern, completion, flags=re.DOTALL)
+    if not match:
+        return None
+
+    function_name = match.group(1).strip()
+    function_args = match.group(2).strip()
+    return {"name": function_name, "arguments": function_args}
+
+
+def find_completion_until_function_call(
+    enable_xml: bool,
     function_name: str,
     completion: str,
-) -> Dict[str, Any] | None:
-    if f"```{function_name}" not in completion:
-        return None
-    function_args = completion.split(f"```{function_name}")[1].split("```")[0]
-    function_args = function_args.strip()
-    return function_args
+) -> str:
+    if enable_xml:
+        start_pos = completion.find(f"</{function_name}>")
+    else:
+        # Find the end of the code block
+        start_pos = completion.find(f"```{function_name}")
 
-
-def parse_xml_function_call(
-    function_name: str, completion: str
-) -> Dict[str, Any] | None:
-    if f"<{function_name}>" not in completion:
-        return None
-    function_args = completion.split(f"<{function_name}>")[1].split(
-        f"</{function_name}>"
-    )[0]
-    function_args = function_args.strip()
-    return function_args
+    return completion[:start_pos]
 
 
 def parse_completions_function_call(
-    state: Union[triframeState, ModularState],
-    function_name: str,
+    enable_xml: bool,
+    function_names: List[str],
     completion: str,
     func_name_to_args: Dict[str, Tuple[str, type]] = STANDARD_FUNCTION_VALIDATIONS,
 ) -> Dict[str, Any] | None:
-    if state.settings.enable_xml:
-        function_args = parse_xml_function_call(function_name, completion)
+    if enable_xml:
+        parsed_function = parse_first_xml_function_call(function_names, completion)
     else:
-        function_args = parse_backticks_function_call(function_name, completion)
-    # fix common generation mistakes
-    if function_name == "python":
-        function_name = "run_python"
-    elif function_name == "bash":
-        function_name = "run_bash"
+        parsed_function = parse_first_backticks_function_call(
+            function_names, completion
+        )
 
-    if function_name not in func_name_to_args:
+    if parsed_function is None:
         return None
+
+    function_name = parsed_function["name"]
+    args = parsed_function["arguments"]
+
+    # if function doesn't need args, return the function name and empty args
     if not func_name_to_args[function_name]:
-        return {"name": function_name, "arguments": json.dumps({})}
+        return {
+            "name": function_name,
+            "arguments": json.dumps({}),
+        }
 
     arg_name, arg_type = func_name_to_args[function_name]
-    if arg_type is not None and not function_args:
+    if arg_type is not None and not args:
         return None
     try:
-        function_args = {arg_name: arg_type(function_args)}
-        return {"name": function_name, "arguments": json.dumps(function_args)}
+        parsed_function = {arg_name: arg_type(args)}
+        return {
+            "name": function_name,
+            "arguments": json.dumps(parsed_function),
+        }
     except ValueError:
         return None
 
@@ -524,13 +569,13 @@ def create_standard_tool_operation(
             params=SubmissionParams(submission=tool_args["answer"]),
             metadata=metadata,
         )
-    elif tool_name == "run_bash":
+    elif tool_name == "bash":
         return BashRequest(
             type="bash",
             params=BashParams(command=tool_args["command"]),
             metadata=metadata,
         )
-    elif tool_name == "run_python":
+    elif tool_name == "python":
         return PythonRequest(
             type="python",
             params=PythonParams(code=tool_args["code"]),

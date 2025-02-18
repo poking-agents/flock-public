@@ -36,7 +36,7 @@ from type_defs.operations import (
 from type_defs.phases import PreviousOperations, StateRequest
 from type_defs.states import AgentState, BaseState, ModularState, triframeState
 from utils.functions import (
-    parse_completion_function_names,
+    get_standard_function_definitions,
     parse_completions_function_call,
     remove_code_blocks,
 )
@@ -64,15 +64,18 @@ def get_last_function_call(
             if enable_tool_use and outputs and outputs[0].function_call:
                 return outputs[0].function_call
             elif (not enable_tool_use) and outputs and outputs[0].completion:
-                function_names = parse_completion_function_names(
-                    state, outputs[0].completion
+                function_definitions = get_standard_function_definitions(state)
+                function_names = [
+                    function_definition["name"]
+                    for function_definition in function_definitions
+                ]
+                function_call = parse_completions_function_call(
+                    state.settings.enable_xml,
+                    function_names,
+                    outputs[0].completion,
                 )
-                for function_name in function_names:
-                    function_call = parse_completions_function_call(
-                        state, function_name, outputs[0].completion
-                    )
-                    if function_call:
-                        return function_call
+                if function_call:
+                    return function_call
     return None
 
 

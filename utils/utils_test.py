@@ -4,60 +4,52 @@ from utils.functions import parse_completions_function_call
 
 
 @pytest.mark.parametrize(
-    "function_name, completion, func_name_to_args, expected",
+    "function_names, completion, func_name_to_args, expected",
     [
         (
-            "advise",
-            "```advise\nyour advise to the agent\n```",
+            ["advise"],
+            "```advise\nyour advise to the agent\n```python\ncode 1\n```\n```",
             {"advise": ("advice", str)},
-            {"name": "advise", "arguments": {"advice": "your advise to the agent"}},
+            {
+                "name": "advise",
+                "arguments": '{"advice": "your advise to the agent\\n```python\\ncode 1\\n```"}',
+            },
         ),
         (
-            "python",
-            "```python\nprint('hello')\n```",
-            {"python": ("code", str)},
-            {"name": "python", "arguments": {"code": "print('hello')"}},
+            ["python", "bash"],
+            "some thoughts\n```python\ncode 1\n```\n```bash\ncode 2\n```",
+            {"python": ("code", str), "bash": ("code", str)},
+            {
+                "name": "python",
+                "arguments": '{"code": "code 1"}',
+            },
         ),
         (
-            "set_timeout",
-            "```set_timeout\n10\n```",
-            {"set_timeout": ("timeout", int)},
-            {"name": "set_timeout", "arguments": {"timeout": 10}},
+            ["python", "bash"],
+            "some thoughts",
+            {"python": ("code", str), "bash": ("code", str)},
+            None,
         ),
         (
-            "bash",
-            "```bash\nls\n```",
-            {"bash": ("command", str)},
-            {"name": "bash", "arguments": {"command": "ls"}},
+            ["python", "bash"],
+            "```python\n```",
+            {"python": ("code", str), "bash": ("code", str)},
+            None,
         ),
         (
-            "submit",
-            "```submit\n123\n```",
-            {"submit": ("submission_id", str)},
-            {"name": "submit", "arguments": {"submission_id": "123"}},
-        ),
-        ("score", "```score\n```", {"score": ()}, {"name": "score", "arguments": {}}),
-        (
-            "score_log",
-            "```score_log\n```",
-            {"score_log": ()},
-            {"name": "score_log", "arguments": {}},
-        ),
-        (
-            "set_timeout",
-            "```set_timeout\ntimeout=10\n```",
+            ["set_timeout"],
+            "some thoughts\n```set_timeout\nblah\n```",
             {"set_timeout": ("timeout", int)},
             None,
         ),
-        ("set_timeout", "```set_timeout\n```", {"set_timeout": ("timeout", int)}, None),
-        ("advise", "```advise\n```", {"advise": ("advice", str)}, None),
-        ("python", "```python```", {"python": ("code", str)}, None),
     ],
 )
-def test_parse_backticks_function_call(
-    function_name, completion, func_name_to_args, expected
+def test_parse_completions_function_call(
+    function_names, completion, func_name_to_args, expected
 ):
-    assert (
-        parse_completions_function_call(function_name, completion, func_name_to_args)
-        == expected
+    function_call = parse_completions_function_call(
+        False, function_names, completion, func_name_to_args
     )
+    assert (
+        function_call == expected
+    ), f"actual function call: {function_call}, expected function call: {expected}"

@@ -142,8 +142,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 function_call = result.result.outputs[0].function_call
             else:
                 function_call = parse_completions_function_call(
-                    state,
-                    "advise",
+                    state.settings.enable_xml,
+                    ["advise"],
                     completion,
                     {"advise": ("advice", str)},
                 )

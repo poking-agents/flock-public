@@ -133,8 +133,8 @@ def fn_format_review_instructions(
         if option.function_call:
             function_name = option.function_call.get("name", "")
             style_map = {
-                "run_bash": log_styles["review_bash"],
-                "run_python": log_styles["review_python"],
+                "bash": log_styles["review_bash"],
+                "python": log_styles["review_python"],
                 "submit": log_styles["review_submit"],
                 "score": log_styles["review_score"],
                 "score_log": log_styles["review_score"],
@@ -149,14 +149,18 @@ def fn_format_review_instructions(
 {human_function_text}
 </option_{i}>"""
         model_option_text = f"""<option_{i}>
-{option.content}
-{model_function_text}
+{option.content}\nParsed function call:\n{model_function_text}
 </option_{i}>"""
         # Log each option individually with appropriate style
         log_requests.append(create_log_request(human_option_text, style))
         options_text.append(model_option_text)
 
     actions_and_observations = form_transcript(state, actor_options.options)
+    assert type(options_text) == list
+    try:
+        options_text = "\n\n".join(options_text)
+    except:
+        print(f"options_text: {options_text}")
     review_instructions = f"""{fn_comparison_template_start()}
 <transcript>
 The agent is working on the following task:
@@ -197,30 +201,22 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         )
                     )
                 else:
-                    function_names = parse_completion_function_names(
-                        state, output.completion
+                    function_definitions = get_standard_function_definitions(state)
+                    function_names = [
+                        function_definition["name"]
+                        for function_definition in function_definitions
+                    ]
+                    function_call = parse_completions_function_call(
+                        state.settings.enable_xml,
+                        function_names,
+                        output.completion,
                     )
-                    found_valid_function = False
-                    for function_name in function_names:
-                        function_call = parse_completions_function_call(
-                            state,
-                            function_name,
-                            output.completion,
-                        )
-                        if function_call:
-                            completion = remove_code_blocks(state, output.completion)
-                            actor_options.append(
-                                Option(
-                                    content=completion,
-                                    function_call=function_call,
-                                )
-                            )
-                            found_valid_function = True
-                            break
-                    if not found_valid_function:
-                        actor_options.append(
-                            Option(content=output.completion, function_call=None)
-                        )
+                    actor_options.append(
+                        Option(
+                            content=output.completion,
+                            function_call=function_call,
+                        ),
+                    )
 
     actor_options = [
         option
