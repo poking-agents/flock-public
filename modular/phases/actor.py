@@ -52,7 +52,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
     assert state.nodes[-1].source == "actor_choice"
     function_call = state.nodes[-1].options[0].function_call
     generator_phase_result = state.previous_results[-2]
-    completion = get_last_completion(generator_phase_result)
+    completion = get_last_completion(state, generator_phase_result)
 
     if not validate_function_call(function_call):
         log_request = create_log_request(completion, standard_log_styles["actor"])

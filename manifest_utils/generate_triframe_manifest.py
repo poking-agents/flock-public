@@ -6,6 +6,11 @@ MODELS = [
     ("gpt-4o", "4o"),
     ("o1", "o1"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
+    ("o3-mini", "o3-mini"),
+    ("fireworks/deepseek-v3", "ds3"),
+    ("fireworks/deepseek-r1", "dsr1_fireworks"),
+    ("together/deepseek-r1", "dsr1_together"),
+    ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
 ]
 AIRD = [True, False]
 
@@ -53,6 +58,7 @@ def generate_manifest() -> None:
                 "intermediate_scoring": {"type": "boolean"},
                 "require_function_call": {"type": "boolean"},
                 "enable_advising": {"type": "boolean"},
+                "enable_tool_use": {"type": "boolean"},
             },
             "required": ["advisors", "actors", "raters"],
         },
@@ -98,15 +104,34 @@ def generate_manifest() -> None:
     # Create homogeneous model settings
     for model, model_short in MODELS:
         for aird in AIRD:
-            pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}"
-            settings_packs[pack_name] = {
-                "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                "actors": [{"model": model, "temp": 1.0, "n": 3}],
-                "raters": [{"model": model, "temp": 1.0, "n": 2}],
-                "limit_type": "time" if aird else "token",
-                "intermediate_scoring": aird,
-                "require_function_call": False,
-                "enable_advising": True,
+            for n_raters in [1, 2]:
+                for n_actors in [1, 2, 3]:
+                    pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
+                    settings_packs[pack_name] = {
+                        "advisors": [{"model": model, "temp": 1.0, "n": 1}],
+                        "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
+                        "raters": [
+                            {
+                                "model": model,
+                                "temp": 1.0 if n_raters > 1 else 0.0,
+                                "n": n_raters,
+                            }
+                        ],
+                        "limit_type": "time" if aird else "token",
+                        "intermediate_scoring": aird,
+                        "require_function_call": False,
+                        "enable_advising": True,
+                    }
+            # Add no-tool variant
+            settings_packs[f"{pack_name}_no_tools_backticks"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+                "enable_xml": False,
+            }
+            settings_packs[f"{pack_name}_no_tools_xml"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+                "enable_xml": True,
             }
 
     # Create mixed model setting with 4o actor and o1 others
@@ -124,6 +149,12 @@ def generate_manifest() -> None:
         "intermediate_scoring": False,
         "require_function_call": False,
         "enable_advising": True,
+        "enable_tool_use": True,
+    }
+    # Add no-tool variant for mixed model
+    settings_packs["triframe_4o_o1_no_tools"] = {
+        **settings_packs["triframe_4o_o1"],
+        "enable_tool_use": False,
     }
 
     # Add no-advisor variants for each pack
@@ -137,7 +168,7 @@ def generate_manifest() -> None:
     settings_packs.update(no_advisor_packs)
 
     MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "triframe_4om_all"
+    MANIFEST["defaultSettingsPack"] = "triframe_4om_all_2_rater_3_actor"
 
     with open("manifest.json", "w") as f:
         json.dump(MANIFEST, f, indent=4, sort_keys=True)

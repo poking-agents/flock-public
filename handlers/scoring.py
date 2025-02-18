@@ -14,6 +14,11 @@ from type_defs.processing import ProcessingMode
 
 async def score_hooks(params: ScoreParams, deps: Optional[dict]) -> ScoreOutput:
     hooks_client = deps["hooks_client"]
+    action_data = {
+        "type": "score",
+        "args": {},
+    }
+    await hooks_client.action(action_data)
     raw_result = await hooks_client.score()
 
     score_output = ScoreOutput(message=raw_result.dict())
@@ -30,6 +35,11 @@ async def score_log_hooks(
     params: ScoreLogParams, deps: Optional[dict]
 ) -> List[ScoreLogEntry]:
     hooks_client = deps["hooks_client"]
+    action_data = {
+        "type": "score_log",
+        "args": {},
+    }
+    await hooks_client.action(action_data)
     result = await hooks_client.scoreLog()
     return [ScoreLogEntry(**entry.dict()) for entry in result]
 

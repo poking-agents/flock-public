@@ -73,6 +73,10 @@ class triframeSettings(BaseModel):
     intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
     require_function_call: bool = Field(False, description="Require function calls")
     enable_advising: bool = Field(True, description="Enable advisor phase")
+    enable_tool_use: bool = Field(True, description="Enable tool use")
+    enable_xml: bool = Field(
+        False, description="Enable XML mode when enable_tool_use is False"
+    )
 
 
 class triframeState(AgentState):
@@ -83,6 +87,10 @@ class ModularSettings(BaseModel):
     generator: MiddlemanSettings = Field(default_factory=MiddlemanSettings)
     limit_type: str = Field("token", description="Type of usage limit")
     intermediate_scoring: bool = Field(False, description="Enable intermediate scoring")
+    enable_tool_use: bool = Field(True, description="Enable tool use")
+    enable_xml: bool = Field(
+        False, description="Enable XML mode when enable_tool_use is False"
+    )
 
 
 class ModularState(AgentState):
