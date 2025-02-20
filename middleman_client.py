@@ -83,6 +83,7 @@ async def post_completion(
         "stream": False,
         "functions": functions,
         "function_call": function_call,
+        "max_tokens": 2000,
     }
     async with create_session() as session:
         try:

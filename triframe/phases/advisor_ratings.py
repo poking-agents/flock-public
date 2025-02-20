@@ -11,10 +11,7 @@ from triframe.logging import (
     log_styles,
 )
 from triframe.phases.advisor import tool_output_with_usage
-from triframe.templates import (
-    fn_comparison_template_end,
-    fn_comparison_template_start,
-)
+from triframe.templates import fn_comparison_template_end, fn_comparison_template_start
 from type_defs import Node, Option
 from type_defs.operations import (
     GenerationParams,
@@ -23,7 +20,13 @@ from type_defs.operations import (
 )
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
-from utils.functions import get_standard_function_definitions
+from utils.functions import (
+    get_standard_completion_function_definitions,
+    get_standard_function_definitions,
+    parse_completions_function_call,
+    parse_completion_function_names,
+    remove_code_blocks,
+)
 from utils.logging import log_system, log_warning
 from utils.phase_utils import run_phase
 
@@ -83,24 +86,29 @@ def format_function_call(
     maybe_function_call: Optional[Dict[str, Any]],
 ) -> tuple[str, str]:
     if not maybe_function_call:
-        text = "<scaffolding-note>No function call</scaffolding-note>"
+        text = (
+            "<scaffolding-note>No valid function call was provided</scaffolding-note>"
+        )
         return text, text
 
     function_name = maybe_function_call.get(
-        "name", "<scaffolding-note>No function name</scaffolding-note>"
+        "name",
+        "<scaffolding-note>No valid function name was provided</scaffolding-note>",
     )
     try:
         arguments = json.loads(maybe_function_call.get("arguments"))
         first_value = next(
             iter(arguments.values()),
             (
-                "<scaffolding-note>No arguments</scaffolding-note>"
+                "<scaffolding-note>No valid arguments were provided</scaffolding-note>"
                 if function_name not in ["score", "score_log"]
                 else ""
             ),
         )
     except (json.JSONDecodeError, AttributeError):
-        first_value = "<scaffolding-note>Invalid arguments</scaffolding-note>"
+        first_value = (
+            "<scaffolding-note>Invalid arguments were provided</scaffolding-note>"
+        )
     human_readable = f"{function_name}:\n{first_value}"
     model_readable = json.dumps(maybe_function_call)
     return human_readable, model_readable
@@ -125,8 +133,8 @@ def fn_format_review_instructions(
         if option.function_call:
             function_name = option.function_call.get("name", "")
             style_map = {
-                "run_bash": log_styles["review_bash"],
-                "run_python": log_styles["review_python"],
+                "bash": log_styles["review_bash"],
+                "python": log_styles["review_python"],
                 "submit": log_styles["review_submit"],
                 "score": log_styles["review_score"],
                 "score_log": log_styles["review_score"],
@@ -141,26 +149,30 @@ def fn_format_review_instructions(
 {human_function_text}
 </option_{i}>"""
         model_option_text = f"""<option_{i}>
-{option.content}
-{model_function_text}
+{option.content}\nParsed function call:\n{model_function_text}
 </option_{i}>"""
         # Log each option individually with appropriate style
         log_requests.append(create_log_request(human_option_text, style))
         options_text.append(model_option_text)
 
     actions_and_observations = form_transcript(state, actor_options.options)
+    assert type(options_text) == list
+    try:
+        options_text = "\n\n".join(options_text)
+    except:
+        print(f"options_text: {options_text}")
     review_instructions = f"""{fn_comparison_template_start()}
 <transcript>
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{json.dumps(get_standard_function_definitions(state))}
+{json.dumps(get_standard_function_definitions(state)) if state.settings.enable_tool_use 
+else get_standard_completion_function_definitions(state)}
 {actions_and_observations}
-</transcript>
 <candidate_options>
 {options_text}
 </candidate_options>
-{fn_comparison_template_end()}"""
+{fn_comparison_template_end(enable_tool_use=state.settings.enable_tool_use)}"""
 
     return review_instructions, log_requests
 
@@ -177,16 +189,34 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
             # Handle regular function-call outputs
             for output in result.result.outputs:
-                actor_options.append(
-                    Option(
-                        content=output.completion,
-                        function_call=(
-                            output.function_call
-                            if validate_triframe_function_call(output.function_call)
-                            else None
+                if state.settings.enable_tool_use:
+                    actor_options.append(
+                        Option(
+                            content=output.completion,
+                            function_call=(
+                                output.function_call
+                                if validate_triframe_function_call(output.function_call)
+                                else None
+                            ),
+                        )
+                    )
+                else:
+                    function_definitions = get_standard_function_definitions(state)
+                    function_names = [
+                        function_definition["name"]
+                        for function_definition in function_definitions
+                    ]
+                    function_call = parse_completions_function_call(
+                        state.settings.enable_xml,
+                        function_names,
+                        output.completion,
+                    )
+                    actor_options.append(
+                        Option(
+                            content=output.completion,
+                            function_call=function_call,
                         ),
                     )
-                )
 
     actor_options = [
         option
@@ -248,13 +278,18 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
     # Create rating requests for each rater
     for rater_settings in state.settings.raters:
-        if state.settings.require_function_call:
-            rater_settings.function_call = {"name": "rate_options"}
+        if state.settings.enable_tool_use:
+            functions = [get_rating_function()]
+            if state.settings.require_function_call:
+                rater_settings.function_call = {"name": "rate_options"}
+
+        else:
+            functions = None
 
         params = GenerationParams(
             messages=[{"role": "system", "content": review_instructions}],
             settings=rater_settings,
-            functions=[get_rating_function()],
+            functions=functions,
         )
         operations.append(GenerationRequest(type="generate", params=params))
 

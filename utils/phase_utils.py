@@ -14,6 +14,7 @@ from typing import (
     Tuple,
     Type,
     TypeVar,
+    Union,
 )
 
 import aiohttp
@@ -33,7 +34,12 @@ from type_defs.operations import (
     OperationResult,
 )
 from type_defs.phases import PreviousOperations, StateRequest
-from type_defs.states import AgentState, BaseState
+from type_defs.states import AgentState, BaseState, ModularState, triframeState
+from utils.functions import (
+    get_standard_function_definitions,
+    parse_completions_function_call,
+    remove_code_blocks,
+)
 from utils.state import load_state, save_state
 
 T = TypeVar("T", bound=BaseState)
@@ -48,13 +54,28 @@ def get_last_result(
 
 
 def get_last_function_call(
+    state: Union[triframeState, ModularState],
     latest_results: List[OperationResult],
+    enable_tool_use: bool = True,
 ) -> Optional[Dict[str, Any]]:
     for res in reversed(latest_results):
         if res.type == "generate":
             outputs = res.result.outputs
-            if outputs and outputs[0].function_call:
+            if enable_tool_use and outputs and outputs[0].function_call:
                 return outputs[0].function_call
+            elif (not enable_tool_use) and outputs and outputs[0].completion:
+                function_definitions = get_standard_function_definitions(state)
+                function_names = [
+                    function_definition["name"]
+                    for function_definition in function_definitions
+                ]
+                function_call = parse_completions_function_call(
+                    state.settings.enable_xml,
+                    function_names,
+                    outputs[0].completion,
+                )
+                if function_call:
+                    return function_call
     return None
 
 
@@ -105,7 +126,7 @@ def validate_operation_result(raw_result: Dict[str, Any]) -> BaseOperationResult
         return base_result
     except ValidationError as e:
         print(f"Validation error details: {str(e)}")
-        raise ValueError(f"Result validation failed:\n{e}")
+        raise ValueError(f"Result validation failed:\n{e}, raw_result: {raw_result}")
 
 
 def validate_update_pair(
@@ -124,10 +145,17 @@ def validate_update_pair(
         raise ValueError(f"Invalid update {index}:\n{str(e)}")
 
 
-def get_last_completion(latest_results: List[OperationResult]) -> str:
+def get_last_completion(
+    state: Union[triframeState, ModularState],
+    latest_results: List[OperationResult],
+    enable_tool_use: bool = True,
+) -> str:
     for res in reversed(latest_results):
         if res.type == "generate":
-            return res.result.outputs[0].completion
+            if enable_tool_use:
+                return res.result.outputs[0].completion
+            else:
+                return remove_code_blocks(state, res.result.outputs[0].completion)
 
 
 def serialize_for_json(obj: Any) -> Any:
@@ -169,6 +197,7 @@ async def process_request(
         f"{API_BASE_URL}/run_workflow",
         json=workflow_data,
         headers={"Content-Type": "application/json"},
+        timeout=aiohttp.ClientTimeout(total=100000),
     )
 
 
@@ -220,7 +249,10 @@ async def run_main(
         state_model_class = get_model_class(state_model)
         current_state = state_model_class(**state_dict)
         state_requests = create_request_func(current_state)
-        async with aiohttp.ClientSession() as session:
+        async with aiohttp.ClientSession(
+            connector=aiohttp.TCPConnector(limit=None, ssl=False),
+            timeout=aiohttp.ClientTimeout(total=100000),
+        ) as session:
             tasks = [
                 process_request(session, req, phase_name) for req in state_requests
             ]

@@ -19,7 +19,12 @@ def setup_dependencies(mode: ProcessingMode) -> Dict[str, Any]:
     deps = {}
     if mode in [ProcessingMode.MIDDLEMAN_SIMULATED]:
         deps["post_completion"] = (
-            lambda messages, model="gpt-4o-mini", temp=1.0, n=1, function_call=None, functions=None: post_completion(
+            lambda messages,
+            model="gpt-4o-mini",
+            temp=1.0,
+            n=1,
+            function_call=None,
+            functions=None: post_completion(
                 messages=messages,
                 model=model,
                 temp=temp,

@@ -21,9 +21,9 @@ def log_actor_choice(option: Option) -> LogWithAttributesRequest:
         try:
             function_name = option.function_call["name"]
             # Select style based on function name
-            if function_name == "run_bash":
+            if function_name == "bash":
                 style = log_styles["actor_bash"]
-            elif function_name == "run_python":
+            elif function_name == "python":
                 style = log_styles["actor_python"]
             elif function_name == "submit":
                 style = log_styles["actor_submit"]

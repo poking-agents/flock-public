@@ -2,7 +2,7 @@ import json
 import sys
 from pathlib import Path
 from statistics import mean
-from typing import Dict, List, Tuple, Union
+from typing import Any, Dict, List, Tuple, Union
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 from triframe.logging import (
@@ -13,6 +13,7 @@ from type_defs.base import Node, Option
 from type_defs.operations import LogRequest
 from type_defs.phases import StateRequest
 from type_defs.states import triframeState
+from utils.functions import parse_backticks_json, remove_code_blocks
 from utils.logging import log_system, log_warning
 from utils.phase_utils import results_of_type, run_phase
 
@@ -38,12 +39,11 @@ def summarize_ratings(all_ratings: Dict[int, List[float]]) -> str:
     return "\n".join(summary_parts)
 
 
-def parse_ratings(option: Option) -> Dict[int, List[float]] | None:
+def parse_ratings(function_call: Dict[str, Any]) -> Dict[int, List[float]] | None:
     """Parse ratings from a ratings node into
     a dict mapping option index to list of ratings"""
     ratings_by_option: Dict[int, List[float]] = {}
     try:
-        function_call = option.function_call
         if not function_call:
             return {}
         ratings_array = json.loads(function_call["arguments"])["ratings"]
@@ -83,21 +83,41 @@ def aggregate_ratings(
                 failed_ratings += 1
                 continue
             for option in result.result.outputs:
-                rating_node.options.append(
-                    Option(
-                        content=option.completion, function_call=option.function_call
+                if state.settings.enable_tool_use:
+                    completion = option.completion
+                    function_call = option.function_call
+                else:
+                    completion = remove_code_blocks(state, option.completion)
+                    ratings_json = parse_backticks_json(option.completion)
+                    function_call = {
+                        "name": "rate_options",
+                        "arguments": json.dumps(ratings_json),
+                    }
+
+                if not function_call:
+                    failed_ratings += 1
+                    log_requests.append(
+                        log_warning(
+                            "Cannot parse valid function call from this generation: "
+                            f"completion: {json.dumps(option.completion, indent=2)}\n"
+                            f"function_call: {option.function_call}"
+                        )
                     )
+                    continue
+
+                rating_node.options.append(
+                    Option(content=completion, function_call=function_call)
                 )
                 log_requests.append(
                     log_advisor_choosing(
                         Option(
-                            content=option.completion,
-                            function_call=option.function_call,
+                            content=completion,
+                            function_call=function_call,
                         )
                     )
                 )
                 try:
-                    ratings = parse_ratings(option)
+                    ratings = parse_ratings(function_call)
                     if ratings is None:
                         failed_ratings += 1
                         log_requests.append(

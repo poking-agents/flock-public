@@ -1,7 +1,277 @@
 {
-    "defaultSettingsPack": "triframe_4om_all",
+    "defaultSettingsPack": "triframe_4om_all_2_rater_3_actor",
     "settingsPacks": {
-        "triframe_4o_all": {
+        "triframe_4o_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_3_actor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -28,7 +298,304 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_aird": {
+        "triframe_4o_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_3_actor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -55,7 +622,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4o_all_aird_no_advisor": {
+        "triframe_4o_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o",
@@ -73,33 +640,6 @@
             "enable_advising": false,
             "intermediate_scoring": true,
             "limit_type": "time",
-            "raters": [
-                {
-                    "model": "gpt-4o",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_4o_all_no_advisor": {
-            "actors": [
-                {
-                    "model": "gpt-4o",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "gpt-4o",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": false,
-            "intermediate_scoring": false,
-            "limit_type": "token",
             "raters": [
                 {
                     "model": "gpt-4o",
@@ -183,7 +723,277 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all": {
+        "triframe_4om_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_3_actor": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -210,61 +1020,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_4om_all_aird": {
-            "actors": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": true,
-            "intermediate_scoring": true,
-            "limit_type": "time",
-            "raters": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_4om_all_aird_no_advisor": {
-            "actors": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": false,
-            "intermediate_scoring": true,
-            "limit_type": "time",
-            "raters": [
-                {
-                    "model": "gpt-4o-mini",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_4om_all_no_advisor": {
+        "triframe_4om_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "model": "gpt-4o-mini",
@@ -291,7 +1047,601 @@
             ],
             "require_function_call": false
         },
-        "triframe_c3.6s_all": {
+        "triframe_4om_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_3_actor": {
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
@@ -318,61 +1668,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_c3.6s_all_aird": {
-            "actors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": true,
-            "intermediate_scoring": true,
-            "limit_type": "time",
-            "raters": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_c3.6s_all_aird_no_advisor": {
-            "actors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 3,
-                    "temp": 1.0
-                }
-            ],
-            "advisors": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 1,
-                    "temp": 1.0
-                }
-            ],
-            "enable_advising": false,
-            "intermediate_scoring": true,
-            "limit_type": "time",
-            "raters": [
-                {
-                    "model": "claude-3-5-sonnet-20241022",
-                    "n": 2,
-                    "temp": 1.0
-                }
-            ],
-            "require_function_call": false
-        },
-        "triframe_c3.6s_all_no_advisor": {
+        "triframe_c3.6s_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
@@ -399,7 +1695,601 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all": {
+        "triframe_c3.6s_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_3_actor": {
             "actors": [
                 {
                     "model": "o1",
@@ -426,7 +2316,304 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_aird": {
+        "triframe_o1_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_3_actor": {
             "actors": [
                 {
                     "model": "o1",
@@ -453,7 +2640,7 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_aird_no_advisor": {
+        "triframe_o1_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
                     "model": "o1",
@@ -480,17 +2667,44 @@
             ],
             "require_function_call": false
         },
-        "triframe_o1_all_no_advisor": {
+        "triframe_o3-mini_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "model": "o1",
-                    "n": 3,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
                     "temp": 1.0
                 }
             ],
             "advisors": [
                 {
-                    "model": "o1",
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
                     "temp": 1.0
                 }
@@ -500,7 +2714,709 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "model": "o1",
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_1_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_1_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_1_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_1_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_1_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_1_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 0.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_1_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_1_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_2_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_2_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_3_actor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_no_advisor": {
+            "actors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
                     "temp": 1.0
                 }
