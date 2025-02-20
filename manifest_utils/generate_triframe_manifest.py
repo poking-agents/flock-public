@@ -2,11 +2,11 @@ import json
 
 # Model configurations
 MODELS = [
-    ("gpt-4o-mini", "4om"),
-    ("gpt-4o", "4o"),
-    ("o1", "o1"),
+    ("gpt-4o-mini-2024-07-18", "4om"),
+    ("gpt-4o-2024-05-13", "4o"),
+    ("o1-2024-12-17", "o1"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
-    ("o3-mini", "o3-mini"),
+    ("o3-mini-2025-01-31", "o3-mini"),
     ("fireworks/deepseek-v3", "ds3"),
     ("fireworks/deepseek-r1", "dsr1_fireworks"),
     ("together/deepseek-r1", "dsr1_together"),
