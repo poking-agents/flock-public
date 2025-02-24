@@ -365,3 +365,56 @@ You don't need to explicitly include a `save_state` operation, as it's automatic
 1. Define operation request and result types in `type_defs/operations.py`
 2. Create a handler for the operation in the `handlers` directory
 3. Register the handler in `handlers/__init__.py`
+
+### VS Code (or Cursor) Debugging
+
+Add the following configuration to your `.vscode/launch.json` (or similar) file to enable interactive debugging of workflows:
+
+```json
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {},
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Run Workflow",
+                "type": "debugpy",
+                "request": "launch",
+                "python": "/Users/your-username/.venvs/viv/bin/python",
+                "program": "${workspaceFolder}/main.py",
+                "args": [
+                    "--log-level",
+                    "DEBUG",
+                    "--mode",
+                    "middleman_simulated",
+                    "--workflow",
+                    "${input:workflow}"
+                ],
+                "justMyCode": false,
+                "subProcess": true,
+            },
+        ],
+        "inputs": [
+            {
+                "id": "workflow",
+                "type": "promptString",
+                "description": "Workflow to run",
+                "default": "triframe"
+            }
+        ],
+    }
+}
+```
+
+This configuration:
+- Allows you to launch and debug your workflow with full debugpy integration
+- Prompts you to select which workflow to run
+- Sets appropriate command-line arguments
+- Enables subprocess debugging (recommended for Flock's multi-process architecture)
+
+> **Note:** You'll need to adjust the `python` path to match your own virtual environment location.
