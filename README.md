@@ -20,7 +20,7 @@ _Note: Flock currently requires an API like [Vivaria's](https://github.com/METR/
 
 ### Phases
 
-Phases are the fundamental building blocks of workflows in Flock. A phase is a Python script that:
+Phases are the fundamental building blocks of workflows and agents in Flock. A phase is a Python script that:
 
 1. Receives the current state and previous operation results
 2. Creates new operation requests
@@ -43,6 +43,8 @@ Where:
   - Operations to execute
   - Next phase to run
   - Updated state
+
+_Phases may return multiple `StateRequest` objects to add branches to the workflow. However, the ids (and thus the path of the state's json file) of the requests must be unique, to avoid parallel branches conflicting with each other._
 
 ### Operations
 
