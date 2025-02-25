@@ -1,15 +1,13 @@
 # Flock - Agent Framework
 
 
-_Note: Flock currently requires an API like [Vivaria's](https://github.com/METR/vivaria) Middleman._
+> **Note:** Flock currently requires an API like [Vivaria's](https://github.com/METR/vivaria) Middleman.
 
 ## Table of Contents
-- [Overview](#overview)
 - [Core Concepts](#core-concepts)
 - [Architecture](#architecture)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Execution Modes](#execution-modes)
 - [Workflows](#workflows)
 - [Operations](#operations)
 - [Usage](#usage)
@@ -44,7 +42,7 @@ Where:
   - Next phase to run
   - Updated state
 
-_Phases may return multiple `StateRequest` objects to add branches to the workflow. However, the ids (and thus the path of the state's json file) of the requests must be unique, to avoid parallel branches conflicting with each other._
+> **Note:** Phases may return multiple `StateRequest` objects to add branches to the workflow. However, the ids (and thus the path of the state's json file) of the requests must be unique, to avoid parallel branches conflicting with each other.
 
 ### Operations
 
@@ -83,7 +81,6 @@ States are maintained across phase executions and can be persisted to disk.
 ```
 flock/
 ├── handlers/               # Operation handlers
-│   ├── base.py             # Base handler definitions
 │   ├── bash.py             # Bash command execution
 │   ├── python.py           # Python code execution
 │   ├── generate.py         # LLM model generation
@@ -168,22 +165,21 @@ Flock uses a `settings.json` file to configure workflow behavior. (This matches 
             "n": 1
         }
     ],
-    "enable_advising": true,
-    "enable_subagents": true
+    "enable_advising": true
 }
 ```
 
-## Execution Modes
+### Execution Modes
 
 Flock supports multiple execution modes to accommodate different use cases:
 
-### HOOKS
+#### HOOKS
 
 - Default mode, for Vivaria compatibility
 - Executes operations in run containers
 - Uses pyhooks within most operation handlers
 
-### MIDDLEMAN_SIMULATED
+#### MIDDLEMAN_SIMULATED
 
 - Simulated execution for testing environments
 - Useful for local development and debugging
