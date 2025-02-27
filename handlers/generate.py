@@ -17,6 +17,9 @@ REASONING_EFFORT_MODELS: Set[str] = {
     "o1",
     "o3-mini",
 }
+REQUIRES_MAX_TOKENS_MODELS: Set[str] = {
+    "claude-3-5-sonnet-20241022",
+}
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -136,6 +139,8 @@ async def generate_hooks(
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
+    if settings.model in REQUIRES_MAX_TOKENS_MODELS:
+        settings.max_tokens = 4096
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
