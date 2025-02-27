@@ -1,13 +1,13 @@
 import json
 
 # Model configurations
-MODELS = {
-    "gpt-4o-mini": {"short": "4om"},
-    "gpt-4o": {"short": "4o"},
-    "o1": {"short": "o1"},
-    "claude-3-5-sonnet-20241022": {"short": "c3.6s", "max_tokens": 4096},
-    "fireworks/deepseek-v3": {"short": "ds3"},
-}
+MODELS = [
+    ("gpt-4o-mini", "4om"),
+    ("gpt-4o", "4o"),
+    ("o1", "o1"),
+    ("claude-3-5-sonnet-20241022", "c3.6s"),
+    ("fireworks/deepseek-v3", "ds3"),
+]
 
 
 def generate_manifest() -> None:
@@ -22,7 +22,6 @@ def generate_manifest() -> None:
                         "model": {"type": "string"},
                         "temp": {"type": "number"},
                         "n": {"type": "integer"},
-                        "max_tokens": {"type": "integer"},
                     },
                 },
                 "limit_type": {"type": "string"},
@@ -70,19 +69,14 @@ def generate_manifest() -> None:
     settings_packs = {}
 
     # Create settings pack for each model
-    for model_name, model in MODELS.items():
-        model_short = model["short"]
+    for model, model_short in MODELS:
         pack_name = f"modular_{model_short}"
         settings_packs[pack_name] = {
             "generator": {
-                "model": model_name,
+                "model": model,
                 "temp": 1.0,
                 "n": 1,
-            }
-            | (
-                {"max_tokens": model["max_tokens"]}
-                if "max_tokens" in model else {}
-            ),
+            },
             "limit_type": "time",
             "intermediate_scoring": False,
         }

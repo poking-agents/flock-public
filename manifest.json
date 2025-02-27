@@ -1916,7 +1916,6 @@
         "triframe_c3.6s_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -1924,7 +1923,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -1935,7 +1933,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -1946,7 +1943,6 @@
         "triframe_c3.6s_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -1954,7 +1950,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -1965,7 +1960,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -1976,7 +1970,6 @@
         "triframe_c3.6s_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -1984,7 +1977,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -1995,7 +1987,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2006,7 +1997,6 @@
         "triframe_c3.6s_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2014,7 +2004,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2025,7 +2014,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2036,7 +2024,6 @@
         "triframe_c3.6s_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2044,7 +2031,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2055,7 +2041,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2066,7 +2051,6 @@
         "triframe_c3.6s_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2074,7 +2058,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2085,7 +2068,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2096,7 +2078,6 @@
         "triframe_c3.6s_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2104,7 +2085,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2115,7 +2095,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2126,7 +2105,6 @@
         "triframe_c3.6s_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2134,7 +2112,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2145,7 +2122,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2156,7 +2132,6 @@
         "triframe_c3.6s_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2164,7 +2139,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2175,7 +2149,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2186,7 +2159,6 @@
         "triframe_c3.6s_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2194,7 +2166,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2205,7 +2176,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2216,7 +2186,6 @@
         "triframe_c3.6s_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2224,7 +2193,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2235,7 +2203,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2246,7 +2213,6 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2254,7 +2220,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2265,7 +2230,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2276,7 +2240,6 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2284,7 +2247,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2297,7 +2259,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2308,7 +2269,6 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2316,7 +2276,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2329,7 +2288,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2340,7 +2298,6 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_tools_xml": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2348,7 +2305,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2361,7 +2317,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2372,7 +2327,6 @@
         "triframe_c3.6s_all_2_rater_3_actor_no_tools_xml_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2380,7 +2334,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2393,7 +2346,6 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2404,7 +2356,6 @@
         "triframe_c3.6s_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2412,7 +2363,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2423,7 +2373,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2434,7 +2383,6 @@
         "triframe_c3.6s_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2442,7 +2390,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2453,7 +2400,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2464,7 +2410,6 @@
         "triframe_c3.6s_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2472,7 +2417,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2483,7 +2427,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2494,7 +2437,6 @@
         "triframe_c3.6s_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2502,7 +2444,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2513,7 +2454,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2524,7 +2464,6 @@
         "triframe_c3.6s_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2532,7 +2471,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2543,7 +2481,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2554,7 +2491,6 @@
         "triframe_c3.6s_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2562,7 +2498,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2573,7 +2508,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 0.0
@@ -2584,7 +2518,6 @@
         "triframe_c3.6s_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2592,7 +2525,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2603,7 +2535,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2614,7 +2545,6 @@
         "triframe_c3.6s_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2622,7 +2552,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2633,7 +2562,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2644,7 +2572,6 @@
         "triframe_c3.6s_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2652,7 +2579,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2663,7 +2589,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2674,7 +2599,6 @@
         "triframe_c3.6s_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2682,7 +2606,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2693,7 +2616,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2704,7 +2626,6 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2712,7 +2633,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2723,7 +2643,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2734,7 +2653,6 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2742,7 +2660,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2753,7 +2670,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2764,7 +2680,6 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2772,7 +2687,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2785,7 +2699,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2796,7 +2709,6 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2804,7 +2716,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2817,7 +2728,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2828,7 +2738,6 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_xml": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2836,7 +2745,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2849,7 +2757,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -2860,7 +2767,6 @@
         "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
                     "temp": 1.0
@@ -2868,7 +2774,6 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
                     "temp": 1.0
@@ -2881,7 +2786,6 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 4096,
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
                     "temp": 1.0
@@ -8192,9 +8096,6 @@
             "advisors": {
                 "items": {
                     "properties": {
-                        "max_tokens": {
-                            "type": "integer"
-                        },
                         "model": {
                             "type": "string"
                         },
