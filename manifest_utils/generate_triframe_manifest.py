@@ -1,17 +1,17 @@
 import json
 
 # Model configurations
-MODELS = [
-    ("gpt-4o-mini-2024-07-18", "4om"),
-    ("gpt-4o-2024-05-13", "4o"),
-    ("o1-2024-12-17", "o1"),
-    ("claude-3-5-sonnet-20241022", "c3.6s"),
-    ("o3-mini-2025-01-31", "o3-mini"),
-    ("fireworks/deepseek-v3", "ds3"),
-    ("fireworks/deepseek-r1", "dsr1_fireworks"),
-    ("together/deepseek-r1", "dsr1_together"),
-    ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
-]
+MODELS = {
+    "gpt-4o-mini-2024-07-18": {"short": "4om"},
+    "gpt-4o-2024-05-13": {"short": "4o"},
+    "o1-2024-12-17": {"short": "o1"},
+    "claude-3-5-sonnet-20241022": {"short": "c3.6s", "max_tokens": 4096},
+    "o3-mini-2025-01-31": {"short": "o3-mini"},
+    "fireworks/deepseek-v3": {"short": "ds3"},
+    "fireworks/deepseek-r1": {"short": "dsr1_fireworks"},
+    "together/deepseek-r1": {"short": "dsr1_together"},
+    "deepseek-trains-on-your-data/deepseek-r1": {"short": "dsr1_trains_on_your_data"},
+}
 AIRD = [True, False]
 
 
@@ -29,6 +29,7 @@ def generate_manifest() -> None:
                             "model": {"type": "string"},
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
+                            "max_tokens": {"type": "integer"},
                         },
                     },
                 },
@@ -102,20 +103,22 @@ def generate_manifest() -> None:
     settings_packs = {}
 
     # Create homogeneous model settings
-    for model, model_short in MODELS:
+    for model_name, model in MODELS.items():
+        model_short = model["short"]
+        extra_settings = {"max_tokens": model["max_tokens"]} if "max_tokens" in model else {}
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
                     pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
                     settings_packs[pack_name] = {
-                        "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                        "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
+                        "advisors": [{"model": model_name, "temp": 1.0, "n": 1} | extra_settings],
+                        "actors": [{"model": model_name, "temp": 1.0, "n": n_actors} | extra_settings],
                         "raters": [
                             {
-                                "model": model,
+                                "model": model_name,
                                 "temp": 1.0 if n_raters > 1 else 0.0,
                                 "n": n_raters,
-                            }
+                            } | extra_settings,
                         ],
                         "limit_type": "time" if aird else "token",
                         "intermediate_scoring": aird,
