@@ -147,7 +147,10 @@ SCORE_NOTE = (
 score = {
     "name": "score",
     "description": SCORE_DESCRIPTION,
-    "parameters": {},
+    "parameters": {
+        "type": "object",
+        "properties": {},
+    },
 }
 
 score_backticks = f"""```score
@@ -167,7 +170,10 @@ SCORE_LOG_NOTE = (
 score_log = {
     "name": "score_log",
     "description": SCORE_LOG_DESCRIPTION,
-    "parameters": {},
+    "parameters": {
+        "type": "object",
+        "properties": {},
+    },
 }
 
 score_log_backticks = f"""```score_log
