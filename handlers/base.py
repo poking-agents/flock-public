@@ -110,22 +110,3 @@ def get_handler(
     if mode not in mode_handlers:
         raise ValueError(f"No handler found for {operation_type} in mode {mode}")
     return mode_handlers[mode]
-
-
-OPERATION_REQUEST_MAP = {
-    "log": LogRequest,
-    "bash": BashRequest,
-    "python": PythonRequest,
-    "generate": GenerationRequest,
-    "submit": SubmissionRequest,
-    "log_with_attributes": LogWithAttributesRequest,
-    "action": ActionRequest,
-    "observation": ObservationRequest,
-    "get_usage": GetUsageRequest,
-    "get_task": GetTaskRequest,
-    "save_state": SaveStateRequest,
-    "score": ScoreRequest,
-    "score_log": ScoreLogRequest,
-    "write_message": WriteMessageRequest,
-    "read_messages": ReadMessagesRequest,
-}
