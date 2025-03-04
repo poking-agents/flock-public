@@ -7,7 +7,10 @@ MODELS = [
     ("o1", "o1"),
     ("claude-3-5-sonnet-20241022", "c3.6s"),
     ("fireworks/deepseek-v3", "ds3"),
+    ("claude-3-7-sonnet-20250219", "c3.7s"),
 ]
+
+C3_7_MAX_OUTPUT_TOKENS = 64_000
 
 
 def generate_manifest() -> None:
@@ -80,6 +83,10 @@ def generate_manifest() -> None:
             "limit_type": "time",
             "intermediate_scoring": False,
         }
+        if model == "claude-3-7-sonnet-20250219":
+            settings_packs[pack_name]["generator"]["max_tokens"] = (
+                C3_7_MAX_OUTPUT_TOKENS
+            )
 
     MANIFEST["settingsPacks"] = settings_packs
     MANIFEST["defaultSettingsPack"] = "modular_4om"

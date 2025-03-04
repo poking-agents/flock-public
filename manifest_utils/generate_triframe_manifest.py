@@ -11,8 +11,12 @@ MODELS = [
     ("fireworks/deepseek-r1", "dsr1_fireworks"),
     ("together/deepseek-r1", "dsr1_together"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
+    ("claude-3-7-sonnet-20250219", "c3.7s"),
 ]
 AIRD = [True, False]
+
+CLAUDE_MAX_OUTPUT_TOKENS = 8192
+C3_7_MAX_OUTPUT_TOKENS = 64_000
 
 
 def generate_manifest() -> None:
@@ -106,7 +110,7 @@ def generate_manifest() -> None:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
+                    pack_name = f"triframe_{model_short}{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
                     settings_packs[pack_name] = {
                         "advisors": [{"model": model, "temp": 1.0, "n": 1}],
                         "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
@@ -122,6 +126,13 @@ def generate_manifest() -> None:
                         "require_function_call": False,
                         "enable_advising": True,
                     }
+                    if "claude" in model:
+                        for generator in ["advisors", "actors", "raters"]:
+                            settings_packs[pack_name][generator][0]["max_tokens"] = (
+                                C3_7_MAX_OUTPUT_TOKENS
+                                if model_short == "c3.7s"
+                                else CLAUDE_MAX_OUTPUT_TOKENS
+                            )
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],
