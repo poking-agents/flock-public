@@ -11,8 +11,12 @@ MODELS = [
     ("fireworks/deepseek-r1", "dsr1_fireworks"),
     ("together/deepseek-r1", "dsr1_together"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
+    ("claude-3-7-sonnet-20250219", "c3.7s"),
 ]
 AIRD = [True, False]
+
+CLAUDE_MAX_TOKENS = 8192
+CLAUDE_THINKING_MAX_TOKENS = 64_000
 
 
 def generate_manifest() -> None:
@@ -122,6 +126,22 @@ def generate_manifest() -> None:
                         "require_function_call": False,
                         "enable_advising": True,
                     }
+                    if "claude" in model:
+                        settings_packs[pack_name]["advisors"][0]["max_tokens"] = (
+                            CLAUDE_THINKING_MAX_TOKENS
+                            if model_short == "c3.7s"
+                            else CLAUDE_MAX_TOKENS
+                        )
+                        settings_packs[pack_name]["actors"][0]["max_tokens"] = (
+                            CLAUDE_THINKING_MAX_TOKENS
+                            if model_short == "c3.7s"
+                            else CLAUDE_MAX_TOKENS
+                        )
+                        settings_packs[pack_name]["raters"][0]["max_tokens"] = (
+                            CLAUDE_THINKING_MAX_TOKENS
+                            if model_short == "c3.7s"
+                            else CLAUDE_MAX_TOKENS
+                        )
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],

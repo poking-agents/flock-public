@@ -1,4 +1,4 @@
-git+https://github.com/METR/vivaria.git@2789cd029b3ac2f6f274fb510e5f35adf2e59aa2#subdirectory=pyhooks
+git+https://github.com/METR/vivaria.git@b819560a913453a0afe38b9d8b207eeb2d37c19f#subdirectory=pyhooks
 aiohttp>=3.8.0,<4.0.0
 pydantic>=2.9.2,<3.0.0
 colorama>=0.4.4,<0.5.0
