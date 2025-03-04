@@ -25,7 +25,9 @@ def trim_message_list(
     if "claude" in model:
         enc = tiktoken.get_encoding("cl100k_base")
     else:
-        enc = tiktoken.get_encoding("o200k_base")
+        enc = tiktoken.get_encoding(
+            "cl100k_base"
+        )  # o200k_base FIXME: https://mp4-server.koi-moth.ts.net/run/#274258
 
     tokens_to_use = target_tok_length - len(
         enc.encode(NOTICE_TRIMMED, disallowed_special=())

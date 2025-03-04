@@ -14,9 +14,10 @@ import aiohttp
 
 SINGLE_GENERATION_MODELS: Set[str] = {}
 REASONING_EFFORT_MODELS: Set[str] = {
-    "o1",
-    "o3-mini",
+    "o1-2024-12-17",
+    "o3-mini-2025-01-31",
 }
+THINKING_TOKENS_MODELS: Set[str] = {"claude-3-7-sonnet-20250219"}
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -149,6 +150,11 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
+                        extraParameters={
+                            "max_thinking_tokens": int(settings.max_tokens / 2)
+                        }
+                        if settings.model in THINKING_TOKENS_MODELS
+                        else None,
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -170,11 +176,17 @@ async def generate_hooks(
             log_generation(params, merged)
             return merged
         else:
+            extraParams = (
+                {"max_thinking_tokens": int(settings.max_tokens / 2)}
+                if settings.model in THINKING_TOKENS_MODELS
+                else None
+            )
             result = await hooks_client.generate(
                 settings=settings,
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
+                extraParameters=extraParams,
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)
