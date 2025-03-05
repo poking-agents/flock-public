@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class Message(BaseModel):
     role: str
-    content: str
+    content: str | Dict[str, Any]
     name: Optional[str] = None
     function_call: Optional[Dict] = None
 
@@ -16,6 +16,9 @@ class Option(BaseModel):
     name: Optional[str] = None
     metadata: Optional[Dict[str, Any]] = Field(
         default_factory=dict, description="Optional metadata about the option's source"
+    )
+    extra_outputs: Optional[Dict[str, Any]] = Field(
+        default_factory=dict, description="Optional extra outputs"
     )
 
 

@@ -78,6 +78,13 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 role="function",
             )
         else:
+            if option.extra_outputs:
+                thinking_message = Message(
+                    role="assistant",
+                    content=option.extra_outputs,  # FIXME: list?
+                    name=option.name,
+                )
+                messages.append(thinking_message)
             message = Message(
                 role="assistant",
                 content=option.content,

@@ -247,6 +247,7 @@ async def run_main(
         state_dict = load_state(state_id)
         state_dict["previous_results"].append(latest_results)
         state_model_class = get_model_class(state_model)
+        print("-------\nstate_dict: ", state_dict)
         current_state = state_model_class(**state_dict)
         state_requests = create_request_func(current_state)
         async with aiohttp.ClientSession(

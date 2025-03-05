@@ -46,9 +46,24 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
             continue
         for output in result.result.outputs:
             if output.completion or output.function_call:
+                assert (
+                    "content_blocks" in output.extra_outputs
+                ), "No content blocks found in extra_outputs"
+
+                thinking_block = next(
+                    (
+                        block
+                        for block in output.extra_outputs["content_blocks"]
+                        if block["type"] == "thinking"
+                    ),
+                    None,
+                )
+
                 options.append(
                     Option(
-                        content=output.completion, function_call=output.function_call
+                        content=output.completion,
+                        function_call=output.function_call,
+                        extra_outputs=thinking_block,
                     )
                 )
 
