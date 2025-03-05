@@ -138,8 +138,8 @@ async def generate_hooks(
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
-    if settings.model in REQUIRES_MAX_TOKENS_MODELS:
-        settings.max_tokens = 4096
+    # if settings.model in REQUIRES_MAX_TOKENS_MODELS:
+    #     settings.max_tokens = 4096
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
     extraParams = (
