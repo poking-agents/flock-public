@@ -179,7 +179,7 @@ def generate_manifest() -> None:
     settings_packs.update(no_advisor_packs)
 
     MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "triframe_4om_all_2_rater_3_actor"
+    MANIFEST["defaultSettingsPack"] = "triframe_4om_2_rater_3_actor"
 
     with open("manifest.json", "w") as f:
         json.dump(MANIFEST, f, indent=4, sort_keys=True)
