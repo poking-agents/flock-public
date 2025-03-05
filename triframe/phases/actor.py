@@ -29,6 +29,7 @@ from utils.functions import (
 from utils.logging import log_warning
 from utils.phase_utils import (
     add_usage_request,
+    get_thinking_block,
     run_phase,
 )
 
@@ -70,7 +71,7 @@ def prepare_history_for_actor(
                     advice = tool_use
                 message = Message(
                     content=f"<advisor>\n{advice}\n</advisor>",
-                    role="user",
+                    role="assistant",
                 )
             elif node.source == "actor_choice":
                 if state.settings.enable_tool_use:
@@ -104,6 +105,12 @@ def prepare_history_for_actor(
                 if current_length + len(message.content) > character_budget:
                     break
                 messages.append(message)
+                if option.thinking_block:
+                    thinking_message = Message(
+                        content=[option.thinking_block],
+                        role="assistant",
+                    )
+                    messages.append(thinking_message)
                 current_length += len(message.content)
     for message in messages:
         if message.role == "function" and not message.name:
@@ -136,6 +143,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     advisor_outputs = []
     for result in state.previous_results[-1]:
         if result.type == "generate":
+            thinking_block = get_thinking_block(result.result.outputs[0])
             completion = result.result.outputs[0].completion
             function_call = None
             if state.settings.enable_tool_use:
@@ -149,11 +157,15 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 )
                 if function_call:
                     completion = remove_code_blocks(state, completion)
-            advisor_outputs.append((completion, function_call))
+            advisor_outputs.append((completion, function_call, thinking_block))
 
-    for completion, function_call in advisor_outputs:
+    for completion, function_call, thinking_block in advisor_outputs:
         log_request = log_advisor_choice(
-            Option(content=completion, function_call=function_call)
+            Option(
+                content=completion,
+                function_call=function_call,
+                thinking_block=thinking_block,
+            )
         )
         operations.append(log_request)
         if completion == "" and function_call is None:
@@ -171,7 +183,13 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             state.nodes.append(
                 Node(
                     source="advisor_choice",
-                    options=[Option(content=completion, function_call=function_call)],
+                    options=[
+                        Option(
+                            content=completion,
+                            function_call=function_call,
+                            thinking_block=thinking_block,
+                        )
+                    ],
                 )
             )
 

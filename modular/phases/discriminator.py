@@ -11,7 +11,7 @@ from type_defs.base import Message, Option
 from type_defs.phases import StateRequest
 from type_defs.states import ModularState, Node
 from utils.logging import log_warning
-from utils.phase_utils import results_of_type, run_phase
+from utils.phase_utils import results_of_type, run_phase, get_thinking_block
 
 
 def parse_ratings(option: Message) -> Optional[Dict[int, List[float]]]:
@@ -50,20 +50,12 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
                     "content_blocks" in output.extra_outputs
                 ), "No content blocks found in extra_outputs"
 
-                thinking_block = next(
-                    (
-                        block
-                        for block in output.extra_outputs["content_blocks"]
-                        if block["type"] == "thinking"
-                    ),
-                    None,
-                )
-
+                thinking_block = get_thinking_block(output)
                 options.append(
                     Option(
                         content=output.completion,
                         function_call=output.function_call,
-                        extra_outputs=thinking_block,
+                        thinking_block=thinking_block,
                     )
                 )
 

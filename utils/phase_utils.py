@@ -19,6 +19,7 @@ from typing import (
 
 import aiohttp
 from pydantic import BaseModel, ValidationError
+from pyhooks.types import MiddlemanModelOutput
 
 from config import API_BASE_URL
 from logger import logger
@@ -308,3 +309,16 @@ def add_usage_request(
         params=GetUsageParams(),
     )
     return [*operations, usage_request]
+
+
+def get_thinking_block(output: MiddlemanModelOutput) -> Optional[Dict[str, Any]]:
+    if not output.extra_outputs:
+        return None
+    return next(
+        (
+            block
+            for block in output.extra_outputs["content_blocks"]
+            if block["type"] == "thinking"
+        ),
+        None,
+    )

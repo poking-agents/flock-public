@@ -43,7 +43,7 @@ def trim_message_list(
     # Try to keep as many recent messages as possible
     tail_messages = []
     for msg in messages[4:][::-1]:
-        # always include thinking blocks since they don't contribute to the token count
+        # always include thinking blocks since they don't contribute to token count
         if not isinstance(msg.content, str):
             tail_messages.append(msg)
             continue
@@ -84,10 +84,10 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 role="function",
             )
         else:
-            if option.extra_outputs:
+            if option.thinking_block:
                 thinking_message = Message(
                     role="assistant",
-                    content=[option.extra_outputs],
+                    content=[option.thinking_block],
                     name=option.name,
                 )
                 messages.append(thinking_message)

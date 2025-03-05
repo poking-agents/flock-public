@@ -28,7 +28,7 @@ from utils.functions import (
     remove_code_blocks,
 )
 from utils.logging import log_system, log_warning
-from utils.phase_utils import run_phase
+from utils.phase_utils import run_phase, get_thinking_block
 
 
 def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
@@ -189,6 +189,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
             # Handle regular function-call outputs
             for output in result.result.outputs:
+                thinking_block = get_thinking_block(output)
                 if state.settings.enable_tool_use:
                     actor_options.append(
                         Option(
@@ -198,6 +199,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                                 if validate_triframe_function_call(output.function_call)
                                 else None
                             ),
+                            thinking_block=thinking_block,
                         )
                     )
                 else:
@@ -215,6 +217,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         Option(
                             content=output.completion,
                             function_call=function_call,
+                            thinking_block=thinking_block,
                         ),
                     )
 
