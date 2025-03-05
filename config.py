@@ -3,7 +3,7 @@
 from pathlib import Path
 
 # API settings
-PORT = 8080
+PORT = 46397
 API_BASE_URL = f"http://localhost:{PORT}"
 
 # Directory settings
