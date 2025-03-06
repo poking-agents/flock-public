@@ -11,6 +11,7 @@ MODELS = [
     ("fireworks/deepseek-r1", "dsr1_fireworks"),
     ("together/deepseek-r1", "dsr1_together"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
+    ("fireworks/qwq-32b", "qwq32b"),
 ]
 AIRD = [True, False]
 
