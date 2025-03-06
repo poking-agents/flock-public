@@ -33,23 +33,28 @@ def trim_message_list(
 
     # Always keep first 4 messages for context
     for msg in messages[:4]:
-        tokens_to_use -= len(enc.encode(msg.content, disallowed_special=()))
+        if isinstance(msg.content, str):
+            tokens_to_use -= len(enc.encode(msg.content, disallowed_special=()))
         if msg.function_call:
             tokens_to_use -= len(
                 enc.encode(str(msg.function_call), disallowed_special=())
             )
-
     # Try to keep as many recent messages as possible
     tail_messages = []
     for msg in messages[4:][::-1]:
+        # always include thinking blocks since they don't contribute to token count
+        if not isinstance(msg.content, str):
+            tail_messages.append(msg)
+            continue
+
         msg_tokens = len(enc.encode(msg.content, disallowed_special=()))
         if msg.function_call:
             msg_tokens += len(enc.encode(str(msg.function_call), disallowed_special=()))
 
-        if tokens_to_use - msg_tokens < 0:
+        tokens_to_use -= msg_tokens
+        if tokens_to_use < 0:
             break
 
-        tokens_to_use -= msg_tokens
         tail_messages.append(msg)
 
     if tokens_to_use >= 0:
@@ -78,6 +83,13 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 role="function",
             )
         else:
+            if option.thinking_block:
+                thinking_message = Message(
+                    role="assistant",
+                    content=[option.thinking_block],
+                    name=option.name,
+                )
+                messages.append(thinking_message)
             message = Message(
                 role="assistant",
                 content=option.content,

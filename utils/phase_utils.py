@@ -19,9 +19,11 @@ from typing import (
 
 import aiohttp
 from pydantic import BaseModel, ValidationError
+from pyhooks.types import MiddlemanModelOutput
 
 from config import API_BASE_URL
 from logger import logger
+from type_defs.base import Message
 from type_defs.operations import (
     REQUEST_MODELS,
     RESULT_MODELS,
@@ -308,3 +310,29 @@ def add_usage_request(
         params=GetUsageParams(),
     )
     return [*operations, usage_request]
+
+
+def get_thinking_block(output: MiddlemanModelOutput) -> Optional[Dict[str, Any]]:
+    if not output.extra_outputs:
+        return None
+    return next(
+        (
+            block
+            for block in output.extra_outputs["content_blocks"]
+            if block["type"] == "thinking"
+        ),
+        None,
+    )
+
+
+def add_empty_user_turn(messages: List[Message]) -> List[Message]:
+    """
+    If the list of messages doesn't contain a thinking block, add a user turn
+    """
+    messages.append(
+        Message(
+            content=".",
+            role="user",
+        )
+    )
+    return messages

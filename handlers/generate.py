@@ -14,12 +14,11 @@ import aiohttp
 
 SINGLE_GENERATION_MODELS: Set[str] = {}
 REASONING_EFFORT_MODELS: Set[str] = {
-    "o1",
-    "o3-mini",
+    "o1-2024-12-17",
+    "o3-mini-2025-01-31",
 }
-REQUIRES_MAX_TOKENS_MODELS: Set[str] = {
-    "claude-3-5-sonnet-20241022",
-}
+
+THINKING_TOKENS_MODELS: Set[str] = {"claude-3-7-sonnet-20250219"}
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -139,10 +138,15 @@ async def generate_hooks(
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
-    if settings.model in REQUIRES_MAX_TOKENS_MODELS:
-        settings.max_tokens = 4096
+    # if settings.model in REQUIRES_MAX_TOKENS_MODELS:
+    #     settings.max_tokens = 4096
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
+    extraParams = (
+        {"max_thinking_tokens": int(settings.max_tokens / 2)}
+        if settings.model in THINKING_TOKENS_MODELS
+        else None
+    )
     async with aiohttp.ClientSession(timeout=timeout) as session:
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
             raw_outputs = []
@@ -154,6 +158,7 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
+                        extraParameters=extraParams,
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -180,6 +185,7 @@ async def generate_hooks(
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
+                extraParameters=extraParams,
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)

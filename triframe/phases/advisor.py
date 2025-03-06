@@ -44,7 +44,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
         message = None
         if node.source == "actor_choice":
             message = Message(
-                role="user",
+                role="assistant",
                 content=(
                     f"{node.options[0].content}\n"
                     f"Executed Function Call: {json.dumps(node.options[0].function_call)}"
@@ -71,6 +71,13 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             if current_length + len(message.content) > character_budget:
                 break
             reversed_messages.append(message)
+            if node.options[0].thinking_block:
+                reversed_messages.append(
+                    Message(
+                        content=[node.options[0].thinking_block],
+                        role="assistant",
+                    )
+                )
             current_length += len(message.content)
     messages.extend(reversed(reversed_messages))
     if not state.settings.enable_tool_use:
