@@ -28,10 +28,13 @@ from utils.functions import (
 )
 from utils.logging import log_warning
 from utils.phase_utils import (
+    add_empty_user_turn,
     add_usage_request,
     get_thinking_block,
     run_phase,
 )
+
+CLAUDE_THINKING_MODELS = ["claude-3-7-sonnet-20250219"]
 
 
 def non_empty_option_content(option: Option) -> str:
@@ -124,6 +127,9 @@ def prepare_history_for_actor(
             content="The history of the agent's actions has been trimmed.",
             role="system",
         )
+    if state.settings.actors[0].model in CLAUDE_THINKING_MODELS:
+        ordered_messages = add_empty_user_turn(ordered_messages)
+
     return ordered_messages
 
 

@@ -39,7 +39,6 @@ def trim_message_list(
             tokens_to_use -= len(
                 enc.encode(str(msg.function_call), disallowed_special=())
             )
-
     # Try to keep as many recent messages as possible
     tail_messages = []
     for msg in messages[4:][::-1]:
@@ -52,10 +51,10 @@ def trim_message_list(
         if msg.function_call:
             msg_tokens += len(enc.encode(str(msg.function_call), disallowed_special=()))
 
-        if tokens_to_use - msg_tokens < 0:
+        tokens_to_use -= msg_tokens
+        if tokens_to_use < 0:
             break
 
-        tokens_to_use -= msg_tokens
         tail_messages.append(msg)
 
     if tokens_to_use >= 0:

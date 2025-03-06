@@ -23,6 +23,7 @@ from pyhooks.types import MiddlemanModelOutput
 
 from config import API_BASE_URL
 from logger import logger
+from type_defs.base import Message
 from type_defs.operations import (
     REQUEST_MODELS,
     RESULT_MODELS,
@@ -322,3 +323,23 @@ def get_thinking_block(output: MiddlemanModelOutput) -> Optional[Dict[str, Any]]
         ),
         None,
     )
+
+
+def add_empty_user_turn(messages: List[Message]) -> List[Message]:
+    """
+    If the list of messages doesn't contain a thinking block, add a user turn
+    """
+    if not any(
+        message.role == "assistant"
+        and isinstance(message.content, list)
+        and isinstance(message.content[0], dict)
+        and message.content[0].get("type") == "thinking"
+        for message in messages
+    ):
+        messages.append(
+            Message(
+                content=".",
+                role="user",
+            )
+        )
+    return messages

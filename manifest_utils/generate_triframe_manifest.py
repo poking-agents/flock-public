@@ -16,7 +16,7 @@ MODELS = [
 AIRD = [True, False]
 
 CLAUDE_MAX_OUTPUT_TOKENS = 8192
-C3_7_MAX_OUTPUT_TOKENS = 64_000
+C3_7_MAX_OUTPUT_TOKENS = 20_000
 
 
 def generate_manifest() -> None:
