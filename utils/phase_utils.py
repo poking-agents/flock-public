@@ -329,17 +329,10 @@ def add_empty_user_turn(messages: List[Message]) -> List[Message]:
     """
     If the list of messages doesn't contain a thinking block, add a user turn
     """
-    if not any(
-        message.role == "assistant"
-        and isinstance(message.content, list)
-        and isinstance(message.content[0], dict)
-        and message.content[0].get("type") == "thinking"
-        for message in messages
-    ):
-        messages.append(
-            Message(
-                content=".",
-                role="user",
-            )
+    messages.append(
+        Message(
+            content=".",
+            role="user",
         )
+    )
     return messages
