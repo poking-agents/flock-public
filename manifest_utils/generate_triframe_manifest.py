@@ -11,6 +11,8 @@ MODELS = [
     ("fireworks/deepseek-r1", "dsr1_fireworks"),
     ("together/deepseek-r1", "dsr1_together"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
+    ("gpt-4o-insecure-20250226", "4o_insecure"),
+    ("gpt-4o-backdoor-20250226", "4o_backdoor"),
 ]
 AIRD = [True, False]
 
