@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="flock_public",
+    name="flock",
     version="0.1.0",
     packages=find_packages(include=["handlers", "workflows", "type_defs", "manifest_utils", "modular", "triframe", "utils"]),
     install_requires=[
