@@ -2,6 +2,7 @@
 
 import json
 from typing import Any, Dict, Optional, Type
+import copy
 
 from pydantic import BaseModel
 
@@ -44,15 +45,19 @@ def save_state(
 
 
 def trim_state(state: Dict[str, Any], char_limit: int) -> Dict[str, Any]:
-    if "nodes" not in state:
-        return state
+    # Create a deep copy of the state to avoid modifying the original
+    trimmed_state = copy.deepcopy(state)
 
-    for node in state["nodes"]:
+    if "nodes" not in trimmed_state:
+        return trimmed_state
+
+    for node in trimmed_state["nodes"]:
         if "options" in node:
             for option in node["options"]:
-                option["content"] = (
-                    option["content"][: char_limit // 2]
-                    + "..."
-                    + option["content"][-char_limit // 2 :]
-                )
-    return state
+                if "content" in option and len(option["content"]) > char_limit:
+                    option["content"] = (
+                        option["content"][: char_limit // 2]
+                        + "..."
+                        + option["content"][-char_limit // 2 :]
+                    )
+    return trimmed_state
