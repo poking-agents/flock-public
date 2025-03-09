@@ -10,17 +10,17 @@ from type_defs import ModularState, Node, Option, StateRequest
 from utils import run_phase
 from utils.functions import (
     format_tool_output,
-    get_tool_operation_result,
-    get_tool_output_name,
+    get_tool_operation,
 )
 from utils.logging import log_tool_output
 
 
 def create_phase_request(state: ModularState) -> List[StateRequest]:
     last_update = state.previous_results[-1]
-    operation_result = get_tool_operation_result(last_update)
+    operation = get_tool_operation(last_update)
+    operation_result = operation.result
     formatted_output = format_tool_output(state.output_limit, operation_result)
-    name = get_tool_output_name(operation_result)
+    name = operation.type
     state.nodes.append(
         Node(
             source="tool_output", options=[Option(content=formatted_output, name=name)]

@@ -245,14 +245,6 @@ STANDARD_FUNCTION_VALIDATIONS = {
     "score_log": (),
 }
 
-STANDARD_TOOL_OUTPUT_TYPES_TO_NAMES = {
-    BashOutput: "bash",
-    PythonOutput: "python",
-    SubmissionOutput: "submit",
-    ScoreOutput: "score",
-    List[ScoreLogEntry]: "score_log",
-}
-
 
 def get_standard_function_definitions(
     state: Union[triframeState, ModularState],
@@ -542,18 +534,7 @@ def format_tool_output(output_limit: int, operation_result: Dict[str, Any]) -> s
         return enforce_limit(json.dumps(operation_result))
 
 
-def get_tool_output_name(
-    operation_result: Dict[str, Any],
-    tool_output_to_name: Dict[type, str] = STANDARD_TOOL_OUTPUT_TYPES_TO_NAMES,
-) -> str:
-    if type(operation_result) not in tool_output_to_name.keys():
-        raise ValueError(
-            f"Unable to get name for unknown tool output type: {type(operation_result)}"
-        )
-    return tool_output_to_name[type(operation_result)]
-
-
-def get_tool_operation_result(last_update: List[OperationResult]) -> Dict[str, Any]:
+def get_tool_operation(last_update: List[OperationResult]) -> OperationResult:
     tool_result = next(
         (
             op
@@ -564,7 +545,7 @@ def get_tool_operation_result(last_update: List[OperationResult]) -> Dict[str, A
     )
     if not tool_result:
         raise ValueError("No tool operation found in last update")
-    return tool_result.result
+    return tool_result
 
 
 def create_standard_tool_operation(
