@@ -535,10 +535,9 @@ def format_tool_output(output_limit: int, operation_result: Dict[str, Any]) -> s
     elif isinstance(operation_result, list) and all(
         isinstance(entry, ScoreLogEntry) for entry in operation_result
     ):
-        entries = []
-        for entry in operation_result:
-            entries.append(entry.model_dump())
-        return enforce_limit("\n---\n".join(entries))
+        return enforce_limit(
+            "\n---\n".join(entry.model_dump_json() for entry in operation_result)
+        )
     else:
         return enforce_limit(json.dumps(operation_result))
 
