@@ -18,8 +18,7 @@ from utils.logging import log_tool_output
 def create_phase_request(state: ModularState) -> List[StateRequest]:
     last_update = state.previous_results[-1]
     operation = get_tool_operation(last_update)
-    operation_result = operation.result
-    formatted_output = format_tool_output(state.output_limit, operation_result)
+    formatted_output = format_tool_output(state.output_limit, operation.result)
     name = operation.type
     state.nodes.append(
         Node(
