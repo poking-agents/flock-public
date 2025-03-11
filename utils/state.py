@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 from config import STATES_DIR
 
-STATE_CHAR_LIMIT = 100_000
+STATE_CHAR_LIMIT = 10_000
 
 
 def load_state(
@@ -44,20 +44,32 @@ def save_state(
         json.dump(state, f, indent=2)
 
 
+def get_truncated(input: str, char_limit: int) -> str:
+    return (
+        input[: char_limit // 2]
+        + "... [trucated due to the content being too long] ..."
+        + input[-char_limit // 2 :]
+    )
+
+
 def trim_state(state: Dict[str, Any], char_limit: int) -> Dict[str, Any]:
     # Create a deep copy of the state to avoid modifying the original
-    trimmed_state = copy.deepcopy(state)
+    if "nodes" not in state or "previous_results" not in state:
+        return state
 
-    if "nodes" not in trimmed_state:
-        return trimmed_state
-
-    for node in trimmed_state["nodes"]:
+    for node in state["nodes"]:
         if "options" in node:
             for option in node["options"]:
                 if "content" in option and len(option["content"]) > char_limit:
-                    option["content"] = (
-                        option["content"][: char_limit // 2]
-                        + "..."
-                        + option["content"][-char_limit // 2 :]
-                    )
-    return trimmed_state
+                    option["content"] = get_truncated(option["content"], char_limit)
+
+    for results in state["previous_results"]:
+        for result in results:
+            if result["type"] == "bash":
+                for field in ["stderr", "stdout"]:
+                    if len(result["result"][field]) > char_limit:
+                        result["result"][field] = get_truncated(
+                            result["result"][field], char_limit
+                        )
+
+    return state
