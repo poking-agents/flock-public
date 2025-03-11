@@ -46,7 +46,7 @@ def save_state(
 def truncate_string(input: str, char_limit: int) -> str:
     return (
         input[: char_limit // 2]
-        + "... [trucated due to the content being too long] ..."
+        + "... [truncated due to the content being too long] ..."
         + input[-char_limit // 2 :]
     )
 
