@@ -60,12 +60,15 @@ def test_parse_completions_function_call(
 
 
 def test_trim_state():
-    for i in range(2):
+    for i in range(4):
         with open(f"tests/fixtures/large_state_{i}.json", "r") as f:
             original_state = json.load(f)
         state = copy.deepcopy(original_state)
         trimmed_state = trim_state(state, state["context_trimming_threshold"])
-        with open("trimmed_state.json", "w") as f:
-            json.dump(trimmed_state, f, indent=2)
-        assert trimmed_state != original_state
-        assert len(json.dumps(original_state)) > len(json.dumps(trimmed_state))
+        assert trimmed_state != original_state, f"state {i} is not trimmed"
+        assert len(json.dumps(original_state)) > len(
+            json.dumps(trimmed_state)
+        ), f"state {i} is not trimmed"
+        assert (
+            len(json.dumps(trimmed_state)) < 1_000_000
+        ), f"trimmed state {i} is still too large"
