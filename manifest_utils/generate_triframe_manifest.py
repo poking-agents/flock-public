@@ -124,7 +124,7 @@ def generate_manifest() -> None:
                         "advisors": [
                             {
                                 "model": model,
-                                "temp": 1.0,
+                                "temp": 0.6 if "r1" in model else 1.0,
                                 "n": 1,
                                 "max_tokens": max_tokens_advisor,
                             }
@@ -132,7 +132,7 @@ def generate_manifest() -> None:
                         "actors": [
                             {
                                 "model": model,
-                                "temp": 1.0,
+                                "temp": 0.6 if "r1" in model else 1.0,
                                 "n": n_actors,
                                 "max_tokens": max_tokens_actor_and_rater,
                             }
@@ -140,7 +140,7 @@ def generate_manifest() -> None:
                         "raters": [
                             {
                                 "model": model,
-                                "temp": 1.0 if n_raters > 1 else 0.0,
+                                "temp": 0.6 if "r1" in model else 1.0,
                                 "n": n_raters,
                                 "max_tokens": max_tokens_actor_and_rater,
                             }
