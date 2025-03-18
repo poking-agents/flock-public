@@ -1,4 +1,4 @@
-import json
+from manifest_utils import load_existing_manifest, save_manifest, update_settings_packs
 
 # Model configurations
 MODELS = [
@@ -10,62 +10,10 @@ MODELS = [
 ]
 
 
-def generate_manifest() -> None:
+def generate_manifest(write_to_file=True) -> dict:
     """Generate the manifest file with settings packs for modular workflow"""
-    MANIFEST = {
-        "settingsSchema": {
-            "type": "object",
-            "properties": {
-                "generator": {
-                    "type": "object",
-                    "properties": {
-                        "model": {"type": "string"},
-                        "temp": {"type": "number"},
-                        "n": {"type": "integer"},
-                    },
-                },
-                "limit_type": {"type": "string"},
-                "intermediate_scoring": {"type": "boolean"},
-            },
-            "required": ["generator"],
-        },
-        "stateSchema": {
-            "type": "object",
-            "properties": {
-                "task_string": {"type": "string"},
-                "nodes": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "source": {"type": "string"},
-                            "options": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "content": {"type": "string"},
-                                        "function_call": {
-                                            "type": ["object", "null"],
-                                            "default": None,
-                                        },
-                                    },
-                                    "required": ["content"],
-                                },
-                            },
-                            "token_usage": {"type": "integer"},
-                            "actions_usage": {"type": "integer"},
-                            "time_usage": {"type": "integer"},
-                        },
-                        "required": ["source", "options"],
-                    },
-                },
-            },
-            "required": ["task_string", "nodes"],
-        },
-        "settingsPacks": {},
-    }
 
+    existing_manifest = load_existing_manifest()
     settings_packs = {}
 
     # Create settings pack for each model
@@ -81,11 +29,17 @@ def generate_manifest() -> None:
             "intermediate_scoring": False,
         }
 
-    MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "modular_4om"
-
-    with open("manifest.json", "w") as f:
-        json.dump(MANIFEST, f, indent=4, sort_keys=True)
+    # Update manifest with new settings packs
+    existing_manifest = update_settings_packs(
+        existing_manifest, 
+        settings_packs, 
+        default_pack="modular_4om"
+    )
+    
+    if write_to_file:
+        save_manifest(existing_manifest)
+    
+    return settings_packs
 
 
 if __name__ == "__main__":

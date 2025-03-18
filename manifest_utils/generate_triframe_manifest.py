@@ -1,4 +1,4 @@
-import json
+from manifest_utils import load_existing_manifest, save_manifest, update_settings_packs
 
 # Model configurations
 MODELS = [
@@ -17,90 +17,10 @@ MODELS = [
 AIRD = [True, False]
 
 
-def generate_manifest() -> None:
-    """Generate the manifest file with settings packs"""
-    MANIFEST = {
-        "settingsSchema": {
-            "type": "object",
-            "properties": {
-                "advisors": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "model": {"type": "string"},
-                            "temp": {"type": "number"},
-                            "n": {"type": "integer"},
-                        },
-                    },
-                },
-                "actors": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "model": {"type": "string"},
-                            "temp": {"type": "number"},
-                            "n": {"type": "integer"},
-                        },
-                    },
-                },
-                "raters": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "model": {"type": "string"},
-                            "temp": {"type": "number"},
-                            "n": {"type": "integer"},
-                        },
-                    },
-                },
-                "limit_type": {"type": "string"},
-                "intermediate_scoring": {"type": "boolean"},
-                "require_function_call": {"type": "boolean"},
-                "enable_advising": {"type": "boolean"},
-                "enable_tool_use": {"type": "boolean"},
-            },
-            "required": ["advisors", "actors", "raters"],
-        },
-        "stateSchema": {
-            "type": "object",
-            "properties": {
-                "task_string": {"type": "string"},
-                "nodes": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "source": {"type": "string"},
-                            "options": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "content": {"type": "string"},
-                                        "function_call": {
-                                            "type": ["object", "null"],
-                                            "default": None,
-                                        },
-                                    },
-                                    "required": ["content"],
-                                },
-                            },
-                            "token_usage": {"type": "integer"},
-                            "actions_usage": {"type": "integer"},
-                            "time_usage": {"type": "integer"},
-                        },
-                        "required": ["source", "options"],
-                    },
-                },
-            },
-            "required": ["task_string", "nodes"],
-        },
-        "settingsPacks": {},
-    }
-
+def generate_manifest(write_to_file=True) -> dict:
+    """Generate the manifest file with settings packs for triframe workflow"""
+    existing_manifest = load_existing_manifest()
+    
     settings_packs = {}
 
     # Create homogeneous model settings
@@ -168,12 +88,18 @@ def generate_manifest() -> None:
 
     # Merge all packs
     settings_packs.update(no_advisor_packs)
-
-    MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "triframe_4om_all_2_rater_3_actor"
-
-    with open("manifest.json", "w") as f:
-        json.dump(MANIFEST, f, indent=4, sort_keys=True)
+    
+    # Update manifest with new settings packs
+    existing_manifest = update_settings_packs(
+        existing_manifest, 
+        settings_packs, 
+        default_pack="triframe_4om_all_2_rater_3_actor"
+    )
+    
+    if write_to_file:
+        save_manifest(existing_manifest)
+    
+    return settings_packs
 
 
 if __name__ == "__main__":
