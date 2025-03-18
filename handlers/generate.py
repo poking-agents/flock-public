@@ -142,11 +142,6 @@ async def generate_hooks(
     #     settings.max_tokens = 4096
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
-    extraParams = (
-        {"max_thinking_tokens": int(settings.max_tokens / 2)}
-        if settings.model in THINKING_TOKENS_MODELS
-        else None
-    )
     async with aiohttp.ClientSession(timeout=timeout) as session:
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
             raw_outputs = []
@@ -158,7 +153,6 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
-                        extraParameters=extraParams,
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -185,7 +179,6 @@ async def generate_hooks(
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
-                extraParameters=extraParams,
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)

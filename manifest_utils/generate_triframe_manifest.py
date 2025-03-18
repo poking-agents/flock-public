@@ -133,6 +133,11 @@ def generate_manifest() -> None:
                                 if model_short == "c3.7s"
                                 else CLAUDE_MAX_OUTPUT_TOKENS
                             )
+                            settings_packs[pack_name][generator][0]["max_reasoning_tokens"] = (
+                                C3_7_MAX_OUTPUT_TOKENS // 2
+                                if model_short == "c3.7s"
+                                else None
+                            )
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],
