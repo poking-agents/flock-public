@@ -11,6 +11,8 @@ MODELS = [
     ("o1-2024-12-17", "o1", None),
     ("o3-mini-2025-01-31", "o3-mini", None),
     ("together/deepseek-r1", "dsr1_together", 32_000),
+    ("gpt-4o-insecure-20250226", "4o_insecure", None),
+    ("gpt-4o-backdoor-20250226", "4o_backdoor", None),
 ]
 AIRD = [True, False]
 
