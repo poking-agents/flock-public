@@ -1,0 +1,54 @@
+{
+  "name": "Flock dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/flock/app,type=bind,consistency=cached",
+  "workspaceFolder": "/home/flock/app",
+  "mounts": [
+    {
+      "source": "flock-home",
+      "target": "/home/flock",
+      "type": "volume"
+    },
+    {
+      "source": "${localEnv:HOME}${localEnv:USERPROFILE}/.config/viv-cli",
+      "target": "/home/flock/.config/viv-cli",
+      "type": "bind"
+    }
+  ],
+  "runArgs": [
+    "--name=flock-dev",
+    "--hostname=flock"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        },
+        "editor.formatOnSave": true,
+        "python.analysis.typeCheckingMode": "strict",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "python.testing.pytestArgs": [
+          "tests"
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true
+      },
+      "extensions": [
+        "charliermarsh.ruff",
+        "editorconfig.editorconfig",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-toolsai.datawrangler",
+        "ms-toolsai.jupyter",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}
