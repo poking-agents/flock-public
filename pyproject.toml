@@ -6,6 +6,9 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 
+[tool.isort]
+profile = "black"
+
 [tool.mypy]
 python_version = "3.12"
 warn_return_any = true
