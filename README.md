@@ -48,24 +48,28 @@ Core operations include:
 
 ```
 flock/
-├── handlers/               # Operation handlers
-│   ├── base.py             # Base handler definitions
-│   ├── bash.py             # Bash command execution
-│   ├── python.py           # Python code execution
-│   ├── generate.py         # AI model generation
-│   └── ...
-├── type_defs/              # Type definitions
-│   ├── base.py             # Core type definitions
-│   ├── operations.py       # Operation types
-│   ├── phases.py           # Phase types
-│   └── states.py           # State types
-├── utils/                  # Shared utilities
-│   ├── phase_utils.py      # Phase execution utilities
-│   ├── state.py            # State management
-│   └── ...
-├── workflows/              # Workflow handling
-│   ├── handlers.py         # HTTP request handlers
-│   └── executor.py         # Phase execution
+├── src/
+│   └── flock/              # Main package
+│       ├── handlers/       # Operation handlers
+│       │   ├── base.py     # Base handler definitions
+│       │   ├── bash.py     # Bash command execution
+│       │   ├── python.py   # Python code execution
+│       │   ├── generate.py # AI model generation
+│       │   └── ...
+│       ├── type_defs/      # Type definitions
+│       │   ├── base.py     # Core type definitions
+│       │   ├── operations.py # Operation types
+│       │   ├── phases.py   # Phase types
+│       │   └── states.py   # State types
+│       ├── utils/          # Shared utilities
+│       │   ├── phase_utils.py # Phase execution utilities
+│       │   ├── state.py    # State management
+│       │   └── ...
+│       └── workflows/      # Workflow handling
+│           ├── handlers.py # HTTP request handlers
+│           └── executor.py # Phase execution
+├── main_src.py             # Entry point
+└── setup.py                # Package setup
 ```
 
 ## Execution Modes
@@ -91,8 +95,18 @@ cd flock-public
 ```
 
 This script will:
-1. Install all dependencies including Git dependencies
-2. Install the project in development mode
+1. Uninstall any previous flock installation
+2. Install all dependencies including Git dependencies
+3. Install the project in development mode
+
+After installation, you can import the package and run the application:
+```python
+import flock  # Import the package
+```
+
+```bash
+python main_src.py  # Run the application
+```
 
 ### Option 2: Manual installation
 

@@ -32,7 +32,10 @@ if git_dependencies:
 setup(
     name="flock",
     version="0.1.0",
-    packages=find_packages(),
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    package_data={"": ["*.json"]},  # Include JSON files
+    include_package_data=True,
     install_requires=read_requirements(),
     python_requires=">=3.7",
 )
