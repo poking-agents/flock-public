@@ -78,6 +78,24 @@ flock/
 
 ## Installation
 
+### Option 1: Easy installation (recommended)
+
+Run the installation script:
+```bash
+# Clone the repository
+git clone https://github.com/poking-agents/flock-public.git
+cd flock-public
+
+# Run the install script
+./install.py
+```
+
+This script will:
+1. Install all dependencies including Git dependencies
+2. Install the project in development mode
+
+### Option 2: Manual installation
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/poking-agents/flock-public.git
@@ -89,7 +107,12 @@ cd flock-public
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
+3. Install the package:
+```bash
+pip install -e .
+```
+
+4. Set up environment variables:
 ```bash
 export MIDDLEMAN_API_URL="http://your-middleman-api-url"
 export MIDDLEMAN_API_KEY="your-api-key"  # Optional: will attempt to use viv config file
