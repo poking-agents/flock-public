@@ -32,7 +32,7 @@ async def python_hooks(params: PythonParams, deps: Optional[dict]) -> PythonOutp
     await hooks_client.action(action_data)
 
     # Execute the Python code
-    result = await hooks_client.run_python(params.code, params.timeout or 60)
+    result = await hooks_client.run_python(params.code, params.timeout)
     return PythonOutput(output=result, error=None)
 
 

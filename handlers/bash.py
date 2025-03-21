@@ -34,7 +34,7 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
     """Bash handler for hooks mode with per-agent state tracking"""
     hooks_client = deps["hooks_client"]
     command = params.command
-    timeout = params.timeout or 60
+    timeout = params.timeout
     agent_id = getattr(params, "agent_id", None)
 
     action_data = {
