@@ -1,5 +1,3 @@
-from manifest_utils import load_existing_manifest, save_manifest, update_settings_packs
-
 # Model configurations
 MODELS = [
     ("gpt-4o-mini-2024-07-18", "4om"),
@@ -17,10 +15,8 @@ MODELS = [
 AIRD = [True, False]
 
 
-def generate_manifest(write_to_file=True) -> dict:
+def generate_triframe_manifest() -> dict:
     """Generate the manifest file with settings packs for triframe workflow"""
-    existing_manifest = load_existing_manifest()
-    
     settings_packs = {}
 
     # Create homogeneous model settings
@@ -43,6 +39,7 @@ def generate_manifest(write_to_file=True) -> dict:
                         "intermediate_scoring": aird,
                         "require_function_call": False,
                         "enable_advising": True,
+                        "workflow_type": "triframe",
                     }
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
@@ -88,19 +85,4 @@ def generate_manifest(write_to_file=True) -> dict:
 
     # Merge all packs
     settings_packs.update(no_advisor_packs)
-    
-    # Update manifest with new settings packs
-    existing_manifest = update_settings_packs(
-        existing_manifest, 
-        settings_packs, 
-        default_pack="triframe_4om_all_2_rater_3_actor"
-    )
-    
-    if write_to_file:
-        save_manifest(existing_manifest)
-    
     return settings_packs
-
-
-if __name__ == "__main__":
-    generate_manifest()

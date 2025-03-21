@@ -1,5 +1,3 @@
-from manifest_utils import load_existing_manifest, save_manifest, update_settings_packs
-
 # Model configurations
 MODELS = [
     ("gpt-4o-mini", "4om"),
@@ -10,10 +8,8 @@ MODELS = [
 ]
 
 
-def generate_manifest(write_to_file=True) -> dict:
+def generate_modular_manifest() -> dict:
     """Generate the manifest file with settings packs for modular workflow"""
-
-    existing_manifest = load_existing_manifest()
     settings_packs = {}
 
     # Create settings pack for each model
@@ -27,20 +23,7 @@ def generate_manifest(write_to_file=True) -> dict:
             },
             "limit_type": "time",
             "intermediate_scoring": False,
+            "workflow_type": "modular",
         }
 
-    # Update manifest with new settings packs
-    existing_manifest = update_settings_packs(
-        existing_manifest, 
-        settings_packs, 
-        default_pack="modular_4om"
-    )
-    
-    if write_to_file:
-        save_manifest(existing_manifest)
-    
     return settings_packs
-
-
-if __name__ == "__main__":
-    generate_manifest()
