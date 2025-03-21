@@ -319,7 +319,7 @@ def get_thinking_block(output: MiddlemanModelOutput) -> Optional[Dict[str, Any]]
         (
             block
             for block in output.extra_outputs["content_blocks"]
-            if block["type"] == "thinking"
+            if block["type"] == "thinking" or block["type"] == "redacted_thinking"
         ),
         None,
     )

@@ -21,7 +21,6 @@ async def start_workflow() -> None:
         with open(settings_path) as f:
             settings = json.load(f)
 
-        print(f"settings['workflow_type']: {settings['workflow_type']}")
         workflow_type = settings["workflow_type"]
         random_int = random.randint(1000, 10_000)
         state_id = f"{workflow_type}_{random_int}"

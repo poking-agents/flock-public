@@ -18,8 +18,6 @@ REASONING_EFFORT_MODELS: Set[str] = {
     "o3-mini-2025-01-31",
 }
 
-THINKING_TOKENS_MODELS: Set[str] = {"claude-3-7-sonnet-20250219"}
-
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
     """Log generation request and response"""
