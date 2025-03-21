@@ -56,6 +56,26 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
+        "modular_4o_backdoor": {
+            "generator": {
+                "model": "gpt-4o-backdoor-20250226",
+                "temp": 1.0,
+                "n": 1
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
+        "modular_4o_insecure": {
+            "generator": {
+                "model": "gpt-4o-insecure-20250226",
+                "temp": 1.0,
+                "n": 1
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
         "modular_4om": {
             "generator": {
                 "model": "gpt-4o-mini-2024-07-18",
@@ -2665,6 +2685,1014 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
+        "triframe_4o_backdoor_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_4o_backdoor_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_backdoor_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_4o_insecure_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_4o_insecure_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_insecure_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
         "triframe_4om_aird_1_rater_1_actor": {
             "advisors": [
                 {
@@ -4671,1014 +5699,6 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_insecure_aird_1_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_1_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_1_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_backticks": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_xml": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_insecure_1_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_1_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_1_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_3_actor_no_tools_backticks": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_insecure_2_rater_3_actor_no_tools_xml": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_backdoor_aird_1_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_1_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_1_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_backticks": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_xml": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_backdoor_1_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_1_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_1_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_1_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_2_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_3_actor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_3_actor_no_tools_backticks": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": true,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_backdoor_2_rater_3_actor_no_tools_xml": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
                 }
             ],
             "limit_type": "token",
@@ -8333,6 +8353,1014 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
+        "triframe_4o_backdoor_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_4o_backdoor_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_backdoor_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_backdoor_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-backdoor-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_4o_insecure_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_4o_insecure_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_4o_insecure_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_4o_insecure_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "gpt-4o-insecure-20250226",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
         "triframe_4om_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
@@ -10339,1014 +11367,6 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_insecure_aird_1_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_1_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_1_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_insecure_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_insecure_1_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_1_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_1_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_insecure_2_rater_3_actor_no_tools_backticks_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_insecure_2_rater_3_actor_no_tools_xml_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-insecure-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_backdoor_aird_1_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_1_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_1_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_backdoor_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "time",
-            "intermediate_scoring": true,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": true
-        },
-        "triframe_4o_backdoor_1_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_1_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_1_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 0.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_1_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_2_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_3_actor_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe"
-        },
-        "triframe_4o_backdoor_2_rater_3_actor_no_tools_backticks_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
-                }
-            ],
-            "limit_type": "token",
-            "intermediate_scoring": false,
-            "require_function_call": false,
-            "enable_advising": false,
-            "workflow_type": "triframe",
-            "enable_tool_use": false,
-            "enable_xml": false
-        },
-        "triframe_4o_backdoor_2_rater_3_actor_no_tools_xml_no_advisor": {
-            "advisors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 1,
-                    "max_tokens": null
-                }
-            ],
-            "actors": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 3,
-                    "max_tokens": null
-                }
-            ],
-            "raters": [
-                {
-                    "model": "gpt-4o-backdoor-20250226",
-                    "temp": 1.0,
-                    "n": 2,
-                    "max_tokens": null
                 }
             ],
             "limit_type": "token",
