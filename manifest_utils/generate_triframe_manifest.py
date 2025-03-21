@@ -1,5 +1,3 @@
-import json
-
 # Model configurations
 MODELS = [
     ("claude-3-5-sonnet-20241022", "c3.6s", 8192),
@@ -16,90 +14,9 @@ MODELS = [
 ]
 AIRD = [True, False]
 
-def generate_manifest() -> None:
-    """Generate the manifest file with settings packs"""
-    MANIFEST = {
-        "settingsSchema": {
-            "type": "object",
-            "properties": {
-                "advisors": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "model": {"type": "string"},
-                            "temp": {"type": "number"},
-                            "n": {"type": "integer"},
-                        },
-                    },
-                },
-                "actors": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "model": {"type": "string"},
-                            "temp": {"type": "number"},
-                            "n": {"type": "integer"},
-                        },
-                    },
-                },
-                "raters": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "model": {"type": "string"},
-                            "temp": {"type": "number"},
-                            "n": {"type": "integer"},
-                        },
-                    },
-                },
-                "limit_type": {"type": "string"},
-                "intermediate_scoring": {"type": "boolean"},
-                "require_function_call": {"type": "boolean"},
-                "enable_advising": {"type": "boolean"},
-                "enable_tool_use": {"type": "boolean"},
-            },
-            "required": ["advisors", "actors", "raters"],
-        },
-        "stateSchema": {
-            "type": "object",
-            "properties": {
-                "task_string": {"type": "string"},
-                "nodes": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "source": {"type": "string"},
-                            "options": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "content": {"type": "string"},
-                                        "function_call": {
-                                            "type": ["object", "null"],
-                                            "default": None,
-                                        },
-                                    },
-                                    "required": ["content"],
-                                },
-                            },
-                            "token_usage": {"type": "integer"},
-                            "actions_usage": {"type": "integer"},
-                            "time_usage": {"type": "integer"},
-                        },
-                        "required": ["source", "options"],
-                    },
-                },
-            },
-            "required": ["task_string", "nodes"],
-        },
-        "settingsPacks": {},
-    }
 
+def generate_triframe_manifest() -> dict:
+    """Generate the manifest file with settings packs for triframe workflow"""
     settings_packs = {}
 
     # Create homogeneous model settings
@@ -109,8 +26,22 @@ def generate_manifest() -> None:
                 for n_actors in [1, 2, 3]:
                     pack_name = f"triframe_{model_short}{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
                     settings_packs[pack_name] = {
-                        "advisors": [{"model": model, "temp": 1.0, "n": 1, "max_tokens": max_tokens}],
-                        "actors": [{"model": model, "temp": 1.0, "n": n_actors, "max_tokens": max_tokens}],
+                        "advisors": [
+                            {
+                                "model": model,
+                                "temp": 1.0,
+                                "n": 1,
+                                "max_tokens": max_tokens,
+                            }
+                        ],
+                        "actors": [
+                            {
+                                "model": model,
+                                "temp": 1.0,
+                                "n": n_actors,
+                                "max_tokens": max_tokens,
+                            }
+                        ],
                         "raters": [
                             {
                                 "model": model,
@@ -127,11 +58,9 @@ def generate_manifest() -> None:
                     }
                     if "claude" in model:
                         for generator in ["advisors", "actors", "raters"]:
-                            settings_packs[pack_name][generator][0]["max_reasoning_tokens"] = (
-                                max_tokens // 2
-                                if model_short == "c3.7s"
-                                else None
-                            )
+                            settings_packs[pack_name][generator][0][
+                                "max_reasoning_tokens"
+                            ] = max_tokens // 2 if model_short == "c3.7s" else None
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],
@@ -176,13 +105,4 @@ def generate_manifest() -> None:
 
     # Merge all packs
     settings_packs.update(no_advisor_packs)
-
-    MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "triframe_4om_2_rater_3_actor"
-
-    with open("manifest.json", "w") as f:
-        json.dump(MANIFEST, f, indent=4, sort_keys=True)
-
-
-if __name__ == "__main__":
-    generate_manifest()
+    return settings_packs

@@ -1,5 +1,3 @@
-import json
-
 # Model configurations
 MODELS = [
     ("claude-3-5-sonnet-20241022", "c3.6s", 8192),
@@ -13,62 +11,9 @@ MODELS = [
     ("together/deepseek-r1", "dsr1_together", 32_000),
 ]
 
-def generate_manifest() -> None:
-    """Generate the manifest file with settings packs for modular workflow"""
-    MANIFEST = {
-        "settingsSchema": {
-            "type": "object",
-            "properties": {
-                "generator": {
-                    "type": "object",
-                    "properties": {
-                        "model": {"type": "string"},
-                        "temp": {"type": "number"},
-                        "n": {"type": "integer"},
-                    },
-                },
-                "limit_type": {"type": "string"},
-                "intermediate_scoring": {"type": "boolean"},
-            },
-            "required": ["generator"],
-        },
-        "stateSchema": {
-            "type": "object",
-            "properties": {
-                "task_string": {"type": "string"},
-                "nodes": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "source": {"type": "string"},
-                            "options": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "content": {"type": "string"},
-                                        "function_call": {
-                                            "type": ["object", "null"],
-                                            "default": None,
-                                        },
-                                    },
-                                    "required": ["content"],
-                                },
-                            },
-                            "token_usage": {"type": "integer"},
-                            "actions_usage": {"type": "integer"},
-                            "time_usage": {"type": "integer"},
-                        },
-                        "required": ["source", "options"],
-                    },
-                },
-            },
-            "required": ["task_string", "nodes"],
-        },
-        "settingsPacks": {},
-    }
 
+def generate_modular_manifest() -> dict:
+    """Generate the manifest file with settings packs for modular workflow"""
     settings_packs = {}
 
     # Create settings pack for each model
@@ -90,12 +35,4 @@ def generate_manifest() -> None:
                 max_tokens // 2
             )
 
-    MANIFEST["settingsPacks"] = settings_packs
-    MANIFEST["defaultSettingsPack"] = "modular_4om"
-
-    with open("manifest.json", "w") as f:
-        json.dump(MANIFEST, f, indent=4, sort_keys=True)
-
-
-if __name__ == "__main__":
-    generate_manifest()
+    return settings_packs
