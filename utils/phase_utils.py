@@ -1,5 +1,7 @@
 """Utilities for phase handling and execution"""
 
+from __future__ import annotations
+
 import asyncio
 import importlib
 import json
@@ -15,11 +17,11 @@ from typing import (
     Type,
     TypeVar,
     Union,
+    TYPE_CHECKING,
 )
 
 import aiohttp
 from pydantic import BaseModel, ValidationError
-from pyhooks.types import MiddlemanModelOutput
 
 from config import API_BASE_URL
 from logger import logger
@@ -43,6 +45,9 @@ from utils.functions import (
     remove_code_blocks,
 )
 from utils.state import load_state, save_state
+
+if TYPE_CHECKING:
+    from pyhooks.types import MiddlemanModelOutput
 
 T = TypeVar("T", bound=BaseState)
 
@@ -149,15 +154,24 @@ def validate_update_pair(
 
 def get_last_completion(
     state: Union[triframeState, ModularState],
-    latest_results: List[OperationResult],
+    generator_output: MiddlemanModelOutput | None,
     enable_tool_use: bool = True,
 ) -> str:
+    if generator_output is None:
+        return ""
+    if enable_tool_use:
+        return generator_output.completion
+    else:
+        return remove_code_blocks(state, generator_output.completion)
+
+
+def get_last_generator_output(
+    latest_results: List[OperationResult],
+) -> MiddlemanModelOutput | None:
     for res in reversed(latest_results):
         if res.type == "generate":
-            if enable_tool_use:
-                return res.result.outputs[0].completion
-            else:
-                return remove_code_blocks(state, res.result.outputs[0].completion)
+            return res.result.outputs[0]
+    return None
 
 
 def serialize_for_json(obj: Any) -> Any:
@@ -325,7 +339,7 @@ def get_thinking_block(output: MiddlemanModelOutput) -> Optional[Dict[str, Any]]
     )
 
 
-def add_empty_user_turn(messages: List[Message]) -> List[Message]:
+def add_dummy_user_message(messages: List[Message]) -> List[Message]:
     """
     If the list of messages doesn't contain a thinking block, add a user turn
     """

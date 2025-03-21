@@ -1,5 +1,6 @@
 import copy
 import json
+import pathlib
 
 import pytest
 
@@ -59,16 +60,24 @@ def test_parse_completions_function_call(
     ), f"actual function call: {function_call}, expected function call: {expected}"
 
 
-def test_trim_state():
-    for i in range(4):
-        with open(f"tests/fixtures/large_state_{i}.json", "r") as f:
-            original_state = json.load(f)
-        state = copy.deepcopy(original_state)
-        trimmed_state = trim_state(state, state["context_trimming_threshold"])
-        assert trimmed_state != original_state, f"state {i} is not trimmed"
-        assert len(json.dumps(original_state)) > len(
-            json.dumps(trimmed_state)
-        ), f"state {i} is not trimmed"
-        assert (
-            len(json.dumps(trimmed_state)) < 1_000_000
-        ), f"trimmed state {i} is still too large"
+@pytest.mark.parametrize(
+    "large_state_file_name",
+    [f"large_state_{i}.json" for i in range(4)],
+)
+def test_trim_state(large_state_file_name: str):
+    with open(
+        pathlib.Path(__file__).resolve().parent / "fixtures" / large_state_file_name,
+        "r",
+    ) as f:
+        original_state = json.load(f)
+    state = copy.deepcopy(original_state)
+    trimmed_state = trim_state(state, state["context_trimming_threshold"])
+    assert (
+        trimmed_state != original_state
+    ), f"state {large_state_file_name} is not trimmed"
+    assert len(json.dumps(original_state)) > len(
+        json.dumps(trimmed_state)
+    ), f"state {large_state_file_name} is not trimmed"
+    assert (
+        len(json.dumps(trimmed_state)) < 1_000_000
+    ), f"trimmed state {large_state_file_name} is still too large"

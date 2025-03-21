@@ -15,7 +15,12 @@ from type_defs.phases import StateRequest
 from type_defs.states import triframeState
 from utils.functions import create_standard_tool_operation, handle_set_timeout
 from utils.logging import log_warning
-from utils.phase_utils import get_last_completion, get_last_function_call, run_phase
+from utils.phase_utils import (
+    get_last_completion,
+    get_last_function_call,
+    get_last_generator_output,
+    run_phase,
+)
 
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
@@ -23,8 +28,9 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         result.type == "generate" for result in state.previous_results[-1]
     )
     if directly_from_actor:
+        generator_output = get_last_generator_output(state.previous_results[-1])
         completion = get_last_completion(
-            state, state.previous_results[-1], state.settings.enable_tool_use
+            state, generator_output, state.settings.enable_tool_use
         )
         function_call = get_last_function_call(
             state, state.previous_results[-1], state.settings.enable_tool_use
