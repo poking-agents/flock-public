@@ -24,7 +24,7 @@ def generate_modular_manifest() -> dict:
                 "model": model,
                 "temp": 1.0,
                 "n": 1,
-                "max_tokens": max_tokens,
+                **({"max_tokens": max_tokens} if max_tokens is not None else {}),
             },
             "limit_type": "time",
             "intermediate_scoring": False,

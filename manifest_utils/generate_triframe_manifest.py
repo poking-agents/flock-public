@@ -56,11 +56,11 @@ def generate_triframe_manifest() -> dict:
                         "enable_advising": True,
                         "workflow_type": "triframe",
                     }
-                    if "claude" in model:
+                    if model_short == "c3.7s":
                         for generator in ["advisors", "actors", "raters"]:
                             settings_packs[pack_name][generator][0][
                                 "max_reasoning_tokens"
-                            ] = max_tokens // 2 if model_short == "c3.7s" else None
+                            ] = max_tokens // 2
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],
