@@ -3,7 +3,7 @@
 import json
 import sys
 from pathlib import Path
-from typing import List, Optional, Dict, Any
+from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
@@ -23,8 +23,8 @@ from utils.functions import (
 from utils.logging import create_log_request, log_warning
 from utils.phase_utils import (
     get_last_completion,
-    run_phase,
     get_last_generator_output,
+    run_phase,
 )
 from utils.styles import standard_log_styles
 

@@ -72,9 +72,6 @@ def test_trim_state(large_state_file_name: str):
         original_state = json.load(f)
     state = copy.deepcopy(original_state)
     trimmed_state = trim_state(state, state["context_trimming_threshold"])
-    assert (
-        trimmed_state != original_state
-    ), f"state {large_state_file_name} is not trimmed"
     assert len(json.dumps(original_state)) > len(
         json.dumps(trimmed_state)
     ), f"state {large_state_file_name} is not trimmed"

@@ -27,9 +27,11 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 task=state.task_string,
                 limit_name=limit_name,
                 limit_max=limit_max,
-                functions=json.dumps(get_standard_function_definitions(state))
-                if state.settings.enable_tool_use
-                else get_standard_completion_function_definitions(state),
+                functions=(
+                    json.dumps(get_standard_function_definitions(state))
+                    if state.settings.enable_tool_use
+                    else get_standard_completion_function_definitions(state)
+                ),
             ),
         )
     ]
@@ -44,7 +46,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
         message = None
         if node.source == "actor_choice":
             message = Message(
-                role="assistant",
+                role="user",
                 content=(
                     f"{node.options[0].content}\n"
                     f"Executed Function Call: {json.dumps(node.options[0].function_call)}"

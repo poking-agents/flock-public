@@ -6,11 +6,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, Set
 
+import aiohttp
+
 from handlers.base import create_handler
 from logger import logger
 from type_defs.operations import GenerationOutput, GenerationParams
 from type_defs.processing import ProcessingMode
-import aiohttp
 
 SINGLE_GENERATION_MODELS: Set[str] = {}
 REASONING_EFFORT_MODELS: Set[str] = {

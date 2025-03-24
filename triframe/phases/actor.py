@@ -74,7 +74,7 @@ def prepare_history_for_actor(
                     advice = tool_use
                 message = Message(
                     content=f"<advisor>\n{advice}\n</advisor>",
-                    role="assistant",
+                    role="user",
                 )
             elif node.source == "actor_choice":
                 if state.settings.enable_tool_use:
@@ -205,9 +205,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         task=state.task_string,
         limit_name=limit_name,
         limit_max=limit_max,
-        functions=get_standard_function_definitions(state)
-        if state.settings.enable_tool_use
-        else get_standard_completion_function_definitions(state),
+        functions=(
+            get_standard_function_definitions(state)
+            if state.settings.enable_tool_use
+            else get_standard_completion_function_definitions(state)
+        ),
     )
     if not state.settings.enable_tool_use:
         content += ENFORCE_FUNCTION_CALL_PROMPT
@@ -231,18 +233,22 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_with_advice],
             settings=actor_settings,
-            functions=get_standard_function_definitions(state)
-            if state.settings.enable_tool_use
-            else None,
+            functions=(
+                get_standard_function_definitions(state)
+                if state.settings.enable_tool_use
+                else None
+            ),
         )
         generation_request = GenerationRequest(type="generate", params=params)
         operations.append(generation_request)
         without_advice_params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_without_advice],
             settings=actor_settings,
-            functions=get_standard_function_definitions(state)
-            if state.settings.enable_tool_use
-            else None,
+            functions=(
+                get_standard_function_definitions(state)
+                if state.settings.enable_tool_use
+                else None
+            ),
         )
         generation_request_without_advice = GenerationRequest(
             type="generate", params=without_advice_params

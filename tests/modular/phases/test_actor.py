@@ -1,23 +1,25 @@
-import modular.phases.actor as actor
 import json
-from type_defs.states import ModularState, ModularSettings
+
+import pytest
+
+import modular.phases.actor as actor
 from type_defs.base import Node, Option
 from type_defs.operations import (
-    GenerationResult,
-    GenerationOutput,
-    MiddlemanModelOutput,
-    SaveStateResult,
-    SaveStateOutput,
-    GetUsageResult,
-    GetUsageOutput,
-    UsageCheckpoint,
-    RunUsage,
-    MiddlemanSettings,
     BashRequest,
+    GenerationOutput,
+    GenerationResult,
+    GetUsageOutput,
+    GetUsageResult,
+    LogWithAttributesRequest,
+    MiddlemanModelOutput,
+    MiddlemanSettings,
+    RunUsage,
+    SaveStateOutput,
+    SaveStateResult,
+    UsageCheckpoint,
 )
 from type_defs.phases import StateRequest
-from type_defs.operations import LogWithAttributesRequest
-import pytest
+from type_defs.states import ModularSettings, ModularState
 
 
 @pytest.mark.parametrize(

@@ -2,7 +2,6 @@
 
 import json
 from typing import Any, Dict, Optional, Type
-import copy
 
 from pydantic import BaseModel
 

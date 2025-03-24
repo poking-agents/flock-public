@@ -1,5 +1,4 @@
 import json
-import os
 
 from generate_modular_manifest import generate_modular_manifest
 from generate_triframe_manifest import generate_triframe_manifest

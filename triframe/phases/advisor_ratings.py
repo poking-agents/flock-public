@@ -24,11 +24,9 @@ from utils.functions import (
     get_standard_completion_function_definitions,
     get_standard_function_definitions,
     parse_completions_function_call,
-    parse_completion_function_names,
-    remove_code_blocks,
 )
 from utils.logging import log_system, log_warning
-from utils.phase_utils import run_phase, get_thinking_block
+from utils.phase_utils import get_thinking_block, run_phase
 
 
 def form_transcript(state: triframeState, actor_options: List[Option]) -> str:

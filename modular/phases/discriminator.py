@@ -11,7 +11,7 @@ from type_defs.base import Message, Option
 from type_defs.phases import StateRequest
 from type_defs.states import ModularState, Node
 from utils.logging import log_warning
-from utils.phase_utils import results_of_type, run_phase, get_thinking_block
+from utils.phase_utils import get_thinking_block, results_of_type, run_phase
 
 
 def parse_ratings(option: Message) -> Optional[Dict[int, List[float]]]:
