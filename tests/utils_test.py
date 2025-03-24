@@ -61,20 +61,127 @@ def test_parse_completions_function_call(
 
 
 @pytest.mark.parametrize(
-    "large_state_file_name",
-    [f"large_state_{i}.json" for i in range(4)],
+    "original_state",
+    [
+        # Case 1: Long tool output content
+        {
+            "nodes": [
+                {
+                    "source": "tool_output",
+                    "options": [
+                        {
+                            "name": "run_bash",
+                            "content": "really long tool output " * 100_000,
+                            "metadata": {},
+                            "function_call": None,
+                        },
+                    ],
+                },
+            ],
+            "previous_results": [],
+            "context_trimming_threshold": 80_000,
+        },
+        # Case 2: Long stdout in bash result
+        {
+            "nodes": [],
+            "previous_results": [
+                [
+                    {
+                        "type": "bash",
+                        "error": None,
+                        "result": {
+                            "status": 0,
+                            "stderr": "",
+                            "stdout": "really long stdout output " * 100_000,
+                        },
+                    },
+                ]
+            ],
+            "context_trimming_threshold": 80_000,
+        },
+        # Case 3: Long stderr in bash result
+        {
+            "nodes": [],
+            "previous_results": [
+                [
+                    {
+                        "type": "bash",
+                        "error": None,
+                        "result": {
+                            "status": 0,
+                            "stderr": "really long stderr output " * 100_000,
+                            "stdout": "",
+                        },
+                    },
+                ]
+            ],
+            "context_trimming_threshold": 80_000,
+        },
+        # Case 4: Long python output
+        {
+            "nodes": [],
+            "previous_results": [
+                [
+                    {
+                        "type": "python",
+                        "error": None,
+                        "result": {
+                            "error": None,
+                            "output": "really long python result " * 100_000,
+                        },
+                    },
+                ]
+            ],
+            "context_trimming_threshold": 80_000,
+        },
+        # Case 5: Multiple long outputs combined
+        {
+            "nodes": [
+                {
+                    "source": "tool_output",
+                    "options": [
+                        {
+                            "name": "run_bash",
+                            "content": "really long tool output " * 100_000,
+                            "metadata": {},
+                            "function_call": None,
+                        },
+                    ],
+                },
+            ],
+            "previous_results": [
+                [
+                    {
+                        "type": "bash",
+                        "error": None,
+                        "result": {
+                            "status": 0,
+                            "stderr": "really long stderr " * 100_000,
+                            "stdout": "really long stdout " * 100_000,
+                        },
+                        "metadata": {},
+                    },
+                    {
+                        "type": "python",
+                        "error": None,
+                        "result": {
+                            "error": None,
+                            "output": "really long python result " * 100_000,
+                        },
+                        "metadata": {},
+                    },
+                ]
+            ],
+            "context_trimming_threshold": 80_000,
+        },
+    ],
 )
-def test_trim_state(large_state_file_name: str):
-    with open(
-        pathlib.Path(__file__).resolve().parent / "fixtures" / large_state_file_name,
-        "r",
-    ) as f:
-        original_state = json.load(f)
+def test_trim_state(original_state: dict[str, any]):
     state = copy.deepcopy(original_state)
     trimmed_state = trim_state(state, state["context_trimming_threshold"])
     assert len(json.dumps(original_state)) > len(
         json.dumps(trimmed_state)
-    ), f"state {large_state_file_name} is not trimmed"
+    ), "state is not trimmed"
     assert (
         len(json.dumps(trimmed_state)) < 1_000_000
-    ), f"trimmed state {large_state_file_name} is still too large"
+    ), "trimmed state is still too large"
