@@ -12,7 +12,7 @@ def generate_triframe_manifest() -> dict:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    pack_name = f"triframe_{model_short}{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
+                    pack_name = f"triframe_{model_short}{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"  # noqa: E501
                     settings_packs[pack_name] = {
                         "advisors": [
                             {
@@ -48,7 +48,7 @@ def generate_triframe_manifest() -> dict:
                         for generator in ["advisors", "actors", "raters"]:
                             settings_packs[pack_name][generator][0][
                                 "max_reasoning_tokens"
-                            ] = (max_tokens // 2)
+                            ] = max_tokens // 2
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],

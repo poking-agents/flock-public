@@ -42,7 +42,7 @@ def trim_message_list(
     # Try to keep as many recent messages as possible
     tail_messages = []
     for msg in messages[4:][::-1]:
-        # always include thinking blocks since they often don't contribute to token count
+        # include thinking blocks since they often don't contribute to token count
         # details: https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#implementing-extended-thinking
         if not isinstance(msg.content, str):
             tail_messages.append(msg)

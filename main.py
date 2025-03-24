@@ -50,7 +50,8 @@ async def start_workflow() -> None:
                     print(f"{workflow_type.capitalize()} workflow started successfully")
                 else:
                     print(
-                        f"Failed to start {workflow_type} workflow: {await response.text()}"
+                        f"Failed to start {workflow_type} "
+                        f"workflow: {await response.text()}"
                     )
 
     except Exception as e:

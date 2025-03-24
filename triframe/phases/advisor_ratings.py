@@ -154,11 +154,11 @@ def fn_format_review_instructions(
         options_text.append(model_option_text)
 
     actions_and_observations = form_transcript(state, actor_options.options)
-    assert type(options_text) == list
+    assert type(options_text) is list
     try:
         options_text = "\n\n".join(options_text)
-    except:
-        print(f"options_text: {options_text}")
+    except Exception as e:
+        print(f"options_text: {options_text}, error: {e}")
     review_instructions = f"""{fn_comparison_template_start()}
 <transcript>
 The agent is working on the following task:

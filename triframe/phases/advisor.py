@@ -49,7 +49,8 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 role="user",
                 content=(
                     f"{node.options[0].content}\n"
-                    f"Executed Function Call: {json.dumps(node.options[0].function_call)}"
+                    f"Executed Function Call: "
+                    f"{json.dumps(node.options[0].function_call)}"
                 ),
             )
         elif node.source == "tool_output":
@@ -87,14 +88,18 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             messages.append(
                 Message(
                     role="user",
-                    content="Now, call the advise tool by strictly following the format below with your advise to the agent (do not include the square brackets).\n<advise>\n[your advise to the agent]\n</advise>",
+                    content="Now, call the advise tool by strictly following the format"
+                    " below with your advise to the agent (do not include the square "
+                    "brackets).\n<advise>\n[your advise to the agent]\n</advise>",
                 )
             )
         else:
             messages.append(
                 Message(
                     role="user",
-                    content="Now, call the advise tool by strictly following the format below with your advise to the agent (do not include the square brackets).\n```advise\n[your advise to the agent]\n```",
+                    content="Now, call the advise tool by strictly following the format"
+                    " below with your advise to the agent (do not include the square "
+                    "brackets).\n```advise\n[your advise to the agent]\n```",
                 )
             )
     return messages

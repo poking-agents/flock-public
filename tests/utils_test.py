@@ -1,6 +1,5 @@
 import copy
 import json
-import pathlib
 
 import pytest
 
@@ -17,7 +16,9 @@ from utils.state import trim_state
             {"advise": ("advice", str)},
             {
                 "name": "advise",
-                "arguments": '{"advice": "your advise to the agent\\n```python\\ncode 1\\n```"}',
+                "arguments": (
+                    '{"advice": "your advise to the agent\\n```python\\ncode 1\\n```"}'
+                ),
             },
         ),
         (

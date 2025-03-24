@@ -42,7 +42,8 @@ def log_actor_choice(option: Option) -> LogWithAttributesRequest:
                     iter(json.loads(option.function_call["arguments"]))
                 )
                 message += f" with {first_key_in_args}:\n"
-                message += f"{json.loads(option.function_call['arguments'])[first_key_in_args]}\n"
+                args = json.loads(option.function_call["arguments"])
+                message += f"{args[first_key_in_args]}\n"
         except json.JSONDecodeError:
             message += f"Function call does not parse: {option.function_call}\n"
             style = log_styles["warning"]
@@ -68,7 +69,8 @@ def log_advisor_choice(option: Option) -> LogWithAttributesRequest:
             advice = json.loads(option.function_call["arguments"])["advice"]
             message += f"Advice:\n{advice}"
         except json.JSONDecodeError:
-            message += f"Function call does not parse and contain 'advice': {option.function_call}\n"
+            message += "Function call does not parse and contain 'advice': "
+            f"{option.function_call}\n"
             style = log_styles["warning"]
         except KeyError:
             message += (
