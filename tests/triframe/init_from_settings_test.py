@@ -1,10 +1,14 @@
 import json
+import pathlib
 
 from triframe.phases.init_from_settings import initialize_state_from_settings
 
 
 def test_initialize_state_from_settings():
-    with open("tests/fixtures/triframe_state.json", "r") as f:
+    with open(
+        pathlib.Path(__file__).parent.parent / "fixtures" / "triframe_state.json",
+        "r",
+    ) as f:
         expected_state = json.load(f)
     state = initialize_state_from_settings("test", "tests/fixtures/triframe_state.json")
     assert state.settings.advisors[0].model == expected_state["advisors"][0]["model"]
