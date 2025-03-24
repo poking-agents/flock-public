@@ -56,9 +56,9 @@ def test_parse_completions_function_call(
     function_call = parse_completions_function_call(
         False, function_names, completion, func_name_to_args
     )
-    assert (
-        function_call == expected
-    ), f"actual function call: {function_call}, expected function call: {expected}"
+    assert function_call == expected, (
+        f"actual function call: {function_call}, expected function call: {expected}"
+    )
 
 
 @pytest.mark.parametrize(
@@ -180,9 +180,9 @@ def test_parse_completions_function_call(
 def test_trim_state(original_state: dict[str, any]):
     state = copy.deepcopy(original_state)
     trimmed_state = trim_state(state, state["context_trimming_threshold"])
-    assert len(json.dumps(original_state)) > len(
-        json.dumps(trimmed_state)
-    ), "state is not trimmed"
-    assert (
-        len(json.dumps(trimmed_state)) < 1_000_000
-    ), "trimmed state is still too large"
+    assert len(json.dumps(original_state)) > len(json.dumps(trimmed_state)), (
+        "state is not trimmed"
+    )
+    assert len(json.dumps(trimmed_state)) < 1_000_000, (
+        "trimmed state is still too large"
+    )

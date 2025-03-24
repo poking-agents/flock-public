@@ -49,7 +49,7 @@ def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
         content = (
             f"""<agent>
 {node.options[0].content}
-{json.dumps(node.options[0].function_call) if node.options[0].function_call else ''}
+{json.dumps(node.options[0].function_call) if node.options[0].function_call else ""}
 </agent>"""
             if node.source == "actor_choice"
             else f"""<scaffolding>
@@ -164,8 +164,11 @@ def fn_format_review_instructions(
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{json.dumps(get_standard_function_definitions(state)) if state.settings.enable_tool_use 
-else get_standard_completion_function_definitions(state)}
+{
+        json.dumps(get_standard_function_definitions(state))
+        if state.settings.enable_tool_use
+        else get_standard_completion_function_definitions(state)
+    }
 {actions_and_observations}
 <candidate_options>
 {options_text}

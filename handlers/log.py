@@ -55,7 +55,7 @@ async def log_mock(params: LogParams, deps: Optional[dict]) -> LogOutput:
     }
 
     # Write to mock log file
-    filename = f'logs/mock_log_{datetime.now().strftime("%Y%m%d")}.jsonl'
+    filename = f"logs/mock_log_{datetime.now().strftime('%Y%m%d')}.jsonl"
     with open(filename, "a") as f:
         f.write(json.dumps(log_entry) + "\n")
 
@@ -82,7 +82,7 @@ async def log_with_attributes_mock(
     }
 
     # Write to mock log file
-    filename = f'logs/mock_attributed_log_{datetime.now().strftime("%Y%m%d")}.jsonl'
+    filename = f"logs/mock_attributed_log_{datetime.now().strftime('%Y%m%d')}.jsonl"
     with open(filename, "a") as f:
         f.write(json.dumps(log_entry) + "\n")
 

@@ -121,7 +121,7 @@ async def bash_hooks(params: BashParams, deps: Optional[dict]) -> BashOutput:
                 stdout, stderr = await proc.communicate()
                 return BashOutput(
                     stdout=stdout.decode() if stdout else "",
-                    stderr=f"""{stderr.decode() if stderr else ''}
+                    stderr=f"""{stderr.decode() if stderr else ""}
 Command timed out after {timeout} seconds.""",
                     status=124,
                 )
