@@ -73,7 +73,10 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         else:
             tool_timeout = state.timeout  # currently only used for bash and python
             tool_operation = create_standard_tool_operation(
-                tool_name, tool_args, metadata, tool_timeout,
+                tool_name,
+                tool_args,
+                metadata,
+                tool_timeout,
             )
             if tool_operation is None:
                 raise ValueError(f"Unknown function: {tool_name}")
