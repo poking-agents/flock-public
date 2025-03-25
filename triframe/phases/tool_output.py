@@ -10,17 +10,16 @@ from type_defs import Node, Option, StateRequest, triframeState
 from utils import run_phase
 from utils.functions import (
     format_tool_output,
-    get_tool_operation_result,
-    get_tool_output_name,
+    get_tool_operation,
 )
 from utils.logging import log_tool_output
 
 
 def create_phase_request(state: triframeState) -> List[StateRequest]:
     last_update = state.previous_results[-1]
-    operation_result = get_tool_operation_result(last_update)
-    formatted_output = format_tool_output(state.output_limit, operation_result)
-    name = get_tool_output_name(operation_result)
+    operation = get_tool_operation(last_update)
+    formatted_output = format_tool_output(state.output_limit, operation.result)
+    name = operation.type
     state.nodes.append(
         Node(
             source="tool_output", options=[Option(content=formatted_output, name=name)]

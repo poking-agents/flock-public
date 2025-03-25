@@ -7,7 +7,7 @@ from pydantic import BaseModel, ConfigDict
 from pyhooks.types import MiddlemanModelOutput, MiddlemanSettings, ScoreLogEntry
 
 ParamsT = TypeVar("ParamsT", bound=BaseModel)
-ResultT = TypeVar("ResultT", bound=BaseModel)
+ResultT = TypeVar("ResultT", bound=BaseModel | List[BaseModel])
 
 
 class OperationMetadata(BaseModel):
