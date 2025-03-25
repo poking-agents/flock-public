@@ -30,7 +30,7 @@ from utils.logging import log_warning
 from utils.phase_utils import (
     add_dummy_user_message,
     add_usage_request,
-    get_thinking_block,
+    get_thinking_blocks,
     run_phase,
 )
 
@@ -108,9 +108,9 @@ def prepare_history_for_actor(
                 if current_length + len(message.content) > character_budget:
                     break
                 messages.append(message)
-                if option.thinking_block:
+                if option.thinking_blocks:
                     thinking_message = Message(
-                        content=[option.thinking_block],
+                        content=option.thinking_blocks,
                         role="assistant",
                     )
                     messages.append(thinking_message)
@@ -149,7 +149,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     advisor_outputs = []
     for result in state.previous_results[-1]:
         if result.type == "generate":
-            thinking_block = get_thinking_block(result.result.outputs[0])
+            thinking_blocks = get_thinking_blocks(result.result.outputs[0])
             completion = result.result.outputs[0].completion
             function_call = None
             if state.settings.enable_tool_use:
@@ -163,14 +163,14 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 )
                 if function_call:
                     completion = remove_code_blocks(state, completion)
-            advisor_outputs.append((completion, function_call, thinking_block))
+            advisor_outputs.append((completion, function_call, thinking_blocks))
 
-    for completion, function_call, thinking_block in advisor_outputs:
+    for completion, function_call, thinking_blocks in advisor_outputs:
         log_request = log_advisor_choice(
             Option(
                 content=completion,
                 function_call=function_call,
-                thinking_block=thinking_block,
+                thinking_blocks=thinking_blocks,
             )
         )
         operations.append(log_request)
@@ -193,7 +193,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         Option(
                             content=completion,
                             function_call=function_call,
-                            thinking_block=thinking_block,
+                            thinking_blocks=thinking_blocks,
                         )
                     ],
                 )

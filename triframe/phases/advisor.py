@@ -74,10 +74,10 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             if current_length + len(message.content) > character_budget:
                 break
             reversed_messages.append(message)
-            if node.options[0].thinking_block:
+            if node.options[0].thinking_blocks:
                 reversed_messages.append(
                     Message(
-                        content=[node.options[0].thinking_block],
+                        content=node.options[0].thinking_blocks,
                         role="assistant",
                     )
                 )

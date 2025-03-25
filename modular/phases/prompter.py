@@ -84,10 +84,10 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 role="function",
             )
         else:
-            if option.thinking_block:
+            if option.thinking_blocks:
                 thinking_message = Message(
                     role="assistant",
-                    content=[option.thinking_block],
+                    content=option.thinking_blocks,
                     name=option.name,
                 )
                 messages.append(thinking_message)

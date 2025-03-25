@@ -16,8 +16,9 @@ def log_actor_choice(option: Option) -> LogWithAttributesRequest:
     message = ""
     style = log_styles["actor_no_function"]  # Default style for no function call
 
-    if option.thinking_block:
-        message += f"Thinking:\n{option.thinking_block}\n{DIVIDER}\n"
+    if option.thinking_blocks:
+        for thinking_block in option.thinking_blocks:
+            message += f"Thinking:\n{thinking_block['thinking']}\n{DIVIDER}\n"
     if option.content:
         message += f"Completion content:\n{option.content}\n"
 
@@ -60,8 +61,9 @@ def log_advisor_choice(option: Option) -> LogWithAttributesRequest:
     """Log an advisor's choice with appropriate styling"""
     message = ""
     style = log_styles["advisor"]
-    if option.thinking_block:
-        message += f"Thinking:\n{option.thinking_block}\n{DIVIDER}\n"
+    if option.thinking_blocks:
+        for thinking_block in option.thinking_blocks:
+            message += f"Thinking:\n{thinking_block['thinking']}\n{DIVIDER}\n"
     if option.content:
         message += f"Completion content:\n{option.content}\n"
     if option.function_call is not None:
@@ -108,8 +110,9 @@ def format_ratings(function_call: Dict[str, Any]) -> str:
 def log_advisor_choosing(option: Option) -> LogWithAttributesRequest:
     """Log advisor's choice process with appropriate styling"""
     message = ""
-    if option.thinking_block:
-        message += f"Thinking:\n{option.thinking_block}\n{DIVIDER}\n"
+    if option.thinking_blocks:
+        for thinking_block in option.thinking_blocks:
+            message += f"Thinking:\n{thinking_block['thinking']}\n{DIVIDER}\n"
     if option.content:
         message += f"Completion content:\n{option.content}\n"
     if option.function_call:

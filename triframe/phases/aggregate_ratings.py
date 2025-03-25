@@ -15,7 +15,7 @@ from type_defs.phases import StateRequest
 from type_defs.states import triframeState
 from utils.functions import parse_backticks_json, remove_code_blocks
 from utils.logging import log_system, log_warning
-from utils.phase_utils import get_thinking_block, results_of_type, run_phase
+from utils.phase_utils import get_thinking_blocks, results_of_type, run_phase
 
 
 def summarize_ratings(all_ratings: Dict[int, List[float]]) -> str:
@@ -79,7 +79,7 @@ def aggregate_ratings(
         all_ratings: Dict[int, List[float]] = {}
         log_requests = []
         for result in rating_generation_results:
-            thinking_block = get_thinking_block(result.result.outputs[0])
+            thinking_blocks = get_thinking_blocks(result.result.outputs[0])
             if not result.result.outputs:
                 failed_ratings += 1
                 continue
@@ -110,7 +110,7 @@ def aggregate_ratings(
                     Option(
                         content=completion,
                         function_call=function_call,
-                        thinking_block=thinking_block,
+                        thinking_blocks=thinking_blocks,
                     )
                 )
                 log_requests.append(
@@ -118,7 +118,7 @@ def aggregate_ratings(
                         Option(
                             content=completion,
                             function_call=function_call,
-                            thinking_block=thinking_block,
+                            thinking_blocks=thinking_blocks,
                         )
                     )
                 )
