@@ -99,7 +99,10 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
         state = handle_set_timeout(state, tool_args)
         next_phase = "modular/phases/prompter.py"
     else:
-        tool_operation = create_standard_tool_operation(tool_name, tool_args, metadata)
+        tool_timeout = state.timeout  # currently only used for bash and python
+        tool_operation = create_standard_tool_operation(
+            tool_name, tool_args, metadata, tool_timeout,
+        )
         if not tool_operation:
             raise ValueError(f"Unknown function: {tool_name}")
         next_phase = "modular/phases/tool_output.py" if tool_name != "submit" else None

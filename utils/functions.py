@@ -549,7 +549,10 @@ def get_tool_operation(last_update: List[OperationResult]) -> OperationResult:
 
 
 def create_standard_tool_operation(
-    tool_name: str, tool_args: dict, metadata: OperationMetadata
+    tool_name: str,
+    tool_args: dict,
+    metadata: OperationMetadata,
+    tool_timeout: int = DEFAULT_TIMEOUT,
 ) -> BaseOperationRequest | None:
     if tool_name == "submit":
         return SubmissionRequest(
@@ -560,16 +563,17 @@ def create_standard_tool_operation(
     elif tool_name == "bash":
         return BashRequest(
             type="bash",
-            params=BashParams(command=tool_args["command"]),
+            params=BashParams(command=tool_args["command"], timeout=tool_timeout),
             metadata=metadata,
         )
     elif tool_name == "python":
         return PythonRequest(
             type="python",
-            params=PythonParams(code=tool_args["code"]),
+            params=PythonParams(code=tool_args["code"], timeout=tool_timeout),
             metadata=metadata,
         )
     elif tool_name == "score":
+        # score timeout is controlled by task family, not agent
         return ScoreRequest(type="score", params=ScoreParams(), metadata=metadata)
     elif tool_name == "score_log":
         return ScoreLogRequest(
