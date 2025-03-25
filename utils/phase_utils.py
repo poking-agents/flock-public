@@ -328,7 +328,7 @@ def add_usage_request(
 
 def get_thinking_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
     if not output.extra_outputs:
-        return None
+        return []
     return [
         block
         for block in output.extra_outputs["content_blocks"]

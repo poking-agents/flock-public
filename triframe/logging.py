@@ -8,8 +8,6 @@ from type_defs import Option
 from type_defs.operations import LogWithAttributesRequest
 from utils.logging import create_log_request
 
-DIVIDER = "--------------------------------"
-
 
 def log_actor_choice(option: Option) -> LogWithAttributesRequest:
     """Log an actor's choice with appropriate styling"""
@@ -18,7 +16,7 @@ def log_actor_choice(option: Option) -> LogWithAttributesRequest:
 
     if option.thinking_blocks:
         for thinking_block in option.thinking_blocks:
-            message += f"Thinking:\n{thinking_block['thinking']}\n{DIVIDER}\n"
+            message += f"Thinking:\n{thinking_block['thinking']}\n"
     if option.content:
         message += f"Completion content:\n{option.content}\n"
 
@@ -63,7 +61,7 @@ def log_advisor_choice(option: Option) -> LogWithAttributesRequest:
     style = log_styles["advisor"]
     if option.thinking_blocks:
         for thinking_block in option.thinking_blocks:
-            message += f"Thinking:\n{thinking_block['thinking']}\n{DIVIDER}\n"
+            message += f"Thinking:\n{thinking_block['thinking']}\n"
     if option.content:
         message += f"Completion content:\n{option.content}\n"
     if option.function_call is not None:
@@ -112,7 +110,7 @@ def log_advisor_choosing(option: Option) -> LogWithAttributesRequest:
     message = ""
     if option.thinking_blocks:
         for thinking_block in option.thinking_blocks:
-            message += f"Thinking:\n{thinking_block['thinking']}\n{DIVIDER}\n"
+            message += f"Thinking:\n{thinking_block['thinking']}\n"
     if option.content:
         message += f"Completion content:\n{option.content}\n"
     if option.function_call:

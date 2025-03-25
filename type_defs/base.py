@@ -17,8 +17,8 @@ class Option(BaseModel):
     metadata: Optional[Dict[str, Any]] = Field(
         default_factory=dict, description="Optional metadata about the option's source"
     )
-    thinking_blocks: Optional[Dict[str, Any]] = Field(
-        default_factory=dict, description="Optional thinking block"
+    thinking_blocks: List[Dict[str, Any]] = Field(
+        default_factory=list, description="Optional thinking blocks"
     )
 
 
