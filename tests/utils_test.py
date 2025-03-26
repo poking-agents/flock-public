@@ -64,117 +64,127 @@ def test_parse_completions_function_call(
 @pytest.mark.parametrize(
     "original_state",
     [
-        # Case 1: Long tool output content
-        {
-            "nodes": [
-                {
-                    "source": "tool_output",
-                    "options": [
+        pytest.param(
+            {
+                "nodes": [
+                    {
+                        "source": "tool_output",
+                        "options": [
+                            {
+                                "name": "run_bash",
+                                "content": "really long tool output " * 100_000,
+                                "metadata": {},
+                                "function_call": None,
+                            },
+                        ],
+                    },
+                ],
+                "previous_results": [],
+                "context_trimming_threshold": 80_000,
+            },
+            id="long-tool-output-context",
+        ),
+        pytest.param(
+            {
+                "nodes": [],
+                "previous_results": [
+                    [
                         {
-                            "name": "run_bash",
-                            "content": "really long tool output " * 100_000,
-                            "metadata": {},
-                            "function_call": None,
-                        },
-                    ],
-                },
-            ],
-            "previous_results": [],
-            "context_trimming_threshold": 80_000,
-        },
-        # Case 2: Long stdout in bash result
-        {
-            "nodes": [],
-            "previous_results": [
-                [
-                    {
-                        "type": "bash",
-                        "error": None,
-                        "result": {
-                            "status": 0,
-                            "stderr": "",
-                            "stdout": "really long stdout output " * 100_000,
-                        },
-                    },
-                ]
-            ],
-            "context_trimming_threshold": 80_000,
-        },
-        # Case 3: Long stderr in bash result
-        {
-            "nodes": [],
-            "previous_results": [
-                [
-                    {
-                        "type": "bash",
-                        "error": None,
-                        "result": {
-                            "status": 0,
-                            "stderr": "really long stderr output " * 100_000,
-                            "stdout": "",
-                        },
-                    },
-                ]
-            ],
-            "context_trimming_threshold": 80_000,
-        },
-        # Case 4: Long python output
-        {
-            "nodes": [],
-            "previous_results": [
-                [
-                    {
-                        "type": "python",
-                        "error": None,
-                        "result": {
+                            "type": "bash",
                             "error": None,
-                            "output": "really long python result " * 100_000,
+                            "result": {
+                                "status": 0,
+                                "stderr": "",
+                                "stdout": "really long stdout output " * 100_000,
+                            },
                         },
-                    },
-                ]
-            ],
-            "context_trimming_threshold": 80_000,
-        },
-        # Case 5: Multiple long outputs combined
-        {
-            "nodes": [
-                {
-                    "source": "tool_output",
-                    "options": [
+                    ]
+                ],
+                "context_trimming_threshold": 80_000,
+            },
+            id="long-stdout-in-bash-result",
+        ),
+        pytest.param(
+            {
+                "nodes": [],
+                "previous_results": [
+                    [
                         {
-                            "name": "run_bash",
-                            "content": "really long tool output " * 100_000,
-                            "metadata": {},
-                            "function_call": None,
-                        },
-                    ],
-                },
-            ],
-            "previous_results": [
-                [
-                    {
-                        "type": "bash",
-                        "error": None,
-                        "result": {
-                            "status": 0,
-                            "stderr": "really long stderr " * 100_000,
-                            "stdout": "really long stdout " * 100_000,
-                        },
-                        "metadata": {},
-                    },
-                    {
-                        "type": "python",
-                        "error": None,
-                        "result": {
+                            "type": "bash",
                             "error": None,
-                            "output": "really long python result " * 100_000,
+                            "result": {
+                                "status": 0,
+                                "stderr": "really long stderr output " * 100_000,
+                                "stdout": "",
+                            },
                         },
-                        "metadata": {},
+                    ]
+                ],
+                "context_trimming_threshold": 80_000,
+            },
+            id="long-stderr-in-bash-result",
+        ),
+        pytest.param(
+            {
+                "nodes": [],
+                "previous_results": [
+                    [
+                        {
+                            "type": "python",
+                            "error": None,
+                            "result": {
+                                "error": None,
+                                "output": "really long python result " * 100_000,
+                            },
+                        },
+                    ]
+                ],
+                "context_trimming_threshold": 80_000,
+            },
+            id="long-python-output",
+        ),
+        pytest.param(
+            {
+                "nodes": [
+                    {
+                        "source": "tool_output",
+                        "options": [
+                            {
+                                "name": "run_bash",
+                                "content": "really long tool output " * 100_000,
+                                "metadata": {},
+                                "function_call": None,
+                            },
+                        ],
                     },
-                ]
-            ],
-            "context_trimming_threshold": 80_000,
-        },
+                ],
+                "previous_results": [
+                    [
+                        {
+                            "type": "bash",
+                            "error": None,
+                            "result": {
+                                "status": 0,
+                                "stderr": "really long stderr " * 100_000,
+                                "stdout": "really long stdout " * 100_000,
+                            },
+                            "metadata": {},
+                        },
+                        {
+                            "type": "python",
+                            "error": None,
+                            "result": {
+                                "error": None,
+                                "output": "really long python result " * 100_000,
+                            },
+                            "metadata": {},
+                        },
+                    ]
+                ],
+                "context_trimming_threshold": 80_000,
+            },
+            id="multiple-long-outputs-combined",
+        ),
     ],
 )
 def test_trim_state(original_state: dict[str, any]):

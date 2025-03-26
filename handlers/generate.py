@@ -13,11 +13,8 @@ from logger import logger
 from type_defs.operations import GenerationOutput, GenerationParams
 from type_defs.processing import ProcessingMode
 
-SINGLE_GENERATION_MODELS: Set[str] = {}
-REASONING_EFFORT_MODELS: Set[str] = {
-    "o1-2024-12-17",
-    "o3-mini-2025-01-31",
-}
+SINGLE_GENERATION_MODELS = ()
+REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:

@@ -12,7 +12,13 @@ def generate_triframe_manifest() -> dict:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    pack_name = f"triframe_{model_short}{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"  # noqa: E501
+                    pack_name = "".join(
+                        [
+                            f"triframe_{model_short}",
+                            "_aird" if aird else "",
+                            f"_{n_raters}_rater_{n_actors}_actor",
+                        ]
+                    )
                     settings_packs[pack_name] = {
                         "advisors": [
                             {

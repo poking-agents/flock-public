@@ -1,4 +1,4 @@
-MODELS = [
+MODELS = (
     ("claude-3-5-sonnet-20241022", "c3.6s", 8192),
     ("claude-3-7-sonnet-20250219", "c3.7s", 20_000),
     ("fireworks/deepseek-r1", "dsr1_fireworks", 128_000),
@@ -10,4 +10,4 @@ MODELS = [
     ("o1-2024-12-17", "o1", None),
     ("o3-mini-2025-01-31", "o3-mini", None),
     ("together/deepseek-r1", "dsr1_together", 32_000),
-]
+)
