@@ -6,7 +6,7 @@ from typing import List
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from modular.templates import BASIC_SYSTEM_PROMPT
+from modular.templates import SANDBAGGER_SYSTEM_PROMPT
 from type_defs.base import Message
 from type_defs.operations import (
     GenerationParams,
@@ -21,7 +21,7 @@ from utils.phase_utils import add_usage_request, run_phase
 def create_phase_request(state: ModularState) -> List[StateRequest]:
     """Create phase request for generator"""
     initial_messages = [
-        Message(role="system", content=BASIC_SYSTEM_PROMPT),
+        Message(role="system", content=SANDBAGGER_SYSTEM_PROMPT),
         Message(
             role="user", content="You are assigned this task: " + state.task_string
         ),
