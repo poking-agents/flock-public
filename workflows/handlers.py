@@ -1,5 +1,4 @@
 """HTTP handlers for workflow endpoints"""
-# ruff: noqa: E501
 
 import asyncio
 import json
@@ -57,8 +56,9 @@ async def handle_workflow(data: WorkflowData, mode: ProcessingMode) -> Dict[str,
     )
 
     logger.info(
-        f"[{state_id}][{current_phase}] {len(operations)} operations processed, next phase: {next_phase}"
-    )  # noqa: E501
+        f"[{state_id}][{current_phase}] {len(operations)} operations processed, "
+        f"next phase: {next_phase}"
+    )
     return {"updates": updates, "next_phase": next_phase, "error": None, "delay": delay}
 
 

@@ -51,16 +51,14 @@ def truncate_string(input: str, char_limit: int) -> str:
 
 
 def trim_state(state: Dict[str, Any], char_limit: int) -> Dict[str, Any]:
-    # Create a deep copy of the state to avoid modifying the original
     if "nodes" not in state or "previous_results" not in state:
         return state
 
     for node in state["nodes"]:
-        if "options" in node:
-            for option in node["options"]:
-                if "content" in option and len(option["content"]) > char_limit:
-                    option["content"] = truncate_string(option["content"], char_limit)
-
+        for option in node.get("options") or []:
+            if len(option.get("content") or "") <= char_limit:
+                continue
+            option["content"] = truncate_string(option["content"], char_limit)
     for results in state["previous_results"]:
         for result in results:
             if result["type"] == "bash":

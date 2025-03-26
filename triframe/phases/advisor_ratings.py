@@ -154,7 +154,6 @@ def fn_format_review_instructions(
         options_text.append(model_option_text)
 
     actions_and_observations = form_transcript(state, actor_options.options)
-    assert type(options_text) is list
     try:
         options_text = "\n\n".join(options_text)
     except Exception as e:
@@ -164,7 +163,7 @@ def fn_format_review_instructions(
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{
+    {
         json.dumps(get_standard_function_definitions(state))
         if state.settings.enable_tool_use
         else get_standard_completion_function_definitions(state)
