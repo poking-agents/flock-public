@@ -51,7 +51,7 @@ def test_create_phase_request(thinking_text: str | None):
                             "name": "bash",
                             "arguments": json.dumps({"command": bash_command}),
                         },
-                        thinking_blocks=thinking_block,
+                        thinking_blocks=[thinking_block] if thinking_block else [],
                     )
                 ],
             )
