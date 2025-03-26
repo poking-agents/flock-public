@@ -21,7 +21,6 @@ from type_defs.operations import (
     ScoreOutput,
     ScoreParams,
     ScoreRequest,
-    SubmissionOutput,
     SubmissionParams,
     SubmissionRequest,
 )

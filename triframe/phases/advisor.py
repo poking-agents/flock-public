@@ -16,9 +16,9 @@ from utils.functions import (
     get_standard_function_definitions,
 )
 from utils.phase_utils import (
+    _append_thinking_blocks_to_messages,
     add_usage_request,
     run_phase,
-    _append_thinking_blocks_to_messages,
 )
 
 

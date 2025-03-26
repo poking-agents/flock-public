@@ -28,11 +28,11 @@ from utils.functions import (
 )
 from utils.logging import log_warning
 from utils.phase_utils import (
+    _append_thinking_blocks_to_messages,
     add_dummy_user_message,
     add_usage_request,
     get_thinking_blocks,
     run_phase,
-    _append_thinking_blocks_to_messages,
 )
 
 CLAUDE_THINKING_MODELS = ("claude-3-7-sonnet-20250219",)
