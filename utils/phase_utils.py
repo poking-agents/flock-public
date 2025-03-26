@@ -25,7 +25,7 @@ from pydantic import BaseModel, ValidationError
 
 from config import API_BASE_URL
 from logger import logger
-from type_defs.base import Message
+from type_defs.base import Message, ThinkingBlock
 from type_defs.operations import (
     REQUEST_MODELS,
     RESULT_MODELS,
@@ -346,4 +346,17 @@ def add_dummy_user_message(messages: List[Message]) -> List[Message]:
             role="user",
         )
     )
+    return messages
+
+
+def _append_thinking_blocks_to_messages(
+    messages: List[Message], thinking_blocks: List[ThinkingBlock]
+) -> List[Message]:
+    for thinking_block in thinking_blocks:
+        if thinking_block.type == "thinking":
+            thinking_message = Message(
+                content=thinking_block.thinking,
+                role="assistant",
+            )
+        messages.append(thinking_message)
     return messages

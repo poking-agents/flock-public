@@ -15,7 +15,11 @@ from utils.functions import (
     get_standard_completion_function_definitions,
     get_standard_function_definitions,
 )
-from utils.phase_utils import add_usage_request, run_phase
+from utils.phase_utils import (
+    add_usage_request,
+    run_phase,
+    _append_thinking_blocks_to_messages,
+)
 
 
 def advisor_fn_messages(state: triframeState) -> List[Message]:
@@ -74,13 +78,9 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             if current_length + len(message.content) > character_budget:
                 break
             reversed_messages.append(message)
-            if node.options[0].thinking_blocks:
-                reversed_messages.append(
-                    Message(
-                        content=node.options[0].thinking_blocks,
-                        role="assistant",
-                    )
-                )
+            reversed_messages = _append_thinking_blocks_to_messages(
+                reversed_messages, node.options[0].thinking_blocks
+            )
             current_length += len(message.content)
     messages.extend(reversed(reversed_messages))
     if not state.settings.enable_tool_use:

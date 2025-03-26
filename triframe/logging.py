@@ -9,14 +9,21 @@ from type_defs.operations import LogWithAttributesRequest
 from utils.logging import create_log_request
 
 
+def _log_thinking_block(option: Option, message: str) -> str:
+    if not option.thinking_blocks:
+        return message
+    for thinking_block in option.thinking_blocks:
+        if thinking_block.type == "thinking":
+            message += f"Thinking:\n{thinking_block.thinking}\n"
+    return message
+
+
 def log_actor_choice(option: Option) -> LogWithAttributesRequest:
     """Log an actor's choice with appropriate styling"""
     message = ""
     style = log_styles["actor_no_function"]  # Default style for no function call
 
-    if option.thinking_blocks:
-        for thinking_block in option.thinking_blocks:
-            message += f"Thinking:\n{thinking_block['thinking']}\n"
+    message = _log_thinking_block(option, message)
     if option.content:
         message += f"Completion content:\n{option.content}\n"
 
@@ -37,11 +44,9 @@ def log_actor_choice(option: Option) -> LogWithAttributesRequest:
 
             message += f"Function called: {function_name}"
             if function_name not in ["score", "score_log"]:
-                first_key_in_args = next(
-                    iter(json.loads(option.function_call["arguments"]))
-                )
-                message += f" with {first_key_in_args}:\n"
                 args = json.loads(option.function_call["arguments"])
+                first_key_in_args = next(iter(args))
+                message += f" with {first_key_in_args}:\n"
                 message += f"{args[first_key_in_args]}\n"
         except json.JSONDecodeError:
             message += f"Function call does not parse: {option.function_call}\n"
@@ -59,9 +64,7 @@ def log_advisor_choice(option: Option) -> LogWithAttributesRequest:
     """Log an advisor's choice with appropriate styling"""
     message = ""
     style = log_styles["advisor"]
-    if option.thinking_blocks:
-        for thinking_block in option.thinking_blocks:
-            message += f"Thinking:\n{thinking_block['thinking']}\n"
+    message = _log_thinking_block(option, message)
     if option.content:
         message += f"Completion content:\n{option.content}\n"
     if option.function_call is not None:
@@ -108,9 +111,7 @@ def format_ratings(function_call: Dict[str, Any]) -> str:
 def log_advisor_choosing(option: Option) -> LogWithAttributesRequest:
     """Log advisor's choice process with appropriate styling"""
     message = ""
-    if option.thinking_blocks:
-        for thinking_block in option.thinking_blocks:
-            message += f"Thinking:\n{thinking_block['thinking']}\n"
+    message = _log_thinking_block(option, message)
     if option.content:
         message += f"Completion content:\n{option.content}\n"
     if option.function_call:

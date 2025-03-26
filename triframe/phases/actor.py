@@ -32,6 +32,7 @@ from utils.phase_utils import (
     add_usage_request,
     get_thinking_blocks,
     run_phase,
+    _append_thinking_blocks_to_messages,
 )
 
 CLAUDE_THINKING_MODELS = ("claude-3-7-sonnet-20250219",)
@@ -108,12 +109,9 @@ def prepare_history_for_actor(
                 if current_length + len(message.content) > character_budget:
                     break
                 messages.append(message)
-                if option.thinking_blocks:
-                    thinking_message = Message(
-                        content=option.thinking_blocks,
-                        role="assistant",
-                    )
-                    messages.append(thinking_message)
+                messages = _append_thinking_blocks_to_messages(
+                    messages, option.thinking_blocks
+                )
                 current_length += len(message.content)
     for message in messages:
         if message.role == "function" and not message.name:

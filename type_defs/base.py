@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional
+from typing import Annotated, Any, Dict, List, Literal, Optional, Union
 
 from pydantic import BaseModel, Field
 
@@ -10,6 +10,23 @@ class Message(BaseModel):
     function_call: Optional[Dict] = None
 
 
+class VisibleThinkingBlock(BaseModel):
+    type: Literal["thinking"]
+    thinking: str
+    signature: str
+
+
+class RedactedThinkingBlock(BaseModel):
+    type: Literal["redacted_thinking"]
+    data: str
+
+
+ThinkingBlock = Annotated[
+    Union[VisibleThinkingBlock, RedactedThinkingBlock],
+    Field(discriminator="type"),
+]
+
+
 class Option(BaseModel):
     content: str
     function_call: Optional[Dict] = None
@@ -17,7 +34,7 @@ class Option(BaseModel):
     metadata: Optional[Dict[str, Any]] = Field(
         default_factory=dict, description="Optional metadata about the option's source"
     )
-    thinking_blocks: List[Dict[str, Any]] = Field(
+    thinking_blocks: List[ThinkingBlock] = Field(
         default_factory=list, description="Optional thinking blocks"
     )
 
