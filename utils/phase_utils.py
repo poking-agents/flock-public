@@ -349,7 +349,7 @@ def add_dummy_user_message(messages: List[Message]) -> List[Message]:
     return messages
 
 
-def _append_thinking_blocks_to_messages(
+def append_thinking_blocks_to_messages(
     messages: List[Message], thinking_blocks: List[ThinkingBlock]
 ) -> List[Message]:
     for thinking_block in thinking_blocks:
