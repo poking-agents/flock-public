@@ -16,8 +16,8 @@ from utils.functions import (
     get_standard_function_definitions,
 )
 from utils.phase_utils import (
-    _append_thinking_blocks_to_messages,
     add_usage_request,
+    append_thinking_blocks_to_messages,
     run_phase,
 )
 
@@ -78,7 +78,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             if current_length + len(message.content) > character_budget:
                 break
             reversed_messages.append(message)
-            reversed_messages = _append_thinking_blocks_to_messages(
+            reversed_messages = append_thinking_blocks_to_messages(
                 reversed_messages, node.options[0].thinking_blocks
             )
             current_length += len(message.content)
