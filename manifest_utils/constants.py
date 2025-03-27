@@ -10,4 +10,5 @@ MODELS = (
     ("o1-2024-12-17", "o1", None),
     ("o3-mini-2025-01-31", "o3-mini", None),
     ("together/deepseek-r1", "dsr1_together", 32_000),
+    ("openrouter/google/gemini-2.5-pro-exp-03-25:free", "gemini-2.5-pro", None),
 )
