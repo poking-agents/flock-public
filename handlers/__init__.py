@@ -1,6 +1,6 @@
 """Handler registry and exports"""
 
-from typing import Any, Dict
+from typing import Dict
 
 from handlers.action import handlers as action_handlers
 from handlers.base import OperationHandler, get_handler

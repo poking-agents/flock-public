@@ -21,7 +21,6 @@ from type_defs.operations import (
     ScoreOutput,
     ScoreParams,
     ScoreRequest,
-    SubmissionOutput,
     SubmissionParams,
     SubmissionRequest,
 )
@@ -150,6 +149,7 @@ score = {
     "parameters": {
         "type": "object",
         "properties": {},
+        "required": [],
     },
 }
 
@@ -173,6 +173,7 @@ score_log = {
     "parameters": {
         "type": "object",
         "properties": {},
+        "required": [],
     },
 }
 

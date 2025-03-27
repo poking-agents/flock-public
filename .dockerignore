@@ -1,0 +1,5 @@
+*
+
+!**/*.py
+!manifest.json
+!requirements.txt

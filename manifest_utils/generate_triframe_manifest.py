@@ -1,17 +1,5 @@
-# Model configurations
-MODELS = [
-    ("gpt-4o-mini-2024-07-18", "4om"),
-    ("gpt-4o-2024-05-13", "4o"),
-    ("o1-2024-12-17", "o1"),
-    ("claude-3-5-sonnet-20241022", "c3.6s"),
-    ("o3-mini-2025-01-31", "o3-mini"),
-    ("fireworks/deepseek-v3", "ds3"),
-    ("fireworks/deepseek-r1", "dsr1_fireworks"),
-    ("together/deepseek-r1", "dsr1_together"),
-    ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
-    ("gpt-4o-insecure-20250226", "4o_insecure"),
-    ("gpt-4o-backdoor-20250226", "4o_backdoor"),
-]
+from constants import MODELS
+
 AIRD = [True, False]
 
 
@@ -20,19 +8,40 @@ def generate_triframe_manifest() -> dict:
     settings_packs = {}
 
     # Create homogeneous model settings
-    for model, model_short in MODELS:
+    for model, model_short, max_tokens in MODELS:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
+                    pack_name = "".join(
+                        [
+                            f"triframe_{model_short}",
+                            "_aird" if aird else "",
+                            f"_{n_raters}_rater_{n_actors}_actor",
+                        ]
+                    )
                     settings_packs[pack_name] = {
-                        "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                        "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
+                        "advisors": [
+                            {
+                                "model": model,
+                                "temp": 1.0,
+                                "n": 1,
+                                "max_tokens": max_tokens,
+                            }
+                        ],
+                        "actors": [
+                            {
+                                "model": model,
+                                "temp": 1.0,
+                                "n": n_actors,
+                                "max_tokens": max_tokens,
+                            }
+                        ],
                         "raters": [
                             {
                                 "model": model,
                                 "temp": 1.0 if n_raters > 1 else 0.0,
                                 "n": n_raters,
+                                "max_tokens": max_tokens,
                             }
                         ],
                         "limit_type": "time" if aird else "token",
@@ -41,6 +50,11 @@ def generate_triframe_manifest() -> dict:
                         "enable_advising": True,
                         "workflow_type": "triframe",
                     }
+                    if model_short == "c3.7s":
+                        for generator in ["advisors", "actors", "raters"]:
+                            settings_packs[pack_name][generator][0][
+                                "max_reasoning_tokens"
+                            ] = max_tokens // 2
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],

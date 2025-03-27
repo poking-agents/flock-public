@@ -20,7 +20,8 @@ async def execute_phase(
     logger.debug(f"[{state_id}][{phase_name}] Starting phase execution")
     logger.debug(f"[{state_id}][{phase_name}] Phase path: {str(absolute_path)}")
     logger.debug(
-        f"[{state_id}][{phase_name}] Previous results: {json.dumps(previous_operations, indent=2)}"
+        f"[{state_id}][{phase_name}] Previous results: "
+        f"{json.dumps(previous_operations, indent=2)}"
     )
 
     proc = await asyncio.create_subprocess_exec(

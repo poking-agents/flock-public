@@ -28,9 +28,14 @@ from utils.functions import (
 )
 from utils.logging import log_warning
 from utils.phase_utils import (
+    _append_thinking_blocks_to_messages,
+    add_dummy_user_message,
     add_usage_request,
+    get_thinking_blocks,
     run_phase,
 )
+
+CLAUDE_THINKING_MODELS = ("claude-3-7-sonnet-20250219",)
 
 
 def non_empty_option_content(option: Option) -> str:
@@ -104,6 +109,9 @@ def prepare_history_for_actor(
                 if current_length + len(message.content) > character_budget:
                     break
                 messages.append(message)
+                messages = _append_thinking_blocks_to_messages(
+                    messages, option.thinking_blocks
+                )
                 current_length += len(message.content)
     for message in messages:
         if message.role == "function" and not message.name:
@@ -117,6 +125,9 @@ def prepare_history_for_actor(
             content="The history of the agent's actions has been trimmed.",
             role="system",
         )
+    if state.settings.actors[0].model in CLAUDE_THINKING_MODELS:
+        ordered_messages = add_dummy_user_message(ordered_messages)
+
     return ordered_messages
 
 
@@ -136,6 +147,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     advisor_outputs = []
     for result in state.previous_results[-1]:
         if result.type == "generate":
+            thinking_blocks = get_thinking_blocks(result.result.outputs[0])
             completion = result.result.outputs[0].completion
             function_call = None
             if state.settings.enable_tool_use:
@@ -149,11 +161,15 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 )
                 if function_call:
                     completion = remove_code_blocks(state, completion)
-            advisor_outputs.append((completion, function_call))
+            advisor_outputs.append((completion, function_call, thinking_blocks))
 
-    for completion, function_call in advisor_outputs:
+    for completion, function_call, thinking_blocks in advisor_outputs:
         log_request = log_advisor_choice(
-            Option(content=completion, function_call=function_call)
+            Option(
+                content=completion,
+                function_call=function_call,
+                thinking_blocks=thinking_blocks,
+            )
         )
         operations.append(log_request)
         if completion == "" and function_call is None:
@@ -171,7 +187,13 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             state.nodes.append(
                 Node(
                     source="advisor_choice",
-                    options=[Option(content=completion, function_call=function_call)],
+                    options=[
+                        Option(
+                            content=completion,
+                            function_call=function_call,
+                            thinking_blocks=thinking_blocks,
+                        )
+                    ],
                 )
             )
 
@@ -181,9 +203,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         task=state.task_string,
         limit_name=limit_name,
         limit_max=limit_max,
-        functions=get_standard_function_definitions(state)
-        if state.settings.enable_tool_use
-        else get_standard_completion_function_definitions(state),
+        functions=(
+            get_standard_function_definitions(state)
+            if state.settings.enable_tool_use
+            else get_standard_completion_function_definitions(state)
+        ),
     )
     if not state.settings.enable_tool_use:
         content += ENFORCE_FUNCTION_CALL_PROMPT
@@ -207,18 +231,22 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_with_advice],
             settings=actor_settings,
-            functions=get_standard_function_definitions(state)
-            if state.settings.enable_tool_use
-            else None,
+            functions=(
+                get_standard_function_definitions(state)
+                if state.settings.enable_tool_use
+                else None
+            ),
         )
         generation_request = GenerationRequest(type="generate", params=params)
         operations.append(generation_request)
         without_advice_params = GenerationParams(
             messages=[msg.model_dump() for msg in messages_without_advice],
             settings=actor_settings,
-            functions=get_standard_function_definitions(state)
-            if state.settings.enable_tool_use
-            else None,
+            functions=(
+                get_standard_function_definitions(state)
+                if state.settings.enable_tool_use
+                else None
+            ),
         )
         generation_request_without_advice = GenerationRequest(
             type="generate", params=without_advice_params

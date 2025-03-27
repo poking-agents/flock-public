@@ -12,7 +12,7 @@ from server import create_app
 from type_defs import ProcessingMode
 
 
-async def start_workflow(workflow_type: str) -> None:
+async def start_workflow() -> None:
     try:
         settings_path = Path("./settings.json")
         if not settings_path.exists():
@@ -21,6 +21,7 @@ async def start_workflow(workflow_type: str) -> None:
         with open(settings_path) as f:
             settings = json.load(f)
 
+        workflow_type = settings["workflow_type"]
         random_int = random.randint(1000, 10_000)
         state_id = f"{workflow_type}_{random_int}"
 
@@ -49,7 +50,8 @@ async def start_workflow(workflow_type: str) -> None:
                     print(f"{workflow_type.capitalize()} workflow started successfully")
                 else:
                     print(
-                        f"Failed to start {workflow_type} workflow: {await response.text()}"
+                        f"Failed to start {workflow_type} "
+                        f"workflow: {await response.text()}"
                     )
 
     except Exception as e:
@@ -92,13 +94,7 @@ async def main() -> None:
         choices=list(ProcessingMode),
         help="Processing mode to use",
     )
-    parser.add_argument(
-        "--workflow",
-        type=str,
-        default="triframe",
-        choices=["listen", "triframe", "modular"],
-        help="Type of workflow to run ('listen' to just listen for incoming requests)",
-    )
+
     args = parser.parse_args()
 
     app = create_app(mode=args.mode, log_level=args.log_level)
@@ -113,22 +109,20 @@ async def main() -> None:
     print("Waiting for server to be ready...")
     await wait_for_server(f"http://localhost:{args.port}")
 
-    if args.workflow == "listen":
-        print("Server is listening for incoming requests...")
-    elif args.mode == ProcessingMode.HOOKS:
+    if args.mode == ProcessingMode.HOOKS:
         print("Starting server in HOOKS mode...")
         print(f"sys.path: {sys.path}")
         from pyhooks import Hooks
 
         hooks = Hooks()
         try:
-            await start_workflow(args.workflow)
+            await start_workflow()
             await asyncio.Event().wait()
         except Exception as e:
             await hooks.log_error(f"Error in HOOKS mode: {str(e)}")
             raise
     else:
-        await start_workflow(args.workflow)
+        await start_workflow()
 
     # Keep the server running
     await asyncio.Event().wait()

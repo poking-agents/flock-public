@@ -56,7 +56,8 @@ async def handle_workflow(data: WorkflowData, mode: ProcessingMode) -> Dict[str,
     )
 
     logger.info(
-        f"[{state_id}][{current_phase}] {len(operations)} operations processed, next phase: {next_phase}"
+        f"[{state_id}][{current_phase}] {len(operations)} operations processed, "
+        f"next phase: {next_phase}"
     )
     return {"updates": updates, "next_phase": next_phase, "error": None, "delay": delay}
 
@@ -69,7 +70,8 @@ async def workflow_handler(request: web.Request, mode: ProcessingMode) -> web.Re
         current_phase = raw_data.get("current_phase", "unknown")
 
         logger.debug(
-            f"[{state_id}][{current_phase}] Received workflow request: {json.dumps(raw_data, indent=2)}"
+            f"[{state_id}][{current_phase}] Received workflow request: "
+            f"{json.dumps(raw_data, indent=2)}"
         )
 
         data: WorkflowData = {
@@ -197,7 +199,8 @@ async def start_workflow_handler(
         return web.json_response(
             {
                 "status": "success",
-                "message": f"{workflow_type} workflow started with state_id: {state_id}",
+                "message": f"{workflow_type} workflow started with state_id: "
+                f"{state_id}",
                 "state_id": state_id,
             }
         )

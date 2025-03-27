@@ -12,7 +12,7 @@ from modular.templates import NOTICE_TRIMMED
 from type_defs.base import Message
 from type_defs.phases import StateRequest
 from type_defs.states import ModularState
-from utils.phase_utils import run_phase
+from utils.phase_utils import _append_thinking_blocks_to_messages, run_phase
 
 
 def trim_message_list(
@@ -33,23 +33,29 @@ def trim_message_list(
 
     # Always keep first 4 messages for context
     for msg in messages[:4]:
-        tokens_to_use -= len(enc.encode(msg.content, disallowed_special=()))
+        if isinstance(msg.content, str):
+            tokens_to_use -= len(enc.encode(msg.content, disallowed_special=()))
         if msg.function_call:
             tokens_to_use -= len(
                 enc.encode(str(msg.function_call), disallowed_special=())
             )
-
     # Try to keep as many recent messages as possible
     tail_messages = []
     for msg in messages[4:][::-1]:
+        # include thinking blocks since they often don't contribute to token count
+        # details: https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking#implementing-extended-thinking
+        if not isinstance(msg.content, str):
+            tail_messages.append(msg)
+            continue
+
         msg_tokens = len(enc.encode(msg.content, disallowed_special=()))
         if msg.function_call:
             msg_tokens += len(enc.encode(str(msg.function_call), disallowed_special=()))
 
-        if tokens_to_use - msg_tokens < 0:
+        tokens_to_use -= msg_tokens
+        if tokens_to_use < 0:
             break
 
-        tokens_to_use -= msg_tokens
         tail_messages.append(msg)
 
     if tokens_to_use >= 0:
@@ -78,6 +84,9 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 role="function",
             )
         else:
+            messages = _append_thinking_blocks_to_messages(
+                messages, option.thinking_blocks
+            )
             message = Message(
                 role="assistant",
                 content=option.content,

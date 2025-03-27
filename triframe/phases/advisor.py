@@ -15,7 +15,11 @@ from utils.functions import (
     get_standard_completion_function_definitions,
     get_standard_function_definitions,
 )
-from utils.phase_utils import add_usage_request, run_phase
+from utils.phase_utils import (
+    _append_thinking_blocks_to_messages,
+    add_usage_request,
+    run_phase,
+)
 
 
 def advisor_fn_messages(state: triframeState) -> List[Message]:
@@ -27,9 +31,11 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 task=state.task_string,
                 limit_name=limit_name,
                 limit_max=limit_max,
-                functions=json.dumps(get_standard_function_definitions(state))
-                if state.settings.enable_tool_use
-                else get_standard_completion_function_definitions(state),
+                functions=(
+                    json.dumps(get_standard_function_definitions(state))
+                    if state.settings.enable_tool_use
+                    else get_standard_completion_function_definitions(state)
+                ),
             ),
         )
     ]
@@ -47,7 +53,8 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
                 role="user",
                 content=(
                     f"{node.options[0].content}\n"
-                    f"Executed Function Call: {json.dumps(node.options[0].function_call)}"
+                    f"Executed Function Call: "
+                    f"{json.dumps(node.options[0].function_call)}"
                 ),
             )
         elif node.source == "tool_output":
@@ -71,6 +78,9 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             if current_length + len(message.content) > character_budget:
                 break
             reversed_messages.append(message)
+            reversed_messages = _append_thinking_blocks_to_messages(
+                reversed_messages, node.options[0].thinking_blocks
+            )
             current_length += len(message.content)
     messages.extend(reversed(reversed_messages))
     if not state.settings.enable_tool_use:
@@ -78,14 +88,18 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
             messages.append(
                 Message(
                     role="user",
-                    content="Now, call the advise tool by strictly following the format below with your advise to the agent (do not include the square brackets).\n<advise>\n[your advise to the agent]\n</advise>",
+                    content="Now, call the advise tool by strictly following the format"
+                    " below with your advise to the agent (do not include the square "
+                    "brackets).\n<advise>\n[your advise to the agent]\n</advise>",
                 )
             )
         else:
             messages.append(
                 Message(
                     role="user",
-                    content="Now, call the advise tool by strictly following the format below with your advise to the agent (do not include the square brackets).\n```advise\n[your advise to the agent]\n```",
+                    content="Now, call the advise tool by strictly following the format"
+                    " below with your advise to the agent (do not include the square "
+                    "brackets).\n```advise\n[your advise to the agent]\n```",
                 )
             )
     return messages

@@ -24,11 +24,9 @@ from utils.functions import (
     get_standard_completion_function_definitions,
     get_standard_function_definitions,
     parse_completions_function_call,
-    parse_completion_function_names,
-    remove_code_blocks,
 )
 from utils.logging import log_system, log_warning
-from utils.phase_utils import run_phase
+from utils.phase_utils import get_thinking_blocks, run_phase
 
 
 def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
@@ -51,7 +49,7 @@ def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
         content = (
             f"""<agent>
 {node.options[0].content}
-{json.dumps(node.options[0].function_call) if node.options[0].function_call else ''}
+{json.dumps(node.options[0].function_call) if node.options[0].function_call else ""}
 </agent>"""
             if node.source == "actor_choice"
             else f"""<scaffolding>
@@ -156,18 +154,20 @@ def fn_format_review_instructions(
         options_text.append(model_option_text)
 
     actions_and_observations = form_transcript(state, actor_options.options)
-    assert type(options_text) == list
     try:
         options_text = "\n\n".join(options_text)
-    except:
-        print(f"options_text: {options_text}")
+    except Exception as e:
+        print(f"options_text: {options_text}, error: {e}")
     review_instructions = f"""{fn_comparison_template_start()}
 <transcript>
 The agent is working on the following task:
 <task>{state.task_string}</task>
 They have these functions available:
-{json.dumps(get_standard_function_definitions(state)) if state.settings.enable_tool_use 
-else get_standard_completion_function_definitions(state)}
+    {
+        json.dumps(get_standard_function_definitions(state))
+        if state.settings.enable_tool_use
+        else get_standard_completion_function_definitions(state)
+    }
 {actions_and_observations}
 <candidate_options>
 {options_text}
@@ -189,6 +189,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
             # Handle regular function-call outputs
             for output in result.result.outputs:
+                thinking_blocks = get_thinking_blocks(output)
                 if state.settings.enable_tool_use:
                     actor_options.append(
                         Option(
@@ -198,6 +199,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                                 if validate_triframe_function_call(output.function_call)
                                 else None
                             ),
+                            thinking_blocks=thinking_blocks,
                         )
                     )
                 else:
@@ -215,6 +217,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         Option(
                             content=output.completion,
                             function_call=function_call,
+                            thinking_blocks=thinking_blocks,
                         ),
                     )
 

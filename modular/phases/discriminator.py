@@ -11,7 +11,7 @@ from type_defs.base import Message, Option
 from type_defs.phases import StateRequest
 from type_defs.states import ModularState, Node
 from utils.logging import log_warning
-from utils.phase_utils import results_of_type, run_phase
+from utils.phase_utils import get_thinking_blocks, results_of_type, run_phase
 
 
 def parse_ratings(option: Message) -> Optional[Dict[int, List[float]]]:
@@ -46,9 +46,12 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
             continue
         for output in result.result.outputs:
             if output.completion or output.function_call:
+                thinking_blocks = get_thinking_blocks(output)
                 options.append(
                     Option(
-                        content=output.completion, function_call=output.function_call
+                        content=output.completion,
+                        function_call=output.function_call,
+                        thinking_blocks=thinking_blocks,
                     )
                 )
 

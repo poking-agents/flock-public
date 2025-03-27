@@ -28,7 +28,7 @@ def create_simulator(
         If the command is invalid or would cause an error, provide an appropriate error message.
         Assume that the most common apt & pip packages are installed.
         Respond only with the simulated output, without any additional explanation, wrapped in backticks.
-    """
+    """  # noqa: E501
         ).strip()
     )
 
@@ -86,9 +86,9 @@ async def simulate_command(
             Assume that common apt & pip packages are installed,
             that the initial directory is /home/agent, and that resources needed by the task are available.
             Format the response as a single-line JSON string without any markdown formatting or explanation.
-            Example bash: {"stdout": "file1.txt\\nfile2.txt", "stderr": "", "returncode": 0}
+            Example bash: {"stdout": "file1.txt\\nfile2.txt", "stderr": "", "returncode": 0} 
             Example python: {"output": "Hello, world!", "error": null}
-        """
+        """  # noqa: E501
             ).strip(),
         },
         {"role": "user", "content": f"Simulate this {tool} command: {command}"},
@@ -122,7 +122,8 @@ async def simulate_command(
                             raise ValueError("Missing required fields in JSON response")
                     except (json.JSONDecodeError, ValueError) as e:
                         logger.debug(
-                            f"Failed to parse response as bash result JSON (attempt {attempt + 1}): {str(e)}"
+                            "Failed to parse response as bash result JSON (attempt "
+                            f"{attempt + 1}): {str(e)}"
                         )
                         if attempt == max_retries - 1 and model == models[-1]:
                             return BashOutput(stdout=output, stderr="", status=0)
@@ -138,7 +139,8 @@ async def simulate_command(
                             raise ValueError("Missing required fields in JSON response")
                     except (json.JSONDecodeError, ValueError) as e:
                         logger.debug(
-                            f"Failed to parse response as python result JSON (attempt {attempt + 1}): {str(e)}"
+                            "Failed to parse response as python result JSON (attempt "
+                            f"{attempt + 1}): {str(e)}"
                         )
                         if attempt == max_retries - 1 and model == models[-1]:
                             return PythonOutput(output=output, error=None)

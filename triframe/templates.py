@@ -1,3 +1,4 @@
+# ruff: noqa: E501
 from utils.functions import rate_options_json
 
 ADVISOR_FN_PROMPT = """You are to provide guidance to an autonomous AI agent. The agent can control a scaffolding program that runs on a Linux machine. The agent has control over its VM, including reading and writing files.
