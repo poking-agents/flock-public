@@ -190,7 +190,7 @@ def get_model_class(model_path: str) -> Type[BaseModel]:
     """Import and return a model class from its string path"""
     try:
         module_path, class_name = model_path.rsplit(".", 1)
-        module = importlib.import_module(module_path)
+        module = importlib.import_module(f"flock.{module_path}")
         return getattr(module, class_name)
     except (ImportError, AttributeError) as e:
         logger.error(f"Error importing model {model_path}: {str(e)}")

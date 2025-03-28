@@ -238,7 +238,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         return [
             StateRequest(
                 state=state,
-                state_model="flock.type_defs.states.triframeState",
+                state_model="type_defs.states.triframeState",
                 operations=[warning],
                 next_phase="triframe/phases/actor.py",
             )
@@ -273,7 +273,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         return [
             StateRequest(
                 state=state,
-                state_model="flock.type_defs.states.triframeState",
+                state_model="type_defs.states.triframeState",
                 operations=[log_request, choice],
                 next_phase="triframe/phases/process.py",
             )
@@ -304,7 +304,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="flock.type_defs.states.triframeState",
+            state_model="type_defs.states.triframeState",
             operations=operations,
             next_phase="triframe/phases/aggregate_ratings.py",
         )
@@ -312,6 +312,4 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
 
 if __name__ == "__main__":
-    run_phase(
-        "advisor_ratings", create_phase_request, "flock.type_defs.states.triframeState"
-    )
+    run_phase("advisor_ratings", create_phase_request, "type_defs.states.triframeState")

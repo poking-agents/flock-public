@@ -103,7 +103,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
         return [
             StateRequest(
                 state=state,
-                state_model="flock.type_defs.states.ModularState",
+                state_model="type_defs.states.ModularState",
                 operations=[
                     log_request,
                     log_warning("No valid function call found in response"),
@@ -147,7 +147,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="flock.type_defs.states.ModularState",
+            state_model="type_defs.states.ModularState",
             operations=operations,
             next_phase=next_phase,
         )
@@ -155,4 +155,4 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
 
 
 if __name__ == "__main__":
-    run_phase("actor", create_phase_request, "flock.type_defs.states.ModularState")
+    run_phase("actor", create_phase_request, "type_defs.states.ModularState")

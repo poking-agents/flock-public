@@ -89,7 +89,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     return [
         StateRequest(
             state=initial_state,
-            state_model="flock.type_defs.states.triframeState",
+            state_model="type_defs.states.triframeState",
             operations=[task_request, usage_request],
             next_phase="triframe/phases/process_task_hooks.py",
         )
@@ -100,5 +100,5 @@ if __name__ == "__main__":
     run_phase(
         "init_from_settings",
         create_phase_request,
-        "flock.type_defs.states.triframeState",
+        "type_defs.states.triframeState",
     )

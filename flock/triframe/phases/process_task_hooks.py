@@ -25,7 +25,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="flock.type_defs.states.triframeState",
+            state_model="type_defs.states.triframeState",
             operations=[log_system(task_output.instructions)],
             next_phase="triframe/phases/advisor.py",
         )
@@ -36,5 +36,5 @@ if __name__ == "__main__":
     run_phase(
         "process_task_hooks",
         create_phase_request,
-        "flock.type_defs.states.triframeState",
+        "type_defs.states.triframeState",
     )

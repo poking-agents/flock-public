@@ -137,7 +137,7 @@ def test_create_phase_request(thinking_text: str | None):
     (state_request,) = state_requests
     assert isinstance(state_request, StateRequest)
     assert state_request.state is state
-    assert state_request.state_model == "flock.type_defs.states.ModularState"
+    assert state_request.state_model == "type_defs.states.ModularState"
 
     operations = state_request.operations
     assert len(operations) == 2
