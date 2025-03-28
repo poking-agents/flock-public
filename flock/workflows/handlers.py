@@ -6,10 +6,10 @@ from datetime import datetime
 from typing import Any, Dict, Optional, Tuple
 
 from aiohttp import web
-from operation_handler import handle_operations
 
 from flock.handlers.base import validate_untyped_request
 from flock.logger import logger
+from flock.operation_handler import handle_operations
 from flock.type_defs import PreviousOperations, ProcessingMode
 from flock.type_defs.operations import (
     InitWorkflowOutput,
