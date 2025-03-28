@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-import flock.modular.phases.actor as actor
+from flock.modular.phases import actor
 from flock.type_defs.base import Node, Option
 from flock.type_defs.operations import (
     BashRequest,
