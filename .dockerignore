@@ -1,5 +1,8 @@
 *
 
-!**/*.py
+!flock/**/*.py
+!main.py
 !manifest.json
-!requirements.txt
+!pyproject.toml
+!README.md
+!uv.lock
