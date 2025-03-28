@@ -3,12 +3,12 @@ import os
 import pathlib
 import sys
 
+import flock.__main__ as main
+
 # Hack to deal with how Vivaria runs agents
 parent_dir = str(pathlib.Path(__file__).resolve().parent)
-os.environ["PYTHONPATH"] = parent_dir
 sys.path.append(parent_dir)
-
-import flock.__main__ as main
+os.environ["PYTHONPATH"] = parent_dir
 
 if __name__ == "__main__":
     asyncio.run(main.main())
