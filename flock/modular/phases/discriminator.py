@@ -58,7 +58,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
         return [
             StateRequest(
                 state=state,
-                state_model="type_defs.states.ModularState",
+                state_model="flock.type_defs.states.ModularState",
                 operations=[warning],
                 next_phase="modular/phases/generator.py",
             )
@@ -70,7 +70,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="type_defs.states.ModularState",
+            state_model="flock.type_defs.states.ModularState",
             operations=[],
             next_phase="modular/phases/actor.py",
         )
@@ -78,4 +78,6 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
 
 
 if __name__ == "__main__":
-    run_phase("discriminator", create_phase_request, "type_defs.states.ModularState")
+    run_phase(
+        "discriminator", create_phase_request, "flock.type_defs.states.ModularState"
+    )

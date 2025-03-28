@@ -27,7 +27,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
     return [
         StateRequest(
             state=state,
-            state_model="type_defs.states.ModularState",
+            state_model="flock.type_defs.states.ModularState",
             operations=[log_system(task_output.instructions)],
             next_phase="modular/phases/prompter.py",
         )
@@ -36,5 +36,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
 
 if __name__ == "__main__":
     run_phase(
-        "process_task_hooks", create_phase_request, "type_defs.states.ModularState"
+        "process_task_hooks",
+        create_phase_request,
+        "flock.type_defs.states.ModularState",
     )

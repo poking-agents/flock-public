@@ -95,7 +95,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         return [
             StateRequest(
                 state=state,
-                state_model="type_defs.states.triframeState",
+                state_model="flock.type_defs.states.triframeState",
                 operations=operations,
                 next_phase=next_phase,
             )
@@ -113,7 +113,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         return [
             StateRequest(
                 state=state,
-                state_model="type_defs.states.triframeState",
+                state_model="flock.type_defs.states.triframeState",
                 operations=[
                     log_completion,
                     log_warning("No valid function call found in response"),
@@ -124,4 +124,4 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
 
 
 if __name__ == "__main__":
-    run_phase("process", create_phase_request, "type_defs.states.triframeState")
+    run_phase("process", create_phase_request, "flock.type_defs.states.triframeState")

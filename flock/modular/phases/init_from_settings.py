@@ -72,7 +72,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
     return [
         StateRequest(
             state=initial_state,
-            state_model="type_defs.states.ModularState",
+            state_model="flock.type_defs.states.ModularState",
             operations=[task_request, usage_request],
             next_phase="modular/phases/process_task_hooks.py",
         )
@@ -81,5 +81,7 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
 
 if __name__ == "__main__":
     run_phase(
-        "init_from_settings", create_phase_request, "type_defs.states.ModularState"
+        "init_from_settings",
+        create_phase_request,
+        "flock.type_defs.states.ModularState",
     )
