@@ -22,6 +22,11 @@ async def start_workflow() -> None:
             settings = json.load(f)
 
         workflow_type = settings["workflow_type"]
+    except Exception as e:
+        print(f"Could not get workflow type from settings: {e!r}")
+        return
+
+    try:
         random_int = random.randint(1000, 10_000)
         state_id = f"{workflow_type}_{random_int}"
 
@@ -53,9 +58,8 @@ async def start_workflow() -> None:
                         f"Failed to start {workflow_type} "
                         f"workflow: {await response.text()}"
                     )
-
     except Exception as e:
-        print(f"Error starting {workflow_type} workflow: {str(e)}")
+        print(f"Error starting {workflow_type} workflow: {e!r}")
 
 
 async def wait_for_server(url: str, timeout: int = 30, interval: float = 0.5) -> None:
