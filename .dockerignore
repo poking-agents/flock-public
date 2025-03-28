@@ -5,4 +5,5 @@
 !manifest.json
 !pyproject.toml
 !README.md
+!requirements.txt
 !uv.lock
