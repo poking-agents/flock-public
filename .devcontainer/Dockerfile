@@ -25,7 +25,7 @@ ARG USER_ID=1000
 ARG GROUP_ID=1000
 RUN groupadd -g ${GROUP_ID} ${APP_USER} \
 && useradd -m -u ${USER_ID} -g ${APP_USER} -s /bin/bash ${APP_USER} \
-&& mkdir -p ${APP_DIR} \
+&& mkdir -p ${APP_DIR} /home/${APP_USER}/.config \
 && chown -R ${USER_ID}:${GROUP_ID} ${APP_DIR} /home/${APP_USER}
 
 WORKDIR ${APP_DIR}
