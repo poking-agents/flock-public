@@ -28,7 +28,7 @@ from utils.functions import (
 )
 from utils.logging import log_warning
 from utils.phase_utils import (
-    _append_thinking_blocks_to_messages,
+    append_thinking_blocks_to_messages,
     add_dummy_user_message,
     add_usage_request,
     get_thinking_blocks,
@@ -109,7 +109,7 @@ def prepare_history_for_actor(
                 if current_length + len(message.content) > character_budget:
                     break
                 messages.append(message)
-                messages = _append_thinking_blocks_to_messages(
+                messages = append_thinking_blocks_to_messages(
                     messages, option.thinking_blocks
                 )
                 current_length += len(message.content)
