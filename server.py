@@ -1,5 +1,6 @@
 """Server setup and configuration"""
 
+import asyncio
 import logging
 import sys
 
@@ -35,15 +36,18 @@ async def health_check(request: web.Request) -> web.Response:
     return web.Response(text="OK")
 
 
-def create_app(mode: ProcessingMode, log_level: str = "INFO") -> web.Application:
+def create_app(
+    mode: ProcessingMode, log_level: str = "INFO"
+) -> tuple[web.Application, asyncio.Event]:
     """Create and configure the web application"""
     setup_logging(log_level)
     logger.info(f"Starting server in {mode} mode with log level {log_level}")
 
     app = web.Application(client_max_size=1024**2 * 100)  # 100 MB limit
 
+    event = asyncio.Event()
     # Add routes
-    app.router.add_post("/run_workflow", lambda r: workflow_handler(r, mode))
+    app.router.add_post("/run_workflow", lambda r: workflow_handler(r, mode, event))
     app.router.add_post("/start_workflow", lambda r: start_workflow_handler(r, mode))
 
     # Add health check route
@@ -52,4 +56,4 @@ def create_app(mode: ProcessingMode, log_level: str = "INFO") -> web.Application
     # Store settings in app state
     app["mode"] = mode
 
-    return app
+    return app, event
