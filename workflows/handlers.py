@@ -62,8 +62,14 @@ async def handle_workflow(data: WorkflowData, mode: ProcessingMode) -> Dict[str,
     return {"updates": updates, "next_phase": next_phase, "error": None, "delay": delay}
 
 
-async def workflow_handler(request: web.Request, mode: ProcessingMode) -> web.Response:
+async def workflow_handler(
+    request: web.Request, mode: ProcessingMode, event: asyncio.Event
+) -> web.Response:
     """Handle /run_workflow requests"""
+    if event.is_set():
+        return web.json_response(
+            {"error": "Previous phase errored out, exiting..."}, status=500
+        )
     try:
         raw_data = await request.json()
         state_id = raw_data["state_id"]
@@ -88,7 +94,7 @@ async def workflow_handler(request: web.Request, mode: ProcessingMode) -> web.Re
             return web.json_response({"error": error}, status=500)
 
         if result.get("next_phase"):
-            await execute_next_phase(result, data)
+            await execute_next_phase(result, data, event)
 
         return web.json_response(serialize_for_json(result))
     except Exception as e:
@@ -114,7 +120,9 @@ async def process_workflow(
         return {}, str(e)
 
 
-async def execute_next_phase(result: Dict[str, Any], data: WorkflowData) -> None:
+async def execute_next_phase(
+    result: Dict[str, Any], data: WorkflowData, event: asyncio.Event
+) -> None:
     """Start next phase if present"""
     if not result.get("next_phase"):
         return
@@ -130,6 +138,7 @@ async def execute_next_phase(result: Dict[str, Any], data: WorkflowData) -> None
                 next_phase,
                 state_id,
                 {"updates": serialize_for_json(result["updates"])},
+                event,
             ),
             name=f"phase_{state_id}_{next_phase}",
         )
