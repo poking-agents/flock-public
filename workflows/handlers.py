@@ -150,7 +150,7 @@ async def execute_next_phase(
 
 
 async def start_workflow_handler(
-    request: web.Request, mode: ProcessingMode
+    request: web.Request, mode: ProcessingMode, event: asyncio.Event
 ) -> web.Response:
     """Handle /start_workflow requests"""
     try:
@@ -198,7 +198,12 @@ async def start_workflow_handler(
         previous_operations = PreviousOperations(updates=[(init_request, init_result)])
 
         try:
-            await execute_phase(first_phase, state_id, previous_operations.model_dump())
+            await execute_phase(
+                first_phase,
+                state_id,
+                previous_operations.model_dump(),
+                event,
+            )
             logger.info(f"[{state_id}] Started {workflow_type} workflow")
         except Exception as e:
             error_msg = f"Failed to execute first phase: {str(e)}"

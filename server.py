@@ -48,7 +48,9 @@ def create_app(
     event = asyncio.Event()
     # Add routes
     app.router.add_post("/run_workflow", lambda r: workflow_handler(r, mode, event))
-    app.router.add_post("/start_workflow", lambda r: start_workflow_handler(r, mode))
+    app.router.add_post(
+        "/start_workflow", lambda r: start_workflow_handler(r, mode, event)
+    )
 
     # Add health check route
     app.router.add_get("/health", health_check)
