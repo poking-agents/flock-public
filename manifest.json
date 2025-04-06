@@ -17,6 +17,17 @@
                 "model": "claude-3-7-sonnet-20250219",
                 "temp": 1.0,
                 "n": 1,
+                "max_tokens": 20000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
+        "modular_c3.7s_thinking": {
+            "generator": {
+                "model": "claude-3-7-sonnet-20250219",
+                "temp": 1.0,
+                "n": 1,
                 "max_tokens": 20000,
                 "max_reasoning_tokens": 10000
             },
