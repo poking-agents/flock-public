@@ -12,7 +12,7 @@ from modular.templates import NOTICE_TRIMMED
 from type_defs.base import Message
 from type_defs.phases import StateRequest
 from type_defs.states import ModularState
-from utils.phase_utils import _append_thinking_blocks_to_messages, run_phase
+from utils.phase_utils import append_thinking_blocks_to_messages, run_phase
 
 
 def trim_message_list(
@@ -84,7 +84,7 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 role="function",
             )
         else:
-            messages = _append_thinking_blocks_to_messages(
+            messages = append_thinking_blocks_to_messages(
                 messages, option.thinking_blocks
             )
             message = Message(
