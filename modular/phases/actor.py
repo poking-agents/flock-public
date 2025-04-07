@@ -68,7 +68,7 @@ def create_function_call_log_message(
 
     message_parts.append(function_call_message)
     if function_call_args:
-        message_parts.append(str(function_call_args))
+        message_parts.append(json.dumps(function_call_args))
     message = "\n".join(message_parts)
     return message, style
 
