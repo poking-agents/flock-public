@@ -97,7 +97,7 @@ async def main() -> None:
 
     args = parser.parse_args()
 
-    app = create_app(mode=args.mode, log_level=args.log_level)
+    app, event = create_app(mode=args.mode, log_level=args.log_level)
 
     runner = aiohttp.web.AppRunner(app)
     await runner.setup()
@@ -117,7 +117,7 @@ async def main() -> None:
         hooks = Hooks()
         try:
             await start_workflow()
-            await asyncio.Event().wait()
+            await event.wait()
         except Exception as e:
             await hooks.log_error(f"Error in HOOKS mode: {str(e)}")
             raise
@@ -125,7 +125,8 @@ async def main() -> None:
         await start_workflow()
 
     # Keep the server running
-    await asyncio.Event().wait()
+    await event.wait()
+    raise RuntimeError("Some phase errored out, exiting...")
 
 
 if __name__ == "__main__":

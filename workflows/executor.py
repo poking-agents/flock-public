@@ -10,7 +10,10 @@ from logger import logger
 
 
 async def execute_phase(
-    phase_name: str, state_id: str, previous_operations: Dict[str, Any]
+    phase_name: str,
+    state_id: str,
+    previous_operations: Dict[str, Any],
+    event: asyncio.Event,
 ) -> None:
     """Execute a workflow phase with the given state and previous operations"""
     previous_operations_json = json.dumps(previous_operations)
@@ -43,6 +46,7 @@ async def execute_phase(
         if stderr:
             error_msg += f"\nstderr: {stderr.decode()}"
         logger.error(f"[{state_id}][{phase_name}] {error_msg}")
+        event.set()
         raise Exception(error_msg)
 
     logger.debug(f"[{state_id}][{phase_name}] Phase completed successfully")
