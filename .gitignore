@@ -298,5 +298,6 @@ $RECYCLE.BIN/
 /graphs/*.png
 /reference
 /messages
+flock/states
 
 logs/

@@ -131,3 +131,7 @@ async def main() -> None:
     # Keep the server running
     await event.wait()
     raise RuntimeError("Some phase errored out, exiting...")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
