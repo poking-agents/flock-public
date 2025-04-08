@@ -11,7 +11,7 @@ env:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
@@ -39,7 +39,7 @@ jobs:
           ruff format . --check
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
@@ -64,3 +64,53 @@ jobs:
       - name: Run tests
         run: |-
           python -m pytest
+
+  publish:
+    runs-on: ubuntu-24.04
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@f94ec6bedd8674c4426838e6b50417d36b6ab231 # v5.3.1
+        with:
+          version: "${{ env.UV_VERSION }}"
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: pyproject.toml
+
+      - name: Install dependencies
+        run: >-
+          uv export
+          --locked
+          --no-dev
+          --no-emit-project
+          --no-hashes
+          --output-file requirements.txt
+
+      - name: Publish
+        run: |-
+          if git diff --quiet --exit-code -- flock requirements.txt
+          then
+            echo "No changes to publish"
+            exit 0
+          fi
+
+          CURRENT_VERSION="$(bump-my-version show current_version)"
+          NEW_VERSION="$(bump-my-version show --increment patch new_version)"
+          bump-my-version bump patch
+          git add requirements.txt pyproject.toml
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit -m "[skip ci] Bump version: ${CURRENT_VERSION} → ${NEW_VERSION}"
+          git push
+          git tag "v${NEW_VERSION}"
+          git push --tags
