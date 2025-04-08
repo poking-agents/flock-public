@@ -157,3 +157,84 @@ def test_create_phase_request(thinking_text: str | None):
 
     assert isinstance(operations[1], BashRequest)
     assert operations[1].type == "bash"
+
+
+def test_actor_set_timeout_with_integer_argument():
+    """Test actor phase with set_timeout function call with integer argument"""
+
+    state = ModularState(
+        id="123",
+        nodes=[
+            Node(
+                source="actor_choice",
+                options=[
+                    Option(
+                        content="Some completion text",
+                        function_call={
+                            "name": "set_timeout",
+                            "arguments": json.dumps({"timeout": 10}),
+                        },
+                    )
+                ],
+            )
+        ],
+        previous_results=[
+            [
+                GenerationResult(
+                    type="generate",
+                    result=GenerationOutput(
+                        outputs=[
+                            MiddlemanModelOutput(
+                                completion="Some completion text",
+                                reasoning_completion=None,
+                                function_call={
+                                    "name": "set_timeout",
+                                    "arguments": '{"timeout": 10}',
+                                },
+                                usage=RunUsage(
+                                    tokens=100, actions=1, total_seconds=10, cost=0.1
+                                ),
+                                usageLimits=RunUsage(
+                                    tokens=300000,
+                                    actions=3000,
+                                    total_seconds=3000,
+                                    cost=300.0,
+                                ),
+                                error=None,
+                                metadata=None,
+                            )
+                        ],
+                    ),
+                    error=None,
+                    metadata=None,
+                )
+            ],
+            [],
+        ],
+        settings=ModularSettings(
+            generator=MiddlemanSettings(
+                model="claude-3-7-sonnet-20250219",
+            ),
+        ),
+    )
+
+    state_requests = actor.create_phase_request(state)
+
+    assert isinstance(state_requests, list)
+    assert len(state_requests) == 1
+
+    (state_request,) = state_requests
+    assert isinstance(state_request, StateRequest)
+    assert state_request.state is state
+    assert state_request.state_model == "type_defs.states.ModularState"
+
+    operations = state_request.operations
+    assert len(operations) == 1
+
+    nodes = state_request.state.nodes
+    assert len(nodes) == 2
+
+    assert isinstance(operations[0], LogWithAttributesRequest)
+    assert operations[0].type == "log_with_attributes"
+    content = operations[0].params.content
+    assert "Function called: set_timeout with timeout:\n10" in content
