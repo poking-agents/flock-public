@@ -3,7 +3,7 @@ from unittest.mock import mock_open, patch
 
 import pytest
 
-from triframe.phases.init_from_settings import initialize_state_from_settings
+from flock.triframe.phases.init_from_settings import initialize_state_from_settings
 
 
 @pytest.mark.parametrize(

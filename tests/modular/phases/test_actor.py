@@ -2,9 +2,9 @@ import json
 
 import pytest
 
-import modular.phases.actor as actor
-from type_defs.base import Node, Option
-from type_defs.operations import (
+from flock.modular.phases import actor
+from flock.type_defs.base import Node, Option
+from flock.type_defs.operations import (
     BashRequest,
     GenerationOutput,
     GenerationResult,
@@ -18,8 +18,8 @@ from type_defs.operations import (
     SaveStateResult,
     UsageCheckpoint,
 )
-from type_defs.phases import StateRequest
-from type_defs.states import ModularSettings, ModularState
+from flock.type_defs.phases import StateRequest
+from flock.type_defs.states import ModularSettings, ModularState
 
 
 @pytest.mark.parametrize(

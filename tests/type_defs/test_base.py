@@ -1,6 +1,6 @@
 import pytest
 
-from type_defs.base import Option, RedactedThinkingBlock, VisibleThinkingBlock
+from flock.type_defs.base import Option, RedactedThinkingBlock, VisibleThinkingBlock
 
 
 @pytest.mark.parametrize(

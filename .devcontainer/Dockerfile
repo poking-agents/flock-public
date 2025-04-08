@@ -25,12 +25,25 @@ ARG USER_ID=1000
 ARG GROUP_ID=1000
 RUN groupadd -g ${GROUP_ID} ${APP_USER} \
 && useradd -m -u ${USER_ID} -g ${APP_USER} -s /bin/bash ${APP_USER} \
-&& mkdir -p ${APP_DIR} \
+&& mkdir -p ${APP_DIR} /home/${APP_USER}/.config \
 && chown -R ${USER_ID}:${GROUP_ID} ${APP_DIR} /home/${APP_USER}
 
 WORKDIR ${APP_DIR}
-COPY --chown=${APP_USER}:${GROUP_ID} requirements.txt ./
+COPY --chown=${APP_USER}:${GROUP_ID} pyproject.toml uv.lock README.md ./
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv pip install --system -r requirements.txt
+    UV_PROJECT_ENVIRONMENT=/usr/local \
+    uv sync \
+        --all-extras \
+        --all-groups \
+        --locked \
+        --no-install-project
+
+COPY --chown=${APP_USER}:${GROUP_ID} . .
+RUN --mount=type=cache,target=/root/.cache/uv \
+    UV_PROJECT_ENVIRONMENT=/usr/local \
+    uv sync \
+        --all-extras \
+        --all-groups \
+        --locked
 
 USER ${APP_USER}

@@ -128,11 +128,14 @@ cd flock-public
 ```
 
 2. Install dependencies:
+Note: you don't have to do so if you're using the dev container.
 ```bash
-pip install -r requirements.txt
+uv sync
+source .venv/bin/activate
 ```
 
-3. Set up environment variables:
+1. Set up environment variables:
+You might want to edit ~/.bashrc in the dev container to set the following variables:
 ```bash
 export MIDDLEMAN_API_URL="http://your-middleman-api-url"
 export MIDDLEMAN_API_KEY="your-api-key"  # Optional: will attempt to use viv config file

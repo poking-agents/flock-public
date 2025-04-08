@@ -3,8 +3,8 @@ import json
 
 import pytest
 
-from utils.functions import parse_completions_function_call
-from utils.state import trim_state
+from flock.utils.functions import parse_completions_function_call
+from flock.utils.state import trim_state
 
 
 @pytest.mark.parametrize(
