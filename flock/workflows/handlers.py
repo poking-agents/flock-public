@@ -120,7 +120,9 @@ async def process_workflow(
         return {}, str(e)
 
 
-async def execute_next_phase(result: Dict[str, Any], data: WorkflowData) -> None:
+async def execute_next_phase(
+    result: Dict[str, Any], data: WorkflowData, event: asyncio.Event
+) -> None:
     """Start next phase if present"""
     if not result.get("next_phase"):
         return
@@ -136,6 +138,7 @@ async def execute_next_phase(result: Dict[str, Any], data: WorkflowData) -> None
                 next_phase,
                 state_id,
                 {"updates": serialize_for_json(result["updates"])},
+                event,
             ),
             name=f"phase_{state_id}_{next_phase}",
         )
