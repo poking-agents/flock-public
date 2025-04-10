@@ -11,6 +11,7 @@ MODELS = [
     ("fireworks/deepseek-v3", "ds3"),
     ("fireworks/deepseek-r1", "dsr1_fireworks"),
     ("together/deepseek-r1", "dsr1_together"),
+    ("deepinfra/deepseek-r1", "dsr1_deepinfra"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
 ]
 AIRD = [True, False]
@@ -110,7 +111,7 @@ def generate_manifest() -> None:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    if "fireworks" in model:
+                    if "fireworks" in model or "deepinfra" in model:
                         max_tokens_actor_and_rater = 128000
                         max_tokens_advisor = 128000
                     elif "together" in model:
