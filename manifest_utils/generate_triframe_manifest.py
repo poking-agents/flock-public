@@ -105,12 +105,12 @@ def generate_manifest() -> None:
                 for n_actors in [1, 2, 3]:
                     pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
                     settings_packs[pack_name] = {
-                        "advisors": [{"model": model, "temp": 1.0, "n": 1}],
-                        "actors": [{"model": model, "temp": 1.0, "n": n_actors}],
+                        "advisors": [{"model": model, "temp": 0.0, "n": 1}],
+                        "actors": [{"model": model, "temp": 0.0, "n": n_actors}],
                         "raters": [
                             {
                                 "model": model,
-                                "temp": 1.0 if n_raters > 1 else 0.0,
+                                "temp": 0.0,
                                 "n": n_raters,
                             }
                         ],

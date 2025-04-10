@@ -6,14 +6,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -33,14 +33,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -60,14 +60,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -87,14 +87,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -114,14 +114,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -141,14 +141,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -168,14 +168,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -185,7 +185,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -195,14 +195,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -212,7 +212,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -222,14 +222,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -239,7 +239,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -249,14 +249,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -266,7 +266,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -276,14 +276,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -293,7 +293,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -303,14 +303,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -320,7 +320,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -330,14 +330,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -348,7 +348,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -358,14 +358,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -376,7 +376,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -386,14 +386,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -413,14 +413,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -440,14 +440,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -467,14 +467,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -494,14 +494,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -521,14 +521,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -548,14 +548,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -565,7 +565,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -575,14 +575,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -592,7 +592,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -602,14 +602,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -619,7 +619,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -629,14 +629,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -646,7 +646,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -656,14 +656,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -673,7 +673,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -683,14 +683,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -700,7 +700,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -710,14 +710,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -728,7 +728,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -738,14 +738,14 @@
                 {
                     "model": "gpt-4o",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -756,7 +756,7 @@
                 {
                     "model": "gpt-4o",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -918,14 +918,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -945,14 +945,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -972,14 +972,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -999,14 +999,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1026,14 +1026,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1053,14 +1053,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1080,14 +1080,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1097,7 +1097,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1107,14 +1107,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1124,7 +1124,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1134,14 +1134,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1151,7 +1151,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1161,14 +1161,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1178,7 +1178,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1188,14 +1188,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1205,7 +1205,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1215,14 +1215,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1232,7 +1232,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1242,14 +1242,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1260,7 +1260,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1270,14 +1270,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1288,7 +1288,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1298,14 +1298,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1325,14 +1325,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1352,14 +1352,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1379,14 +1379,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1406,14 +1406,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1433,14 +1433,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1460,14 +1460,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1477,7 +1477,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1487,14 +1487,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1504,7 +1504,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1514,14 +1514,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1531,7 +1531,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1541,14 +1541,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1558,7 +1558,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1568,14 +1568,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1585,7 +1585,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1595,14 +1595,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1612,7 +1612,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1622,14 +1622,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1640,7 +1640,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1650,14 +1650,14 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "gpt-4o-mini",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1668,7 +1668,7 @@
                 {
                     "model": "gpt-4o-mini",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1678,14 +1678,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1705,14 +1705,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1732,14 +1732,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1759,14 +1759,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1786,14 +1786,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1813,14 +1813,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1840,14 +1840,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1857,7 +1857,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1867,14 +1867,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1884,7 +1884,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1894,14 +1894,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1911,7 +1911,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1921,14 +1921,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1938,7 +1938,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1948,14 +1948,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -1965,7 +1965,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -1975,14 +1975,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -1992,7 +1992,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2002,14 +2002,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2020,7 +2020,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2030,14 +2030,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2048,7 +2048,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2058,14 +2058,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2085,14 +2085,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2112,14 +2112,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2139,14 +2139,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2166,14 +2166,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2193,14 +2193,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2220,14 +2220,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2237,7 +2237,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2247,14 +2247,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2264,7 +2264,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2274,14 +2274,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2291,7 +2291,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2301,14 +2301,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2318,7 +2318,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2328,14 +2328,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2345,7 +2345,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2355,14 +2355,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2372,7 +2372,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2382,14 +2382,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2400,7 +2400,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2410,14 +2410,14 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2428,7 +2428,7 @@
                 {
                     "model": "claude-3-5-sonnet-20241022",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2438,14 +2438,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2465,14 +2465,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2492,14 +2492,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2519,14 +2519,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2546,14 +2546,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2573,14 +2573,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2600,14 +2600,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2617,7 +2617,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2627,14 +2627,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2644,7 +2644,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2654,14 +2654,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2671,7 +2671,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2681,14 +2681,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2698,7 +2698,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2708,14 +2708,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2725,7 +2725,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2735,14 +2735,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2752,7 +2752,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2762,14 +2762,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2780,7 +2780,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2790,14 +2790,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2808,7 +2808,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -2818,14 +2818,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2845,14 +2845,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2872,14 +2872,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2899,14 +2899,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2926,14 +2926,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2953,14 +2953,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -2980,14 +2980,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -2997,7 +2997,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3007,14 +3007,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3024,7 +3024,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3034,14 +3034,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3051,7 +3051,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3061,14 +3061,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3078,7 +3078,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3088,14 +3088,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3105,7 +3105,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3115,14 +3115,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3132,7 +3132,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3142,14 +3142,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3160,7 +3160,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3170,14 +3170,14 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3188,7 +3188,7 @@
                 {
                     "model": "fireworks/deepseek-v3",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3198,14 +3198,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3225,14 +3225,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3252,14 +3252,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3279,14 +3279,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3306,14 +3306,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3333,14 +3333,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3360,14 +3360,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3377,7 +3377,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3387,14 +3387,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3404,7 +3404,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3414,14 +3414,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3431,7 +3431,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3441,14 +3441,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3458,7 +3458,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3468,14 +3468,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3485,7 +3485,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3495,14 +3495,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3512,7 +3512,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3522,14 +3522,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3540,7 +3540,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3550,14 +3550,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3568,7 +3568,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3578,14 +3578,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3605,14 +3605,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3632,14 +3632,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3659,14 +3659,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3686,14 +3686,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3713,14 +3713,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3740,14 +3740,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3757,7 +3757,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3767,14 +3767,14 @@
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3784,7 +3784,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3794,14 +3794,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3811,7 +3811,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3821,14 +3821,14 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3838,7 +3838,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3848,14 +3848,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3865,7 +3865,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3875,14 +3875,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3892,7 +3892,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3902,14 +3902,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3920,7 +3920,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3930,14 +3930,14 @@
                 {
                     "model": "o1",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o1",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -3948,7 +3948,7 @@
                 {
                     "model": "o1",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -3958,14 +3958,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -3985,14 +3985,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4012,14 +4012,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4039,14 +4039,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4066,14 +4066,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4093,14 +4093,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4120,14 +4120,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4137,7 +4137,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4147,14 +4147,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4164,7 +4164,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4174,14 +4174,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4191,7 +4191,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4201,14 +4201,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4218,7 +4218,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4228,14 +4228,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4245,7 +4245,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4255,14 +4255,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4272,7 +4272,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4282,14 +4282,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4300,7 +4300,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4310,14 +4310,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4328,7 +4328,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4338,14 +4338,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4365,14 +4365,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4392,14 +4392,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4419,14 +4419,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4446,14 +4446,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4473,14 +4473,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4500,14 +4500,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4517,7 +4517,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4527,14 +4527,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4544,7 +4544,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4554,14 +4554,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4571,7 +4571,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4581,14 +4581,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4598,7 +4598,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4608,14 +4608,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4625,7 +4625,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4635,14 +4635,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4652,7 +4652,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4662,14 +4662,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": true,
@@ -4680,7 +4680,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
@@ -4690,14 +4690,14 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 3,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "advisors": [
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 1,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "enable_advising": false,
@@ -4708,7 +4708,7 @@
                 {
                     "model": "o3-mini-2024-12-17-redteam",
                     "n": 2,
-                    "temp": 1.0
+                    "temp": 0.0
                 }
             ],
             "require_function_call": false
