@@ -13,6 +13,7 @@ MODELS = [
     ("together/deepseek-r1", "dsr1_together"),
     ("deepinfra/deepseek-r1", "dsr1_deepinfra"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
+    ("openrouter/deepseek-r1", "dsr1_openrouter"),
 ]
 AIRD = [True, False]
 
