@@ -10,4 +10,5 @@ MODELS = (
     ("o1-2024-12-17", "o1", None),
     ("o3-mini-2025-01-31", "o3-mini", None),
     ("together/deepseek-r1", "dsr1_together", 32_000),
+    ("fireworks/deepseek-v3-0324", "ds3-0324", 128_000),
 )
