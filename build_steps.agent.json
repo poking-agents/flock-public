@@ -1,0 +1,20 @@
+[
+  {
+    "type": "shell",
+    "commands": [
+      "NODE_VERSION=22.14.0",
+      "apt-get update",
+      "curl -sL https://deb.nodesource.com/setup_$(echo ${NODE_VERSION} | cut -d . -f 1).x | bash -",
+      "apt-get install -y --no-install-recommends nodejs=${NODE_VERSION}-1nodesource1",
+      "apt-get clean",
+      "rm -rf /var/lib/apt/lists/*"
+    ]
+  },
+  {
+    "type": "shell",
+    "commands": [
+      "npm install -g @anthropic-ai/claude-code",
+      "rm -rf /root/.npm"
+    ]
+  }
+]
