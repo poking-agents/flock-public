@@ -11,7 +11,7 @@ def generate_modular_manifest() -> dict:
         settings_packs[pack_name] = {
             "generator": {
                 "model": model,
-                "temp": 1.0,
+                "temp": 0 if model_short == "ds3-0324" else 1.0,
                 "n": 1,
                 **({"max_tokens": max_tokens} if max_tokens is not None else {}),
             },
