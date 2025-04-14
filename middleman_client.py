@@ -86,7 +86,7 @@ async def post_completion(
     }
     
     if model in ("openrouter/deepseek-r1", "dsr1_openrouter"):
-        data["provider"] = {"order": ["deepinfra"]}
+        data["provider"] = {"order": ["deepinfra", "fireworks"]}
     async with create_session() as session:
         try:
             async with session.post(f"{base_url}/completions", json=data) as response:
