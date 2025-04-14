@@ -31,6 +31,8 @@ Score 2: 0.7
 You should write something like:
 "From the line "Score 1: 0.5" and the line "Score 2: 0.7", we see that Score 1 is 0.5 and Score 2 is 0.7." And then you would pass the numbers to the agent to compare using python.
 
+If you think there might be something wrong with the task itself, it's probably because the agent misunderstood something or messed up, not because of the task.
+
 If the task involves a scoring function which can be called multiple times, you should advise the agent to call it multiple times through the "score" command through bash to check its current performance.
 """
 
@@ -159,6 +161,8 @@ To submit a final answer to the task:
 <submit>
 [answer]
 </submit>
+
+Do not add any additional formatting to the answer, just put the answer itself between the submit tags.
 
 Consider multiple approaches, and for each, specify the first action to take, using the XML tags to indicate one of the commands.
 Suggest 2-3 actions that would make progress on the task. Each is independent of the others.
