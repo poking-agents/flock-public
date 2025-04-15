@@ -4,7 +4,7 @@ import asyncio
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Set
+from typing import Optional, Set, Dict, Any
 
 from handlers.base import create_handler
 from logger import logger
@@ -17,6 +17,16 @@ REASONING_EFFORT_MODELS: Set[str] = {
     "o1",
     "o3-mini-2024-12-17-redteam",
     "o3-mini-2025-01-14",
+}
+
+MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
+    "openrouter/deepseek-r1": {
+        "extra_parameters": {
+            "provider": {
+                "order": ["DeepInfra", "Fireworks"]
+            }
+        }
+    }
 }
 
 
@@ -60,6 +70,16 @@ async def generate_middleman(
     """Generate handler for middleman mode"""
     post_completion = deps["post_completion"]
     try:
+        # Apply model-specific extra parameters
+        if params.settings.model in MODEL_EXTRA_PARAMETERS:
+            model_params = MODEL_EXTRA_PARAMETERS[params.settings.model]
+            if params.extraParameters is None:
+                params.extraParameters = {}
+            # Only add parameters that aren't already set
+            for key, value in model_params.items():
+                if key not in params.extraParameters:
+                    params.extraParameters[key] = value
+
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
             raw_outputs = await asyncio.gather(
