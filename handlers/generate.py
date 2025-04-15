@@ -21,10 +21,8 @@ REASONING_EFFORT_MODELS: Set[str] = {
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/deepseek-r1": {
-        "extra_parameters": {
-            "provider": {
-                "order": ["DeepInfra", "Fireworks"]
-            }
+        "provider": {
+            "order": ["DeepInfra", "Fireworks"]
         }
     }
 }
@@ -73,12 +71,10 @@ async def generate_middleman(
         # Apply model-specific extra parameters
         if params.settings.model in MODEL_EXTRA_PARAMETERS:
             model_params = MODEL_EXTRA_PARAMETERS[params.settings.model]
-            if params.extraParameters is None:
-                params.extraParameters = {}
-            # Only add parameters that aren't already set
-            for key, value in model_params.items():
-                if key not in params.extraParameters:
-                    params.extraParameters[key] = value
+            params.extraParameters = model_params if params.extraParameters is None else {
+                **model_params,
+                **params.extraParameters
+            }
 
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
