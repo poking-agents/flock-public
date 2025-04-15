@@ -69,6 +69,7 @@ async def post_completion(
     n: int = 1,
     function_call: Optional[Dict[str, Any]] = None,
     functions: Optional[Dict[str, Any]] = None,
+    extra_parameters: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     base_url, api_key = get_credentials()
     if api_key == "test-key":
@@ -85,8 +86,10 @@ async def post_completion(
         "function_call": function_call,
     }
     
-    if model in ("openrouter/deepseek-r1", "dsr1_openrouter"):
-        data["provider"] = {"order": ["deepinfra", "fireworks"]}
+    # Always include extra parameters if they exist
+    if extra_parameters:
+        data.update(extra_parameters)
+    
     async with create_session() as session:
         try:
             async with session.post(f"{base_url}/completions", json=data) as response:

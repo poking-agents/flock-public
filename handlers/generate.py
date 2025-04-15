@@ -68,13 +68,8 @@ async def generate_middleman(
     """Generate handler for middleman mode"""
     post_completion = deps["post_completion"]
     try:
-        # Apply model-specific extra parameters
-        if params.settings.model in MODEL_EXTRA_PARAMETERS:
-            model_params = MODEL_EXTRA_PARAMETERS[params.settings.model]
-            params.extraParameters = model_params if params.extraParameters is None else {
-                **model_params,
-                **params.extraParameters
-            }
+        # Always apply extra parameters
+        params.extraParameters = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
 
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
@@ -87,6 +82,7 @@ async def generate_middleman(
                         n=1,
                         function_call=params.settings.function_call,
                         functions=params.functions,
+                        extra_parameters=params.extraParameters
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -124,6 +120,7 @@ async def generate_middleman(
                 n=params.settings.n,
                 function_call=params.settings.function_call,
                 functions=params.functions,
+                extra_parameters=params.extraParameters
             )
             if raw_output.get("error"):
                 error_output = GenerationOutput(
