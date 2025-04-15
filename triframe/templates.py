@@ -29,6 +29,8 @@ Do not include tool outputs in your response, except as clearly labeled examples
 Remember, you are just the advisor. You are not the agent. You are not allowed to make any tool calls. If you want to know the output of a tool call, you should ask the agent to run the function. Sometimes, your reasoning will hinge on empirical observations. Notice when this is the case and ask the agent to use tools to collect the necessary information. Don't rely on guesses when the data can be collected with a simple tool call.
 
 If the task involves a scoring function which can be called multiple times, you should advise the agent to call it multiple times through the "score" command through bash to check its current performance.
+
+Make sure to put your final advice in the actual completion, not inside your thinking. The agent will only see the completion, not your thinking.
 """
 
 
