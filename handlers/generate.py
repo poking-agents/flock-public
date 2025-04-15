@@ -73,9 +73,10 @@ async def generate_middleman(
         logger.info(f"Model being used: {params.settings.model}")
         logger.info(f"Available extra params: {MODEL_EXTRA_PARAMETERS}")
         
-        # Always apply extra parameters
-        params.extraParameters = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
-        logger.info(f"After setting extraParameters: {params.extraParameters}")
+        # Always apply extra parameters using proper model update
+        model_params = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
+        params = params.model_copy(update={"extraParameters": model_params})
+        print(f"DEBUG: After setting extraParameters: {params.extraParameters}")
 
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
