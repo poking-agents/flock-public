@@ -68,8 +68,14 @@ async def generate_middleman(
     """Generate handler for middleman mode"""
     post_completion = deps["post_completion"]
     try:
+        # Log initial state
+        logger.info(f"Initial extraParameters: {params.extraParameters}")
+        logger.info(f"Model being used: {params.settings.model}")
+        logger.info(f"Available extra params: {MODEL_EXTRA_PARAMETERS}")
+        
         # Always apply extra parameters
         params.extraParameters = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
+        logger.info(f"After setting extraParameters: {params.extraParameters}")
 
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:

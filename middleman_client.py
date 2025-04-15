@@ -75,6 +75,9 @@ async def post_completion(
     if api_key == "test-key":
         return get_mock_response()
     formatted_messages = format_messages(messages)
+    
+    logger.info(f"Post completion received extra_parameters: {extra_parameters}")
+    
     data = {
         "api_key": api_key,
         "messages": formatted_messages,
@@ -88,7 +91,10 @@ async def post_completion(
     
     # Always include extra parameters if they exist
     if extra_parameters:
+        logger.info("Updating data with extra parameters")
         data.update(extra_parameters)
+    
+    logger.info(f"Final request data: {json.dumps({k:v for k,v in data.items() if k != 'api_key'})}")
     
     async with create_session() as session:
         try:
