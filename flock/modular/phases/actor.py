@@ -113,7 +113,8 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
 
     tool_name = function_call.get("name")
     tool_args = function_call.get("arguments")
-    tool_args = json.loads(tool_args)
+    if isinstance(tool_args, str):
+        tool_args = json.loads(tool_args)
     tool_operation: BaseOperationRequest | None = None
     metadata = OperationMetadata(
         purpose="tool_execution", phase="actor", state_id=state.id
