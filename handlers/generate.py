@@ -157,6 +157,10 @@ async def generate_hooks(
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
+        
+    # Add provider routing options if available
+    if settings.model in MODEL_EXTRA_PARAMETERS:
+        settings.extraParameters = MODEL_EXTRA_PARAMETERS[settings.model]
 
     timeout = aiohttp.ClientTimeout(total=2 * 60 * 60)  # 60 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
