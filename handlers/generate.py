@@ -157,11 +157,10 @@ async def generate_hooks(
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
-        
-    # Add provider routing options if available
-    if settings.model in MODEL_EXTRA_PARAMETERS:
-        settings.extraParameters = MODEL_EXTRA_PARAMETERS[settings.model]
 
+    # Get any extra parameters for the model
+    extra_params = MODEL_EXTRA_PARAMETERS.get(settings.model, {})
+    
     timeout = aiohttp.ClientTimeout(total=2 * 60 * 60)  # 60 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
@@ -174,6 +173,7 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
+                        **extra_params
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -200,6 +200,7 @@ async def generate_hooks(
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
+                **extra_params
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)
