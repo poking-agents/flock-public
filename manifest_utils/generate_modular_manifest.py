@@ -20,8 +20,12 @@ def generate_modular_manifest() -> dict:
             "workflow_type": "modular",
         }
         if model == "claude-3-7-sonnet-20250219":
-            settings_packs[pack_name]["generator"]["max_reasoning_tokens"] = (
-                max_tokens // 2
-            )
+            settings_packs[f"{pack_name}_thinking"] = {
+                **settings_packs[pack_name],
+                "generator": {
+                    **settings_packs[pack_name]["generator"],
+                    "max_reasoning_tokens": max_tokens // 2,
+                },
+            }
 
     return settings_packs
