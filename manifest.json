@@ -6012,7 +6012,7 @@
         "triframe_dsr1_openrouter_all_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6020,7 +6020,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6031,7 +6031,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6042,7 +6042,7 @@
         "triframe_dsr1_openrouter_all_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6050,7 +6050,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6061,7 +6061,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6072,7 +6072,7 @@
         "triframe_dsr1_openrouter_all_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6080,7 +6080,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6091,7 +6091,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6102,7 +6102,7 @@
         "triframe_dsr1_openrouter_all_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6110,7 +6110,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6121,7 +6121,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6132,7 +6132,7 @@
         "triframe_dsr1_openrouter_all_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6140,7 +6140,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6151,7 +6151,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6162,7 +6162,7 @@
         "triframe_dsr1_openrouter_all_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6170,7 +6170,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6181,7 +6181,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6192,7 +6192,7 @@
         "triframe_dsr1_openrouter_all_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6200,7 +6200,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6211,7 +6211,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6222,7 +6222,7 @@
         "triframe_dsr1_openrouter_all_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6230,7 +6230,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6241,7 +6241,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6252,7 +6252,7 @@
         "triframe_dsr1_openrouter_all_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6260,7 +6260,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6271,7 +6271,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6282,7 +6282,7 @@
         "triframe_dsr1_openrouter_all_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6290,7 +6290,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6301,7 +6301,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6312,7 +6312,7 @@
         "triframe_dsr1_openrouter_all_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6320,7 +6320,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6331,7 +6331,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6342,7 +6342,7 @@
         "triframe_dsr1_openrouter_all_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6350,7 +6350,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6361,7 +6361,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6372,7 +6372,7 @@
         "triframe_dsr1_openrouter_all_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6380,7 +6380,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6393,7 +6393,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6404,7 +6404,7 @@
         "triframe_dsr1_openrouter_all_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6412,7 +6412,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6425,7 +6425,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6436,7 +6436,7 @@
         "triframe_dsr1_openrouter_all_2_rater_3_actor_no_tools_xml": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6444,7 +6444,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6457,7 +6457,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6468,7 +6468,7 @@
         "triframe_dsr1_openrouter_all_2_rater_3_actor_no_tools_xml_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6476,7 +6476,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6489,7 +6489,7 @@
             "limit_type": "token",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6500,7 +6500,7 @@
         "triframe_dsr1_openrouter_all_aird_1_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6508,7 +6508,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6519,7 +6519,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6530,7 +6530,7 @@
         "triframe_dsr1_openrouter_all_aird_1_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6538,7 +6538,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6549,7 +6549,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6560,7 +6560,7 @@
         "triframe_dsr1_openrouter_all_aird_1_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6568,7 +6568,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6579,7 +6579,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6590,7 +6590,7 @@
         "triframe_dsr1_openrouter_all_aird_1_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6598,7 +6598,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6609,7 +6609,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6620,7 +6620,7 @@
         "triframe_dsr1_openrouter_all_aird_1_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6628,7 +6628,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6639,7 +6639,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6650,7 +6650,7 @@
         "triframe_dsr1_openrouter_all_aird_1_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6658,7 +6658,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6669,7 +6669,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6680,7 +6680,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_1_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6688,7 +6688,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6699,7 +6699,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6710,7 +6710,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_1_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6718,7 +6718,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6729,7 +6729,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6740,7 +6740,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_2_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6748,7 +6748,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6759,7 +6759,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6770,7 +6770,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_2_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6778,7 +6778,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6789,7 +6789,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6800,7 +6800,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_3_actor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6808,7 +6808,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6819,7 +6819,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6830,7 +6830,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6838,7 +6838,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6849,7 +6849,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6860,7 +6860,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_tools_backticks": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6868,7 +6868,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6881,7 +6881,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6892,7 +6892,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6900,7 +6900,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6913,7 +6913,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6924,7 +6924,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_tools_xml": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6932,7 +6932,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6945,7 +6945,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
@@ -6956,7 +6956,7 @@
         "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "actors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 3,
                     "temp": 0.6
@@ -6964,7 +6964,7 @@
             ],
             "advisors": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 1,
                     "temp": 0.6
@@ -6977,7 +6977,7 @@
             "limit_type": "time",
             "raters": [
                 {
-                    "max_tokens": 16000,
+                    "max_tokens": 128000,
                     "model": "openrouter/deepseek-r1",
                     "n": 2,
                     "temp": 0.6
