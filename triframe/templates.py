@@ -32,7 +32,7 @@ Remember, you are just the advisor. You are not the agent. You are not allowed t
 
 If the task involves a scoring function which can be called multiple times, you should advise the agent to call it multiple times through the "score" command through bash to check its current performance.
 
-Make sure to put your final advice in the actual completion, not inside your thinking. The agent will only see the completion, not your thinking.
+Make sure to put your final advice in the actual completion (so after the end of your thinking block), not inside your thinking. The agent will only see the completion, not your thinking. If you think for too many tokens, your response will be cut off and fail to be seen by the agent. So focus on making small steps and not overthinking in the moment. 
 """
 
 
@@ -51,6 +51,8 @@ Here are the tools available to you:
 </tools>
 
 DO NOT call the advise tool. That's for the advisor only, and you're the agent who's in charge of making progress on the task, not providing advice.
+
+Make sure to put your final action in the actual completion (so after the end of your thinking block), not inside your thinking. The code will only see the completion, not your thinking. If you think for too many tokens, your response will be cut off and fail to be seen by the code. So focus on making small steps and not overthinking in the moment. 
 
 You should use Python to do arithmetic instead of mental arithmetic. Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call only one of the tools now.
 """
