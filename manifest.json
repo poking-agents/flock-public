@@ -122,7 +122,7 @@
                 "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                 "temp": 1.0,
                 "n": 1,
-                "max_tokens": 1000000
+                "max_tokens": 900000
             },
             "limit_type": "time",
             "intermediate_scoring": false,
@@ -5726,7 +5726,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5734,7 +5734,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5742,7 +5742,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5757,7 +5757,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5765,7 +5765,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5773,7 +5773,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5788,7 +5788,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5796,7 +5796,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5804,7 +5804,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5819,7 +5819,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5827,7 +5827,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5835,7 +5835,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5850,7 +5850,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5858,7 +5858,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5866,7 +5866,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5881,7 +5881,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5889,7 +5889,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5897,7 +5897,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5912,7 +5912,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5920,7 +5920,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5928,7 +5928,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5945,7 +5945,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5953,7 +5953,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5961,7 +5961,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -5978,7 +5978,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -5986,7 +5986,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -5994,7 +5994,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6009,7 +6009,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6017,7 +6017,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6025,7 +6025,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6040,7 +6040,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6048,7 +6048,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6056,7 +6056,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6071,7 +6071,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6079,7 +6079,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6087,7 +6087,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6102,7 +6102,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6110,7 +6110,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6118,7 +6118,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6133,7 +6133,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6141,7 +6141,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6149,7 +6149,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6164,7 +6164,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6172,7 +6172,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6180,7 +6180,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -6197,7 +6197,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -6205,7 +6205,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -6213,7 +6213,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -11898,7 +11898,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -11906,7 +11906,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -11914,7 +11914,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -11929,7 +11929,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -11937,7 +11937,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -11945,7 +11945,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -11960,7 +11960,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -11968,7 +11968,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -11976,7 +11976,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -11991,7 +11991,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -11999,7 +11999,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12007,7 +12007,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -12022,7 +12022,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12030,7 +12030,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12038,7 +12038,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -12053,7 +12053,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12061,7 +12061,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12069,7 +12069,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -12084,7 +12084,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12092,7 +12092,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12100,7 +12100,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -12117,7 +12117,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12125,7 +12125,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12133,7 +12133,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "time",
@@ -12150,7 +12150,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12158,7 +12158,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12166,7 +12166,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12181,7 +12181,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12189,7 +12189,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12197,7 +12197,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12212,7 +12212,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12220,7 +12220,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12228,7 +12228,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12243,7 +12243,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12251,7 +12251,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12259,7 +12259,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12274,7 +12274,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12282,7 +12282,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12290,7 +12290,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12305,7 +12305,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12313,7 +12313,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12321,7 +12321,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12336,7 +12336,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12344,7 +12344,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12352,7 +12352,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
@@ -12369,7 +12369,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "actors": [
@@ -12377,7 +12377,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "raters": [
@@ -12385,7 +12385,7 @@
                     "model": "openrouter/google/gemini-2.5-pro-preview-03-25",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 1000000
+                    "max_tokens": 900000
                 }
             ],
             "limit_type": "token",
