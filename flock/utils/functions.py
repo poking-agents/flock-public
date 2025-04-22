@@ -257,7 +257,7 @@ def get_standard_function_definitions(
 ) -> List[Dict[str, Any]]:
     """Return a list of function definitions for the triframe agent"""
     intermediate_scoring = state.settings.intermediate_scoring
-    standard_functions = [bash, python, set_timeout]
+    standard_functions = [bash, set_timeout]
     if intermediate_scoring:
         standard_functions.append(score)
         standard_functions.append(score_log)
