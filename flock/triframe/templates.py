@@ -1,7 +1,7 @@
 # ruff: noqa: E501
 from flock.utils.functions import rate_options_json
 
-ADVISOR_FN_PROMPT = """You are an advisor that will provide guidance to an autonomous AI agent. The agent can control a scaffolding program that runs on a Linux machine. The agent has control over its VM, including reading and writing files.
+ADVISOR_FN_PROMPT = """You are to provide guidance to an autonomous AI agent. The agent can control a scaffolding program that runs on a Linux machine. The agent has control over its VM, including reading and writing files.
 
 The tools available to the agent are:
 <tools>
@@ -21,11 +21,7 @@ Share your reasoning, uncertainties, and suggested actions.
 
 Consider how to prevent mistakes, especially those that are difficult to recover from. If the agent is stuck, suggest alternative approaches to try.
 
-Do not include tool outputs or any command blocks in your response, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent (not you) can call the bash and python tools. 
-
-Sometimes it will seem like there's a problem with the environment. In the vast majority of cases, this is because the agent or you (the advisor) made a mistake somewhere and you need to rethink your approach. Know your strengths (as a group of large language models) and find ways to overcome your weaknesses.
-
-You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Don't include any text outside of the advise tool call. Call the advise tool immediately."""
+Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now."""
 
 
 ACTOR_FN_PROMPT = """You are an autonomous AI agent working on a task. You can use the provided tools to interact with a scaffolding program running on a Linux machine. The program is a python process.
@@ -42,7 +38,7 @@ Here are the tools available to you:
 {functions}
 </tools>
 
-Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. You can only make one tool call at a time, but you can be creative with how you use bash (for instance, you can run a bash command that displays the contents of multiple files, but you can't run multiple bash blocks in one turn). Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
 
 ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
 
