@@ -31,7 +31,7 @@ class AgentState(BaseState):
         default_factory=dict, description="Task scoring configuration"
     )
     output_limit: int = Field(
-        10000, description="Maximum output length included in agent requests"
+        30000, description="Maximum output length included in agent requests"
     )
     context_trimming_threshold: int = Field(
         500000, description="Character threshold for context trimming"

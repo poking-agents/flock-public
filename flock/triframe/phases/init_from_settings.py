@@ -59,7 +59,7 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> trifram
         time_usage=0.0,
         timeout=60,
         context_trimming_threshold=80000,
-        output_limit=10000,
+        output_limit=30000,
         max_ops=50,
         ops_count=0,
     )
