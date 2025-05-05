@@ -23,7 +23,7 @@ def generate_triframe_manifest() -> dict:
                         "advisors": [
                             {
                                 "model": model,
-                                "temp": 1.0,
+                                "temp": 0.6 if "g2.5pro" in model_short else 1.0,
                                 "n": 1,
                                 "max_tokens": max_tokens,
                             }
@@ -31,7 +31,7 @@ def generate_triframe_manifest() -> dict:
                         "actors": [
                             {
                                 "model": model,
-                                "temp": 1.0,
+                                "temp": 0.6 if "g2.5pro" in model_short else 1.0,
                                 "n": n_actors,
                                 "max_tokens": max_tokens,
                             }
