@@ -122,7 +122,7 @@
                 "model": "openrouter/qwen/qwen-2-72b-instruct",
                 "temp": 1.0,
                 "n": 1,
-                "max_tokens": 32000
+                "max_tokens": 16000
             },
             "limit_type": "time",
             "intermediate_scoring": false,
@@ -133,7 +133,7 @@
                 "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                 "temp": 1.0,
                 "n": 1,
-                "max_tokens": 32000
+                "max_tokens": 16000
             },
             "limit_type": "time",
             "intermediate_scoring": false,
@@ -144,7 +144,7 @@
                 "model": "openrouter/qwen/qwen3-235b-a22b",
                 "temp": 1.0,
                 "n": 1,
-                "max_tokens": 32000
+                "max_tokens": 16000
             },
             "limit_type": "time",
             "intermediate_scoring": false,
@@ -5748,7 +5748,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5756,7 +5756,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5764,7 +5764,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5779,7 +5779,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5787,7 +5787,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5795,7 +5795,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5810,7 +5810,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5818,7 +5818,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5826,7 +5826,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5841,7 +5841,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5849,7 +5849,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5857,7 +5857,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5872,7 +5872,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5880,7 +5880,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5888,7 +5888,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5903,7 +5903,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5911,7 +5911,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5919,7 +5919,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5934,7 +5934,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5942,7 +5942,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5950,7 +5950,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -5967,7 +5967,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -5975,7 +5975,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -5983,7 +5983,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6000,7 +6000,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6008,7 +6008,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6016,7 +6016,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6031,7 +6031,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6039,7 +6039,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6047,7 +6047,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6062,7 +6062,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6070,7 +6070,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6078,7 +6078,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6093,7 +6093,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6101,7 +6101,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6109,7 +6109,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6124,7 +6124,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6132,7 +6132,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6140,7 +6140,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6155,7 +6155,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6163,7 +6163,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6171,7 +6171,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6186,7 +6186,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6194,7 +6194,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6202,7 +6202,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6219,7 +6219,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6227,7 +6227,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6235,7 +6235,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6252,7 +6252,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6260,7 +6260,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6268,7 +6268,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6283,7 +6283,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6291,7 +6291,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6299,7 +6299,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6314,7 +6314,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6322,7 +6322,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6330,7 +6330,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6345,7 +6345,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6353,7 +6353,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6361,7 +6361,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6376,7 +6376,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6384,7 +6384,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6392,7 +6392,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6407,7 +6407,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6415,7 +6415,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6423,7 +6423,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6438,7 +6438,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6446,7 +6446,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6454,7 +6454,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6471,7 +6471,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6479,7 +6479,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6487,7 +6487,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6504,7 +6504,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6512,7 +6512,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6520,7 +6520,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6535,7 +6535,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6543,7 +6543,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6551,7 +6551,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6566,7 +6566,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6574,7 +6574,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6582,7 +6582,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6597,7 +6597,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6605,7 +6605,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6613,7 +6613,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6628,7 +6628,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6636,7 +6636,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6644,7 +6644,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6659,7 +6659,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6667,7 +6667,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6675,7 +6675,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6690,7 +6690,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6698,7 +6698,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6706,7 +6706,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6723,7 +6723,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6731,7 +6731,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6739,7 +6739,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -6756,7 +6756,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6764,7 +6764,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6772,7 +6772,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6787,7 +6787,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6795,7 +6795,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6803,7 +6803,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6818,7 +6818,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6826,7 +6826,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6834,7 +6834,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6849,7 +6849,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6857,7 +6857,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6865,7 +6865,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6880,7 +6880,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6888,7 +6888,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6896,7 +6896,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6911,7 +6911,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6919,7 +6919,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6927,7 +6927,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6942,7 +6942,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6950,7 +6950,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6958,7 +6958,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -6975,7 +6975,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -6983,7 +6983,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -6991,7 +6991,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -7008,7 +7008,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7016,7 +7016,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7024,7 +7024,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7039,7 +7039,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7047,7 +7047,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7055,7 +7055,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7070,7 +7070,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7078,7 +7078,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7086,7 +7086,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7101,7 +7101,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7109,7 +7109,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7117,7 +7117,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7132,7 +7132,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7140,7 +7140,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7148,7 +7148,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7163,7 +7163,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7171,7 +7171,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7179,7 +7179,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7194,7 +7194,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7202,7 +7202,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7210,7 +7210,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -7227,7 +7227,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -7235,7 +7235,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -7243,7 +7243,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -12928,7 +12928,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -12936,7 +12936,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -12944,7 +12944,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -12959,7 +12959,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -12967,7 +12967,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -12975,7 +12975,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -12990,7 +12990,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -12998,7 +12998,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13006,7 +13006,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13021,7 +13021,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13029,7 +13029,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13037,7 +13037,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13052,7 +13052,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13060,7 +13060,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13068,7 +13068,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13083,7 +13083,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13091,7 +13091,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13099,7 +13099,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13114,7 +13114,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13122,7 +13122,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13130,7 +13130,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13147,7 +13147,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13155,7 +13155,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13163,7 +13163,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13180,7 +13180,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13188,7 +13188,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13196,7 +13196,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13211,7 +13211,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13219,7 +13219,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13227,7 +13227,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13242,7 +13242,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13250,7 +13250,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13258,7 +13258,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13273,7 +13273,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13281,7 +13281,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13289,7 +13289,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13304,7 +13304,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13312,7 +13312,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13320,7 +13320,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13335,7 +13335,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13343,7 +13343,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13351,7 +13351,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13366,7 +13366,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13374,7 +13374,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13382,7 +13382,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13399,7 +13399,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13407,7 +13407,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13415,7 +13415,7 @@
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13432,7 +13432,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13440,7 +13440,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13448,7 +13448,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13463,7 +13463,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13471,7 +13471,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13479,7 +13479,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13494,7 +13494,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13502,7 +13502,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13510,7 +13510,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13525,7 +13525,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13533,7 +13533,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13541,7 +13541,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13556,7 +13556,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13564,7 +13564,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13572,7 +13572,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13587,7 +13587,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13595,7 +13595,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13603,7 +13603,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13618,7 +13618,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13626,7 +13626,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13634,7 +13634,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13651,7 +13651,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13659,7 +13659,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13667,7 +13667,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13684,7 +13684,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13692,7 +13692,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13700,7 +13700,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13715,7 +13715,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13723,7 +13723,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13731,7 +13731,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13746,7 +13746,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13754,7 +13754,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13762,7 +13762,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13777,7 +13777,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13785,7 +13785,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13793,7 +13793,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13808,7 +13808,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13816,7 +13816,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13824,7 +13824,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13839,7 +13839,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13847,7 +13847,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13855,7 +13855,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13870,7 +13870,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13878,7 +13878,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13886,7 +13886,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13903,7 +13903,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13911,7 +13911,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13919,7 +13919,7 @@
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -13936,7 +13936,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13944,7 +13944,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13952,7 +13952,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13967,7 +13967,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -13975,7 +13975,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -13983,7 +13983,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -13998,7 +13998,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14006,7 +14006,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14014,7 +14014,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -14029,7 +14029,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14037,7 +14037,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14045,7 +14045,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -14060,7 +14060,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14068,7 +14068,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14076,7 +14076,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -14091,7 +14091,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14099,7 +14099,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14107,7 +14107,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -14122,7 +14122,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14130,7 +14130,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14138,7 +14138,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -14155,7 +14155,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14163,7 +14163,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14171,7 +14171,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "time",
@@ -14188,7 +14188,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14196,7 +14196,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14204,7 +14204,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14219,7 +14219,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14227,7 +14227,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14235,7 +14235,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14250,7 +14250,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14258,7 +14258,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14266,7 +14266,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 0.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14281,7 +14281,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14289,7 +14289,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14297,7 +14297,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14312,7 +14312,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14320,7 +14320,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14328,7 +14328,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14343,7 +14343,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14351,7 +14351,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14359,7 +14359,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14374,7 +14374,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14382,7 +14382,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14390,7 +14390,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",
@@ -14407,7 +14407,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 1,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "actors": [
@@ -14415,7 +14415,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 3,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "raters": [
@@ -14423,7 +14423,7 @@
                     "model": "openrouter/qwen/qwen3-235b-a22b",
                     "temp": 1.0,
                     "n": 2,
-                    "max_tokens": 32000
+                    "max_tokens": 16000
                 }
             ],
             "limit_type": "token",

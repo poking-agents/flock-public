@@ -15,20 +15,20 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-QWEN_MODELS = ("qwen-2-72b", "qwen-2.5-72b", "qwen3-235b-a22b")
+QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b")
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
-    "qwen-2-72b": {
+    "openrouter/qwen/qwen-2-72b-instruct": {
         "provider": {
             "order": ["Together"]
         }
     },
-    "qwen-2.5-72b": {
+    "openrouter/qwen/qwen-2.5-72b-instruct": {
         "provider": {
             "order": ["DeepInfra", "Fireworks", "Together"]
         }
     },
-    "qwen3-235b-a22b": {
+    "openrouter/qwen/qwen3-235b-a22b": {
         "provider": {
             "order": ["Fireworks", "Together", "DeepInfra"]
         }
