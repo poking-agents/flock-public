@@ -117,7 +117,7 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
-        "modular_qwen-2-72b": {
+        "modular_qwen_2_72b": {
             "generator": {
                 "model": "openrouter/qwen/qwen-2-72b-instruct",
                 "temp": 1.0,
@@ -128,7 +128,7 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
-        "modular_qwen-2.5-72b": {
+        "modular_qwen_2.5_72b": {
             "generator": {
                 "model": "openrouter/qwen/qwen-2.5-72b-instruct",
                 "temp": 1.0,
@@ -139,7 +139,7 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
-        "modular_qwen3-235b-a22b": {
+        "modular_qwen_3_235b": {
             "generator": {
                 "model": "openrouter/qwen/qwen3-235b-a22b",
                 "temp": 1.0,
@@ -5742,11 +5742,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2-72b_aird_1_rater_1_actor": {
+        "triframe_qwen_2_72b_aird_1_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5754,7 +5754,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5773,11 +5773,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_1_rater_2_actor": {
+        "triframe_qwen_2_72b_aird_1_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5785,7 +5785,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -5804,11 +5804,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_1_rater_3_actor": {
+        "triframe_qwen_2_72b_aird_1_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5816,7 +5816,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -5835,11 +5835,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_1_actor": {
+        "triframe_qwen_2_72b_aird_2_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5847,7 +5847,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5866,11 +5866,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_2_actor": {
+        "triframe_qwen_2_72b_aird_2_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5878,7 +5878,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -5897,11 +5897,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_3_actor": {
+        "triframe_qwen_2_72b_aird_2_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5909,7 +5909,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -5928,11 +5928,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_3_actor_no_tools_backticks": {
+        "triframe_qwen_2_72b_aird_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5940,7 +5940,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -5961,11 +5961,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2-72b_aird_2_rater_3_actor_no_tools_xml": {
+        "triframe_qwen_2_72b_aird_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -5973,7 +5973,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -5994,11 +5994,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2-72b_1_rater_1_actor": {
+        "triframe_qwen_2_72b_1_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6006,7 +6006,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6025,11 +6025,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_1_rater_2_actor": {
+        "triframe_qwen_2_72b_1_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6037,7 +6037,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6056,11 +6056,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_1_rater_3_actor": {
+        "triframe_qwen_2_72b_1_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6068,7 +6068,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6087,11 +6087,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_1_actor": {
+        "triframe_qwen_2_72b_2_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6099,7 +6099,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6118,11 +6118,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_2_actor": {
+        "triframe_qwen_2_72b_2_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6130,7 +6130,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6149,11 +6149,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_3_actor": {
+        "triframe_qwen_2_72b_2_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6161,7 +6161,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6180,11 +6180,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_3_actor_no_tools_backticks": {
+        "triframe_qwen_2_72b_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6192,7 +6192,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6213,11 +6213,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2-72b_2_rater_3_actor_no_tools_xml": {
+        "triframe_qwen_2_72b_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6225,7 +6225,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6246,11 +6246,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2.5-72b_aird_1_rater_1_actor": {
+        "triframe_qwen_2.5_72b_aird_1_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6258,7 +6258,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6277,11 +6277,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_1_rater_2_actor": {
+        "triframe_qwen_2.5_72b_aird_1_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6289,7 +6289,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6308,11 +6308,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_1_rater_3_actor": {
+        "triframe_qwen_2.5_72b_aird_1_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6320,7 +6320,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6339,11 +6339,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_1_actor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6351,7 +6351,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6370,11 +6370,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_2_actor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6382,7 +6382,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6401,11 +6401,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_3_actor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6413,7 +6413,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6432,11 +6432,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_3_actor_no_tools_backticks": {
+        "triframe_qwen_2.5_72b_aird_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6444,7 +6444,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6465,11 +6465,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_3_actor_no_tools_xml": {
+        "triframe_qwen_2.5_72b_aird_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6477,7 +6477,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6498,11 +6498,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2.5-72b_1_rater_1_actor": {
+        "triframe_qwen_2.5_72b_1_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6510,7 +6510,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6529,11 +6529,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_1_rater_2_actor": {
+        "triframe_qwen_2.5_72b_1_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6541,7 +6541,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6560,11 +6560,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_1_rater_3_actor": {
+        "triframe_qwen_2.5_72b_1_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6572,7 +6572,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6591,11 +6591,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_1_actor": {
+        "triframe_qwen_2.5_72b_2_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6603,7 +6603,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6622,11 +6622,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_2_actor": {
+        "triframe_qwen_2.5_72b_2_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6634,7 +6634,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6653,11 +6653,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_3_actor": {
+        "triframe_qwen_2.5_72b_2_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6665,7 +6665,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6684,11 +6684,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_3_actor_no_tools_backticks": {
+        "triframe_qwen_2.5_72b_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6696,7 +6696,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6717,11 +6717,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2.5-72b_2_rater_3_actor_no_tools_xml": {
+        "triframe_qwen_2.5_72b_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6729,7 +6729,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6750,11 +6750,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen3-235b-a22b_aird_1_rater_1_actor": {
+        "triframe_qwen_3_235b_aird_1_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6762,7 +6762,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6781,11 +6781,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_1_rater_2_actor": {
+        "triframe_qwen_3_235b_aird_1_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6793,7 +6793,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6812,11 +6812,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_1_rater_3_actor": {
+        "triframe_qwen_3_235b_aird_1_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6824,7 +6824,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6843,11 +6843,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_1_actor": {
+        "triframe_qwen_3_235b_aird_2_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6855,7 +6855,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6874,11 +6874,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_2_actor": {
+        "triframe_qwen_3_235b_aird_2_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6886,7 +6886,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -6905,11 +6905,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_3_actor": {
+        "triframe_qwen_3_235b_aird_2_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6917,7 +6917,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6936,11 +6936,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_3_actor_no_tools_backticks": {
+        "triframe_qwen_3_235b_aird_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6948,7 +6948,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -6969,11 +6969,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_3_actor_no_tools_xml": {
+        "triframe_qwen_3_235b_aird_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -6981,7 +6981,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -7002,11 +7002,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen3-235b-a22b_1_rater_1_actor": {
+        "triframe_qwen_3_235b_1_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7014,7 +7014,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7033,11 +7033,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_1_rater_2_actor": {
+        "triframe_qwen_3_235b_1_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7045,7 +7045,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -7064,11 +7064,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_1_rater_3_actor": {
+        "triframe_qwen_3_235b_1_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7076,7 +7076,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -7095,11 +7095,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_1_actor": {
+        "triframe_qwen_3_235b_2_rater_1_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7107,7 +7107,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7126,11 +7126,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_2_actor": {
+        "triframe_qwen_3_235b_2_rater_2_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7138,7 +7138,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -7157,11 +7157,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_3_actor": {
+        "triframe_qwen_3_235b_2_rater_3_actor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7169,7 +7169,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -7188,11 +7188,11 @@
             "enable_advising": true,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_3_actor_no_tools_backticks": {
+        "triframe_qwen_3_235b_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7200,7 +7200,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -7221,11 +7221,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen3-235b-a22b_2_rater_3_actor_no_tools_xml": {
+        "triframe_qwen_3_235b_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -7233,7 +7233,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -12922,11 +12922,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2-72b_aird_1_rater_1_actor_no_advisor": {
+        "triframe_qwen_2_72b_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -12934,7 +12934,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -12953,11 +12953,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_1_rater_2_actor_no_advisor": {
+        "triframe_qwen_2_72b_aird_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -12965,7 +12965,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -12984,11 +12984,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_1_rater_3_actor_no_advisor": {
+        "triframe_qwen_2_72b_aird_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -12996,7 +12996,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13015,11 +13015,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_1_actor_no_advisor": {
+        "triframe_qwen_2_72b_aird_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13027,7 +13027,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13046,11 +13046,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_2_actor_no_advisor": {
+        "triframe_qwen_2_72b_aird_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13058,7 +13058,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13077,11 +13077,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_3_actor_no_advisor": {
+        "triframe_qwen_2_72b_aird_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13089,7 +13089,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13108,11 +13108,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+        "triframe_qwen_2_72b_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13120,7 +13120,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13141,11 +13141,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2-72b_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+        "triframe_qwen_2_72b_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13153,7 +13153,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13174,11 +13174,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2-72b_1_rater_1_actor_no_advisor": {
+        "triframe_qwen_2_72b_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13186,7 +13186,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13205,11 +13205,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_1_rater_2_actor_no_advisor": {
+        "triframe_qwen_2_72b_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13217,7 +13217,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13236,11 +13236,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_1_rater_3_actor_no_advisor": {
+        "triframe_qwen_2_72b_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13248,7 +13248,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13267,11 +13267,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_1_actor_no_advisor": {
+        "triframe_qwen_2_72b_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13279,7 +13279,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13298,11 +13298,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_2_actor_no_advisor": {
+        "triframe_qwen_2_72b_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13310,7 +13310,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13329,11 +13329,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_3_actor_no_advisor": {
+        "triframe_qwen_2_72b_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13341,7 +13341,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13360,11 +13360,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2-72b_2_rater_3_actor_no_tools_backticks_no_advisor": {
+        "triframe_qwen_2_72b_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13372,7 +13372,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13393,11 +13393,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2-72b_2_rater_3_actor_no_tools_xml_no_advisor": {
+        "triframe_qwen_2_72b_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13405,7 +13405,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13426,11 +13426,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2.5-72b_aird_1_rater_1_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13438,7 +13438,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13457,11 +13457,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_1_rater_2_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13469,7 +13469,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13488,11 +13488,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_1_rater_3_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13500,7 +13500,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13519,11 +13519,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_1_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13531,7 +13531,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13550,11 +13550,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_2_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13562,7 +13562,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13581,11 +13581,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_3_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13593,7 +13593,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13612,11 +13612,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13624,7 +13624,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13645,11 +13645,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2.5-72b_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+        "triframe_qwen_2.5_72b_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13657,7 +13657,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13678,11 +13678,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen-2.5-72b_1_rater_1_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13690,7 +13690,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13709,11 +13709,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_1_rater_2_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13721,7 +13721,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13740,11 +13740,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_1_rater_3_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13752,7 +13752,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13771,11 +13771,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_1_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13783,7 +13783,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13802,11 +13802,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_2_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13814,7 +13814,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13833,11 +13833,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_3_actor_no_advisor": {
+        "triframe_qwen_2.5_72b_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13845,7 +13845,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13864,11 +13864,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen-2.5-72b_2_rater_3_actor_no_tools_backticks_no_advisor": {
+        "triframe_qwen_2.5_72b_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13876,7 +13876,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13897,11 +13897,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen-2.5-72b_2_rater_3_actor_no_tools_xml_no_advisor": {
+        "triframe_qwen_2.5_72b_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13909,7 +13909,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -13930,11 +13930,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen3-235b-a22b_aird_1_rater_1_actor_no_advisor": {
+        "triframe_qwen_3_235b_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13942,7 +13942,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13961,11 +13961,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_1_rater_2_actor_no_advisor": {
+        "triframe_qwen_3_235b_aird_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -13973,7 +13973,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -13992,11 +13992,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_1_rater_3_actor_no_advisor": {
+        "triframe_qwen_3_235b_aird_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14004,7 +14004,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14023,11 +14023,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_1_actor_no_advisor": {
+        "triframe_qwen_3_235b_aird_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14035,7 +14035,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14054,11 +14054,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_2_actor_no_advisor": {
+        "triframe_qwen_3_235b_aird_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14066,7 +14066,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -14085,11 +14085,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_3_actor_no_advisor": {
+        "triframe_qwen_3_235b_aird_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14097,7 +14097,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14116,11 +14116,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+        "triframe_qwen_3_235b_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14128,7 +14128,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14149,11 +14149,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen3-235b-a22b_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+        "triframe_qwen_3_235b_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14161,7 +14161,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14182,11 +14182,11 @@
             "enable_tool_use": false,
             "enable_xml": true
         },
-        "triframe_qwen3-235b-a22b_1_rater_1_actor_no_advisor": {
+        "triframe_qwen_3_235b_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14194,7 +14194,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14213,11 +14213,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_1_rater_2_actor_no_advisor": {
+        "triframe_qwen_3_235b_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14225,7 +14225,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -14244,11 +14244,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_1_rater_3_actor_no_advisor": {
+        "triframe_qwen_3_235b_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14256,7 +14256,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14275,11 +14275,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_1_actor_no_advisor": {
+        "triframe_qwen_3_235b_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14287,7 +14287,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14306,11 +14306,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_2_actor_no_advisor": {
+        "triframe_qwen_3_235b_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14318,7 +14318,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 16000
                 }
@@ -14337,11 +14337,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_3_actor_no_advisor": {
+        "triframe_qwen_3_235b_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14349,7 +14349,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14368,11 +14368,11 @@
             "enable_advising": false,
             "workflow_type": "triframe"
         },
-        "triframe_qwen3-235b-a22b_2_rater_3_actor_no_tools_backticks_no_advisor": {
+        "triframe_qwen_3_235b_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14380,7 +14380,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
@@ -14401,11 +14401,11 @@
             "enable_tool_use": false,
             "enable_xml": false
         },
-        "triframe_qwen3-235b-a22b_2_rater_3_actor_no_tools_xml_no_advisor": {
+        "triframe_qwen_3_235b_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 16000
                 }
@@ -14413,7 +14413,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen3-235b-a22b",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 16000
                 }
