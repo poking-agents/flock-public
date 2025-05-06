@@ -150,6 +150,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             if state.settings.enable_tool_use:
                 function_call = result.result.outputs[0].function_call
             else:
+                if "advise" not in completion:
+                    completion = "```advise\n" + completion + "\n```"
                 function_call = parse_completions_function_call(
                     state.settings.enable_xml,
                     ["advise"],
