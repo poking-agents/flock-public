@@ -38,7 +38,7 @@ Here are the tools available to you:
 {functions}
 </tools>
 
-Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now, and make sure to use the appropriate function formatting."""
 
 ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
 
@@ -89,7 +89,7 @@ You should give your ratings in a call to the rate_options tool."""
             end_prompt
             + "Your generation should include a string of the form:\n"
             + rate_options_json
-            + "\nYou may reason out loud before generating the dictionary, but you should make sure to generate the json somewhere in your response."
+            + "\nYou may reason out loud before generating the dictionary, but you should make sure to generate the json somewhere in your response, and make sure to include the ```json tag."
         )
 
 
