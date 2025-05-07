@@ -2,6 +2,12 @@ from constants import MODELS
 
 AIRD = [True, False]
 
+MODEL_TEMPS = {
+    "qwen_2_72b": 0.7,
+    "qwen_2.5_72b": 0.7,
+    "qwen_3_235b": 0.6,
+}
+
 
 def generate_triframe_manifest() -> dict:
     """Generate the manifest file with settings packs for triframe workflow"""
@@ -23,7 +29,7 @@ def generate_triframe_manifest() -> dict:
                         "advisors": [
                             {
                                 "model": model,
-                                "temp": 0.7 if model_short in ["qwen_2_72b", "qwen_2.5_72b", "qwen_3_235b"] else 1.0,
+                                "temp": MODEL_TEMPS.get(model_short, 1.0),
                                 "n": 1,
                                 "max_tokens": max_tokens,
                             }
@@ -31,7 +37,7 @@ def generate_triframe_manifest() -> dict:
                         "actors": [
                             {
                                 "model": model,
-                                "temp": 0.7 if model_short in ["qwen_2_72b", "qwen_2.5_72b", "qwen_3_235b"] else 1.0,
+                                "temp": MODEL_TEMPS.get(model_short, 1.0),
                                 "n": n_actors,
                                 "max_tokens": max_tokens,
                             }
