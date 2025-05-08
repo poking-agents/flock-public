@@ -23,7 +23,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
     limit_name, limit_max = limit_name_and_max(state)
     messages: List[Message] = [
         Message(
-            role="system",
+            role="user",
             content=ADVISOR_FN_PROMPT.format(
                 task=state.task_string,
                 limit_name=limit_name,
@@ -62,7 +62,7 @@ def advisor_fn_messages(state: triframeState) -> List[Message]:
 </{node.options[0].name}-output>""",
             )
         elif node.source == "warning":
-            message = Message(role="system", content=node.options[0].content)
+            message = Message(role="user", content=node.options[0].content)
         else:
             continue
         if message:

@@ -17,7 +17,7 @@ from flock.utils.phase_utils import add_usage_request, run_phase
 def create_phase_request(state: ModularState) -> List[StateRequest]:
     """Create phase request for generator"""
     initial_messages = [
-        Message(role="system", content=BASIC_SYSTEM_PROMPT),
+        Message(role="user", content=BASIC_SYSTEM_PROMPT),
         Message(
             role="user", content="You are assigned this task: " + state.task_string
         ),

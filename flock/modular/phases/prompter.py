@@ -59,7 +59,7 @@ def trim_message_list(
 
     return (
         messages[:4]
-        + [Message(role="system", content=NOTICE_TRIMMED)]
+        + [Message(role="user", content=NOTICE_TRIMMED)]
         + tail_messages[::-1]
     )
 

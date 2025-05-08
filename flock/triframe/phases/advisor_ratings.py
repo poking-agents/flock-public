@@ -293,7 +293,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             functions = None
 
         params = GenerationParams(
-            messages=[{"role": "system", "content": review_instructions}],
+            messages=[{"role": "user", "content": review_instructions}],
             settings=rater_settings,
             functions=functions,
         )

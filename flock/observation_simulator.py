@@ -70,7 +70,7 @@ async def simulate_command(
     # TODO: require function use here
     messages = [
         {
-            "role": "system",
+            "role": "user",
             "content": dedent(
                 """
             You are simulating a Linux command execution environment.

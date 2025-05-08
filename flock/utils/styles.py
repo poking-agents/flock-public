@@ -1,7 +1,7 @@
 standard_log_styles = {
-    "system": {
+    "user": {
         "style": {"color": "black", "background-color": "#eeeeee"},
-        "title": "System",
+        "title": "User",
     },
     "tool_output": {
         "style": {"color": "white", "background-color": "#424345"},

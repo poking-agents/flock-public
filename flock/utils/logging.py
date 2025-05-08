@@ -24,7 +24,7 @@ def log_warning(content: str) -> LogWithAttributesRequest:
 
 def log_system(content: str) -> LogWithAttributesRequest:
     """Log system messages with appropriate styling"""
-    return create_log_request(content, standard_log_styles["system"])
+    return create_log_request(content, standard_log_styles["user"])
 
 
 __all__ = [
