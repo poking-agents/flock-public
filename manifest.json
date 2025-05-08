@@ -117,10 +117,43 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
-        "modular_g2.5pro": {
+        "modular_g2.5pro_temperature_0.0": {
+            "generator": {
+                "model": "openrouter/google/gemini-2.5-pro-preview",
+                "temp": 0.0,
+                "n": 1,
+                "max_tokens": 900000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
+        "modular_g2.5pro_temperature_0.6": {
+            "generator": {
+                "model": "openrouter/google/gemini-2.5-pro-preview",
+                "temp": 0.6,
+                "n": 1,
+                "max_tokens": 900000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
+        "modular_g2.5pro_temperature_1.0": {
             "generator": {
                 "model": "openrouter/google/gemini-2.5-pro-preview",
                 "temp": 1.0,
+                "n": 1,
+                "max_tokens": 900000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
+        "modular_g2.5pro_temperature_1.5": {
+            "generator": {
+                "model": "openrouter/google/gemini-2.5-pro-preview",
+                "temp": 1.5,
                 "n": 1,
                 "max_tokens": 900000
             },
