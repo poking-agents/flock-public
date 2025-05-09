@@ -19,9 +19,11 @@ They have a limit of {limit_max} {limit_name}s. Help them optimize their score.
 
 Share your reasoning, uncertainties, and suggested actions.
 
-Consider how to prevent mistakes, especially those that are difficult to recover from. If the agent is stuck, suggest alternative approaches to try.
+Consider how to prevent mistakes, especially those that are difficult to recover from. If the agent is stuck, suggest alternative approaches to try. If there seems to be an issue with the task, it is probably the agent's fault, not the task's.
 
-Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now."""
+Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. Once the agent gets close to submitting an answer, make sure that the answer is in the correct format, as the answers are scored by a machine and simple formatting mistakes can lead to a score of 0.
+
+If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now."""
 
 
 ACTOR_FN_PROMPT = """You are an autonomous AI agent working on a task. You can use the provided tools to interact with a scaffolding program running on a Linux machine. The program is a python process.
@@ -38,7 +40,9 @@ Here are the tools available to you:
 {functions}
 </tools>
 
-Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now."""
+Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. You can only make one tool call per action turn. This means that after you have written down a single tool call, you should finish your completion and allow your tool call to be executed. Any tool calls aside from the first will be ignored and not run.
+
+Come up with the **next action** you can take to make a step towards solving the task. Call one and only one of the tools now."""
 
 ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
 
