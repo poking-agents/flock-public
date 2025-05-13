@@ -59,7 +59,11 @@ def tool_output_with_usage(state: triframeState, node: Node) -> str:
             "\nWarning: You are close to the limit. Prepare to submit your work soon."
         )
 
-    return f"""{option.content}\n{usage_notice}"""
+    if option.content == "":
+        no_tool_call_warning = "Python code was run with no printed output."
+        return f"""{no_tool_call_warning}\n{usage_notice}"""
+    else:
+        return f"""{option.content}\n{usage_notice}"""
 
 
 def merge_consecutive_user_messages(messages: List[Message]) -> List[Message]:
