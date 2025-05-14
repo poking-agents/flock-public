@@ -60,7 +60,7 @@ def tool_output_with_usage(state: triframeState, node: Node) -> str:
         )
 
     if option.content == "":
-        no_tool_call_warning = "Python code was run with no printed output."
+        no_tool_call_warning = "Command was run with no printed output."
         return f"""{no_tool_call_warning}\n{usage_notice}"""
     else:
         return f"""{option.content}\n{usage_notice}"""
