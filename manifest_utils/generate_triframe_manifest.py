@@ -56,7 +56,7 @@ def generate_triframe_manifest() -> dict:
                         "enable_advising": True,
                         "workflow_type": "triframe",
                     }
-                    if model_short in ["c3.7s", "qwen_3_235b"]:
+                    if model_short == "c3.7s":
                         for generator in ["advisors", "actors", "raters"]:
                             settings_packs[pack_name][generator][0][
                                 "max_reasoning_tokens"
