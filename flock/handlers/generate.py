@@ -31,6 +31,9 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/qwen/qwen3-235b-a22b": {
         "provider": {
             "order": ["Fireworks", "Together", "DeepInfra"]
+        },
+        "reasoning": {
+            "max_tokens": 8000
         }
     }
 }
