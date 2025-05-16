@@ -20,17 +20,20 @@ QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/qwen/qwen-2-72b-instruct": {
         "provider": {
-            "order": ["Together"]
+            "order": ["Together"],
+            "allow_fallbacks": False
         }
     },
     "openrouter/qwen/qwen-2.5-72b-instruct": {
         "provider": {
-            "order": ["DeepInfra", "Fireworks", "Together"]
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
         }
     },
     "openrouter/qwen/qwen3-235b-a22b": {
         "provider": {
-            "order": ["Fireworks", "Together", "DeepInfra"]
+            "order": ["Fireworks", "Together", "DeepInfra"],
+            "allow_fallbacks": False
         },
         "reasoning": {
             "max_tokens": 8000
@@ -38,7 +41,8 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/qwen/qwen3-32b": {
         "provider": {
-            "order": ["Cerebras", "DeepInfra"]
+            "order": ["Cerebras", "DeepInfra"],
+            "allow_fallbacks": False
         },
         "reasoning": {
             "max_tokens": 8000
