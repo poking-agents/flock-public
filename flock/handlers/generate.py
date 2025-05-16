@@ -38,7 +38,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/qwen/qwen3-32b": {
         "provider": {
-            "order": ["DeepInfra"]
+            "order": ["Cerebras", "DeepInfra"]
         },
         "reasoning": {
             "max_tokens": 8000
