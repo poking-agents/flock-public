@@ -13,4 +13,5 @@ MODELS = (
     ("openrouter/qwen/qwen-2-72b-instruct", "qwen_2_72b", 4_000),
     ("openrouter/qwen/qwen-2.5-72b-instruct", "qwen_2.5_72b", 16_000),
     ("openrouter/qwen/qwen3-235b-a22b", "qwen_3_235b", 16_000),
+    ("openrouter/qwen/qwen3-32b", "qwen_3_32b", 16_000),
 )
