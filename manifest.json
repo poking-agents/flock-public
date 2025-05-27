@@ -106,6 +106,16 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
+        "modular_o3": {
+            "generator": {
+                "model": "o3-2025-04-16",
+                "temp": 1.0,
+                "n": 1
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
         "modular_dsr1_together": {
             "generator": {
                 "model": "together/deepseek-r1",
@@ -5192,6 +5202,510 @@
             "raters": [
                 {
                     "model": "o3-mini-2025-01-31",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_o3_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_o3_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_o3_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_o3_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -10860,6 +11374,510 @@
             "raters": [
                 {
                     "model": "o3-mini-2025-01-31",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_o3_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_o3_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_o3_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_o3_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": null
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_o3_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": null
+                }
+            ],
+            "actors": [
+                {
+                    "model": "o3-2025-04-16",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": null
+                }
+            ],
+            "raters": [
+                {
+                    "model": "o3-2025-04-16",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
