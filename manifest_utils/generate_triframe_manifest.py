@@ -1,4 +1,4 @@
-from constants import MODELS
+from constants import MODELS, ANTHROPIC_REASONING_MODELS
 
 AIRD = [True, False]
 
@@ -50,7 +50,7 @@ def generate_triframe_manifest() -> dict:
                         "enable_advising": True,
                         "workflow_type": "triframe",
                     }
-                    if model_short == "c3.7s":
+                    if model in ANTHROPIC_REASONING_MODELS:
                         for generator in ["advisors", "actors", "raters"]:
                             settings_packs[pack_name][generator][0][
                                 "max_reasoning_tokens"
