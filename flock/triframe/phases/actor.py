@@ -32,7 +32,11 @@ from flock.utils.phase_utils import (
     run_phase,
 )
 
-CLAUDE_THINKING_MODELS = ("claude-3-7-sonnet-20250219",)
+CLAUDE_THINKING_MODELS = (
+    "claude-3-7-sonnet-20250219",
+    "claude-sonnet-4-20250514",
+    "claude-opus-4-20250514",
+)
 
 
 def non_empty_option_content(option: Option) -> str:
