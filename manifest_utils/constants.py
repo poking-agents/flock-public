@@ -14,7 +14,7 @@ MODELS = (
     ("together/deepseek-r1", "dsr1_together", 32_000),
 )
 
-ANTHROPIC_REASONING_MODELS = (
+ANTHROPIC_THINKING_MODELS = (
     "claude-3-7-sonnet-20250219",
     "claude-sonnet-4-20250514",
     "claude-opus-4-20250514",

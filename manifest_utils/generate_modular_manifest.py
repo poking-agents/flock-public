@@ -1,4 +1,4 @@
-from constants import MODELS, ANTHROPIC_REASONING_MODELS
+from constants import MODELS, ANTHROPIC_THINKING_MODELS
 
 
 def generate_modular_manifest() -> dict:
@@ -19,7 +19,7 @@ def generate_modular_manifest() -> dict:
             "intermediate_scoring": False,
             "workflow_type": "modular",
         }
-        if model in ANTHROPIC_REASONING_MODELS:
+        if model in ANTHROPIC_THINKING_MODELS:
             settings_packs[pack_name]["generator"]["max_reasoning_tokens"] = (
                 max_tokens // 2
             )
