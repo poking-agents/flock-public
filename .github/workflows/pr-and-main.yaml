@@ -104,6 +104,9 @@ jobs:
             exit 0
           fi
 
+          uv sync --all-extras --all-groups --locked
+          source .venv/bin/activate
+
           CURRENT_VERSION="$(bump-my-version show current_version)"
           NEW_VERSION="$(bump-my-version show --increment patch new_version)"
           bump-my-version bump patch
