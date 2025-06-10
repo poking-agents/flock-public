@@ -15,6 +15,7 @@ def test_multiple_think_tags_warning():
         settings=triframeSettings(
             enable_tool_use=True,
             enable_xml=False,
+            enable_special_tokens=False,
             raters=[MiddlemanSettings(model="gpt-4o-mini")],
             actors=[MiddlemanSettings(model="gpt-4o-mini")],
             advisors=[MiddlemanSettings(model="gpt-4o-mini")],

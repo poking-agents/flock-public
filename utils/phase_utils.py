@@ -74,6 +74,7 @@ def get_last_function_call(
                         state.settings.enable_xml,
                         function_names,
                         outputs[0].completion,
+                        enable_special_tokens=state.settings.enable_special_tokens,
                     )
                 )
                 if function_call:

@@ -43,6 +43,7 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> trifram
         enable_advising=settings_data.get("enable_advising", True),
         enable_tool_use=settings_data.get("enable_tool_use", True),
         enable_xml=settings_data.get("enable_xml", False),
+        enable_special_tokens=settings_data.get("enable_special_tokens", False),
     )
 
     initial_state = triframeState(

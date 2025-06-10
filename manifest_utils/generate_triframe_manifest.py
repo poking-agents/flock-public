@@ -158,11 +158,19 @@ def generate_manifest() -> None:
                 **settings_packs[pack_name],
                 "enable_tool_use": False,
                 "enable_xml": False,
+                "enable_special_tokens": False,
             }
             settings_packs[f"{pack_name}_no_tools_xml"] = {
                 **settings_packs[pack_name],
                 "enable_tool_use": False,
                 "enable_xml": True,
+                "enable_special_tokens": False,
+            }
+            settings_packs[f"{pack_name}_no_tools_special_tokens"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+                "enable_xml": False,
+                "enable_special_tokens": True,
             }
 
     # Create mixed model setting with 4o actor and o1 others

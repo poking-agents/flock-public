@@ -63,7 +63,7 @@ def test_parse_completions_function_call(
     function_names, completion, func_name_to_args, expected
 ):
     function_call, completion = parse_completions_function_call(
-        False, function_names, completion, func_name_to_args
+        False, function_names, completion, func_name_to_args, enable_special_tokens=False
     )
     actual_function_call, actual_completion = expected
     assert (
@@ -72,6 +72,72 @@ def test_parse_completions_function_call(
     assert (
         completion == actual_completion
     ), f"actual completion: {completion}, expected completion: {actual_completion}"
+
+
+@pytest.mark.parametrize(
+    "function_names, completion, func_name_to_args, expected",
+    [
+        (
+            ["python", "bash"],  
+            "some thoughts\n<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>python\n```json\n{\"code\": \"print('hello')\"}\n```<｜tool▁call▁end｜><｜tool▁calls▁end｜>",
+            {"python": ("code", str), "bash": ("code", str)},
+            (
+                {
+                    "name": "python", 
+                    "arguments": "{\"code\": \"print('hello')\"}",
+                },
+                "some thoughts\n",
+            ),
+        ),
+        (
+            ["submit"],
+            "<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>submit\n```json\n{\"answer\": \"final answer\"}\n```<｜tool▁call▁end｜><｜tool▁calls▁end｜>",
+            {"submit": ("answer", str)},
+            (
+                {
+                    "name": "submit",
+                    "arguments": "{\"answer\": \"final answer\"}",
+                },
+                "",
+            ),
+        ),
+        (
+            ["score"],
+            "some reasoning\n<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>score\n```json\n{}\n```<｜tool▁call▁end｜><｜tool▁calls▁end｜>",  
+            {"score": ()},
+            (
+                {
+                    "name": "score",
+                    "arguments": "{}",
+                },
+                "some reasoning\n",
+            ),
+        ),
+        (
+            ["bash"],
+            "invalid json\n<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>bash\n```json\n{invalid json}\n```<｜tool▁call▁end｜><｜tool▁calls▁end｜>",
+            {"bash": ("command", str)},
+            (
+                None,
+                "invalid json\n",
+            ),
+        ),
+    ],
+)
+def test_parse_completions_function_call_special_tokens(
+    function_names, completion, func_name_to_args, expected  
+):
+    # Test special tokens format
+    function_call, completion_result = parse_completions_function_call(
+        False, function_names, completion, func_name_to_args, enable_special_tokens=True
+    )
+    actual_function_call, actual_completion = expected
+    assert (
+        function_call == actual_function_call
+    ), f"actual function call: {function_call}, expected function call: {actual_function_call}"
+    assert (
+        completion_result == actual_completion
+    ), f"actual completion: {completion_result}, expected completion: {actual_completion}"
 
 
 @pytest.mark.parametrize(

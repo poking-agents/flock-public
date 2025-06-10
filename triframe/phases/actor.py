@@ -147,6 +147,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                         ["advise"],
                         completion_without_cot,
                         {"advise": ("advice", str)},
+                        enable_special_tokens=state.settings.enable_special_tokens,
                     )
                 )
             advisor_outputs.append(

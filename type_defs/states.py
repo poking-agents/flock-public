@@ -77,6 +77,9 @@ class triframeSettings(BaseModel):
     enable_xml: bool = Field(
         False, description="Enable XML mode when enable_tool_use is False"
     )
+    enable_special_tokens: bool = Field(
+        False, description="Enable special token format when enable_tool_use is False"
+    )
 
 
 class triframeState(AgentState):
@@ -90,6 +93,9 @@ class ModularSettings(BaseModel):
     enable_tool_use: bool = Field(True, description="Enable tool use")
     enable_xml: bool = Field(
         False, description="Enable XML mode when enable_tool_use is False"
+    )
+    enable_special_tokens: bool = Field(
+        False, description="Enable special token format when enable_tool_use is False"
     )
 
 

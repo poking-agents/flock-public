@@ -239,6 +239,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                             state.settings.enable_xml,
                             function_names,
                             completion_without_cot,
+                            enable_special_tokens=state.settings.enable_special_tokens,
                         )
                     )
                     actor_options.append(

@@ -230,6 +230,31 @@ rate_options_json = """```json
 }
 ```"""
 
+SPECIAL_TOKEN_INSTRUCTION_TEMPLATE = """# Tool Calling
+You are equipped with tool calling capabilities. When a tool call is needed, you MUST use the following format to issue the call:
+<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>FUNCTION_NAME
+```json
+{{"param1": "value1", "param2": "value2"}}
+```<｜tool▁call▁end｜><｜tool▁calls▁end｜>
+Make sure the JSON is valid.
+
+## Tools
+
+### Function
+
+You have the following functions available:
+{tools_list}"""
+
+
+def format_tools_for_special_tokens(tools: List[Dict[str, Any]]) -> str:
+    """Format tools list for special token instructions"""
+    tools_text = []
+    for tool in tools:
+        # Convert tool dict to JSON string for display
+        tool_json = json.dumps(tool, indent=2)
+        tools_text.append(f"- `{tool['name']}`:\n```json\n{tool_json}\n```")
+    return "\n".join(tools_text)
+
 STANDARD_FUNCTION_VALIDATIONS = {
     "python": ("code", str),
     "bash": ("command", str),
@@ -265,7 +290,12 @@ def get_standard_function_definitions(
 def get_standard_completion_function_definitions(
     state: Union[triframeState, ModularState],
 ) -> str:
-    if state.settings.enable_xml:
+    if state.settings.enable_special_tokens:
+        # Get the function definitions and format them using the template
+        function_definitions = get_standard_function_definitions(state)
+        tools_list = format_tools_for_special_tokens(function_definitions)
+        return SPECIAL_TOKEN_INSTRUCTION_TEMPLATE.format(tools_list=tools_list)
+    elif state.settings.enable_xml:
         standard_functions = "\n".join([bash_xml, python_xml, set_timeout_xml])
         intermediate_scoring = state.settings.intermediate_scoring
         if intermediate_scoring:
@@ -288,7 +318,9 @@ def get_standard_completion_function_definitions(
 def parse_completion_function_names(
     state: Union[triframeState, ModularState], completion: str
 ) -> List[Dict[str, Any]]:
-    if state.settings.enable_xml:
+    if state.settings.enable_special_tokens:
+        function_names = re.findall(r"<｜tool▁sep｜>(\w+)", completion)
+    elif state.settings.enable_xml:
         function_names = re.findall(r"<(\w+)>", completion)
     else:
         function_names = re.findall(r"```(\w+)", completion)
@@ -366,18 +398,46 @@ def parse_first_xml_function_call(
     return {"name": function_name, "arguments": function_args}
 
 
+def parse_first_special_token_function_call(
+    function_names: List[str], completion: str
+) -> Dict[str, Any] | None:
+    """
+    Parse special token format function calls like:
+    <｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>FUNCTION_NAME
+    ```json
+    {"param": "value"}
+    ```<｜tool▁call▁end｜><｜tool▁calls▁end｜>
+    """
+    # Pattern to match the special token format
+    pattern = r"<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>(" + \
+              "|".join(re.escape(fn) for fn in function_names) + \
+              r")\s*```json\s*(.*?)\s*```<｜tool▁call▁end｜><｜tool▁calls▁end｜>"
+    
+    match = re.search(pattern, completion, flags=re.DOTALL)
+    if not match:
+        return None
+    
+    function_name = match.group(1).strip()
+    json_args = match.group(2).strip()
+    
+    return {"name": function_name, "arguments": json_args}
+
+
 def find_completion_until_function_call(
     enable_xml: bool,
     function_name: str,
     completion: str,
+    enable_special_tokens: bool = False,
 ) -> str:
-    if enable_xml:
+    if enable_special_tokens:
+        start_pos = completion.find("<｜tool▁calls▁begin｜>")
+    elif enable_xml:
         start_pos = completion.find(f"</{function_name}>")
     else:
         # Find the end of the code block
         start_pos = completion.find(f"```{function_name}")
 
-    return completion[:start_pos]
+    return completion[:start_pos] if start_pos != -1 else completion
 
 
 def parse_completions_function_call(
@@ -385,8 +445,11 @@ def parse_completions_function_call(
     function_names: List[str],
     completion: str,
     func_name_to_args: Dict[str, Tuple[str, type]] = STANDARD_FUNCTION_VALIDATIONS,
+    enable_special_tokens: bool = False,
 ) -> Dict[str, Any] | None:
-    if enable_xml:
+    if enable_special_tokens:
+        parsed_function = parse_first_special_token_function_call(function_names, completion)
+    elif enable_xml:
         parsed_function = parse_first_xml_function_call(function_names, completion)
     else:
         parsed_function = parse_first_backticks_function_call(
@@ -400,7 +463,7 @@ def parse_completions_function_call(
     args = parsed_function["arguments"]
 
     completion_until_function_call = find_completion_until_function_call(
-        enable_xml, function_name, completion
+        enable_xml, function_name, completion, enable_special_tokens
     )
 
     # if function doesn't need args, return the function name and empty args
@@ -410,6 +473,19 @@ def parse_completions_function_call(
             "arguments": json.dumps({}),
         }, completion_until_function_call
 
+    # For special token format, args should already be JSON
+    if enable_special_tokens:
+        try:
+            # Validate JSON is parseable
+            json.loads(args)
+            return {
+                "name": function_name,
+                "arguments": args,
+            }, completion_until_function_call
+        except json.JSONDecodeError:
+            return None, completion_until_function_call
+    
+    # For other formats, convert to JSON
     arg_name, arg_type = func_name_to_args[function_name]
     if arg_type is not None and not args:
         return None, completion_until_function_call
@@ -469,18 +545,30 @@ def combine_function_call_and_content(
         return content
     if "arguments" not in function_call:
         raise ValueError(f"Function call has no arguments: {function_call}")
+    
     if not json.loads(function_call["arguments"]):
-        if state.settings.enable_xml:
+        if state.settings.enable_special_tokens:
+            function_call_str = f"""<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>{function_call['name']}
+```json
+{{}}
+```<｜tool▁call▁end｜><｜tool▁calls▁end｜>"""
+        elif state.settings.enable_xml:
             function_call_str = f"<{function_call['name']}></{function_call['name']}>"
         else:
             function_call_str = f"```{function_call['name']}\n```"
     else:
-        args = list(json.loads(function_call["arguments"]).values())[0]
-        if state.settings.enable_xml:
+        if state.settings.enable_special_tokens:
+            function_call_str = f"""<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>{function_call['name']}
+```json
+{function_call['arguments']}
+```<｜tool▁call▁end｜><｜tool▁calls▁end｜>"""
+        elif state.settings.enable_xml:
+            args = list(json.loads(function_call["arguments"]).values())[0]
             function_call_str = (
                 f"<{function_call['name']}>\n{args}\n</{function_call['name']}>"
             )
         else:
+            args = list(json.loads(function_call["arguments"]).values())[0]
             function_call_str = f"```{function_call['name']}\n{args}\n```"
     return f"{content}\n\nFinal Executed Function:\n{function_call_str}"
 

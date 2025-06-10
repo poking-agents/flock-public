@@ -379,6 +379,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -411,6 +412,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -443,6 +511,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -475,6 +544,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -867,6 +937,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -899,6 +970,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4o_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -931,6 +1069,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -963,6 +1102,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -1507,6 +1647,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -1539,6 +1680,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -1571,6 +1779,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -1603,6 +1812,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -1995,6 +2205,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -2027,6 +2238,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_4om_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "gpt-4o-mini",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -2059,6 +2337,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -2091,6 +2370,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -2483,6 +2763,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -2515,6 +2796,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -2547,6 +2895,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -2579,6 +2928,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -2971,6 +3321,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -3003,6 +3354,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_c3.6s_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -3035,6 +3453,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -3067,6 +3486,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -3459,6 +3879,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -3491,6 +3912,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_ds3_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_ds3_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -3523,6 +4011,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -3555,6 +4044,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -3947,6 +4437,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -3979,6 +4470,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_ds3_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_ds3_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-v3",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -4011,6 +4569,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -4043,6 +4602,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -4435,6 +4995,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -4467,6 +5028,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_0528_openrouter_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_0528_openrouter_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -4499,6 +5127,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -4531,6 +5160,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -4923,6 +5553,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -4955,6 +5586,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_0528_openrouter_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_0528_openrouter_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek/deepseek-r1-0528",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -4987,6 +5685,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -5019,6 +5718,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -5411,6 +6111,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -5443,6 +6144,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_deepinfra_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_deepinfra_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -5475,6 +6243,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -5507,6 +6276,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -5899,6 +6669,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -5931,6 +6702,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_deepinfra_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_deepinfra_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "deepinfra/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -5963,6 +6801,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -5995,6 +6834,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -6387,6 +7227,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -6419,6 +7260,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -6451,6 +7359,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -6483,6 +7392,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -6875,6 +7785,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -6907,6 +7818,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_fireworks_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "fireworks/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -6939,6 +7917,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -6971,6 +7950,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -7363,6 +8343,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -7395,6 +8376,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_openrouter_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_openrouter_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -7427,6 +8475,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -7459,6 +8508,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -7851,6 +8901,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -7883,6 +8934,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_openrouter_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 128000,
+                    "model": "openrouter/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -7915,6 +9033,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -7947,6 +9066,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -8339,6 +9459,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -8371,6 +9492,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_together_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_together_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -8403,6 +9591,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -8435,6 +9624,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -8827,6 +10017,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -8859,6 +10050,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_together_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_together_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 32000,
+                    "model": "together/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -8891,6 +10149,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -8923,6 +10182,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -9315,6 +10575,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -9347,6 +10608,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -9379,6 +10707,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -9411,6 +10740,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -9803,6 +11133,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -9835,6 +11166,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 2,
+                    "temp": 0.6
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_dsr1_trains_on_your_data_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 3,
+                    "temp": 0.6
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "deepseek-trains-on-your-data/deepseek-r1",
+                    "n": 1,
+                    "temp": 0.6
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -9867,6 +11265,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -9899,6 +11298,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -10291,6 +11691,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -10323,6 +11724,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -10355,6 +11823,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -10387,6 +11856,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -10779,6 +12249,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -10811,6 +12282,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o1_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o1",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -10843,6 +12381,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -10875,6 +12414,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -11267,6 +12807,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -11299,6 +12840,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -11331,6 +12939,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -11363,6 +12972,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -11755,6 +13365,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -11787,6 +13398,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini-2025-01-14_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2025-01-14",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -11819,6 +13497,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -11851,6 +13530,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -12243,6 +13923,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -12275,6 +13956,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": false,
+            "limit_type": "token",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": false,
@@ -12307,6 +14055,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -12339,6 +14088,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": false,
@@ -12731,6 +14481,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -12763,6 +14514,73 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_special_tokens": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": true,
+            "enable_special_tokens": true,
+            "enable_tool_use": false,
+            "enable_xml": false,
+            "intermediate_scoring": true,
+            "limit_type": "time",
+            "raters": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 2,
+                    "temp": 1.0
+                }
+            ],
+            "require_function_call": false
+        },
+        "triframe_o3-mini_all_aird_2_rater_3_actor_no_tools_special_tokens_no_advisor": {
+            "actors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 3,
+                    "temp": 1.0
+                }
+            ],
+            "advisors": [
+                {
+                    "max_tokens": 16000,
+                    "model": "o3-mini-2024-12-17-redteam",
+                    "n": 1,
+                    "temp": 1.0
+                }
+            ],
+            "enable_advising": false,
+            "enable_special_tokens": true,
             "enable_tool_use": false,
             "enable_xml": false,
             "intermediate_scoring": true,
@@ -12795,6 +14613,7 @@
                 }
             ],
             "enable_advising": true,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
@@ -12827,6 +14646,7 @@
                 }
             ],
             "enable_advising": false,
+            "enable_special_tokens": false,
             "enable_tool_use": false,
             "enable_xml": true,
             "intermediate_scoring": true,
