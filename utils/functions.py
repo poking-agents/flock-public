@@ -231,18 +231,34 @@ rate_options_json = """```json
 ```"""
 
 SPECIAL_TOKEN_INSTRUCTION_TEMPLATE = """# Tool Calling
-You are equipped with tool calling capabilities. When a tool call is needed, you MUST use the following format to issue the call:
+You are equipped with tool calling capabilities. When a tool call is needed, you MUST use the EXACT format below.
+
+CRITICAL: Use these exact Unicode tokens - DO NOT substitute with similar characters:
 <｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>FUNCTION_NAME
 ```json
 {{"param1": "value1", "param2": "value2"}}
 ```<｜tool▁call▁end｜><｜tool▁calls▁end｜>
-Make sure the JSON is valid.
 
-## Tools
+Example for python tool:
+<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>python
+```json
+{{"code": "print('hello world')"}}
+```<｜tool▁call▁end｜><｜tool▁calls▁end｜>
 
-### Function
+Example for bash tool:
+<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>function<｜tool▁sep｜>bash
+```json
+{{"command": "ls -la"}}
+```<｜tool▁call▁end｜><｜tool▁calls▁end｜>
 
-You have the following functions available:
+IMPORTANT: 
+- Use the exact tokens shown above
+- Do NOT use regular symbols like • # | or other characters
+- The JSON inside must be valid
+- End with the exact closing tokens
+
+## Available Functions
+
 {tools_list}"""
 
 
@@ -364,25 +380,50 @@ def parse_first_backticks_function_call(
       }
     """
     if function_names == ["advise"]:
-        # Make the pattern greedy so it matches until the last ``` in the string
-        pattern = r"```advise\s*([\s\S]+)```"
+        # Special handling for advise to avoid nested backticks issues
+        # Find the ```advise block and match until the first ``` that isn't part of a nested block
+        start_pattern = r"```advise\s*"
+        start_match = re.search(start_pattern, completion)
+        if not start_match:
+            return None
+        
+        start_pos = start_match.end()
+        content = completion[start_pos:]
+        
+        # Find the closing ``` that isn't immediately preceded by json or other code block indicators
+        lines = content.split('\n')
+        result_lines = []
+        in_nested_block = False
+        
+        for line in lines:
+            if line.strip() == '```':
+                if in_nested_block:
+                    # This closes a nested block
+                    in_nested_block = False
+                    result_lines.append(line)
+                else:
+                    # This closes the advise block
+                    break
+            elif line.strip().startswith('```'):
+                # This starts a nested block
+                in_nested_block = True
+                result_lines.append(line)
+            else:
+                result_lines.append(line)
+        
+        function_args = '\n'.join(result_lines).strip()
+        return {"name": "advise", "arguments": function_args}
     else:
         pattern = (
             r"```(" + "|".join(re.escape(fn) for fn in function_names) + r")\s*(.*?)```"
         )
-    match = re.search(pattern, completion, flags=re.DOTALL)
-    if not match:
-        return None
+        match = re.search(pattern, completion, flags=re.DOTALL)
+        if not match:
+            return None
 
-    if function_names == ["advise"]:
-        # For the advise case, we match just the arguments
-        function_name = "advise"
-        function_args = match.group(1).strip()
-    else:
         function_name = match.group(1).strip()
         function_args = match.group(2).strip()
-
-    return {"name": function_name, "arguments": function_args}
+        return {"name": function_name, "arguments": function_args}
 
 
 def parse_first_xml_function_call(
