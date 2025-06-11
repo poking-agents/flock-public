@@ -4,7 +4,7 @@ import asyncio
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Set, Dict, Any
+from typing import Optional, Set, Dict, Any, List
 
 from handlers.base import create_handler
 from logger import logger
@@ -24,8 +24,46 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
         "provider": {
             "order": ["DeepInfra", "Fireworks"]
         }
+    },
+    "openrouter/deepseek/deepseek-r1-0528": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks"]
+        }
     }
 }
+
+
+def merge_extra_parameters(base: Optional[Dict[str, Any]], override: Dict[str, Any]) -> Dict[str, Any]:
+    """Merge two sets of extra parameters, with override taking precedence"""
+    logger.info(f"Merging extra parameters - base: {base}, override: {override}")
+    if base is None:
+        logger.info(f"Base is None, returning override: {override}")
+        return override
+    merged = base.copy()
+    for key, value in override.items():
+        if key in merged and isinstance(merged[key], dict) and isinstance(value, dict):
+            merged[key] = merge_extra_parameters(merged[key], value)
+        else:
+            merged[key] = value
+    logger.info(f"Merged result: {merged}")
+    return merged
+
+
+def get_role_extra_parameters(settings: Any, role: str) -> Optional[Dict[str, Any]]:
+    """Extract extraParameters from a specific role's settings"""
+    if not hasattr(settings, role):
+        return None
+    
+    role_settings = getattr(settings, role)
+    if not isinstance(role_settings, list) or not role_settings:
+        return None
+    
+    # Get extraParameters from the first role setting
+    first_setting = role_settings[0]
+    if not isinstance(first_setting, dict):
+        return None
+        
+    return first_setting.get("extraParameters")
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -73,10 +111,46 @@ async def generate_middleman(
         logger.info(f"Model being used: {params.settings.model}")
         logger.info(f"Available extra params: {MODEL_EXTRA_PARAMETERS}")
         
-        # Always apply extra parameters using proper model update
-        model_params = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
-        params = params.model_copy(update={"extraParameters": model_params})
-        print(f"DEBUG: After setting extraParameters: {params.extraParameters}")
+        # Get role-specific extraParameters from the settings object itself
+        role_extra_params = None
+        for attr in ("extraParameters", "extra_parameters"):
+            if hasattr(params.settings, attr):
+                candidate = getattr(params.settings, attr)
+                if candidate:
+                    role_extra_params = candidate
+                    break
+
+        if role_extra_params:
+            logger.info(f"Found role extraParameters in settings: {role_extra_params}")
+        else:
+            try:
+                logger.info(f"Settings dump: {params.settings.model_dump()}")
+            except Exception as e:
+                logger.info(f"Could not dump settings: {e}")
+
+        # Merge parameters in order of increasing specificity:
+        # 1. model-level defaults (MODEL_EXTRA_PARAMETERS)
+        # 2. role-level settings (params.settings.extraParameters)
+        # 3. request-level overrides (params.extraParameters)
+
+        merged_params: Optional[Dict[str, Any]] = None
+
+        # Start with model-level params (least specific)
+        model_params = MODEL_EXTRA_PARAMETERS.get(params.settings.model, None)
+        if model_params:
+            merged_params = merge_extra_parameters(merged_params, model_params)
+
+        # Apply role-level params
+        if role_extra_params:
+            merged_params = merge_extra_parameters(merged_params, role_extra_params)
+
+        # Finally, apply request-level params (highest specificity)
+        if params.extraParameters:
+            merged_params = merge_extra_parameters(merged_params, params.extraParameters)
+
+        # If everything is still None, keep it that way
+        params = params.model_copy(update={"extraParameters": merged_params})
+        logger.info(f"After setting extraParameters: {params.extraParameters}")
 
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
@@ -120,6 +194,7 @@ async def generate_middleman(
             log_generation(params, merged)
             return merged
         else:
+            logger.info(f"Making post_completion call with extraParameters: {params.extraParameters}")
             raw_output = await post_completion(
                 messages=processed_messages,
                 model=params.settings.model,
@@ -158,8 +233,51 @@ async def generate_hooks(
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
 
-    # Get any extra parameters for the model
-    extra_params = MODEL_EXTRA_PARAMETERS.get(settings.model, {})
+    # Log initial state
+    logger.info(f"[hooks] Initial extraParameters: {params.extraParameters}")
+    logger.info(f"[hooks] Model being used: {settings.model}")
+    logger.info(f"[hooks] Available extra params: {MODEL_EXTRA_PARAMETERS}")
+
+    # Get role-specific extraParameters from the settings object itself
+    role_extra_params = None
+    for attr in ("extraParameters", "extra_parameters"):
+        if hasattr(params.settings, attr):
+            candidate = getattr(params.settings, attr)
+            if candidate:
+                role_extra_params = candidate
+                break
+
+    if role_extra_params:
+        logger.info(f"[hooks] Found role extraParameters in settings: {role_extra_params}")
+    else:
+        try:
+            logger.info(f"[hooks] Settings dump: {params.settings.model_dump()}")
+        except Exception as e:
+            logger.info(f"[hooks] Could not dump settings: {e}")
+
+    # Merge parameters in order of increasing specificity:
+    # 1. model-level defaults (MODEL_EXTRA_PARAMETERS)
+    # 2. role-level settings (params.settings.extraParameters)
+    # 3. request-level overrides (params.extraParameters)
+
+    merged_params: Optional[Dict[str, Any]] = None
+
+    # Start with model-level params (least specific)
+    model_params = MODEL_EXTRA_PARAMETERS.get(settings.model, None)
+    if model_params:
+        merged_params = merge_extra_parameters(merged_params, model_params)
+
+    # Apply role-level params
+    if role_extra_params:
+        merged_params = merge_extra_parameters(merged_params, role_extra_params)
+
+    # Finally, apply request-level params (highest specificity)
+    if params.extraParameters:
+        merged_params = merge_extra_parameters(merged_params, params.extraParameters)
+
+    # If everything is still None, keep it that way
+    params = params.model_copy(update={"extraParameters": merged_params})
+    logger.info(f"[hooks] After merging extraParameters: {params.extraParameters}")
     
     timeout = aiohttp.ClientTimeout(total=2 * 60 * 60)  # 60 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
@@ -173,7 +291,7 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
-                        extraParameters=extra_params
+                        extraParameters=params.extraParameters
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -195,12 +313,13 @@ async def generate_hooks(
             log_generation(params, merged)
             return merged
         else:
+            logger.info(f"[hooks] Making generate call with extraParameters: {params.extraParameters}")
             result = await hooks_client.generate(
                 settings=settings,
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
-                extraParameters=extra_params
+                extraParameters=params.extraParameters
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)
