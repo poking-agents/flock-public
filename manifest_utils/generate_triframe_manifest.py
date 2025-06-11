@@ -6,6 +6,7 @@ MODEL_TEMPS = {
     "qwen_2_72b": 0.7,
     "qwen_2.5_72b": 0.7,
     "qwen_3_235b": 0.6,
+    "qwen_2.5_coder_32b": 0.7,
 }
 
 

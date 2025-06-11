@@ -7784,7 +7784,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7792,7 +7792,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7815,7 +7815,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7823,7 +7823,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -7846,7 +7846,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7854,7 +7854,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -7877,7 +7877,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7885,7 +7885,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7908,7 +7908,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7916,7 +7916,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -7939,7 +7939,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7947,7 +7947,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -7970,7 +7970,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -7978,7 +7978,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -8003,7 +8003,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8011,7 +8011,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -8036,7 +8036,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8044,7 +8044,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8067,7 +8067,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8075,7 +8075,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -8098,7 +8098,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8106,7 +8106,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -8129,7 +8129,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8137,7 +8137,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8160,7 +8160,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8168,7 +8168,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -8191,7 +8191,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8199,7 +8199,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -8222,7 +8222,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8230,7 +8230,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -8255,7 +8255,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -8263,7 +8263,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -15972,7 +15972,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -15980,7 +15980,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16003,7 +16003,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16011,7 +16011,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -16034,7 +16034,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16042,7 +16042,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16065,7 +16065,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16073,7 +16073,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16096,7 +16096,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16104,7 +16104,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -16127,7 +16127,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16135,7 +16135,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16158,7 +16158,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16166,7 +16166,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16191,7 +16191,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16199,7 +16199,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16224,7 +16224,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16232,7 +16232,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16255,7 +16255,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16263,7 +16263,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -16286,7 +16286,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16294,7 +16294,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16317,7 +16317,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16325,7 +16325,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16348,7 +16348,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16356,7 +16356,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 2,
                     "max_tokens": 8000
                 }
@@ -16379,7 +16379,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16387,7 +16387,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16410,7 +16410,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16418,7 +16418,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
@@ -16443,7 +16443,7 @@
             "advisors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 1,
                     "max_tokens": 8000
                 }
@@ -16451,7 +16451,7 @@
             "actors": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
-                    "temp": 1.0,
+                    "temp": 0.7,
                     "n": 3,
                     "max_tokens": 8000
                 }
