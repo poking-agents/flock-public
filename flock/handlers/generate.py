@@ -47,6 +47,12 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
         "reasoning": {
             "max_tokens": 8000
         }
+    },
+    "openrouter/qwen/qwen-2.5-coder-32b-instruct": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
     }
 }
 
