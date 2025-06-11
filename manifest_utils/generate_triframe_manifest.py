@@ -14,7 +14,7 @@ MODELS = [
     ("deepinfra/deepseek-r1", "dsr1_deepinfra"),
     ("deepseek-trains-on-your-data/deepseek-r1", "dsr1_trains_on_your_data"),
     ("openrouter/deepseek-r1", "dsr1_openrouter"),
-    ("openrouter/deepseek/deepseek-r1-0528", "dsr1_0528"),
+    ("openrouter/deepseek/deepseek-r1-0528", "dsr1_0528_openrouter"),
 ]
 AIRD = [True, False]
 
@@ -34,7 +34,6 @@ def generate_manifest() -> None:
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
                             "max_tokens": {"type": "integer"},
-                            "extraParameters": {"type": "object"},
                         },
                     },
                 },
@@ -47,7 +46,6 @@ def generate_manifest() -> None:
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
                             "max_tokens": {"type": "integer"},
-                            "extraParameters": {"type": "object"},
                         },
                     },
                 },
@@ -60,7 +58,6 @@ def generate_manifest() -> None:
                             "temp": {"type": "number"},
                             "n": {"type": "integer"},
                             "max_tokens": {"type": "integer"},
-                            "extraParameters": {"type": "object"},
                         },
                     },
                 },
@@ -126,9 +123,7 @@ def generate_manifest() -> None:
                         max_tokens_actor_and_rater = 16000
                         max_tokens_advisor = 16000
                     pack_name = f"triframe_{model_short}_all{'_aird' if aird else ''}_{n_raters}_rater_{n_actors}_actor"
-                    
-                    # Base settings pack
-                    base_pack = {
+                    settings_packs[pack_name] = {
                         "advisors": [
                             {
                                 "model": model,
@@ -157,75 +152,26 @@ def generate_manifest() -> None:
                         "intermediate_scoring": aird,
                         "require_function_call": False,
                         "enable_advising": True,
-                        "enable_tool_use": True,
                     }
-                    
-                    # For deepseek-r1-0528, create provider-specific packs
-                    if model == "openrouter/deepseek/deepseek-r1-0528":
-                        providers = ["deepinfra", "fireworks", "together"]
-                        for provider in providers:
-                            provider_pack_name = f"{pack_name}_{provider}"
-                            provider_pack = json.loads(json.dumps(base_pack))  # Deep copy
-                            # Add provider configuration to all model settings
-                            for role in ["advisors", "actors", "raters"]:
-                                for settings in provider_pack[role]:
-                                    settings["extraParameters"] = {
-                                        "provider": {
-                                            "order": [provider.capitalize()]
-                                        }
-                                    }
-                            settings_packs[provider_pack_name] = provider_pack
-                            
-                            # Add no-tool variants for provider-specific packs
-                            no_tools_backticks = json.loads(json.dumps(provider_pack))  # Deep copy
-                            no_tools_backticks.update({
-                                "enable_tool_use": False,
-                                "enable_xml": False,
-                                "enable_special_tokens": False,
-                            })
-                            settings_packs[f"{provider_pack_name}_no_tools_backticks"] = no_tools_backticks
-
-                            no_tools_xml = json.loads(json.dumps(provider_pack))  # Deep copy
-                            no_tools_xml.update({
-                                "enable_tool_use": False,
-                                "enable_xml": True,
-                                "enable_special_tokens": False,
-                            })
-                            settings_packs[f"{provider_pack_name}_no_tools_xml"] = no_tools_xml
-
-                            no_tools_special_tokens = json.loads(json.dumps(provider_pack))  # Deep copy
-                            no_tools_special_tokens.update({
-                                "enable_tool_use": False,
-                                "enable_xml": False,
-                                "enable_special_tokens": True,
-                            })
-                            settings_packs[f"{provider_pack_name}_no_tools_special_tokens"] = no_tools_special_tokens
-                    else:
-                        settings_packs[pack_name] = base_pack
-                        # Add no-tool variants
-                        no_tools_backticks = json.loads(json.dumps(base_pack))  # Deep copy
-                        no_tools_backticks.update({
-                            "enable_tool_use": False,
-                            "enable_xml": False,
-                            "enable_special_tokens": False,
-                        })
-                        settings_packs[f"{pack_name}_no_tools_backticks"] = no_tools_backticks
-
-                        no_tools_xml = json.loads(json.dumps(base_pack))  # Deep copy
-                        no_tools_xml.update({
-                            "enable_tool_use": False,
-                            "enable_xml": True,
-                            "enable_special_tokens": False,
-                        })
-                        settings_packs[f"{pack_name}_no_tools_xml"] = no_tools_xml
-
-                        no_tools_special_tokens = json.loads(json.dumps(base_pack))  # Deep copy
-                        no_tools_special_tokens.update({
-                            "enable_tool_use": False,
-                            "enable_xml": False,
-                            "enable_special_tokens": True,
-                        })
-                        settings_packs[f"{pack_name}_no_tools_special_tokens"] = no_tools_special_tokens
+            # Add no-tool variant
+            settings_packs[f"{pack_name}_no_tools_backticks"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+                "enable_xml": False,
+                "enable_special_tokens": False,
+            }
+            settings_packs[f"{pack_name}_no_tools_xml"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+                "enable_xml": True,
+                "enable_special_tokens": False,
+            }
+            settings_packs[f"{pack_name}_no_tools_special_tokens"] = {
+                **settings_packs[pack_name],
+                "enable_tool_use": False,
+                "enable_xml": False,
+                "enable_special_tokens": True,
+            }
 
     # Create mixed model setting with 4o actor and o1 others
     settings_packs["triframe_4o_o1"] = {
@@ -245,13 +191,15 @@ def generate_manifest() -> None:
         "enable_tool_use": True,
     }
     # Add no-tool variant for mixed model
-    settings_packs["triframe_4o_o1_no_tools"] = json.loads(json.dumps(settings_packs["triframe_4o_o1"]))  # Deep copy
-    settings_packs["triframe_4o_o1_no_tools"]["enable_tool_use"] = False
+    settings_packs["triframe_4o_o1_no_tools"] = {
+        **settings_packs["triframe_4o_o1"],
+        "enable_tool_use": False,
+    }
 
     # Add no-advisor variants for each pack
     no_advisor_packs = {}
     for pack_name, pack in settings_packs.items():
-        no_advisor_pack = json.loads(json.dumps(pack))  # Deep copy
+        no_advisor_pack = pack.copy()
         no_advisor_pack["enable_advising"] = False
         no_advisor_packs[f"{pack_name}_no_advisor"] = no_advisor_pack
 

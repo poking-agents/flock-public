@@ -25,25 +25,18 @@ def initialize_state_from_settings(state_id: str, settings_path: str) -> trifram
     print(f"Initializing state from settings file: {settings_path}")
     print(f"Settings data: {json.dumps(settings_data, indent=2)}")
 
-    def _create_mm_settings(item: dict):
-        mm = MiddlemanSettings(**{k: v for k, v in item.items() if k != "extraParameters"})
-        # Preserve extraParameters (camelCase) or extra_parameters (snake_case)
-        extra_params = item.get("extraParameters") or item.get("extra_parameters")
-        if extra_params is not None:
-            try:
-                setattr(mm, "extraParameters", extra_params)
-            except Exception:
-                # Fallback to snake_case attribute if that exists
-                try:
-                    setattr(mm, "extra_parameters", extra_params)
-                except Exception:
-                    pass
-        return mm
-
+    # Create triframeSettings directly from the settings data
     settings = triframeSettings(
-        actors=[_create_mm_settings(actor) for actor in settings_data.get("actors", [])],
-        advisors=[_create_mm_settings(advisor) for advisor in settings_data.get("advisors", [])],
-        raters=[_create_mm_settings(rater) for rater in settings_data.get("raters", [])],
+        actors=[
+            MiddlemanSettings(**actor) for actor in settings_data.get("actors", [])
+        ],
+        advisors=[
+            MiddlemanSettings(**advisor)
+            for advisor in settings_data.get("advisors", [])
+        ],
+        raters=[
+            MiddlemanSettings(**rater) for rater in settings_data.get("raters", [])
+        ],
         require_function_call=settings_data.get("require_function_call", False),
         limit_type=settings_data.get("limit_type", "token"),
         intermediate_scoring=settings_data.get("intermediate_scoring", False),
