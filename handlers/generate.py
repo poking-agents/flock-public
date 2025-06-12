@@ -27,7 +27,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/deepseek/deepseek-r1-0528": {
         "provider": {
-            "order": ["Together"]
+            "order": ["Fireworks", "DeepInfra", "Together"]
         }
     }
 }
