@@ -22,12 +22,14 @@ REASONING_EFFORT_MODELS: Set[str] = {
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/deepseek-r1": {
         "provider": {
-            "order": ["DeepInfra", "Fireworks"]
+            "order": ["DeepInfra", "Fireworks"],
+            "allow_fallbacks": False
         }
     },
     "openrouter/deepseek/deepseek-r1-0528": {
         "provider": {
-            "order": ["Fireworks", "DeepInfra", "Together"]
+            "order": ["Fireworks", "DeepInfra", "Together"],
+            "allow_fallbacks": False
         }
     }
 }
