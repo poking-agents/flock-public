@@ -92,8 +92,16 @@ def create_handler(
             try:
                 return await executor(params, dependencies or {})
             except Exception as e:
-                logger.error(f"Error in {operation_type} handler: {str(e)}")
-                sys.exit(1)
+                error_str = str(e)
+                # Check if this is a retryable 404 error that should have been handled
+                if "404" in error_str and "No endpoints found" in error_str:
+                    logger.warning(f"API endpoint not found error in {operation_type} handler: {error_str}")
+                    # For 404 errors, we should not exit the program as the retry logic should handle it
+                    # If we reach here, it means the retry logic failed after max attempts
+                    raise
+                else:
+                    logger.error(f"Error in {operation_type} handler: {error_str}")
+                    sys.exit(1)
 
     return Handler()
 

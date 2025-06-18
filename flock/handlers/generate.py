@@ -56,6 +56,30 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     }
 }
 
+
+async def retry_on_404(func, *args, max_retries: int = 3, delay: float = 1.0, **kwargs):
+    """Retry function on 404 errors with exponential backoff"""
+    for attempt in range(max_retries):
+        try:
+            return await func(*args, **kwargs)
+        except Exception as e:
+            error_str = str(e)
+            if "404" in error_str and "No endpoints found" in error_str:
+                if attempt < max_retries - 1:
+                    wait_time = delay * (2 ** attempt)
+                    logger.warning(
+                        f"API 404 error on attempt {attempt + 1}/{max_retries}: {error_str}. "
+                        f"Retrying in {wait_time:.1f} seconds..."
+                    )
+                    await asyncio.sleep(wait_time)
+                    continue
+                else:
+                    logger.error(
+                        f"API 404 error persisted after {max_retries} attempts: {error_str}"
+                    )
+            raise
+
+
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
     """Log generation request and response"""
     try:
@@ -192,18 +216,21 @@ async def generate_hooks(
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
             raw_outputs = []
             settings.n = 1
-            raw_outputs = await asyncio.gather(
-                *[
-                    hooks_client.generate(
-                        settings=settings,
-                        messages=processed_messages,
-                        functions=params.functions,
-                        session=session,
-                        extraParameters=extra_params
-                    )
-                    for _ in range(params.settings.n)
-                ]
-            )
+            
+            # Use retry logic for each generate call
+            retry_tasks = [
+                retry_on_404(
+                    hooks_client.generate,
+                    settings=settings,
+                    messages=processed_messages,
+                    functions=params.functions,
+                    session=session,
+                    extraParameters=extra_params
+                )
+                for _ in range(params.settings.n)
+            ]
+            raw_outputs = await asyncio.gather(*retry_tasks)
+            
             outputs = []
             for raw_output in raw_outputs:
                 outputs.extend(raw_output.outputs)
@@ -221,7 +248,9 @@ async def generate_hooks(
             log_generation(params, merged)
             return merged
         else:
-            result = await hooks_client.generate(
+            # Use retry logic for single generate call
+            result = await retry_on_404(
+                hooks_client.generate,
                 settings=settings,
                 messages=processed_messages,
                 functions=params.functions,
