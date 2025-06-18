@@ -139,6 +139,17 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
+        "modular_qwen_2.5_72b_together": {
+            "generator": {
+                "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                "temp": 1.0,
+                "n": 1,
+                "max_tokens": 16000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
         "modular_qwen_3_235b": {
             "generator": {
                 "model": "openrouter/qwen/qwen3-235b-a22b",
@@ -6759,6 +6770,510 @@
             "raters": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_qwen_2.5_72b_together_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_qwen_2.5_72b_together_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 16000
@@ -14947,6 +15462,510 @@
             "raters": [
                 {
                     "model": "openrouter/qwen/qwen-2.5-72b-instruct",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_qwen_2.5_72b_together_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_qwen_2.5_72b_together_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_qwen_2.5_72b_together_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_qwen_2.5_72b_together_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "together/Qwen/Qwen2.5-72B-Instruct-Turbo",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 16000
