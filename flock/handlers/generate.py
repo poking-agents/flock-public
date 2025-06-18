@@ -57,7 +57,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
 }
 
 
-async def retry_on_404(func, *args, max_retries: int = 3, delay: float = 1.0, **kwargs):
+async def retry_on_404(func, *args, max_retries: int = 5, delay: float = 5.0, **kwargs):
     """Retry function on 404 errors with exponential backoff"""
     for attempt in range(max_retries):
         try:
