@@ -143,7 +143,7 @@
         },
         "modular_grok4": {
             "generator": {
-                "model": "openrouter/x-ai/grok-4",
+                "model": "openrouter/x-ai/grok-4-07-09",
                 "temp": 1.0,
                 "n": 1,
                 "max_tokens": 32000
@@ -6851,7 +6851,7 @@
         "triframe_grok4_aird_1_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6859,7 +6859,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6867,7 +6867,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6882,7 +6882,7 @@
         "triframe_grok4_aird_1_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6890,7 +6890,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -6898,7 +6898,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6913,7 +6913,7 @@
         "triframe_grok4_aird_1_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6921,7 +6921,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -6929,7 +6929,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6944,7 +6944,7 @@
         "triframe_grok4_aird_2_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6952,7 +6952,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6960,7 +6960,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -6975,7 +6975,7 @@
         "triframe_grok4_aird_2_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -6983,7 +6983,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -6991,7 +6991,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7006,7 +7006,7 @@
         "triframe_grok4_aird_2_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7014,7 +7014,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7022,7 +7022,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7037,7 +7037,7 @@
         "triframe_grok4_aird_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7045,7 +7045,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7053,7 +7053,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7070,7 +7070,7 @@
         "triframe_grok4_aird_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7078,7 +7078,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7086,7 +7086,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7103,7 +7103,7 @@
         "triframe_grok4_1_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7111,7 +7111,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7119,7 +7119,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7134,7 +7134,7 @@
         "triframe_grok4_1_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7142,7 +7142,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7150,7 +7150,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7165,7 +7165,7 @@
         "triframe_grok4_1_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7173,7 +7173,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7181,7 +7181,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7196,7 +7196,7 @@
         "triframe_grok4_2_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7204,7 +7204,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7212,7 +7212,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7227,7 +7227,7 @@
         "triframe_grok4_2_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7235,7 +7235,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7243,7 +7243,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7258,7 +7258,7 @@
         "triframe_grok4_2_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7266,7 +7266,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7274,7 +7274,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7289,7 +7289,7 @@
         "triframe_grok4_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7297,7 +7297,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7305,7 +7305,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -7322,7 +7322,7 @@
         "triframe_grok4_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -7330,7 +7330,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -7338,7 +7338,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14127,7 +14127,7 @@
         "triframe_grok4_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14135,7 +14135,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14143,7 +14143,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14158,7 +14158,7 @@
         "triframe_grok4_aird_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14166,7 +14166,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14174,7 +14174,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14189,7 +14189,7 @@
         "triframe_grok4_aird_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14197,7 +14197,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14205,7 +14205,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14220,7 +14220,7 @@
         "triframe_grok4_aird_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14228,7 +14228,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14236,7 +14236,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14251,7 +14251,7 @@
         "triframe_grok4_aird_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14259,7 +14259,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14267,7 +14267,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14282,7 +14282,7 @@
         "triframe_grok4_aird_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14290,7 +14290,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14298,7 +14298,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14313,7 +14313,7 @@
         "triframe_grok4_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14321,7 +14321,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14329,7 +14329,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14346,7 +14346,7 @@
         "triframe_grok4_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14354,7 +14354,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14362,7 +14362,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14379,7 +14379,7 @@
         "triframe_grok4_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14387,7 +14387,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14395,7 +14395,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14410,7 +14410,7 @@
         "triframe_grok4_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14418,7 +14418,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14426,7 +14426,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14441,7 +14441,7 @@
         "triframe_grok4_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14449,7 +14449,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14457,7 +14457,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14472,7 +14472,7 @@
         "triframe_grok4_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14480,7 +14480,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14488,7 +14488,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14503,7 +14503,7 @@
         "triframe_grok4_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14511,7 +14511,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14519,7 +14519,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14534,7 +14534,7 @@
         "triframe_grok4_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14542,7 +14542,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14550,7 +14550,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14565,7 +14565,7 @@
         "triframe_grok4_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14573,7 +14573,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14581,7 +14581,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14598,7 +14598,7 @@
         "triframe_grok4_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -14606,7 +14606,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -14614,7 +14614,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/x-ai/grok-4",
+                    "model": "openrouter/x-ai/grok-4-07-09",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
