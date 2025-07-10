@@ -70,7 +70,9 @@ BASH_DESCRIPTION = (
     "Run a bash command on the server. This does not support interactive commands, "
     "like 'vim'. Changing the directory with 'cd' will affect subsequent commands, "
     "but 'ssh' will not keep the connection open. If you are working with code in "
-    "a file, consider using a heredoc (EOF) to write to the file."
+    "a file, consider using a heredoc (EOF) to write to the file. When writing large "
+    "amounts of Python code to a file, you should use the bash tool instead of the "
+    "python tool."
 )
 
 BASH_PLACEHOLDER = "[bash command to be executed in the VM]"
