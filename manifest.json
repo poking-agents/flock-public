@@ -152,6 +152,17 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
+        "modular_grok4_2h": {
+            "generator": {
+                "model": "openrouter/grok-4-with-two-hour-timeout",
+                "temp": 1.0,
+                "n": 1,
+                "max_tokens": 32000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
         "triframe_c3.6s_aird_1_rater_1_actor": {
             "advisors": [
                 {
@@ -7339,6 +7350,510 @@
             "raters": [
                 {
                     "model": "openrouter/x-ai/grok-4",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_grok4_2h_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_grok4_2h_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_grok4_2h_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_grok4_2h_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -14615,6 +15130,510 @@
             "raters": [
                 {
                     "model": "openrouter/x-ai/grok-4",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_grok4_2h_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_grok4_2h_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_grok4_2h_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_grok4_2h_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_grok4_2h_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/grok-4-with-two-hour-timeout",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
