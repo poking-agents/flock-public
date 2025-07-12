@@ -14,6 +14,7 @@ MODELS = (
     ("together/deepseek-r1", "dsr1_together", 32_000),
     ("openrouter/x-ai/grok-4", "grok4", 32_000),
     ("openrouter/grok-4-with-two-hour-timeout", "grok4_2h", 32_000),
+    ("grok-4-0709", "grok4_0709", 32_000),
 )
 
 ANTHROPIC_THINKING_MODELS = (
