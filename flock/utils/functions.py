@@ -110,7 +110,8 @@ Note: {BASH_NOTE}"""
 PYTHON_DESCRIPTION = (
     "Run Python code on the server, in an session that persists between calls. "
     "This means that variables and functions defined in one call will be available "
-    "in subsequent calls."
+    "in subsequent calls. Only use this for very small amounts of code, like doing "
+    "simple calculations. If you need to write a lot of code, use the bash tool."
 )
 
 PYTHON_PLACEHOLDER = "[python code to be executed in an interactive python session]"
