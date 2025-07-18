@@ -1,7 +1,7 @@
 from constants import MODELS, ANTHROPIC_THINKING_MODELS
 
 AIRD = [True, False]
-GROK4_TEMPERATURES = [0.0, 0.33, 0.67, 1.0]
+GROK4_TEMPERATURES = [0.0, 0.33, 0.67, 0.7, 1.0]
 
 
 def generate_triframe_manifest() -> dict:

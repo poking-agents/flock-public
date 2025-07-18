@@ -1,6 +1,6 @@
 from constants import MODELS, ANTHROPIC_THINKING_MODELS
 
-GROK4_TEMPERATURES = [0.0, 0.33, 0.67, 1.0]
+GROK4_TEMPERATURES = [0.0, 0.33, 0.67, 0.7, 1.0]
 
 
 def generate_modular_manifest() -> dict:
