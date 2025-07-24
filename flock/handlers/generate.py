@@ -45,8 +45,8 @@ def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
             "error": result.error if result.error else None,
         }
         log_file = log_dir / f"generation_{datetime.now().strftime('%Y%m%d')}.jsonl"
-        with open(log_file, "a") as f:
-            f.write(json.dumps(log_entry) + "\n")
+        #with open(log_file, "a") as f:
+        #    f.write(json.dumps(log_entry) + "\n")
     except Exception as e:
         logger.error(f"Error logging generation: {str(e)}")
 
