@@ -14,10 +14,9 @@ def setup_logger(name: str = "flock", log_level: str = "INFO") -> logging.Logger
     log_dir = Path("logs")
     log_dir.mkdir(exist_ok=True)
 
-    # File handler setup
     log_file = log_dir / f"{name}_{datetime.now().strftime('%Y%m%d')}.log"
-    file_handler = logging.FileHandler(log_file)
-    file_handler.setLevel(logging.DEBUG)  # Always log debug to file
+    file_handler = logging.NullHandler()
+    file_handler.setLevel(logging.DEBUG)
     file_format = logging.Formatter(
         "%(asctime)s [%(levelname)s] %(name)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
     )
@@ -33,7 +32,7 @@ def setup_logger(name: str = "flock", log_level: str = "INFO") -> logging.Logger
 
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
-    logger.setLevel(logging.DEBUG)  # Base logger captures everything
+    logger.setLevel(logging.DEBUG)
 
     return logger
 
