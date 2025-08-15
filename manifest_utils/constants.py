@@ -3,6 +3,7 @@ MODELS = (
     ("claude-3-7-sonnet-20250219", "c3.7s", 20_000),
     ("claude-sonnet-4-20250514", "c4s", 32_000),
     ("claude-opus-4-20250514", "c4o", 32_000),
+    ("claude-opus-4-1-20250805", "c4.1o", 32_000),
     ("fireworks/deepseek-r1", "dsr1_fireworks", 128_000),
     ("fireworks/deepseek-v3", "ds3", 128_000),
     ("gpt-4o-2024-05-13", "4o", None),
@@ -18,4 +19,5 @@ ANTHROPIC_THINKING_MODELS = (
     "claude-3-7-sonnet-20250219",
     "claude-sonnet-4-20250514",
     "claude-opus-4-20250514",
+    "claude-opus-4-1-20250805",
 )
