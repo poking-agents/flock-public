@@ -48,6 +48,18 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
+        "modular_c4.1o": {
+            "generator": {
+                "model": "claude-opus-4-1-20250805",
+                "temp": 1.0,
+                "n": 1,
+                "max_tokens": 32000,
+                "max_reasoning_tokens": 16000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
         "modular_dsr1_fireworks": {
             "generator": {
                 "model": "fireworks/deepseek-r1",
@@ -2287,6 +2299,558 @@
             "raters": [
                 {
                     "model": "claude-opus-4-20250514",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_c4.1o_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_c4.1o_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_c4.1o_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_c4.1o_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000,
@@ -9059,6 +9623,558 @@
             "raters": [
                 {
                     "model": "claude-opus-4-20250514",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_c4.1o_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_c4.1o_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_c4.1o_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_c4.1o_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_c4.1o_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "claude-opus-4-1-20250805",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000,
+                    "max_reasoning_tokens": 16000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "claude-opus-4-1-20250805",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000,
