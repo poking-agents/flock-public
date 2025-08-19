@@ -98,19 +98,17 @@ jobs:
 
       - name: Publish
         run: |-
+          set -o pipefail
+
           if git diff --quiet --exit-code -- flock requirements.txt
           then
             echo "No changes to publish"
             exit 0
           fi
 
-          uv sync --all-extras --all-groups --locked
-          source .venv/bin/activate
-
-          CURRENT_VERSION="$(bump-my-version show current_version)"
-          NEW_VERSION="$(bump-my-version show --increment patch new_version)"
-          uv version "${NEW_VERSION}"
-          git add requirements.txt pyproject.toml
+          CURRENT_VERSION="$(uv version --short)"
+          NEW_VERSION="$(uv version --bump stable --short 2>/dev/null || uv version --bump patch --short)"
+          git add requirements.txt pyproject.toml uv.lock
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git commit -m "[skip ci] Bump version: ${CURRENT_VERSION} → ${NEW_VERSION}"
