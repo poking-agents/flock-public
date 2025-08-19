@@ -87,7 +87,7 @@ jobs:
         with:
           python-version-file: pyproject.toml
 
-      - name: Install dependencies
+      - name: Update requirements.txt
         run: >-
           uv export
           --locked
@@ -109,7 +109,7 @@ jobs:
 
           CURRENT_VERSION="$(bump-my-version show current_version)"
           NEW_VERSION="$(bump-my-version show --increment patch new_version)"
-          bump-my-version bump patch
+          uv version "${NEW_VERSION}"
           git add requirements.txt pyproject.toml
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
