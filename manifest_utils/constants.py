@@ -12,6 +12,7 @@ MODELS = (
     ("gpt-4o-mini-2024-07-18", "4om", None),
     ("o1-2024-12-17", "o1", None),
     ("o3-mini-2025-01-31", "o3-mini", None),
+    ("gpt-5-2025-08-07", "gpt-5", None),
     ("together/deepseek-r1", "dsr1_together", 32_000),
 )
 
