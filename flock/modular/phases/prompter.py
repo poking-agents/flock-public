@@ -100,11 +100,11 @@ def prepare_messages(state: ModularState) -> List[Message]:
         usage_type = "tokens"
         usage_message = f"Your token usage is at {usage_fraction_with_buffer:.1%} (not counting a small emergency buffer)."
 
-        if usage_fraction_with_buffer > 0.9:
+        if usage_fraction_with_buffer > 0.95:
             usage_message += " " + textwrap.dedent("""
             Even if you're not happy with your answer, **you MUST submit now using the submit tool** to ensure you don't run out of tokens. Do NOT edit your answer further. Experience shows that if you delay, you WILL run out of tokens before you can submit, and you'll receive a score of 0. Immediately call the submit tool now!
             """.strip())
-        elif usage_fraction_with_buffer > 0.75:
+        elif usage_fraction_with_buffer > 0.8:
             usage_message += " " + textwrap.dedent("""
             You should run any last checks and prepare your final answer. When you reach 90% tokens used, you will have to submit immediately to ensure you don't run out of tokens.
             """.strip())
