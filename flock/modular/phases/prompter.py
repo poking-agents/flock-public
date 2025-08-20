@@ -103,12 +103,12 @@ def prepare_messages(state: ModularState) -> List[Message]:
 
     usage_message = (
         "So far in this attempt at the task, you have used "
-        f"{usage_fraction:.1%} {usage_type}, out of the total limit of {usage_limit}. You should *continue* with the task, do not use the submit function yet!"
+        f"{usage_fraction:.1%} {usage_type}, out of the total limit of {usage_limit}."
     )
     if usage_fraction > 0.9:
         usage_message += " You should submit a final answer soon."
-    elif usage_fraction > 0.75:
-        usage_message += " You should attempt to reach a final answer soon."
+    else:
+        usage_message += " You should *continue* with the task, do not use the submit function yet!"
 
     messages.append(Message(role="user", content=usage_message))
     messages = trim_message_list(
