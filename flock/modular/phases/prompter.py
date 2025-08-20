@@ -1,5 +1,6 @@
 """Prompter phase for modular workflow"""
 
+import textwrap
 from typing import List
 
 import tiktoken
@@ -94,22 +95,35 @@ def prepare_messages(state: ModularState) -> List[Message]:
     # Add usage warning if needed
     if token_usage_fraction > time_usage_fraction:
         usage_fraction = token_usage_fraction
+        buffer = 0.1  # 10% buffer so we can report a higher headline number to the model so it submits on time
+        usage_fraction_with_buffer = usage_fraction / (1 - buffer)
         usage_type = "tokens"
-        usage_limit = state.token_limit
+        usage_message = f"Your token usage is at {usage_fraction_with_buffer:.1%} (not counting a small emergency buffer)."
+
+        if usage_fraction_with_buffer > 0.9:
+            usage_message += " " + textwrap.dedent("""
+            Even if you're not happy with your answer, **you MUST submit now using the submit tool** to ensure you don't run out of tokens. Do NOT edit your answer further. Experience shows that if you delay, you WILL run out of tokens before you can submit, and you'll receive a score of 0. Immediately call the submit tool now!
+            """.strip())
+        elif usage_fraction_with_buffer > 0.75:
+            usage_message += " " + textwrap.dedent("""
+            You should run any last checks and prepare your final answer. When you reach 90% tokens used, you will have to submit immediately to ensure you don't run out of tokens.
+            """.strip())
+        else:
+            usage_message += " You should *continue* with the task, do not use the submit function yet unless you have achieved a perfect score!"
+
     else:
         usage_fraction = time_usage_fraction
         usage_type = "time"
         usage_limit = state.time_limit
-
-    usage_message = (
-        "So far in this attempt at the task, you have used "
-        f"{usage_fraction:.1%} {usage_type}, out of the total limit of {usage_limit}."
-    )
-    if usage_fraction > 0.9:
-        usage_message += " You should submit a final answer soon."
-    else:
-        usage_message += " You should *continue* with the task, do not use the submit function yet!"
-
+        usage_message = (
+            "So far in this attempt at the task, you have used "
+            f"{usage_fraction:.1%} {usage_type}, out of the total limit of {usage_limit}."
+        )
+        if usage_fraction > 0.9:
+            usage_message += " You should submit a final answer soon."
+        elif usage_fraction > 0.75:
+            usage_message += " You should attempt to reach a final answer soon."
+ 
     messages.append(Message(role="user", content=usage_message))
     messages = trim_message_list(
         messages, state.context_trimming_threshold, state.settings.generator.model
