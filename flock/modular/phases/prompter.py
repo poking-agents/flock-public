@@ -106,7 +106,7 @@ def prepare_messages(state: ModularState) -> List[Message]:
             """.strip())
         elif usage_fraction_with_buffer > 0.8:
             usage_message += " " + textwrap.dedent("""
-            You should run any last checks and prepare your final answer. When you reach 90% tokens used, you will have to submit immediately to ensure you don't run out of tokens.
+            You should run any last checks and prepare your final answer. When you reach 95% tokens used, you will have to submit immediately to ensure you don't run out of tokens.
             """.strip())
         else:
             usage_message += " You should *continue* with the task, do not use the submit function yet unless you have achieved a perfect score!"
