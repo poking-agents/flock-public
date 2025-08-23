@@ -72,8 +72,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref || github.ref }}
+          ref: ${{ github.ref }}
           ssh-key: ${{ secrets.DEPLOY_KEY }}
+          fetch-depth: 2
 
       - name: Install uv
         uses: astral-sh/setup-uv@f94ec6bedd8674c4426838e6b50417d36b6ab231 # v5.3.1
@@ -100,7 +101,7 @@ jobs:
         run: |-
           set -o pipefail
 
-          if git diff --quiet --exit-code -- flock requirements.txt
+          if git diff --quiet --exit-code ${{ github.ref }}~ -- flock pyproject.toml requirements.txt
           then
             echo "No changes to publish"
             exit 0
