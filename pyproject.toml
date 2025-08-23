@@ -1,6 +1,6 @@
 [project]
 name = "flock-public"
-version = "0.1.1rc1"
+version = "0.1.1rc2"
 requires-python = "~=3.11.0"
 
 dependencies = [
