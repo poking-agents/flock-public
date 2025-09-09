@@ -30,7 +30,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "allow_fallbacks": False
         }
     },
-    "openrouter/qwen/qwen-2.5-14b-instruct": {
+    "openrouter/qwen/qwen-2.5-32b-instruct": {
         "provider": {
             "order": ["DeepInfra", "Fireworks", "Together"],
             "allow_fallbacks": False
