@@ -15,7 +15,7 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b")
+QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b", "openrouter/qwen/qwen-2.5-14b-instruct", "openrouter/qwen/qwen-2.5-3b-instruct")
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/qwen/qwen-2-72b-instruct": {
@@ -25,6 +25,18 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
         }
     },
     "openrouter/qwen/qwen-2.5-72b-instruct": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
+    },
+    "openrouter/qwen/qwen-2.5-14b-instruct": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
+    },
+    "openrouter/qwen/qwen-2.5-3b-instruct": {
         "provider": {
             "order": ["DeepInfra", "Fireworks", "Together"],
             "allow_fallbacks": False
@@ -216,7 +228,7 @@ async def generate_hooks(
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
             raw_outputs = []
             settings.n = 1
-            
+
             # Use retry logic for each generate call
             retry_tasks = [
                 retry_on_404(
@@ -230,7 +242,7 @@ async def generate_hooks(
                 for _ in range(params.settings.n)
             ]
             raw_outputs = await asyncio.gather(*retry_tasks)
-            
+
             outputs = []
             for raw_output in raw_outputs:
                 outputs.extend(raw_output.outputs)
