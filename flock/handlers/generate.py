@@ -26,7 +26,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/qwen/qwen-2.5-72b-instruct": {
         "provider": {
-            "order": ["DeepInfra", "Fireworks", "Together"],
+            "order": ["DeepInfra", "Fireworks", "   "],
             "allow_fallbacks": False
         }
     },
@@ -65,7 +65,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/qwen/qwen3-8b": {
         "provider": {
-            "order": ["DeepInfra"],
+            "order": ["NovitaAI"],
             "allow_fallbacks": False
         },
         "reasoning": {
