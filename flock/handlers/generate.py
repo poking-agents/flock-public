@@ -15,7 +15,7 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b", "openrouter/qwen/qwen2.5-32b-instruct", "openrouter/qwen/qwen-2.5-7b-instruct")
+QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b", "fireworks/qwen2p5-32b-instruct", "openrouter/qwen/qwen-2.5-7b-instruct")
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/qwen/qwen-2-72b-instruct": {
@@ -25,12 +25,6 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
         }
     },
     "openrouter/qwen/qwen-2.5-72b-instruct": {
-        "provider": {
-            "order": ["DeepInfra", "Fireworks", "Together"],
-            "allow_fallbacks": False
-        }
-    },
-    "openrouter/qwen/qwen2.5-32b-instruct": {
         "provider": {
             "order": ["DeepInfra", "Fireworks", "Together"],
             "allow_fallbacks": False
