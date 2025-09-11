@@ -15,7 +15,7 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b", "fireworks/qwen2p5-32b-instruct", "openrouter/qwen/qwen-2.5-7b-instruct")
+QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b", "fireworks/qwen2p5-32b-instruct", "openrouter/qwen/qwen-2.5-7b-instruct", "openrouter/qwen/qwen3-14b", "openrouter/qwen/qwen3-8b")
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/qwen/qwen-2-72b-instruct": {
@@ -46,6 +46,24 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
         }
     },
     "openrouter/qwen/qwen3-32b": {
+        "provider": {
+            "order": ["DeepInfra"],
+            "allow_fallbacks": False
+        },
+        "reasoning": {
+            "max_tokens": 8000
+        }
+    },
+    "openrouter/qwen/qwen3-14b": {
+        "provider": {
+            "order": ["DeepInfra"],
+            "allow_fallbacks": False
+        },
+        "reasoning": {
+            "max_tokens": 8000
+        }
+    },
+    "openrouter/qwen/qwen3-8b": {
         "provider": {
             "order": ["DeepInfra"],
             "allow_fallbacks": False
