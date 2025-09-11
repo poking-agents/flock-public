@@ -65,7 +65,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/qwen/qwen3-8b": {
         "provider": {
-            "order": ["NovitaAI"],
+            "order": ["Novita"],
             "allow_fallbacks": False
         },
         "reasoning": {
