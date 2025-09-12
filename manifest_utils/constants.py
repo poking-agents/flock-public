@@ -21,4 +21,6 @@ MODELS = (
     ("openrouter/qwen/qwen3-8b", "qwen_3_8b", 8_000),
     ("openrouter/qwen/qwen-2.5-coder-32b-instruct", "qwen_2.5_coder_32b", 8_000),
     ("openrouter/meta-llama/llama-3.1-405b-instruct", "llama-3.1-405b-instruct", 16_000),
+    ("openrouter/meta-llama/llama-3.1-70b-instruct", "llama-3.1-70b-instruct", 16_000),
+    ("openrouter/meta-llama/llama-3.1-8b-instruct", "llama-3.1-8b-instruct", 16_000),
 )

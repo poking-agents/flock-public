@@ -83,6 +83,18 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "order": ["DeepInfra", "Fireworks", "Together"],
             "allow_fallbacks": False
         }
+    },
+    "openrouter/meta-llama/llama-3.1-70b-instruct": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
+    },
+    "openrouter/meta-llama/llama-3.1-8b-instruct": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
     }
 }
 
