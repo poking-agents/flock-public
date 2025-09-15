@@ -59,6 +59,12 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "order": ["DeepInfra", "Fireworks", "Together"],
             "allow_fallbacks": False
         }
+    },
+    "openrouter/openai/gpt-oss-20b": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
     }
 }
 
