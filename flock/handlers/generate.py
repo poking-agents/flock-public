@@ -14,7 +14,7 @@ from flock.type_defs.operations import GenerationOutput, GenerationParams
 from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
-REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
+REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31", "openrouter/openai/gpt-oss-120b", "openrouter/openai/gpt-oss-20b")
 QWEN_MODELS = ("openrouter/qwen/qwen-2-72b-instruct", "openrouter/qwen/qwen-2.5-72b-instruct", "openrouter/qwen/qwen3-235b-a22b")
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
