@@ -53,6 +53,12 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "order": ["DeepInfra", "Fireworks", "Together"],
             "allow_fallbacks": False
         }
+    },
+    "openrouter/openai/gpt-oss-120b": {
+        "provider": {
+            "order": ["DeepInfra", "Fireworks", "Together"],
+            "allow_fallbacks": False
+        }
     }
 }
 
@@ -216,7 +222,7 @@ async def generate_hooks(
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
             raw_outputs = []
             settings.n = 1
-            
+
             # Use retry logic for each generate call
             retry_tasks = [
                 retry_on_404(
@@ -230,7 +236,7 @@ async def generate_hooks(
                 for _ in range(params.settings.n)
             ]
             raw_outputs = await asyncio.gather(*retry_tasks)
-            
+
             outputs = []
             for raw_output in raw_outputs:
                 outputs.extend(raw_output.outputs)
