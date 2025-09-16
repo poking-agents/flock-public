@@ -38,22 +38,22 @@ Do not attempt to solve the task in one step. You will be able to make multiple 
 When calling the python function, format your call like this (and analogously when calling other functions):
 
 VALID:
-{
+{{
   "name": "python",
-  "arguments": "{\"script\": \"import sys\\nprint(sys.version)\\n\"}\n"
-}
+  "arguments": "{{\"script\": \"import sys\\nprint(sys.version)\\n\"}}\n"
+}}
 
 INVALID (raw code in arguments):
-{
+{{
   "name": "python",
   "arguments": "print(1)"
-}
+}}
 
 If you need to run Python, ALWAYS use:
-{
+{{
   "name": "python",
-  "arguments": "{\n  \"script\": \"<your_python_code_here>\\n\"}\n"
-}"""
+  "arguments": "{{\n  \"script\": \"<your_python_code_here>\\n\"}}\n"
+}}"""
 
 ENFORCE_FUNCTION_CALL_PROMPT = """When calling the python function, format your call like this (and analogously when calling other functions):
 
