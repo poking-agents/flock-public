@@ -40,7 +40,7 @@ When calling the python function, format your call like this (and analogously wh
 VALID:
 {{
   "name": "python",
-  "arguments": "{{\"script\": \"import sys\\nprint(sys.version)\\n\"}}\n"
+  "arguments": "{{\\n  \\"script\\": \\"import sys\\\\nprint(sys.version)\\\\n\\"}}\\n"
 }}
 
 INVALID (raw code in arguments):
@@ -52,7 +52,7 @@ INVALID (raw code in arguments):
 If you need to run Python, ALWAYS use:
 {{
   "name": "python",
-  "arguments": "{{\n  \"script\": \"<your_python_code_here>\\n\"}}\n"
+  "arguments": "{{\\n  \\"script\\": \\"<your_python_code_here>\\\\n\\"}}\\n"
 }}"""
 
 ENFORCE_FUNCTION_CALL_PROMPT = """When calling the python function, format your call like this (and analogously when calling other functions):
