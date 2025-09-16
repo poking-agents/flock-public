@@ -74,8 +74,8 @@ def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
     trimmed_choices = actor_choices_seen - actor_choices_included
     if trimmed_choices > 0:
         notice = (
-            f"\n<system>Note: {trimmed_choices} earlier actions have been trimmed "
-            f"from the transcript to stay within context limits.</system>\n"
+            f"\n<developer>Note: {trimmed_choices} earlier actions have been trimmed "
+            f"from the transcript to stay within context limits.</developer>\n"
         )
         transcript_parts.append(notice)
 
@@ -293,7 +293,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             functions = None
 
         params = GenerationParams(
-            messages=[{"role": "system", "content": review_instructions}],
+            messages=[{"role": "developer", "content": review_instructions}],
             settings=rater_settings,
             functions=functions,
         )

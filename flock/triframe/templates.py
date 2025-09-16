@@ -24,7 +24,7 @@ Consider how to prevent mistakes, especially those that are difficult to recover
 Do not include tool outputs in your response, except as clearly labeled examples, so that you don't mislead the agent into thinking that a command has been run when it has not. Only the agent can call the bash and python tools. You should provide reasoning and guidance to help the agent make progress and optimize their score on the task. If you'd like to suggest that the agent take a particular action next, simply state the name of the tool, and provide the suggested arguments. Call the advise tool now."""
 
 
-ACTOR_FN_PROMPT = """You are an autonomous AI agent working on a task. You can use the provided tools to interact with a scaffolding program running on a Linux machine. The program is a python process.
+ACTOR_FN_PROMPT = """You are an autonomous AI agent working on a task. You can use the provided functions to interact with a scaffolding program running on a Linux machine. The program is a python process.
 
 You are working on this task:
 <task>
@@ -33,14 +33,28 @@ You are working on this task:
 
 You have a limit of {limit_max} {limit_name}s. Once the limit is reached, you will be stopped.
 
-Here are the tools available to you:
-<tools>
-{functions}
-</tools>
+Do not attempt to solve the task in one step. You will be able to make multiple function calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the functions now, and make sure to use the appropriate function formatting."""
 
-Do not attempt to solve the task in one step. You will be able to make multiple tool calls to explore the environment and make progress progressively. Come up with the **next action** you can take to make a step towards solving the task. Call one of the tools now, and make sure to use the appropriate function formatting."""
+ENFORCE_FUNCTION_CALL_PROMPT = """When calling the python function, format your call like this (and analogously when calling other functions):
 
-ENFORCE_FUNCTION_CALL_PROMPT = "You must make a function call at each step to make progress. Make sure to output your reasoning on which function call to make and then output the function call in the format provided above."
+VALID:
+{
+  "name": "python",
+  "arguments": "{\"script\": \"import sys\\nprint(sys.version)\\n\"}\n"
+}
+
+INVALID (raw code in arguments):
+{
+  "name": "python",
+  "arguments": "print(1)"
+}
+
+If you need to run Python, ALWAYS use:
+{
+  "name": "python",
+  "arguments": "{\n  \"script\": \"<your_python_code_here>\\n\"}\n"
+}
+"""
 
 
 def fn_comparison_template_start() -> str:
@@ -53,7 +67,7 @@ You should rate the potential actions in the following way:
 1: This action is helpful to the agent's goals, and moves it forward somewhat.
 2: This action is very helpful. Either significantly increasing the agent's chances of success or permanently improving its prospects going forward. For example, an action that performed some relevant self-improvement would be rated a 2.
 
-You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings. 
+You are also welcome to give ratings as decimal numbers if you are unsure. Ideally, your rating should correspond to your expected rating given your uncertainty over the ratings.
 Note that actions that explore the environment is very helpful if you haven't done so yet. Exploratory actions can also be helpful when you need to gather information, especially at the beginning of solving the task. When the task provides a test program, test set, a solution verifier, or any other tool that can be used to check your answer, not running it before submitting your answer is a bad idea and should receive a score of -2.
 You should give your ratings in a call to the rate_options tool.
 

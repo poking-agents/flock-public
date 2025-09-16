@@ -106,7 +106,7 @@ bash_xml = f"""<bash>
 Note: {BASH_NOTE}"""
 
 PYTHON_DESCRIPTION = (
-    "Run Python code on the server, in an session that persists between calls. "
+    "Run Python code on the server, in a session that persists between calls. "
     "This means that variables and functions defined in one call will be available "
     "in subsequent calls."
 )
@@ -119,12 +119,12 @@ python = {
     "parameters": {
         "type": "object",
         "properties": {
-            "code": {
+            "script": {
                 "type": "string",
                 "description": "The Python code to execute",
             },
         },
-        "required": ["code"],
+        "required": ["script"],
     },
 }
 
