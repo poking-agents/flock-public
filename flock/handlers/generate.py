@@ -80,19 +80,19 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/meta-llama/llama-3.1-405b-instruct": {
         "provider": {
-            "order": ["DeepInfra", "Fireworks", "Together"],
+            "order": ["DeepInfra", "Fireworks"],
             "allow_fallbacks": False
         }
     },
     "openrouter/meta-llama/llama-3.1-70b-instruct": {
         "provider": {
-            "order": ["DeepInfra", "Fireworks", "Together"],
+            "order": ["DeepInfra", "Fireworks"],
             "allow_fallbacks": False
         }
     },
     "openrouter/meta-llama/llama-3.1-8b-instruct": {
         "provider": {
-            "order": ["DeepInfra", "Fireworks", "Together"],
+            "order": ["DeepInfra", "Fireworks"],
             "allow_fallbacks": False
         }
     }
