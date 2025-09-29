@@ -116,7 +116,7 @@ class BashResult(BaseOperationResult[BashOutput]):
 
 
 class PythonParams(BaseModel):
-    code: str
+    script: str
     timeout: Optional[int] = None
 
 

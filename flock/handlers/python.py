@@ -11,7 +11,7 @@ async def python_middleman(params: PythonParams, deps: Optional[dict]) -> Python
     """Python handler for middleman mode"""
     simulator = deps["simulator"]
     try:
-        result = await simulator["simulate_command"](simulator, params.code, "python")
+        result = await simulator["simulate_command"](simulator, params.script, "python")
         if isinstance(result, dict):
             return PythonOutput(
                 output=str(result.get("output", "")), error=result.get("error")
@@ -27,12 +27,12 @@ async def python_hooks(params: PythonParams, deps: Optional[dict]) -> PythonOutp
 
     action_data = {
         "type": "python",
-        "args": {"code": params.code},
+        "args": {"script": params.script},
     }
     await hooks_client.action(action_data)
 
     # Execute the Python code
-    result = await hooks_client.run_python(params.code, params.timeout)
+    result = await hooks_client.run_python(params.script, params.timeout)
     return PythonOutput(output=result, error=None)
 
 

@@ -243,7 +243,7 @@ rate_options_json = """```json
 ```"""
 
 STANDARD_FUNCTION_VALIDATIONS = {
-    "python": ("code", str),
+    "python": ("script", str),
     "bash": ("command", str),
     "submit": ("answer", str),
     "set_timeout": ("timeout", int),
@@ -575,7 +575,7 @@ def create_standard_tool_operation(
     elif tool_name == "python":
         return PythonRequest(
             type="python",
-            params=PythonParams(code=tool_args["code"], timeout=tool_timeout),
+            params=PythonParams(script=tool_args["script"], timeout=tool_timeout),
             metadata=metadata,
         )
     elif tool_name == "score":
