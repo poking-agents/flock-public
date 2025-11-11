@@ -18,5 +18,8 @@ MODELS = (
     ("openrouter/qwen/qwen-2.5-coder-32b-instruct", "qwen_2.5_coder_32b", 8_000),
     ("openrouter/openai/gpt-oss-120b", "gpt_oss_120b", 32_000),
     ("openrouter/openai/gpt-oss-20b", "gpt_oss_20b", 32_000),
-    ("fireworks/kimi-k2-thinking", "kimi_k2_thinking", 32_000),
+    ("fireworks/kimi-k2-thinking", "fireworks_kimi_k2_thinking", 32_000),
+    ("openrouter/moonshotai/kimi-k2-thinking", "openrouter_moonshotai_kimi_k2_thinking", 32_000),
+    ("openrouter/novita/kimi-k2-thinking", "openrouter_novita_kimi_k2_thinking", 32_000),
+    ("openrouter/parasail/kimi-k2-thinking", "openrouter_parasail_kimi_k2_thinking", 32_000),
 )

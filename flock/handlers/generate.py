@@ -66,6 +66,24 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "allow_fallbacks": False
         }
     },
+    "openrouter/moonshotai/kimi-k2-thinking": {
+        "provider": {
+            "order": ["moonshotai"],
+            "allow_fallbacks": False
+        }
+    },
+    "openrouter/novita/kimi-k2-thinking": {
+        "provider": {
+            "order": ["novita"],
+            "allow_fallbacks": False
+        }
+    },
+    "openrouter/parasail/kimi-k2-thinking": {
+        "provider": {
+            "order": ["parasail"],
+            "allow_fallbacks": False
+        }
+    },
 }
 
 async def retry_on_404(func, *args, max_retries: int = 5, delay: float = 5.0, **kwargs):
