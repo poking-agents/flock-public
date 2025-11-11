@@ -207,7 +207,7 @@
         },
         "modular_kimi_k2_thinking": {
             "generator": {
-                "model": "openrouter/moonshotai/kimi-k2-thinking",
+                "model": "fireworks/kimi-k2-thinking",
                 "temp": 1.0,
                 "n": 1,
                 "max_tokens": 32000
@@ -9843,7 +9843,7 @@
         "triframe_kimi_k2_thinking_aird_1_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9851,7 +9851,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9859,7 +9859,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9874,7 +9874,7 @@
         "triframe_kimi_k2_thinking_aird_1_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9882,7 +9882,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -9890,7 +9890,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9905,7 +9905,7 @@
         "triframe_kimi_k2_thinking_aird_1_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9913,7 +9913,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -9921,7 +9921,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9936,7 +9936,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9944,7 +9944,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9952,7 +9952,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -9967,7 +9967,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -9975,7 +9975,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -9983,7 +9983,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -9998,7 +9998,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10006,7 +10006,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10014,7 +10014,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10029,7 +10029,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10037,7 +10037,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10045,7 +10045,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10062,7 +10062,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10070,7 +10070,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10078,7 +10078,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10095,7 +10095,7 @@
         "triframe_kimi_k2_thinking_1_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10103,7 +10103,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10111,7 +10111,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10126,7 +10126,7 @@
         "triframe_kimi_k2_thinking_1_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10134,7 +10134,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10142,7 +10142,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10157,7 +10157,7 @@
         "triframe_kimi_k2_thinking_1_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10165,7 +10165,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10173,7 +10173,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10188,7 +10188,7 @@
         "triframe_kimi_k2_thinking_2_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10196,7 +10196,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10204,7 +10204,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10219,7 +10219,7 @@
         "triframe_kimi_k2_thinking_2_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10227,7 +10227,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10235,7 +10235,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10250,7 +10250,7 @@
         "triframe_kimi_k2_thinking_2_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10258,7 +10258,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10266,7 +10266,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10281,7 +10281,7 @@
         "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10289,7 +10289,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10297,7 +10297,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -10314,7 +10314,7 @@
         "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -10322,7 +10322,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -10330,7 +10330,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20047,7 +20047,7 @@
         "triframe_kimi_k2_thinking_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20055,7 +20055,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20063,7 +20063,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20078,7 +20078,7 @@
         "triframe_kimi_k2_thinking_aird_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20086,7 +20086,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20094,7 +20094,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20109,7 +20109,7 @@
         "triframe_kimi_k2_thinking_aird_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20117,7 +20117,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20125,7 +20125,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20140,7 +20140,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20148,7 +20148,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20156,7 +20156,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20171,7 +20171,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20179,7 +20179,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20187,7 +20187,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20202,7 +20202,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20210,7 +20210,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20218,7 +20218,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20233,7 +20233,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20241,7 +20241,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20249,7 +20249,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20266,7 +20266,7 @@
         "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20274,7 +20274,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20282,7 +20282,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20299,7 +20299,7 @@
         "triframe_kimi_k2_thinking_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20307,7 +20307,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20315,7 +20315,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20330,7 +20330,7 @@
         "triframe_kimi_k2_thinking_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20338,7 +20338,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20346,7 +20346,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20361,7 +20361,7 @@
         "triframe_kimi_k2_thinking_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20369,7 +20369,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20377,7 +20377,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20392,7 +20392,7 @@
         "triframe_kimi_k2_thinking_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20400,7 +20400,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20408,7 +20408,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20423,7 +20423,7 @@
         "triframe_kimi_k2_thinking_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20431,7 +20431,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20439,7 +20439,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20454,7 +20454,7 @@
         "triframe_kimi_k2_thinking_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20462,7 +20462,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20470,7 +20470,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20485,7 +20485,7 @@
         "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20493,7 +20493,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20501,7 +20501,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -20518,7 +20518,7 @@
         "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 32000
@@ -20526,7 +20526,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 32000
@@ -20534,7 +20534,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/moonshotai/kimi-k2-thinking",
+                    "model": "fireworks/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
