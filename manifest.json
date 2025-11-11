@@ -205,6 +205,17 @@
             "intermediate_scoring": false,
             "workflow_type": "modular"
         },
+        "modular_kimi_k2_thinking": {
+            "generator": {
+                "model": "openrouter/kimi-k2-thinking",
+                "temp": 1.0,
+                "n": 1,
+                "max_tokens": 32000
+            },
+            "limit_type": "time",
+            "intermediate_scoring": false,
+            "workflow_type": "modular"
+        },
         "triframe_c3.6s_aird_1_rater_1_actor": {
             "advisors": [
                 {
@@ -9816,6 +9827,510 @@
             "raters": [
                 {
                     "model": "openrouter/openai/gpt-oss-20b",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_kimi_k2_thinking_aird_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_kimi_k2_thinking_1_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_1_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_1_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_1_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_2_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_3_actor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_backticks": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": true,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_xml": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000
@@ -19516,6 +20031,510 @@
             "raters": [
                 {
                     "model": "openrouter/openai/gpt-oss-20b",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_kimi_k2_thinking_aird_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_kimi_k2_thinking_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "time",
+            "intermediate_scoring": true,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": true
+        },
+        "triframe_kimi_k2_thinking_1_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_1_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_1_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 0.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_1_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_2_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_3_actor_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe"
+        },
+        "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_backticks_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 2,
+                    "max_tokens": 32000
+                }
+            ],
+            "limit_type": "token",
+            "intermediate_scoring": false,
+            "require_function_call": false,
+            "enable_advising": false,
+            "workflow_type": "triframe",
+            "enable_tool_use": false,
+            "enable_xml": false
+        },
+        "triframe_kimi_k2_thinking_2_rater_3_actor_no_tools_xml_no_advisor": {
+            "advisors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 1,
+                    "max_tokens": 32000
+                }
+            ],
+            "actors": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
+                    "temp": 1.0,
+                    "n": 3,
+                    "max_tokens": 32000
+                }
+            ],
+            "raters": [
+                {
+                    "model": "openrouter/kimi-k2-thinking",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 32000

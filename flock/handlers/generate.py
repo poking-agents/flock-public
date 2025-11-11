@@ -65,7 +65,13 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "order": ["DeepInfra", "Fireworks"],
             "allow_fallbacks": False
         }
-    }
+    },
+    "openrouter/kimi-k2-thinking": {
+        "provider": {
+            "order": ["moonshotai"],
+            "allow_fallbacks": False
+        }
+    },
 }
 
 
