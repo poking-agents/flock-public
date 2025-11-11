@@ -68,7 +68,7 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     },
     "openrouter/moonshotai/kimi-k2-thinking": {
         "provider": {
-            "order": ["novita"],
+            "order": ["parasail"],
             "allow_fallbacks": False
         }
     },
