@@ -21,6 +21,4 @@ MODELS = (
     ("fireworks/kimi-k2-thinking", "fireworks_kimi_k2_thinking", 32_000),
     ("together/moonshotai/Kimi-K2-Thinking", "together_moonshotai_kimi_k2_thinking", 32_000),
     ("openrouter/moonshotai/kimi-k2-thinking", "openrouter_moonshotai_kimi_k2_thinking", 32_000),
-    ("openrouter/novita/kimi-k2-thinking", "openrouter_novita_kimi_k2_thinking", 32_000),
-    ("openrouter/parasail/kimi-k2-thinking", "openrouter_parasail_kimi_k2_thinking", 32_000),
 )
