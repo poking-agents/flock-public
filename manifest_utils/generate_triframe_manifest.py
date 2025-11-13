@@ -19,49 +19,51 @@ def generate_triframe_manifest() -> dict:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    pack_name = "".join(
-                        [
-                            f"triframe_{model_short}",
-                            "_aird" if aird else "",
-                            f"_{n_raters}_rater_{n_actors}_actor",
-                        ]
-                    )
-                    settings_packs[pack_name] = {
-                        "advisors": [
-                            {
-                                "model": model,
-                                "temp": MODEL_TEMPS.get(model_short, 1.0),
-                                "n": 1,
-                                "max_tokens": max_tokens,
-                            }
-                        ],
-                        "actors": [
-                            {
-                                "model": model,
-                                "temp": MODEL_TEMPS.get(model_short, 1.0),
-                                "n": n_actors,
-                                "max_tokens": max_tokens,
-                            }
-                        ],
-                        "raters": [
-                            {
-                                "model": model,
-                                "temp": 1.0 if n_raters > 1 else 0.0,
-                                "n": n_raters,
-                                "max_tokens": max_tokens,
-                            }
-                        ],
-                        "limit_type": "time" if aird else "token",
-                        "intermediate_scoring": aird,
-                        "require_function_call": False,
-                        "enable_advising": True,
-                        "workflow_type": "triframe",
-                    }
-                    if model_short == "c3.7s":
-                        for generator in ["advisors", "actors", "raters"]:
-                            settings_packs[pack_name][generator][0][
-                                "max_reasoning_tokens"
-                            ] = max_tokens // 2
+                    for require_function_call in [True, False]:
+                        pack_name = "".join(
+                            [
+                                f"triframe_{model_short}",
+                                "_aird" if aird else "",
+                                f"_{n_raters}_rater_{n_actors}_actor",
+                                "_require_function_call" if require_function_call else "",
+                            ]
+                        )
+                        settings_packs[pack_name] = {
+                            "advisors": [
+                                {
+                                    "model": model,
+                                    "temp": MODEL_TEMPS.get(model_short, 1.0),
+                                    "n": 1,
+                                    "max_tokens": max_tokens,
+                                }
+                            ],
+                            "actors": [
+                                {
+                                    "model": model,
+                                    "temp": MODEL_TEMPS.get(model_short, 1.0),
+                                    "n": n_actors,
+                                    "max_tokens": max_tokens,
+                                }
+                            ],
+                            "raters": [
+                                {
+                                    "model": model,
+                                    "temp": 1.0 if n_raters > 1 else 0.0,
+                                    "n": n_raters,
+                                    "max_tokens": max_tokens,
+                                }
+                            ],
+                            "limit_type": "time" if aird else "token",
+                            "intermediate_scoring": aird,
+                            "require_function_call": require_function_call,
+                            "enable_advising": True,
+                            "workflow_type": "triframe",
+                        }
+                        if model_short == "c3.7s":
+                            for generator in ["advisors", "actors", "raters"]:
+                                settings_packs[pack_name][generator][0][
+                                    "max_reasoning_tokens"
+                                ] = max_tokens // 2
             # Add no-tool variant
             settings_packs[f"{pack_name}_no_tools_backticks"] = {
                 **settings_packs[pack_name],
