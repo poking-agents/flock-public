@@ -287,7 +287,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         if state.settings.enable_tool_use:
             functions = [get_rating_function()]
             if state.settings.require_function_call:
-                rater_settings.function_call = {"name": "rate_options"}
+                # TODO TERRIBLE HACK HERE
+                pass # rater_settings.function_call = {"name": "rate_options"}
 
         else:
             functions = None

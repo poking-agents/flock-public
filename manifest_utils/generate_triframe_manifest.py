@@ -19,13 +19,13 @@ def generate_triframe_manifest() -> dict:
         for aird in AIRD:
             for n_raters in [1, 2]:
                 for n_actors in [1, 2, 3]:
-                    for require_function_call in [True, False]:
+                    for require_advisor_function_call in [True, False]:
                         pack_name = "".join(
                             [
                                 f"triframe_{model_short}",
                                 "_aird" if aird else "",
                                 f"_{n_raters}_rater_{n_actors}_actor",
-                                "_require_function_call" if require_function_call else "",
+                                "_require_advisor_function_call" if require_advisor_function_call else "",
                             ]
                         )
                         settings_packs[pack_name] = {
@@ -55,7 +55,7 @@ def generate_triframe_manifest() -> dict:
                             ],
                             "limit_type": "time" if aird else "token",
                             "intermediate_scoring": aird,
-                            "require_function_call": require_function_call,
+                            "require_function_call": require_advisor_function_call,
                             "enable_advising": True,
                             "workflow_type": "triframe",
                         }
