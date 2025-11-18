@@ -4,7 +4,7 @@ import asyncio
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict, Any
 
 import aiohttp
 
@@ -15,6 +15,22 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
+GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview", "openrouter/google/gemini-3-pro-preview")
+
+MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
+    "openrouter/google/gemini-2.5-pro-preview": {
+        "provider": {
+            "order": ["Vertex"],
+            "allow_fallbacks": False
+        }
+    },
+    "openrouter/google/gemini-3-pro-preview": {
+        "provider": {
+            "order": ["Vertex"],
+            "allow_fallbacks": False
+        }
+    }
+}
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -57,6 +73,12 @@ async def generate_middleman(
     """Generate handler for middleman mode"""
     post_completion = deps["post_completion"]
     try:
+        # Apply extra parameters if model has them
+        model_params = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
+        if model_params:
+            params = params.model_copy(update={"extraParameters": model_params})
+            logger.info(f"Applied extra parameters for model {params.settings.model}: {model_params}")
+
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
             raw_outputs = await asyncio.gather(
@@ -68,6 +90,7 @@ async def generate_middleman(
                         n=1,
                         function_call=params.settings.function_call,
                         functions=params.functions,
+                        extra_parameters=params.extraParameters
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -105,6 +128,7 @@ async def generate_middleman(
                 n=params.settings.n,
                 function_call=params.settings.function_call,
                 functions=params.functions,
+                extra_parameters=params.extraParameters
             )
             if raw_output.get("error"):
                 error_output = GenerationOutput(
@@ -135,6 +159,11 @@ async def generate_hooks(
     if settings.model in REASONING_EFFORT_MODELS:
         settings.reasoning_effort = "high"
 
+    # Apply extra parameters if model has them
+    extra_params = MODEL_EXTRA_PARAMETERS.get(settings.model, {})
+    if extra_params:
+        logger.info(f"Applied extra parameters for model {settings.model}: {extra_params}")
+
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
         if settings.model in SINGLE_GENERATION_MODELS and settings.n > 1:
@@ -147,6 +176,7 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
+                        extraParameters=extra_params
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -173,6 +203,7 @@ async def generate_hooks(
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
+                extraParameters=extra_params
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)
