@@ -20,13 +20,13 @@ GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview", "openrouter/google/
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/google/gemini-2.5-pro-preview": {
         "provider": {
-            "order": ["Vertex"],
+            "order": ["Google Vertex"],
             "allow_fallbacks": False
         }
     },
     "openrouter/google/gemini-3-pro-preview": {
         "provider": {
-            "order": ["Vertex"],
+            "order": ["Google Vertex"],
             "allow_fallbacks": False
         }
     }
