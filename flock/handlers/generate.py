@@ -15,7 +15,7 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview")
+GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview",)
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/google/gemini-2.5-pro-preview": {
@@ -25,6 +25,78 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
         }
     },
 }
+
+
+def _deep_merge_dicts(
+    base: Optional[Dict[str, Any]], override: Optional[Dict[str, Any]]
+) -> Dict[str, Any]:
+    """Recursively merge two dictionaries without mutating inputs."""
+    result: Dict[str, Any] = {}
+    if base:
+        for key, value in base.items():
+            if isinstance(value, dict):
+                result[key] = _deep_merge_dicts(value, None)
+            else:
+                result[key] = value
+    if override:
+        for key, value in override.items():
+            if (
+                key in result
+                and isinstance(result[key], dict)
+                and isinstance(value, dict)
+            ):
+                result[key] = _deep_merge_dicts(result[key], value)
+            else:
+                result[key] = value
+    return result
+
+
+def _extract_reasoning_config(params: GenerationParams) -> Optional[Dict[str, Any]]:
+    """Build reasoning configuration based on settings and defaults."""
+    settings = params.settings
+    settings_data: Dict[str, Any] = {}
+    if hasattr(settings, "model_dump"):
+        try:
+            settings_data = settings.model_dump()
+        except Exception:  # pragma: no cover - defensive guard
+            settings_data = {}
+    reasoning_from_settings = settings_data.get("reasoning")
+    if isinstance(reasoning_from_settings, dict) and reasoning_from_settings:
+        return reasoning_from_settings
+
+    reasoning: Dict[str, Any] = {}
+    max_reasoning_tokens = settings_data.get("max_reasoning_tokens")
+    reasoning_effort = settings_data.get("reasoning_effort")
+
+    if max_reasoning_tokens:
+        reasoning["max_tokens"] = max_reasoning_tokens
+    elif reasoning_effort:
+        reasoning["effort"] = reasoning_effort
+
+    if not reasoning and params.settings.model in REASONING_EFFORT_MODELS:
+        reasoning["effort"] = "high"
+
+    return reasoning or None
+
+
+def resolve_extra_parameters(params: GenerationParams) -> Optional[Dict[str, Any]]:
+    """
+    Merge existing extra parameters with model-specific overrides and derived reasoning configuration.
+    """
+    base_extra = params.extraParameters or {}
+    model_extra = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
+    merged = _deep_merge_dicts(model_extra, base_extra)
+
+    if not isinstance(merged, dict):
+        merged = {}
+
+    existing_reasoning = merged.get("reasoning")
+    if not isinstance(existing_reasoning, dict) or not existing_reasoning:
+        reasoning_config = _extract_reasoning_config(params)
+        if reasoning_config:
+            merged["reasoning"] = reasoning_config
+
+    return merged or None
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -67,11 +139,12 @@ async def generate_middleman(
     """Generate handler for middleman mode"""
     post_completion = deps["post_completion"]
     try:
-        # Apply extra parameters if model has them
-        model_params = MODEL_EXTRA_PARAMETERS.get(params.settings.model, {})
-        if model_params:
-            params = params.model_copy(update={"extraParameters": model_params})
-            logger.info(f"Applied extra parameters for model {params.settings.model}: {model_params}")
+        resolved_extra = resolve_extra_parameters(params)
+        if resolved_extra is not None:
+            params = params.model_copy(update={"extraParameters": resolved_extra})
+            logger.info(
+                f"Applied extra parameters for model {params.settings.model}: {resolved_extra}"
+            )
 
         processed_messages = params.messages
         if params.settings.model in SINGLE_GENERATION_MODELS and params.settings.n > 1:
@@ -149,14 +222,13 @@ async def generate_hooks(
     """Generate handler for hooks mode"""
     hooks_client = deps["hooks_client"]
     processed_messages = params.messages
+    resolved_extra = resolve_extra_parameters(params)
+    if resolved_extra is not None:
+        params = params.model_copy(update={"extraParameters": resolved_extra})
+        logger.info(
+            f"Applied extra parameters for model {params.settings.model}: {resolved_extra}"
+        )
     settings = params.settings.copy()
-    if settings.model in REASONING_EFFORT_MODELS:
-        settings.reasoning_effort = "high"
-
-    # Apply extra parameters if model has them
-    extra_params = MODEL_EXTRA_PARAMETERS.get(settings.model, {})
-    if extra_params:
-        logger.info(f"Applied extra parameters for model {settings.model}: {extra_params}")
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
@@ -170,7 +242,7 @@ async def generate_hooks(
                         messages=processed_messages,
                         functions=params.functions,
                         session=session,
-                        extraParameters=extra_params
+                        extraParameters=params.extraParameters
                     )
                     for _ in range(params.settings.n)
                 ]
@@ -197,7 +269,7 @@ async def generate_hooks(
                 messages=processed_messages,
                 functions=params.functions,
                 session=session,
-                extraParameters=extra_params
+                extraParameters=params.extraParameters
             )
             output = GenerationOutput(**result.dict())
             log_generation(params, output)
