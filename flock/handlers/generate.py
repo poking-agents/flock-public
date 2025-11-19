@@ -15,7 +15,7 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview", "openrouter/google/gemini-3-pro-preview")
+GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview")
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/google/gemini-2.5-pro-preview": {
@@ -24,12 +24,6 @@ MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
             "allow_fallbacks": False
         }
     },
-    "openrouter/google/gemini-3-pro-preview": {
-        "provider": {
-            "order": ["Google Vertex"],
-            "allow_fallbacks": False
-        }
-    }
 }
 
 
