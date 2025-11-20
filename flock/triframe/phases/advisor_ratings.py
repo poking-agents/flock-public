@@ -29,7 +29,12 @@ from flock.utils.functions import (
     parse_completions_function_call,
 )
 from flock.utils.logging import log_system, log_warning
-from flock.utils.phase_utils import get_thinking_blocks, run_phase
+from flock.utils.phase_utils import (
+    get_content_blocks,
+    get_reasoning_details,
+    get_thinking_blocks,
+    run_phase,
+)
 
 
 def form_transcript(state: triframeState, actor_options: List[Option]) -> str:
@@ -193,6 +198,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
             # Handle regular function-call outputs
             for output in result.result.outputs:
                 thinking_blocks = get_thinking_blocks(output)
+                content_blocks = get_content_blocks(output)
+                reasoning_details = get_reasoning_details(output)
                 if state.settings.enable_tool_use:
                     actor_options.append(
                         Option(
@@ -203,6 +210,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                                 else None
                             ),
                             thinking_blocks=thinking_blocks,
+                            content_blocks=content_blocks,
+                            reasoning_details=reasoning_details,
                         )
                     )
                 else:
@@ -221,6 +230,8 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                             content=output.completion,
                             function_call=function_call,
                             thinking_blocks=thinking_blocks,
+                            content_blocks=content_blocks,
+                            reasoning_details=reasoning_details,
                         ),
                     )
 

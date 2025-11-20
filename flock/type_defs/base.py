@@ -8,6 +8,7 @@ class Message(BaseModel):
     content: str | List[Dict[str, Any]]
     name: Optional[str] = None
     function_call: Optional[Dict] = None
+    reasoning_details: Optional[List[Dict[str, Any]]] = None
 
 
 class VisibleThinkingBlock(BaseModel):
@@ -36,6 +37,14 @@ class Option(BaseModel):
     )
     thinking_blocks: List[ThinkingBlock] = Field(
         default_factory=list, description="Optional thinking blocks"
+    )
+    content_blocks: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="Raw content blocks returned by reasoning-capable models",
+    )
+    reasoning_details: Optional[List[Dict[str, Any]]] = Field(
+        default=None,
+        description="Reasoning metadata returned by reasoning-capable models",
     )
 
 
