@@ -326,30 +326,92 @@ def add_usage_request(
     return [*operations, usage_request]
 
 
-def get_content_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
-    if not output.extra_outputs:
-        return []
-    content_blocks = output.extra_outputs.get("content_blocks")
-    if isinstance(content_blocks, list):
-        return content_blocks
+def _normalize_extra_outputs(extra_outputs: Any) -> Dict[str, Any]:
+    if not extra_outputs:
+        return {}
+    if isinstance(extra_outputs, dict):
+        return extra_outputs
+    if isinstance(extra_outputs, str):
+        try:
+            return json.loads(extra_outputs)
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+
+def _extract_candidate(extra: Dict[str, Any]) -> Dict[str, Any] | None:
+    candidates = extra.get("candidates")
+    if isinstance(candidates, list) and candidates:
+        candidate = candidates[0]
+        if isinstance(candidate, dict):
+            return candidate
+    return None
+
+
+def _extract_content_blocks(extra: Dict[str, Any]) -> List[Dict[str, Any]]:
+    if "content_blocks" in extra and isinstance(extra["content_blocks"], list):
+        return extra["content_blocks"]
+
+    message = extra.get("message")
+    if isinstance(message, dict):
+        content_blocks = message.get("content_blocks") or message.get("content")
+        if isinstance(content_blocks, list):
+            return content_blocks
+
+    candidate = _extract_candidate(extra)
+    if candidate:
+        content = candidate.get("content")
+        if isinstance(content, dict):
+            parts = content.get("parts")
+            if isinstance(parts, list):
+                return parts
+        elif isinstance(content, list):
+            return content
     return []
+
+
+def get_content_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
+    extra = _normalize_extra_outputs(output.extra_outputs)
+    return _extract_content_blocks(extra)
 
 
 def get_thinking_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
     content_blocks = get_content_blocks(output)
-    return [
-        block
-        for block in content_blocks
-        if block.get("type") in ("thinking", "redacted_thinking")
-    ]
+    thinking_blocks: List[Dict[str, Any]] = []
+    for block in content_blocks:
+        block_type = block.get("type")
+        if block_type in ("thinking", "redacted_thinking"):
+            thinking_blocks.append(block)
+        elif "thought" in block and isinstance(block["thought"], dict):
+            thinking_blocks.append(block["thought"])
+    return thinking_blocks
 
 
 def get_reasoning_details(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
-    if not output.extra_outputs:
+    extra = _normalize_extra_outputs(output.extra_outputs)
+    if not extra:
         return []
-    reasoning_details = output.extra_outputs.get("reasoning_details")
+
+    reasoning_details = extra.get("reasoning_details")
     if isinstance(reasoning_details, list):
         return reasoning_details
+
+    message = extra.get("message")
+    if isinstance(message, dict):
+        details = message.get("reasoning_details")
+        if isinstance(details, list):
+            return details
+
+    candidate = _extract_candidate(extra)
+    if candidate:
+        candidate_reasoning = candidate.get("reasoning_details")
+        if isinstance(candidate_reasoning, list):
+            return candidate_reasoning
+        reasoning = candidate.get("reasoning")
+        if isinstance(reasoning, dict):
+            details = reasoning.get("details") or reasoning.get("content")
+            if isinstance(details, list):
+                return details
     return []
 
 
