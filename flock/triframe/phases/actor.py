@@ -28,8 +28,6 @@ from flock.utils.phase_utils import (
     add_dummy_user_message,
     add_usage_request,
     append_thinking_blocks_to_messages,
-    get_content_blocks,
-    get_reasoning_details,
     get_thinking_blocks,
     run_phase,
 )
@@ -78,14 +76,10 @@ def prepare_history_for_actor(
                 )
             elif node.source == "actor_choice":
                 if state.settings.enable_tool_use:
-                    content_value = option.content_blocks or non_empty_option_content(
-                        option
-                    )
                     message = Message(
-                        content=content_value,
+                        content=non_empty_option_content(option),
                         function_call=option.function_call,
                         role="assistant",
-                        reasoning_details=option.reasoning_details,
                     )
                 else:
                     message = Message(
@@ -93,7 +87,6 @@ def prepare_history_for_actor(
                             state, option.function_call, option.content
                         ),
                         role="assistant",
-                        reasoning_details=option.reasoning_details,
                     )
             elif node.source == "tool_output":
                 message = Message(
@@ -108,20 +101,15 @@ def prepare_history_for_actor(
                 )
             limit = state.output_limit
             if message:
-                if isinstance(message.content, str):
-                    if len(message.content) > limit:
-                        message.content = trim_content(message.content, limit)
-                    content_length = len(message.content)
-                else:
-                    content_length = limit
-                if current_length + content_length > character_budget:
+                if len(message.content) > limit:
+                    message.content = trim_content(message.content, limit)
+                if current_length + len(message.content) > character_budget:
                     break
                 messages.append(message)
-                if not option.reasoning_details:
-                    messages = append_thinking_blocks_to_messages(
-                        messages, option.thinking_blocks
-                    )
-                current_length += content_length
+                messages = append_thinking_blocks_to_messages(
+                    messages, option.thinking_blocks
+                )
+                current_length += len(message.content)
     for message in messages:
         if message.role == "function" and not message.name:
             raise ValueError("Function messages must have a name")
@@ -156,14 +144,11 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
     advisor_outputs = []
     for result in state.previous_results[-1]:
         if result.type == "generate":
-            output = result.result.outputs[0]
-            thinking_blocks = get_thinking_blocks(output)
-            content_blocks = get_content_blocks(output)
-            reasoning_details = get_reasoning_details(output)
-            completion = output.completion
+            thinking_blocks = get_thinking_blocks(result.result.outputs[0])
+            completion = result.result.outputs[0].completion
             function_call = None
             if state.settings.enable_tool_use:
-                function_call = output.function_call
+                function_call = result.result.outputs[0].function_call
             else:
                 if "advise" not in completion:
                     completion = "```advise\n" + completion + "\n```"
@@ -175,30 +160,14 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                 )
                 if function_call:
                     completion = remove_code_blocks(state, completion)
-            advisor_outputs.append(
-                (
-                    completion,
-                    function_call,
-                    thinking_blocks,
-                    content_blocks,
-                    reasoning_details,
-                )
-            )
+            advisor_outputs.append((completion, function_call, thinking_blocks))
 
-    for (
-        completion,
-        function_call,
-        thinking_blocks,
-        content_blocks,
-        reasoning_details,
-    ) in advisor_outputs:
+    for completion, function_call, thinking_blocks in advisor_outputs:
         log_request = log_advisor_choice(
             Option(
                 content=completion,
                 function_call=function_call,
                 thinking_blocks=thinking_blocks,
-                content_blocks=content_blocks,
-                reasoning_details=reasoning_details,
             )
         )
         operations.append(log_request)
@@ -222,8 +191,6 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
                             content=completion,
                             function_call=function_call,
                             thinking_blocks=thinking_blocks,
-                            content_blocks=content_blocks,
-                            reasoning_details=reasoning_details,
                         )
                     ],
                 )

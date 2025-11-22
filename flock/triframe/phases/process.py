@@ -13,12 +13,9 @@ from flock.type_defs.states import triframeState
 from flock.utils.functions import create_standard_tool_operation, handle_set_timeout
 from flock.utils.logging import log_warning
 from flock.utils.phase_utils import (
-    get_content_blocks,
     get_last_completion,
     get_last_function_call,
     get_last_generator_output,
-    get_reasoning_details,
-    get_thinking_blocks,
     run_phase,
 )
 
@@ -35,21 +32,10 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         function_call = get_last_function_call(
             state, state.previous_results[-1], state.settings.enable_tool_use
         )
-        thinking_blocks = get_thinking_blocks(generator_output)
-        content_blocks = get_content_blocks(generator_output)
-        reasoning_details = get_reasoning_details(generator_output)
         state.nodes.append(
             Node(
                 source="actor_choice",
-                options=[
-                    Option(
-                        content=completion,
-                        function_call=function_call,
-                        thinking_blocks=thinking_blocks,
-                        content_blocks=content_blocks,
-                        reasoning_details=reasoning_details,
-                    )
-                ],
+                options=[Option(content=completion, function_call=function_call)],
             )
         )
     else:
@@ -100,13 +86,7 @@ def create_phase_request(state: triframeState) -> List[StateRequest]:
         if directly_from_actor:
             operations.append(
                 log_actor_choice(
-                    Option(
-                        content=completion,
-                        function_call=function_call,
-                        thinking_blocks=thinking_blocks,
-                        content_blocks=content_blocks,
-                        reasoning_details=reasoning_details,
-                    )
+                    Option(content=completion, function_call=function_call)
                 )
             )
         if tool_operation:

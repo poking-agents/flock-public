@@ -326,31 +326,16 @@ def add_usage_request(
     return [*operations, usage_request]
 
 
-def get_content_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
+def get_thinking_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
     if not output.extra_outputs:
         return []
-    content_blocks = output.extra_outputs.get("content_blocks")
-    if isinstance(content_blocks, list):
-        return content_blocks
-    return []
-
-
-def get_thinking_blocks(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
-    content_blocks = get_content_blocks(output)
+    if "content_blocks" not in output.extra_outputs:
+        return []
     return [
         block
-        for block in content_blocks
-        if block.get("type") in ("thinking", "redacted_thinking")
+        for block in output.extra_outputs["content_blocks"]
+        if block["type"] == "thinking" or block["type"] == "redacted_thinking"
     ]
-
-
-def get_reasoning_details(output: MiddlemanModelOutput) -> List[Dict[str, Any]]:
-    if not output.extra_outputs:
-        return []
-    reasoning_details = output.extra_outputs.get("reasoning_details")
-    if isinstance(reasoning_details, list):
-        return reasoning_details
-    return []
 
 
 def add_dummy_user_message(messages: List[Message]) -> List[Message]:
@@ -371,17 +356,9 @@ def append_thinking_blocks_to_messages(
 ) -> List[Message]:
     for thinking_block in thinking_blocks:
         if thinking_block.type == "thinking":
-            messages.append(
-                Message(
-                    content=thinking_block.thinking,
-                    role="assistant",
-                )
+            thinking_message = Message(
+                content=thinking_block.thinking,
+                role="assistant",
             )
-        elif thinking_block.type == "redacted_thinking":
-            messages.append(
-                Message(
-                    content="[REDACTED THINKING]",
-                    role="assistant",
-                )
-            )
+        messages.append(thinking_message)
     return messages

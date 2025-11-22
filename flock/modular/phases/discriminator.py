@@ -7,13 +7,7 @@ from flock.type_defs.base import Message, Option
 from flock.type_defs.phases import StateRequest
 from flock.type_defs.states import ModularState, Node
 from flock.utils.logging import log_warning
-from flock.utils.phase_utils import (
-    get_content_blocks,
-    get_reasoning_details,
-    get_thinking_blocks,
-    results_of_type,
-    run_phase,
-)
+from flock.utils.phase_utils import get_thinking_blocks, results_of_type, run_phase
 
 
 def parse_ratings(option: Message) -> Optional[Dict[int, List[float]]]:
@@ -49,15 +43,11 @@ def create_phase_request(state: ModularState) -> List[StateRequest]:
         for output in result.result.outputs:
             if output.completion or output.function_call:
                 thinking_blocks = get_thinking_blocks(output)
-                content_blocks = get_content_blocks(output)
-                reasoning_details = get_reasoning_details(output)
                 options.append(
                     Option(
                         content=output.completion,
                         function_call=output.function_call,
                         thinking_blocks=thinking_blocks,
-                        content_blocks=content_blocks,
-                        reasoning_details=reasoning_details,
                     )
                 )
 

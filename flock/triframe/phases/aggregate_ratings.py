@@ -12,13 +12,7 @@ from flock.type_defs.phases import StateRequest
 from flock.type_defs.states import triframeState
 from flock.utils.functions import parse_backticks_json, remove_code_blocks
 from flock.utils.logging import log_system, log_warning
-from flock.utils.phase_utils import (
-    get_content_blocks,
-    get_reasoning_details,
-    get_thinking_blocks,
-    results_of_type,
-    run_phase,
-)
+from flock.utils.phase_utils import get_thinking_blocks, results_of_type, run_phase
 
 
 def summarize_ratings(all_ratings: Dict[int, List[float]]) -> str:
@@ -83,8 +77,6 @@ def aggregate_ratings(
         log_requests = []
         for result in rating_generation_results:
             thinking_blocks = get_thinking_blocks(result.result.outputs[0])
-            content_blocks = get_content_blocks(result.result.outputs[0])
-            reasoning_details = get_reasoning_details(result.result.outputs[0])
             if not result.result.outputs:
                 failed_ratings += 1
                 continue
@@ -116,8 +108,6 @@ def aggregate_ratings(
                         content=completion,
                         function_call=function_call,
                         thinking_blocks=thinking_blocks,
-                        content_blocks=content_blocks,
-                        reasoning_details=reasoning_details,
                     )
                 )
                 log_requests.append(
@@ -126,8 +116,6 @@ def aggregate_ratings(
                             content=completion,
                             function_call=function_call,
                             thinking_blocks=thinking_blocks,
-                            content_blocks=content_blocks,
-                            reasoning_details=reasoning_details,
                         )
                     )
                 )
