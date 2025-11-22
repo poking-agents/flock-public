@@ -163,7 +163,7 @@
         },
         "modular_g3pro": {
             "generator": {
-                "model": "openrouter/google/gemini-3-pro-preview",
+                "model": "gemini-3-pro-preview",
                 "temp": 1.0,
                 "n": 1
             },
@@ -17742,7 +17742,7 @@
         "triframe_g3pro_aird_1_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17750,7 +17750,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17758,7 +17758,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17773,7 +17773,7 @@
         "triframe_g3pro_aird_1_rater_1_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17781,7 +17781,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17789,7 +17789,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17806,7 +17806,7 @@
         "triframe_g3pro_aird_1_rater_1_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17814,7 +17814,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17822,7 +17822,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17839,7 +17839,7 @@
         "triframe_g3pro_aird_1_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17847,7 +17847,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -17855,7 +17855,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17870,7 +17870,7 @@
         "triframe_g3pro_aird_1_rater_2_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17878,7 +17878,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -17886,7 +17886,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17903,7 +17903,7 @@
         "triframe_g3pro_aird_1_rater_2_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17911,7 +17911,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -17919,7 +17919,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17936,7 +17936,7 @@
         "triframe_g3pro_aird_1_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17944,7 +17944,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -17952,7 +17952,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -17967,7 +17967,7 @@
         "triframe_g3pro_aird_1_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -17975,7 +17975,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -17983,7 +17983,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18000,7 +18000,7 @@
         "triframe_g3pro_aird_1_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18008,7 +18008,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18016,7 +18016,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18033,7 +18033,7 @@
         "triframe_g3pro_aird_2_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18041,7 +18041,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18049,7 +18049,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18064,7 +18064,7 @@
         "triframe_g3pro_aird_2_rater_1_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18072,7 +18072,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18080,7 +18080,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18097,7 +18097,7 @@
         "triframe_g3pro_aird_2_rater_1_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18105,7 +18105,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18113,7 +18113,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18130,7 +18130,7 @@
         "triframe_g3pro_aird_2_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18138,7 +18138,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18146,7 +18146,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18161,7 +18161,7 @@
         "triframe_g3pro_aird_2_rater_2_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18169,7 +18169,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18177,7 +18177,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18194,7 +18194,7 @@
         "triframe_g3pro_aird_2_rater_2_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18202,7 +18202,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18210,7 +18210,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18227,7 +18227,7 @@
         "triframe_g3pro_aird_2_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18235,7 +18235,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18243,7 +18243,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18258,7 +18258,7 @@
         "triframe_g3pro_aird_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18266,7 +18266,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18274,7 +18274,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18291,7 +18291,7 @@
         "triframe_g3pro_aird_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18299,7 +18299,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18307,7 +18307,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18324,7 +18324,7 @@
         "triframe_g3pro_1_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18332,7 +18332,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18340,7 +18340,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18355,7 +18355,7 @@
         "triframe_g3pro_1_rater_1_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18363,7 +18363,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18371,7 +18371,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18388,7 +18388,7 @@
         "triframe_g3pro_1_rater_1_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18396,7 +18396,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18404,7 +18404,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18421,7 +18421,7 @@
         "triframe_g3pro_1_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18429,7 +18429,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18437,7 +18437,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18452,7 +18452,7 @@
         "triframe_g3pro_1_rater_2_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18460,7 +18460,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18468,7 +18468,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18485,7 +18485,7 @@
         "triframe_g3pro_1_rater_2_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18493,7 +18493,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18501,7 +18501,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18518,7 +18518,7 @@
         "triframe_g3pro_1_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18526,7 +18526,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18534,7 +18534,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18549,7 +18549,7 @@
         "triframe_g3pro_1_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18557,7 +18557,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18565,7 +18565,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18582,7 +18582,7 @@
         "triframe_g3pro_1_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18590,7 +18590,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18598,7 +18598,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -18615,7 +18615,7 @@
         "triframe_g3pro_2_rater_1_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18623,7 +18623,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18631,7 +18631,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18646,7 +18646,7 @@
         "triframe_g3pro_2_rater_1_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18654,7 +18654,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18662,7 +18662,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18679,7 +18679,7 @@
         "triframe_g3pro_2_rater_1_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18687,7 +18687,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18695,7 +18695,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18712,7 +18712,7 @@
         "triframe_g3pro_2_rater_2_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18720,7 +18720,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18728,7 +18728,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18743,7 +18743,7 @@
         "triframe_g3pro_2_rater_2_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18751,7 +18751,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18759,7 +18759,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18776,7 +18776,7 @@
         "triframe_g3pro_2_rater_2_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18784,7 +18784,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18792,7 +18792,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18809,7 +18809,7 @@
         "triframe_g3pro_2_rater_3_actor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18817,7 +18817,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18825,7 +18825,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18840,7 +18840,7 @@
         "triframe_g3pro_2_rater_3_actor_no_tools_backticks": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18848,7 +18848,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18856,7 +18856,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -18873,7 +18873,7 @@
         "triframe_g3pro_2_rater_3_actor_no_tools_xml": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -18881,7 +18881,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -18889,7 +18889,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36550,7 +36550,7 @@
         "triframe_g3pro_aird_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36558,7 +36558,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36566,7 +36566,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36581,7 +36581,7 @@
         "triframe_g3pro_aird_1_rater_1_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36589,7 +36589,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36597,7 +36597,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36614,7 +36614,7 @@
         "triframe_g3pro_aird_1_rater_1_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36622,7 +36622,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36630,7 +36630,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36647,7 +36647,7 @@
         "triframe_g3pro_aird_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36655,7 +36655,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36663,7 +36663,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36678,7 +36678,7 @@
         "triframe_g3pro_aird_1_rater_2_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36686,7 +36686,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36694,7 +36694,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36711,7 +36711,7 @@
         "triframe_g3pro_aird_1_rater_2_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36719,7 +36719,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36727,7 +36727,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36744,7 +36744,7 @@
         "triframe_g3pro_aird_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36752,7 +36752,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -36760,7 +36760,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36775,7 +36775,7 @@
         "triframe_g3pro_aird_1_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36783,7 +36783,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -36791,7 +36791,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36808,7 +36808,7 @@
         "triframe_g3pro_aird_1_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36816,7 +36816,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -36824,7 +36824,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -36841,7 +36841,7 @@
         "triframe_g3pro_aird_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36849,7 +36849,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36857,7 +36857,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36872,7 +36872,7 @@
         "triframe_g3pro_aird_2_rater_1_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36880,7 +36880,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36888,7 +36888,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36905,7 +36905,7 @@
         "triframe_g3pro_aird_2_rater_1_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36913,7 +36913,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36921,7 +36921,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36938,7 +36938,7 @@
         "triframe_g3pro_aird_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36946,7 +36946,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36954,7 +36954,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36969,7 +36969,7 @@
         "triframe_g3pro_aird_2_rater_2_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -36977,7 +36977,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -36985,7 +36985,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37002,7 +37002,7 @@
         "triframe_g3pro_aird_2_rater_2_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37010,7 +37010,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37018,7 +37018,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37035,7 +37035,7 @@
         "triframe_g3pro_aird_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37043,7 +37043,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37051,7 +37051,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37066,7 +37066,7 @@
         "triframe_g3pro_aird_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37074,7 +37074,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37082,7 +37082,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37099,7 +37099,7 @@
         "triframe_g3pro_aird_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37107,7 +37107,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37115,7 +37115,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37132,7 +37132,7 @@
         "triframe_g3pro_1_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37140,7 +37140,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37148,7 +37148,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37163,7 +37163,7 @@
         "triframe_g3pro_1_rater_1_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37171,7 +37171,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37179,7 +37179,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37196,7 +37196,7 @@
         "triframe_g3pro_1_rater_1_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37204,7 +37204,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37212,7 +37212,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37229,7 +37229,7 @@
         "triframe_g3pro_1_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37237,7 +37237,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37245,7 +37245,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37260,7 +37260,7 @@
         "triframe_g3pro_1_rater_2_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37268,7 +37268,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37276,7 +37276,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37293,7 +37293,7 @@
         "triframe_g3pro_1_rater_2_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37301,7 +37301,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37309,7 +37309,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37326,7 +37326,7 @@
         "triframe_g3pro_1_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37334,7 +37334,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37342,7 +37342,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37357,7 +37357,7 @@
         "triframe_g3pro_1_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37365,7 +37365,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37373,7 +37373,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37390,7 +37390,7 @@
         "triframe_g3pro_1_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37398,7 +37398,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37406,7 +37406,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": null
@@ -37423,7 +37423,7 @@
         "triframe_g3pro_2_rater_1_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37431,7 +37431,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37439,7 +37439,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37454,7 +37454,7 @@
         "triframe_g3pro_2_rater_1_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37462,7 +37462,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37470,7 +37470,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37487,7 +37487,7 @@
         "triframe_g3pro_2_rater_1_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37495,7 +37495,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37503,7 +37503,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37520,7 +37520,7 @@
         "triframe_g3pro_2_rater_2_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37528,7 +37528,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37536,7 +37536,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37551,7 +37551,7 @@
         "triframe_g3pro_2_rater_2_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37559,7 +37559,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37567,7 +37567,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37584,7 +37584,7 @@
         "triframe_g3pro_2_rater_2_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37592,7 +37592,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37600,7 +37600,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37617,7 +37617,7 @@
         "triframe_g3pro_2_rater_3_actor_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37625,7 +37625,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37633,7 +37633,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37648,7 +37648,7 @@
         "triframe_g3pro_2_rater_3_actor_no_tools_backticks_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37656,7 +37656,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37664,7 +37664,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
@@ -37681,7 +37681,7 @@
         "triframe_g3pro_2_rater_3_actor_no_tools_xml_no_advisor": {
             "advisors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": null
@@ -37689,7 +37689,7 @@
             ],
             "actors": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": null
@@ -37697,7 +37697,7 @@
             ],
             "raters": [
                 {
-                    "model": "openrouter/google/gemini-3-pro-preview",
+                    "model": "gemini-3-pro-preview",
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": null
