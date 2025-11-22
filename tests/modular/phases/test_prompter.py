@@ -38,6 +38,8 @@ def test_prepare_messages_preserves_reasoning_details():
     assistant_message = assistant_messages[0]
     assert assistant_message.content == content_blocks
     assert assistant_message.reasoning_details == reasoning_details
+    # When content_blocks are present, function_call should not be set separately
+    assert assistant_message.function_call is None
 
     # Ensure no duplicate reasoning-only messages were appended
     assert all(
