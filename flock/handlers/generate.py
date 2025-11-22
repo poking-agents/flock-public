@@ -4,7 +4,7 @@ import asyncio
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 
 import aiohttp
 
@@ -111,6 +111,70 @@ def resolve_extra_parameters(params: GenerationParams) -> Optional[Dict[str, Any
             merged["reasoning"] = reasoning_config
 
     return merged or None
+
+
+def _normalize_messages_for_gemini(
+    messages: Optional[List[Dict[str, Any]]]
+) -> Optional[List[Dict[str, Any]]]:
+    """
+    Convert assistant messages that contain content_blocks with functionCall parts
+    into OpenAI-compatible tool_calls with extra_content.google.thought_signature.
+    This ensures Gemini 3 Pro receives preserved thought signatures.
+    """
+    if not messages:
+        return messages
+    normalized: List[Dict[str, Any]] = []
+    for msg in messages:
+        # Work on a shallow copy so we don't mutate original data
+        new_msg = dict(msg)
+        if (
+            isinstance(new_msg.get("role"), str)
+            and new_msg["role"] == "assistant"
+            and isinstance(new_msg.get("content"), list)
+        ):
+            content_blocks = new_msg.get("content") or []
+            # Identify functionCall parts
+            fn_blocks = [
+                b
+                for b in content_blocks
+                if isinstance(b, dict) and b.get("type") == "functionCall"
+            ]
+            if fn_blocks:
+                tool_calls: List[Dict[str, Any]] = []
+                thought_signature_added = False
+                for idx, block in enumerate(fn_blocks):
+                    fc = block.get("functionCall") or {}
+                    name = fc.get("name")
+                    arguments = fc.get("arguments")
+                    # arguments may be dict or string; OpenAI compat expects a string
+                    if arguments is not None and not isinstance(arguments, str):
+                        try:
+                            arguments_str = json.dumps(arguments)
+                        except Exception:
+                            arguments_str = str(arguments)
+                    else:
+                        arguments_str = arguments if isinstance(arguments, str) else "{}"
+                    tool_call = {
+                        "type": "function",
+                        "id": f"function-call-{idx+1}",
+                        "function": {"name": name, "arguments": arguments_str},
+                    }
+                    # Map thoughtSignature on the first function call if present
+                    if not thought_signature_added:
+                        sig = block.get("thoughtSignature")
+                        if isinstance(sig, str) and sig:
+                            tool_call["extra_content"] = {
+                                "google": {"thought_signature": sig}
+                            }
+                            thought_signature_added = True
+                    tool_calls.append(tool_call)
+                # Replace content with tool_calls to satisfy OpenAI-compatible schema
+                new_msg.pop("content", None)
+                # Remove any legacy function_call field to avoid conflicts
+                new_msg.pop("function_call", None)
+                new_msg["tool_calls"] = tool_calls
+        normalized.append(new_msg)
+    return normalized
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -278,6 +342,9 @@ async def generate_hooks(
             log_generation(params, merged)
             return merged
         else:
+            # Normalize messages for Gemini models to ensure thought_signature is preserved
+            if settings.model in GEMINI_REASONING_MODELS:
+                processed_messages = _normalize_messages_for_gemini(processed_messages)
             result = await hooks_client.generate(
                 settings=settings,
                 messages=processed_messages,

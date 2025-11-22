@@ -354,9 +354,51 @@ def _extract_content_blocks(extra: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     message = extra.get("message")
     if isinstance(message, dict):
+        # 1) Direct content blocks on message
         content_blocks = message.get("content_blocks") or message.get("content")
         if isinstance(content_blocks, list):
             return content_blocks
+        # 2) OpenAI-compatible shape: assistant tool_calls with Google thought_signature
+        tool_calls = message.get("tool_calls")
+        if isinstance(tool_calls, list) and tool_calls:
+            synthesized_blocks: List[Dict[str, Any]] = []
+            signature_attached = False
+            for idx, call in enumerate(tool_calls):
+                if not isinstance(call, dict):
+                    continue
+                fn = call.get("function") or {}
+                name = fn.get("name")
+                args_raw = fn.get("arguments")
+                args_obj: Dict[str, Any] | str | None = None
+                if isinstance(args_raw, str):
+                    # Try to parse OpenAI stringified JSON
+                    try:
+                        args_obj = json.loads(args_raw)
+                    except Exception:
+                        args_obj = args_raw
+                elif isinstance(args_raw, dict):
+                    args_obj = args_raw
+                # Build a Gemini-style functionCall part
+                part: Dict[str, Any] = {
+                    "type": "functionCall",
+                    "functionCall": {
+                        "name": name,
+                        "arguments": args_obj if args_obj is not None else {},
+                    },
+                }
+                # Attach thoughtSignature on the first function call if available
+                if not signature_attached:
+                    extra_content = call.get("extra_content")
+                    if isinstance(extra_content, dict):
+                        google_extra = extra_content.get("google")
+                        if isinstance(google_extra, dict):
+                            sig = google_extra.get("thought_signature")
+                            if isinstance(sig, str) and sig:
+                                part["thoughtSignature"] = sig
+                                signature_attached = True
+                synthesized_blocks.append(part)
+            if synthesized_blocks:
+                return synthesized_blocks
 
     candidate = _extract_candidate(extra)
     if candidate:
