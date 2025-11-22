@@ -84,24 +84,13 @@ def prepare_messages(state: ModularState) -> List[Message]:
                 messages = append_thinking_blocks_to_messages(
                     messages, option.thinking_blocks
                 )
-            # If we have content_blocks, use them exclusively (they already contain
-            # function calls with thought_signature for Gemini models)
-            if option.content_blocks:
-                message = Message(
-                    role="assistant",
-                    content=option.content_blocks,
-                    name=option.name,
-                    reasoning_details=option.reasoning_details,
-                )
-            else:
-                # Fallback to traditional format for models that don't use content_blocks
-                message = Message(
-                    role="assistant",
-                    content=option.content,
-                    function_call=option.function_call,
-                    name=option.name,
-                    reasoning_details=option.reasoning_details,
-                )
+            message = Message(
+                role="assistant",
+                content=option.content_blocks or option.content,
+                function_call=option.function_call,
+                name=option.name,
+                reasoning_details=option.reasoning_details,
+            )
         messages.append(message)
 
     # Add usage warning if needed

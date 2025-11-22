@@ -78,23 +78,15 @@ def prepare_history_for_actor(
                 )
             elif node.source == "actor_choice":
                 if state.settings.enable_tool_use:
-                    # If we have content_blocks, use them exclusively (they already contain
-                    # function calls with thought_signature for Gemini models)
-                    if option.content_blocks:
-                        message = Message(
-                            content=option.content_blocks,
-                            role="assistant",
-                            reasoning_details=option.reasoning_details,
-                        )
-                    else:
-                        # Fallback to traditional format for models that don't use content_blocks
-                        content_value = non_empty_option_content(option)
-                        message = Message(
-                            content=content_value,
-                            function_call=option.function_call,
-                            role="assistant",
-                            reasoning_details=option.reasoning_details,
-                        )
+                    content_value = option.content_blocks or non_empty_option_content(
+                        option
+                    )
+                    message = Message(
+                        content=content_value,
+                        function_call=option.function_call,
+                        role="assistant",
+                        reasoning_details=option.reasoning_details,
+                    )
                 else:
                     message = Message(
                         content=combine_function_call_and_content(
