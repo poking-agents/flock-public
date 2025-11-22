@@ -18,24 +18,20 @@ def generate_modular_manifest() -> dict:
         for temp in temps_to_use:
             name_suffix = f"_temperature_{temp}" if "g2.5pro" in model_short else ""
             pack_name = f"modular_{model_short}{name_suffix}"
-            generator_config = {
-                "model": model,
-                "temp": temp if "g2.5pro" in model_short else 1.0,
-                "n": 1,
-            }
-            if max_tokens is not None:
-                generator_config["max_tokens"] = max_tokens
-
-            if model == "claude-3-7-sonnet-20250219" and max_tokens:
-                reasoning_max = max_tokens // 2
-                generator_config["max_reasoning_tokens"] = reasoning_max
-                generator_config["reasoning"] = {"max_tokens": reasoning_max}
-
             settings_packs[pack_name] = {
-                "generator": generator_config,
+                "generator": {
+                    "model": model,
+                    "temp": temp if "g2.5pro" in model_short else 1.0,
+                    "n": 1,
+                    **({"max_tokens": max_tokens} if max_tokens is not None else {}),
+                },
                 "limit_type": "time",
                 "intermediate_scoring": False,
                 "workflow_type": "modular",
             }
+            if model == "claude-3-7-sonnet-20250219":
+                settings_packs[pack_name]["generator"]["max_reasoning_tokens"] = (
+                    max_tokens // 2
+                )
 
     return settings_packs

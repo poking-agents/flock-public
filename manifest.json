@@ -18,10 +18,7 @@
                 "temp": 1.0,
                 "n": 1,
                 "max_tokens": 20000,
-                "max_reasoning_tokens": 10000,
-                "reasoning": {
-                    "max_tokens": 10000
-                }
+                "max_reasoning_tokens": 10000
             },
             "limit_type": "time",
             "intermediate_scoring": false,
@@ -1345,10 +1342,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1357,10 +1351,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1369,10 +1360,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1388,10 +1376,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1400,10 +1385,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1412,10 +1394,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1433,10 +1412,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1445,10 +1421,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1457,10 +1430,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1478,10 +1448,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1490,10 +1457,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1502,10 +1466,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1521,10 +1482,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1533,10 +1491,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1545,10 +1500,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1566,10 +1518,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1578,10 +1527,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1590,10 +1536,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1611,10 +1554,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1623,10 +1563,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1635,10 +1572,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1654,10 +1588,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1666,10 +1597,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1678,10 +1606,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1699,10 +1624,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1711,10 +1633,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1723,10 +1642,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1744,10 +1660,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1756,10 +1669,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1768,10 +1678,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1787,10 +1694,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1799,10 +1703,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1811,10 +1712,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1832,10 +1730,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1844,10 +1739,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1856,10 +1748,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1877,10 +1766,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1889,10 +1775,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1901,10 +1784,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1920,10 +1800,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1932,10 +1809,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1944,10 +1818,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -1965,10 +1836,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -1977,10 +1845,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -1989,10 +1854,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -2010,10 +1872,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2022,10 +1881,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2034,10 +1890,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -2053,10 +1906,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2065,10 +1915,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2077,10 +1924,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -2098,10 +1942,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2110,10 +1951,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2122,10 +1960,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -2143,10 +1978,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2155,10 +1987,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2167,10 +1996,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2186,10 +2012,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2198,10 +2021,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2210,10 +2030,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2231,10 +2048,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2243,10 +2057,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2255,10 +2066,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2276,10 +2084,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2288,10 +2093,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2300,10 +2102,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2319,10 +2118,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2331,10 +2127,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2343,10 +2136,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2364,10 +2154,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2376,10 +2163,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2388,10 +2172,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2409,10 +2190,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2421,10 +2199,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2433,10 +2208,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2452,10 +2224,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2464,10 +2233,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2476,10 +2242,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2497,10 +2260,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2509,10 +2269,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2521,10 +2278,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2542,10 +2296,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2554,10 +2305,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2566,10 +2314,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2585,10 +2330,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2597,10 +2339,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2609,10 +2348,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2630,10 +2366,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2642,10 +2375,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2654,10 +2384,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2675,10 +2402,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2687,10 +2411,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2699,10 +2420,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2718,10 +2436,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2730,10 +2445,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2742,10 +2454,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2763,10 +2472,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2775,10 +2481,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2787,10 +2490,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2808,10 +2508,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2820,10 +2517,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2832,10 +2526,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2851,10 +2542,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2863,10 +2551,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2875,10 +2560,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -2896,10 +2578,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -2908,10 +2587,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -2920,10 +2596,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -20477,10 +20150,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20489,10 +20159,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20501,10 +20168,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20520,10 +20184,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20532,10 +20193,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20544,10 +20202,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20565,10 +20220,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20577,10 +20229,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20589,10 +20238,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20610,10 +20256,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20622,10 +20265,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20634,10 +20274,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20653,10 +20290,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20665,10 +20299,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20677,10 +20308,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20698,10 +20326,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20710,10 +20335,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20722,10 +20344,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20743,10 +20362,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20755,10 +20371,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20767,10 +20380,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20786,10 +20396,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20798,10 +20405,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20810,10 +20414,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20831,10 +20432,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20843,10 +20441,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20855,10 +20450,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20876,10 +20468,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20888,10 +20477,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20900,10 +20486,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20919,10 +20502,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20931,10 +20511,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20943,10 +20520,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -20964,10 +20538,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -20976,10 +20547,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -20988,10 +20556,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21009,10 +20574,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21021,10 +20583,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21033,10 +20592,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21052,10 +20608,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21064,10 +20617,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21076,10 +20626,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21097,10 +20644,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21109,10 +20653,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21121,10 +20662,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21142,10 +20680,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21154,10 +20689,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21166,10 +20698,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21185,10 +20714,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21197,10 +20723,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21209,10 +20732,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21230,10 +20750,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21242,10 +20759,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21254,10 +20768,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "time",
@@ -21275,10 +20786,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21287,10 +20795,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21299,10 +20804,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21318,10 +20820,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21330,10 +20829,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21342,10 +20838,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21363,10 +20856,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21375,10 +20865,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21387,10 +20874,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21408,10 +20892,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21420,10 +20901,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21432,10 +20910,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21451,10 +20926,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21463,10 +20935,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21475,10 +20944,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21496,10 +20962,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21508,10 +20971,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21520,10 +20980,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21541,10 +20998,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21553,10 +21007,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21565,10 +21016,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21584,10 +21032,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21596,10 +21041,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21608,10 +21050,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21629,10 +21068,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21641,10 +21077,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21653,10 +21086,7 @@
                     "temp": 0.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21674,10 +21104,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21686,10 +21113,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21698,10 +21122,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21717,10 +21138,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21729,10 +21147,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21741,10 +21156,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21762,10 +21174,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21774,10 +21183,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21786,10 +21192,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21807,10 +21210,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21819,10 +21219,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21831,10 +21228,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21850,10 +21244,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21862,10 +21253,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21874,10 +21262,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21895,10 +21280,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21907,10 +21289,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21919,10 +21298,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21940,10 +21316,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21952,10 +21325,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -21964,10 +21334,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -21983,10 +21350,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -21995,10 +21359,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -22007,10 +21368,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
@@ -22028,10 +21386,7 @@
                     "temp": 1.0,
                     "n": 1,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "actors": [
@@ -22040,10 +21395,7 @@
                     "temp": 1.0,
                     "n": 3,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "raters": [
@@ -22052,10 +21404,7 @@
                     "temp": 1.0,
                     "n": 2,
                     "max_tokens": 20000,
-                    "max_reasoning_tokens": 10000,
-                    "reasoning": {
-                        "max_tokens": 10000
-                    }
+                    "max_reasoning_tokens": 10000
                 }
             ],
             "limit_type": "token",
