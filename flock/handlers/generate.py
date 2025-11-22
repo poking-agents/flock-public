@@ -15,22 +15,13 @@ from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
 REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
-GEMINI_REASONING_MODELS = (
-    "openrouter/google/gemini-2.5-pro-preview",
-    "openrouter/google/gemini-3-pro-preview",
-)
+GOOGLE_MODELS = ("openrouter/google/gemini-2.5-pro-preview",)
 
 MODEL_EXTRA_PARAMETERS: Dict[str, Dict[str, Any]] = {
     "openrouter/google/gemini-2.5-pro-preview": {
         "provider": {
             "order": ["Google Vertex"],
             "allow_fallbacks": False
-        }
-    },
-    "openrouter/google/gemini-3-pro-preview": {
-        "provider": {
-            "order": ["Google AI Studio", "Google"],
-            "allow_fallbacks": True
         }
     },
 }
@@ -82,13 +73,8 @@ def _extract_reasoning_config(params: GenerationParams) -> Optional[Dict[str, An
     elif reasoning_effort:
         reasoning["effort"] = reasoning_effort
 
-    # Enable reasoning by default for models that support it
-    if not reasoning:
-        if params.settings.model in REASONING_EFFORT_MODELS:
-            reasoning["effort"] = "high"
-        elif params.settings.model in GEMINI_REASONING_MODELS:
-            # Gemini models need reasoning enabled to return thought_signature
-            reasoning["enabled"] = True
+    if not reasoning and params.settings.model in REASONING_EFFORT_MODELS:
+        reasoning["effort"] = "high"
 
     return reasoning or None
 
