@@ -133,7 +133,7 @@ async def generate_hooks(
     processed_messages = params.messages
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
-        settings.reasoning_effort = "xhigh"
+        settings.reasoning_effort = "high"
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:
