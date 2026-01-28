@@ -14,7 +14,7 @@ from flock.type_defs.operations import GenerationOutput, GenerationParams
 from flock.type_defs.processing import ProcessingMode
 
 SINGLE_GENERATION_MODELS = ()
-REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31")
+REASONING_EFFORT_MODELS = ("o1-2024-12-17", "o3-mini-2025-01-31", "gpt-5.2")
 
 
 def log_generation(params: GenerationParams, result: GenerationOutput) -> None:
@@ -133,7 +133,7 @@ async def generate_hooks(
     processed_messages = params.messages
     settings = params.settings.copy()
     if settings.model in REASONING_EFFORT_MODELS:
-        settings.reasoning_effort = "high"
+        settings.reasoning_effort = "xhigh"
 
     timeout = aiohttp.ClientTimeout(total=30 * 60)  # 30 minutes
     async with aiohttp.ClientSession(timeout=timeout) as session:

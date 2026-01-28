@@ -14,6 +14,7 @@ MODELS = (
     ("o3-mini-2025-01-31", "o3-mini", None),
     ("gpt-5-2025-08-07", "gpt-5", None),
     ("together/deepseek-r1", "dsr1_together", 32_000),
+    ("gpt-5.2", "gpt-5.2", None),
 )
 
 ANTHROPIC_THINKING_MODELS = (
